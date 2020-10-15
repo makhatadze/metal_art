@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d51b9db-7f3b-4935-adfa-fc1bbaf7761b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/admin-panel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/admin-panel.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/app.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/ge/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/home/vip.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home/vip.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/detail-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/detail-header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +210,7 @@
       <workItem from="1602568259056" duration="8720000" />
       <workItem from="1602578464344" duration="4371000" />
       <workItem from="1602588109217" duration="11198000" />
-      <workItem from="1602742129070" duration="16937000" />
+      <workItem from="1602742129070" duration="17430000" />
     </task>
     <servers />
   </component>
@@ -257,10 +252,10 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="261" height="506" key="HiddenNamespacesPopup/72.27.1848.1053@72.27.1848.1053" timestamp="1602075075076" />
-    <state x="2666" y="463" width="401" height="158" key="NewPhpFileDialog" timestamp="1602758521416">
+    <state x="2666" y="463" width="401" height="158" key="NewPhpFileDialog" timestamp="1602762844397">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2666" y="463" width="401" height="158" key="NewPhpFileDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602758521416" />
+    <state x="2666" y="463" width="401" height="158" key="NewPhpFileDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602762844397" />
     <state x="790" y="478" width="401" height="158" key="NewPhpFileDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1602074527336" />
     <state x="2680" y="236" width="461" height="642" key="RollbackChangesDialog" timestamp="1602745000223">
       <screen x="1920" y="0" width="1920" height="1080" />

@@ -22,9 +22,9 @@
                             <h2 id="c-name">{{$vips[0]->{"title_".app()->getLocale()} }}</h2>
                             <span id="c-year">{{ date('Y', strtotime($vips[0]->created_date))}}</span>
 
-                            <div class="currency curr1" >
-                                <button class="select-gel active" onclick="changecurrencyClass('curr1', 'gel')">ლ</button>
-                                <button class="select-dol" onclick="changecurrencyClass('curr1', 'dol')">$</button>
+                            <div class="currency curr{{$i}}" >
+                                <button class="select-gel active" onclick="changecurrencyClass('curr{{$i}}', 'gel')">ლ</button>
+                                <button class="select-dol" onclick="changecurrencyClass('curr{{$i}}', 'dol')">$</button>
                             </div>
                         </div>
 

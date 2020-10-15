@@ -94,11 +94,11 @@
                                     <h2 id="c-name">{{$products[0]->{"title_".app()->getLocale()} }}</h2>
                                     <span id="c-year">{{ date('Y', strtotime($products[0]->created_date))}}</span>
 
-                                    <div class="currency" id="adviced1">
-                                        <button class="select-gel active" onclick="changecurrency('adviced1', 'gel')">
-                                            ₾
+                                    <div class="currency" id="adviced{{$i}}">
+                                        <button class="select-gel active" onclick="changecurrency('adviced{{$i}}', 'gel')">
+                                            ლ
                                         </button>
-                                        <button class="select-dol" onclick="changecurrency('adviced1', 'dol')">$
+                                        <button class="select-dol" onclick="changecurrency('adviced{{$i}}', 'dol')">$
                                         </button>
                                     </div>
                                 </div>
@@ -173,7 +173,7 @@
                     @endfor
                 </div>
 
-                <a href="#" class="we-advice__allproduct-link">
+                <a href="{{route('catalogIndex')}}" class="we-advice__allproduct-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16.784" height="11.689" viewBox="0 0 16.784 11.689">
                         <g id="Icon_feather-list" data-name="Icon feather-list" transform="translate(0.75 0.75)">
                             <path id="Path_332" data-name="Path 332" d="M12,9H23.039" transform="translate(-7.754 -9)"
