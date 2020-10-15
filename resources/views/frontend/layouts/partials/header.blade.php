@@ -25,10 +25,10 @@
             <div class="nav-right">
 
                 <div class="language-switch">
-                    <a class="chosen-lang" href="#">
+                    <a class="{{app()->getLocale() == 'ge' ? 'chosen-lang' : ''}}" href="{{ LaravelLocalization::getLocalizedURL('ge') }}">
                         <img src="{{url('frontend-assets//img/logos/georgia-flag.svg')}}" alt="">
                     </a>
-                    <a class="" href="#">
+                    <a class="{{app()->getLocale() == 'en' ? 'chosen-lang' : ''}}" href="{{ LaravelLocalization::getLocalizedURL('en') }}">
                         <img src="{{url('frontend-assets//img/logos/uk-flag.svg')}}" alt="">
                     </a>
                 </div>

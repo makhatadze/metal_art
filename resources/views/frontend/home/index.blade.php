@@ -91,7 +91,7 @@
                             <div class="card__main">
 
                                 <div class="card__top">
-                                    <h2 id="c-name">{{$products[0]->title_ge}}</h2>
+                                    <h2 id="c-name">{{$products[0]->{"title_".app()->getLocale()} }}</h2>
                                     <span id="c-year">{{ date('Y', strtotime($products[0]->created_date))}}</span>
 
                                     <div class="currency" id="adviced1">
@@ -111,8 +111,8 @@
                                     <div class="card__middle-body">
                                         <p id="c-price">{{number_format($products[0]->price, 2)}} </p>
                                         <p class="c-category">{{$products[0]->new ? 'ახალი' : 'მეორადი'}}
-                                            / {{$products[0]->transmission->title_ge}}
-                                            / {{$products[0]->category->title_ge}}</p>
+                                            / {{$products[0]->transmission->{"title_".app()->getLocale()} }}
+                                            / {{$products[0]->category->{"title_".app()->getLocale()} }}</p>
                                     </div>
                                 </div>
 
@@ -142,7 +142,7 @@
 
                                             მდგომარეობა:
                                         </div>
-                                        <p>{{$products[0]->condition->title_ge}}</p>
+                                        <p>{{$products[0]->condition->{"title_".app()->getLocale()} }}</p>
                                     </div>
 
                                     <div class="card__more-info-block">
@@ -151,7 +151,7 @@
 
                                             გაყიდვის ტიპი:
                                         </div>
-                                        <p>{{$products[0]->deal->title_ge}}</p>
+                                        <p>{{$products[0]->deal->{"title_".app()->getLocale()} }}</p>
                                     </div>
 
                                 </div>
