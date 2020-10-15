@@ -44,4 +44,37 @@ class Product extends Model
     {
         return $this->morphOne('App\Models\Image', 'imageable');
     }
+
+    public function transmission(){
+        return $this->hasOne('App\Models\Transmission', 'id','transmission_id');
+    }
+
+    public function brand(){
+        return $this->hasOne('App\Models\Brand', 'id','brand_id');
+    }
+
+    public function model(){
+        return $this->hasOne('App\Models\BrandModel', 'id','model_id');
+    }
+
+    public function category(){
+        return $this->hasOne('App\Models\Category', 'id','category_id');
+    }
+
+    public function fuel(){
+        return $this->hasOne('App\Models\Fuel', 'id','fuel_id');
+    }
+
+    public function engine(){
+        return $this->hasOne('App\Models\Engine', 'id','engine_id');
+    }
+
+    public function condition(){
+        return $this->hasOne('App\Models\Condition', 'id','condition_id');
+    }
+
+    public function deal(){
+        return $this->hasOne('App\Models\Deal', 'id','deal_id');
+    }
+
 }

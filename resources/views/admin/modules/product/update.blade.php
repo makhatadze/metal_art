@@ -246,6 +246,8 @@
                                         </span>
                     @endif
                 </div>
+
+
                 <div class="file-loading">
                     <input id="input-700" name="kartik-input-700[]" type="file" multiple>
                 </div>
@@ -272,14 +274,10 @@
         $("#input-700").fileinput({
             theme: 'fa',
             uploadUrl: '#',
-            showRemove: false,
             maxFileCount: 7,
             overwriteInitial: true,
-            initialPreviewAsData: true,
+
             initialPreviewFileType: 'image',
-            initialPreview: [
-                "{{url("/storage/product/1/2020101239Bridger_Logo.png")}}"
-            ],
             slugCallback: function (filename) {
                 return filename.replace('(', '_').replace(']', '_');
             },

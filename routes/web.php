@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\TransmissionsController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +30,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/admin/login', [LoginController::class, 'login'])->name('login');
+Route::get('/',[HomeController::class, 'index'])->name('home');
+Route::get('/catalog',[HomeController::class,'catalog'])->name('catalogIndex');
+Route::get('/catalog/{product}',[HomeController::class,'view'])->name('catalogView');
 
 Route::prefix('admin')->group(function () {
     Auth::routes(['register' => false,'reset' => false,'update' => false,'email' => false]);

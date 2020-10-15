@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="georgia_1_" data-name="georgia (1)" transform="translate(0.136 0.136)">
+    <circle id="Ellipse_1" data-name="Ellipse 1" cx="15" cy="15" r="15" transform="translate(-0.136 -0.136)" fill="#f0f0f0"/>
+    <g id="Group_1651" data-name="Group 1651">
+      <path id="Path_43" data-name="Path 43" d="M29.3,12.791H16.629V.125a14.845,14.845,0,0,0-3.837,0V12.791H.125a14.845,14.845,0,0,0,0,3.837H12.791V29.3a14.845,14.845,0,0,0,3.837,0V16.629H29.3a14.845,14.845,0,0,0,0-3.837Z" fill="#d80027"/>
+      <path id="Path_44" data-name="Path 44" d="M92.88,90.962V89.043H90.962v1.919H89.043V92.88h1.919V94.8H92.88V92.88H94.8V90.962Z" transform="translate(-83.927 -83.927)" fill="#d80027"/>
+      <path id="Path_45" data-name="Path 45" d="M326.62,90.962V89.043H324.7v1.919h-1.919V92.88H324.7V94.8h1.919V92.88h1.919V90.962Z" transform="translate(-304.236 -83.927)" fill="#d80027"/>
+      <path id="Path_46" data-name="Path 46" d="M92.88,324.7v-1.919H90.962V324.7H89.043v1.919h1.919v1.919H92.88V326.62H94.8V324.7Z" transform="translate(-83.927 -304.236)" fill="#d80027"/>
+      <path id="Path_47" data-name="Path 47" d="M326.62,324.7v-1.919H324.7V324.7h-1.919v1.919H324.7v1.919h1.919V326.62h1.919V324.7Z" transform="translate(-304.236 -304.236)" fill="#d80027"/>
+    </g>
+  </g>
+</svg>
