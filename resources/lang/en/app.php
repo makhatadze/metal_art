@@ -4,6 +4,15 @@ return [
 
 
     'home' => 'Home',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'Manufacturer' => 'Manufacturer',
+    'custom' => 'Custom',
+    'custom_cleared' => 'Custom Cleared',
+    'before_customs' => 'Before Customs',
+    'new' => 'New',
+    'second' => 'Second',
+    'search' => 'Search',
+    'condition' => 'Condition',
+    'from' => 'From',
+    'to' => 'To'
 
 ];

@@ -9,10 +9,10 @@
 
             <ul class="navigation">
                 <li class="navigation__item">
-                    <a href="index.html" class="navigation__link active">მთავარი</a>
+                    <a href="{{route('home')}}" class="navigation__link active">მთავარი</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="catalogue.html" class="navigation__link">კატალოგი</a>
+                    <a href="{{route('catalogIndex')}}" class="navigation__link">კატალოგი</a>
                 </li>
                 <li class="navigation__item">
                     <a href="about.html" class="navigation__link">ჩვენს შესახებ</a>

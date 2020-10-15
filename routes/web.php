@@ -36,6 +36,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/',[HomeController::class, 'index'])->name('home');
     Route::get('/catalog',[HomeController::class,'catalog'])->name('catalogIndex');
     Route::get('/catalog/{product}',[HomeController::class,'view'])->name('catalogView');
+    Route::get('/about',[HomeController::class,'about'])->name('about');
 });
 
 

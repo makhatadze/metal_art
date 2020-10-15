@@ -19,4 +19,12 @@ class Brand extends Model
     {
         return $this->morphOne('App\Models\BrandModel', 'brandmodeleable');
     }
+
+    /**
+     * Get the brand's image.
+     */
+    public function image()
+    {
+        return $this->morphOne('App\Models\Image', 'imageable');
+    }
 }

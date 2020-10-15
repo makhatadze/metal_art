@@ -2,12 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d51b9db-7f3b-4935-adfa-fc1bbaf7761b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/app.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ge/app.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/about/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BrandController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BrandController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Brand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Brand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ge/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ge/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/modules/brand/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/modules/brand/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/catalog/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/catalog/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/catalog/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/catalog/view.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/home/vip.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home/vip.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/detail-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/detail-header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +219,7 @@
       <workItem from="1602568259056" duration="8720000" />
       <workItem from="1602578464344" duration="4371000" />
       <workItem from="1602588109217" duration="11198000" />
-      <workItem from="1602742129070" duration="17430000" />
+      <workItem from="1602742129070" duration="27692000" />
     </task>
     <servers />
   </component>
@@ -238,24 +247,24 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2727" y="224" width="357" height="674" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602495987580" />
-    <state x="2648" y="310" width="526" height="493" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602502079816">
+    <state x="2648" y="310" width="526" height="493" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602767003642">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2648" y="310" width="526" height="493" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602502079816" />
-    <state x="2654" y="290" width="426" height="493" key="FileChooserDialogImpl" timestamp="1602762118329">
+    <state x="2648" y="310" width="526" height="493" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602767003642" />
+    <state x="2654" y="290" width="426" height="493" key="FileChooserDialogImpl" timestamp="1602773171013">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="734" y="310" width="426" height="493" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1602232385780" />
-    <state x="2654" y="290" width="426" height="493" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602762118329" />
+    <state x="2654" y="290" width="426" height="493" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602773171013" />
     <state x="778" y="310" width="426" height="493" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1602075899718" />
     <state width="261" height="506" key="HiddenNamespacesPopup" timestamp="1602075075076">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="261" height="506" key="HiddenNamespacesPopup/72.27.1848.1053@72.27.1848.1053" timestamp="1602075075076" />
-    <state x="2666" y="463" width="401" height="158" key="NewPhpFileDialog" timestamp="1602762844397">
+    <state x="2666" y="463" width="401" height="158" key="NewPhpFileDialog" timestamp="1602771508192">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2666" y="463" width="401" height="158" key="NewPhpFileDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602762844397" />
+    <state x="2666" y="463" width="401" height="158" key="NewPhpFileDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602771508192" />
     <state x="790" y="478" width="401" height="158" key="NewPhpFileDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1602074527336" />
     <state x="2680" y="236" width="461" height="642" key="RollbackChangesDialog" timestamp="1602745000223">
       <screen x="1920" y="0" width="1920" height="1080" />
@@ -294,11 +303,11 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="590" y="27" width="1181" height="685" maximized="true" key="dock-window-2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602759193331" />
-    <state x="2559" y="272" width="643" height="783" key="find.popup" timestamp="1602751500362">
+    <state x="2559" y="272" width="643" height="783" key="find.popup" timestamp="1602771306691">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="639" y="292" width="643" height="764" key="find.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1602745174974" />
-    <state x="2559" y="272" width="643" height="783" key="find.popup/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602751500362" />
+    <state x="2559" y="272" width="643" height="783" key="find.popup/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602771306691" />
     <state x="687" y="292" width="618" height="594" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1601988730722" />
     <state x="735" y="431" width="628" height="288" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1602079338340">
       <screen x="72" y="27" width="1848" height="1053" />

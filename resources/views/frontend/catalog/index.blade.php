@@ -9,173 +9,167 @@
             <div class="catalogue__wrapper">
 
                 <div class="catalogue__left">
-                    <div class="catalogue__filter">
-                        <h1 class="catalogue__filter-heading">
-                            ფილტრი
-                        </h1>
+                    <form action="/{{app()->getLocale()}}/catalog">
+                        <div class="catalogue__filter">
+                            <h1 class="catalogue__filter-heading">
+                                ფილტრი
+                            </h1>
 
-                        <h2 class="catalogue__filter-category">
-                            მწარმოებელი
-                        </h2>
-                        <div class="catalogue__select-wrap">
-                            <div class="catalogue__select-img">
-                                <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
+                            <h2 class="catalogue__filter-category">
+                                მწარმოებელი
+                            </h2>
+                            <div class="catalogue__select-wrap">
+                                <div class="catalogue__select-img">
+                                    <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
+                                </div>
+                                <select name="brand" value="{{Request::get('brand') ? Request::get('brand') : 1}}">
+                                    @if ($brands)
+                                        @foreach($brands as $brand)
+                                            <option {{(Request::get('brand') && Request::get('brand') == $brand->id) ? 'selected' : ''}} value="{{$brand->id}}">{{$brand->title }}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
                             </div>
-                            <select name="type">
-                                <option value="" disabled selected>მწარმოებელი</option>
-                                <option value="1">მწარმოებელი 1</option>
-                                <option value="2">მწარმოებელი 2</option>
-                                <option value="3">მწარმოებელი 3</option>
-                            </select>
-                        </div>
 
-                        <h2 class="catalogue__filter-category">
-                            მოდელი
-                        </h2>
-                        <div class="catalogue__select-wrap">
-                            <div class="catalogue__select-img">
-                                <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
+                            <h2 class="catalogue__filter-category">
+                                მოდელი
+                            </h2>
+                            <div class="catalogue__select-wrap">
+                                <div class="catalogue__select-img">
+                                    <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
+                                </div>
+                                <select name="model">
+                                    @if ($brandModels)
+                                        @foreach($brandModels as $mod)
+                                            <option {{(Request::get('model') && Request::get('model') == $mod->id) ? 'selected' : ''}} value="{{$mod->id}}">{{$mod->title }}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
                             </div>
-                            <select name="type">
-                                <option value="" disabled selected>მოდელი</option>
-                                <option value="1">მოდელი 1</option>
-                                <option value="2">მოდელი 2</option>
-                                <option value="3">მოდელი 3</option>
-                            </select>
-                        </div>
 
-                        <h2 class="catalogue__filter-category">
-                            მდგომარეობა
-                        </h2>
-                        <div class="catalogue__select-wrap">
-                            <div class="catalogue__select-img">
-                                <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
+                            <h2 class="catalogue__filter-category">
+                                {{__('app.condition')}}
+                            </h2>
+                            <div class="catalogue__select-wrap">
+                                <div class="catalogue__select-img">
+                                    <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
+                                </div>
+                                <select name="condition">
+                                    @if ($conditions)
+                                        @foreach($conditions as $cond)
+                                            <option {{(Request::get('condition') && Request::get('condition') == $cond->id) ? 'selected' : ''}} value="{{$cond->id}}">{{$cond->{"title_".app()->getLocale()} }}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
                             </div>
-                            <select name="type">
-                                <option value="" disabled selected>მდგომარეობა</option>
-                                <option value="1">მდგომარეობა 1</option>
-                                <option value="2">მდგომარეობა 2</option>
-                                <option value="3">მდგომარეობა 3</option>
-                            </select>
-                        </div>
 
-                        <h2 class="catalogue__filter-category">
-                            განბაჟების ტიპი
-                        </h2>
-                        <div class="catalogue__select-wrap">
-                            <div class="catalogue__select-img">
-                                <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
+                            <h2 class="catalogue__filter-category">
+                                განბაჟების ტიპი
+                            </h2>
+                            <div class="catalogue__select-wrap">
+                                <div class="catalogue__select-img">
+                                    <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
+                                </div>
+                                <select name="custom">
+                                    <option {{(Request::get('custom') == 1) ? 'selected' : ''}} value="1">{{__('app.custom_cleared')}}</option>
+                                    <option {{(Request::get('custom') == 0) ? 'selected' : ''}} value="0">{{__('app.before_customs')}}</option>
+                                </select>
                             </div>
-                            <select name="type">
-                                <option value="" disabled selected>განბაჟების ტიპი</option>
-                                <option value="1">განბაჟების ტიპი 1</option>
-                                <option value="2">განბაჟების ტიპი 2</option>
-                                <option value="3">განბაჟების ტიპი 3</option>
-                            </select>
-                        </div>
 
 
-                        <h2 class="catalogue__filter-category">
-                            კატეგორია
-                        </h2>
-                        <div class="catalogue__select-wrap">
-                            <div class="catalogue__select-img">
-                                <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
+                            <h2 class="catalogue__filter-category">
+                                კატეგორია
+                            </h2>
+                            <div class="catalogue__select-wrap">
+                                <div class="catalogue__select-img">
+                                    <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
+                                </div>
+                                <select name="category">
+                                    @if ($categories)
+                                        @foreach($categories as $cat)
+                                            <option {{(Request::get('custom') == $cat->id) ? 'selected' : ''}} value="{{$cat->id}}">{{$cat->{"title_".app()->getLocale()} }}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
                             </div>
-                            <select name="type">
-                                <option value="" disabled selected>კატეგორია</option>
-                                <option value="1">კატეგორია 1</option>
-                                <option value="2">კატეგორია 2</option>
-                                <option value="3">კატეგორია 3</option>
-                            </select>
-                        </div>
 
-                        <h2 class="catalogue__filter-category">
-                            გამოშვების წელი
-                        </h2>
-                        <div class="catalogue__select-wrap half">
+                            <h2 class="catalogue__filter-category">
+                                გამოშვების წელი - დან
+                            </h2>
+                            <div class="catalogue__select-wrap half">
+                                <select name="date_from">
+                                    @foreach(range(1980,date("Y")) as $date )
+                                    <option {{(Request::get('date_from') == $date) ? 'selected' : ''}} value="{{$date}}">{{$date}}</option>
+                                    @endforeach
+                                </select>
 
-                            <select name="type">
-                                <option value="" disabled selected>წელი - დან</option>
-                                <option value="1">2010</option>
-                                <option value="2">2000</option>
-                                <option value="3">2000</option>
-                            </select>
-
-                            <select name="type">
-                                <option value="" disabled selected>წელი - მდე</option>
-                                <option value="1">2009</option>
-                                <option value="2">2009</option>
-                                <option value="3">2009</option>
-                            </select>
-                        </div>
-
-                        <h2 class="catalogue__filter-category">
-                            ფასი
-                        </h2>
-                        <div class="catalogue__select-wrap half">
-
-                            <select name="type">
-                                <option value="" disabled selected>ფასი - დან</option>
-                                <option value="1">100</option>
-                                <option value="2">2000</option>
-                                <option value="3">2000</option>
-                            </select>
-
-                            <select name="type">
-                                <option value="" disabled selected>ფასი - მდე</option>
-                                <option value="1">13000</option>
-                                <option value="2">13000</option>
-                                <option value="3">13000</option>
-                            </select>
-                        </div>
-
-
-                        <h2 class="catalogue__filter-category">
-                            ტრანსმისია
-                        </h2>
-                        <div class="catalogue__select-wrap">
-                            <div class="catalogue__select-img">
-                                <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
+                                <select name="date_to">
+                                    @foreach(range(1980,date("Y")) as $date )
+                                        <option {{(Request::get('date_to') == $date) ? 'selected' : ''}} value="{{$date}}">{{$date}}</option>
+                                    @endforeach
+                                </select>
                             </div>
-                            <select name="type">
-                                <option value="" disabled selected>ტრანსმისია</option>
-                                <option value="1">ტრანსმისია 1</option>
-                                <option value="2">ტრანსმისია 2</option>
-                                <option value="3">ტრანსმისია 3</option>
-                            </select>
-                        </div>
 
-                        <h2 class="catalogue__filter-category">
-                            საწვავის ტიპი
-                        </h2>
-                        <div class="catalogue__select-wrap">
-                            <div class="catalogue__select-img">
-                                <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
+                            <h2 class="catalogue__filter-category">
+                                ფასი
+                            </h2>
+                            <div class="catalogue__select-wrap half">
+                                <label for="price_from">{{__('app.from')}}</label>
+                                <input type="number" name="price_from" value="{{Request::get('price_from')}}">
+                                <label for="price_to">{{__('app.to')}}</label>
+                                <input type="number" name="price_to" value="{{Request::get('price_to')}}">
                             </div>
-                            <select name="type">
-                                <option value="" disabled selected>საწვავის ტიპი</option>
-                                <option value="1">საწვავის ტიპი 1</option>
-                                <option value="2">საწვავის ტიპი 2</option>
-                                <option value="3">საწვავის ტიპი 3</option>
-                            </select>
+
+
+                            <h2 class="catalogue__filter-category">
+                                ტრანსმისია
+                            </h2>
+                            <div class="catalogue__select-wrap">
+                                <div class="catalogue__select-img">
+                                    <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
+                                </div>
+                                <select name="transmission">
+                                    @if ($transmissions)
+                                        @foreach($transmissions as $trans)
+                                            <option {{(Request::get('transmission') == $trans->id) ? 'selected' : ''}} value="{{$trans->id}}">{{$trans->{"title_".app()->getLocale()} }}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
+                            </div>
+
+                            <h2 class="catalogue__filter-category">
+                                საწვავის ტიპი
+                            </h2>
+                            <div class="catalogue__select-wrap">
+                                <div class="catalogue__select-img">
+                                    <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
+                                </div>
+                                <select name="engine">
+                                    @if ($engines)
+                                        @foreach($engines as $engine)
+                                            <option {{(Request::get('engine') == $engine->id) ? 'selected' : ''}} value="{{$engine->id}}">{{$engine->{"title_".app()->getLocale()} }}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
+                            </div>
+
+
+                            <button class="catalogue__filter-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15.442" height="13.998"
+                                     viewBox="0 0 15.442 13.998">
+                                    <path id="Icon_feather-filter" data-name="Icon feather-filter"
+                                          d="M17.442,4.5H3l5.777,6.831v4.723L11.665,17.5V11.331Z"
+                                          transform="translate(-2.5 -4)" fill="none" stroke-linecap="round"
+                                          stroke-linejoin="round" stroke-width="1"/>
+                                </svg>
+
+                                გაფილტვრა
+                            </button>
+
+
                         </div>
 
-
-                        <button class="catalogue__filter-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="15.442" height="13.998"
-                                 viewBox="0 0 15.442 13.998">
-                                <path id="Icon_feather-filter" data-name="Icon feather-filter"
-                                      d="M17.442,4.5H3l5.777,6.831v4.723L11.665,17.5V11.331Z"
-                                      transform="translate(-2.5 -4)" fill="none" stroke-linecap="round"
-                                      stroke-linejoin="round" stroke-width="1"/>
-                            </svg>
-
-                            გაფილტვრა
-                        </button>
-
-
-                    </div>
+                    </form>
 
                     <div class="catalogue-ad">
                         <img class="img-cover" src="{{url('frontend-assets/img/catalogue-ad.png')}}" alt="">
@@ -188,7 +182,7 @@
 
                         <div class="header-left">
                             <p>
-                                <span id="cars-found">13,232</span> მანქანა
+                                <span id="cars-found">{{number_format($products->total(), 0)}}</span> მანქანა
                             </p>
 
                             <div class="catalogue__header-search-box">
@@ -206,7 +200,7 @@
                         </div>
 
                         <div class="catalogue__header-location">
-                            <a href="{{route('home')}}">მთავარი</a> &nbsp; &#47; &nbsp;
+                            <a href="{{route('home')}}">{{__('app.home')}}</a> &nbsp; &#47; &nbsp;
                             <span>კატალოგი</span>
                         </div>
 
@@ -238,7 +232,7 @@
                     <div class="catalogue__item-wrap">
 
                         @if($products)
-                            @foreach($products as $product)
+                            @foreach($products as $key => $product)
                                 <div class="catalogue-card">
 
                                     <div class="card-img-box">
@@ -322,11 +316,11 @@
 
                                             <div class="catalogue-card__bottom">
 
-                                                <div class="currency" id="curr1">
+                                                <div class="currency" id="curr{{$key}}">
                                                     <button class="select-gel active"
-                                                            onclick="changecurrency('curr1', 'gel')">₾
+                                                            onclick="changecurrency('curr{{$key}}', 'gel')">₾
                                                     </button>
-                                                    <button class="select-dol" onclick="changecurrency('curr1', 'dol')">$
+                                                    <button class="select-dol" onclick="changecurrency('curr{{$key}}', 'dol')">$
                                                     </button>
                                                 </div>
 

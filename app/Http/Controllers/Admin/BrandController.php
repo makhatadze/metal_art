@@ -40,6 +40,15 @@ class BrandController extends AdminController
                     }
                 }
             }
+
+            if ($request->hasFile('files')) {
+                $imagename = date('Ymhs') . $request->file('files')->getClientOriginalName();
+                $destination = base_path() . '/storage/app/public/brand/' . $brand->id;
+                $request->file('files')->move($destination, $imagename);
+                $brand->image()->create([
+                    'name' => $imagename
+                ]);
+            }
             return redirect('admin/brands')->with('success', 'მწარმოებელი წარმატებით შეიქმნა.');
 
         }

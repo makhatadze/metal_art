@@ -10,7 +10,7 @@
 
             <div class="container">
 
-                <form action="" class="hero__form">
+                <form action="{{app()->getLocale()}}/catalog" class="hero__form">
                     <h1 class="hero__form-heading">
                         შეარჩიე მანქანა
                     </h1>
@@ -19,36 +19,37 @@
                     </p>
 
 
-                    <select name="cars">
-                        <option value="" disabled selected>მწარმოებელი</option>
-                        <option value="random">მწარმოებელი 1</option>
-                        <option value="random">მწარმოებელი 2</option>
-                        <option value="random">მწარმოებელი 3</option>
+                    <select name="brand">
+                        @if ($brands)
+                            @foreach($brands as $brand)
+                                <option value="{{$brand->id}}">{{$brand->title }}</option>
+                            @endforeach
+                        @endif
                     </select>
 
-                    <select name="cars">
-                        <option value="" disabled selected>განბაჟება</option>
-                        <option value="random">განბაჟება 1</option>
-                        <option value="random">განბაჟება 2</option>
-                        <option value="random">განბაჟება 3</option>
+                    <select name="custom">
+                        <option value="1">{{__('app.custom_cleared')}}</option>
+                        <option value="0">{{__('app.before_customs')}}</option>
                     </select>
 
-                    <select name="cars">
-                        <option value="" disabled selected>გადაცემათა კოლოფი</option>
-                        <option value="random">გადაცემათა კოლოფი 1</option>
-                        <option value="random">გადაცემათა კოლოფი 2</option>
-                        <option value="random">გადაცემათა კოლოფი 3</option>
+                    <select name="transmission">
+                        @if ($transmissions)
+                            @foreach($transmissions as $trans)
+                                <option value="{{$trans->id}}">{{$trans->{"title_".app()->getLocale()} }}</option>
+                            @endforeach
+                        @endif
                     </select>
 
-                    <select name="cars">
-                        <option value="" disabled selected>ადგილმდებარეობა</option>
-                        <option value="random">ადგილმდებარეობა1</option>
-                        <option value="random">ადგილმდებარეობა2</option>
-                        <option value="random">ადგილმდებარეობა3</option>
+                    <select name="condition">
+                        @if ($conditions)
+                            @foreach($conditions as $cond)
+                                <option value="{{$cond->id}}">{{$cond->{"title_".app()->getLocale()} }}</option>
+                            @endforeach
+                        @endif
                     </select>
 
                     <button class="hero__form-btn">
-                        გაფილტვრა
+                        {{__('app.search')}}
                     </button>
 
                 </form>
@@ -95,7 +96,8 @@
                                     <span id="c-year">{{ date('Y', strtotime($products[0]->created_date))}}</span>
 
                                     <div class="currency" id="adviced{{$i}}">
-                                        <button class="select-gel active" onclick="changecurrency('adviced{{$i}}', 'gel')">
+                                        <button class="select-gel active"
+                                                onclick="changecurrency('adviced{{$i}}', 'gel')">
                                             ლ
                                         </button>
                                         <button class="select-dol" onclick="changecurrency('adviced{{$i}}', 'dol')">$
@@ -201,5 +203,9 @@
 @endsection
 @section('custom_scripts')
     <script src="{{ url('frontend-assets/script/index.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+        });
+    </script>
 @endsection
 
