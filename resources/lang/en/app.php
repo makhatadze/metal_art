@@ -3,7 +3,7 @@
 return [
 
 
-    'home' => 'Home',
+    'site' => 'Home',
     'Manufacturer' => 'Manufacturer',
     'custom' => 'Custom',
     'custom_cleared' => 'Custom Cleared',

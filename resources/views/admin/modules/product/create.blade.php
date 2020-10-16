@@ -261,8 +261,8 @@
     <script type="text/javascript">
         $('.side-menu').removeClass('side-menu--active');
         $('.data-menu-item').removeClass('side-menu__sub-open');
-        $('.side-menu[data-menu="vehicle"]').addClass('side-menu--active');
-        $('.data-menu-item[data-menu="vehicle"]').addClass('side-menu__sub-open');
+        $('.side-menu[data-menu="shop"]').addClass('side-menu--active');
+        $('.data-menu-item[data-menu="shop"]').addClass('side-menu__sub-open');
 
         $("#input-700").fileinput({
             theme: 'fa',

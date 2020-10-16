@@ -25,6 +25,6 @@ class Brand extends Model
      */
     public function image()
     {
-        return $this->morphOne('App\Models\Image', 'imageable');
+        return $this->morphMany('App\Models\Image', 'imageable');
     }
 }

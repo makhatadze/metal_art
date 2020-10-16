@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\GearboxController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\SiteController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\TransmissionsController;
 use App\Http\Controllers\HomeController;
@@ -33,7 +34,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
-    Route::get('/',[HomeController::class, 'index'])->name('home');
+    Route::get('/',[HomeController::class, 'index'])->name('site');
     Route::get('/catalog',[HomeController::class,'catalog'])->name('catalogIndex');
     Route::get('/catalog/{product}',[HomeController::class,'view'])->name('catalogView');
     Route::get('/about',[HomeController::class,'about'])->name('about');
@@ -47,7 +48,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/logout', [LoginController::class,'logout'])->name('logout');
         Route::namespace('')->group(function () {
             Route::get('students', [StudentController::class,'index'])->name('student-list');
-            Route::get('/', [AdminController::class,'test'])->name('panel'); // Added name
+            Route::get('/', [SiteController::class,'index'])->name('siteIndex'); // Added name
 
             Route::get('users/{id}/edit/',[\App\Http\Controllers\Admin\UserController::class,'edit']);
             Route::delete('users',[\App\Http\Controllers\Admin\UserController::class,'destroy'])->name('usersDestroy');
@@ -128,6 +129,10 @@ Route::prefix('admin')->group(function () {
             Route::get('products/vip/{product}',[ProductController::class,'vip'])->name('productVip');
             Route::match(['get', 'post'],'products/create',[ProductController::class,'create'])->name('productCreate');
             Route::get('products/models',[ProductController::class,'models'])->name('getModels');
+
+
+            Route::get('images/delete',[ImageController::class,'delete'])->name('imageDelete');
+            Route::get('images/brand-image-delete',[ImageController::class,'brandImageDelete'])->name('brandImageDelete');
 
 
         });

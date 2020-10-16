@@ -32,7 +32,7 @@ class HomeController extends Controller
         $brands = Brand::where(['status' => true])->get();
         $transmissions = Transmission::where(['status' => true])->get();
         $conditions = Condition::where(['status' => true])->get();
-        return view('frontend.home.index')
+        return view('frontend.site.index')
             ->with('products', $products)
             ->with('brands', $brands)
             ->with('transmissions', $transmissions)

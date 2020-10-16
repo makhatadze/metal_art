@@ -3,7 +3,7 @@
 return [
 
 
-    'home' => 'მთავარი',
+    'site' => 'მთავარი',
     'Manufacturer' => 'მწარმოებელი',
     'custom' => 'განბაჟება',
     'custom_cleared' => 'განბაჟებული',

@@ -2,33 +2,48 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Image;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class ImageController extends AdminController
 {
-    public function createForm(){
-        return view('admin.modules.image.image-view');
+
+    public function delete(Request $request)
+    {
+        $request->all();
+        $this->validate($request, [
+            'id' => 'required|integer'
+        ]);
+        $image = Image::where(['id' => $request->id])->first();
+        if ($image) {
+            if (!Storage::delete('public/product/' . $image->imageable_id . '/' . $image->name)) {
+                return false;
+            }
+            if (!$image->delete()) {
+                return false;
+            }
+            return true;
+
+        }
     }
 
-    public function fileUpload(Request $req){
-        $req->validate([
-            'file' => 'required|mimes:csv,txt,xlx,xls,pdf|max:2048'
+    public function brandImageDelete(Request $request)
+    {
+        $request->all();
+        $this->validate($request, [
+            'id' => 'required|integer'
         ]);
+        $image = Image::where(['id' => $request->id])->first();
+        if ($image) {
+            if (!Storage::delete('public/brand/' . $image->imageable_id . '/' . $image->name)) {
+                return false;
+            }
+            if (!$image->delete()) {
+                return false;
+            }
+            return true;
 
-        $fileModel = new File;
-
-        if($req->file()) {
-            $fileName = time().'_'.$req->file->getClientOriginalName();
-            $filePath = $req->file('file')->storeAs('uploads', $fileName, 'public');
-
-            $fileModel->name = time().'_'.$req->file->getClientOriginalName();
-            $fileModel->file_path = '/storage/' . $filePath;
-            $fileModel->save();
-
-            return back()
-                ->with('success','File has been uploaded.')
-                ->with('file', $fileName);
         }
     }
 }

@@ -92,7 +92,6 @@ class ProductController extends AdminController
                 'deal_id' => $request->deal,
                 'new' => $request->new,
                 'vip' => $request->vip,
-                'status' => false
             ]);
             $product->save();
 
@@ -160,9 +159,42 @@ class ProductController extends AdminController
                     'condition' => 'required|integer',
                     'deal' => 'required|integer'
                 ]);
-            $product->title = $request->title;
+            $product->title_ge = $request->title_ge;
+            $product->title_en = $request->title_en;
+            $product->description_ge = $request->description_ge;
+            $product->description_en = $request->description_en;
+            $product->price = $request->price;
+            $product->created_date = $request->created_date;
+            $product->engine_capacity = $request->engine_capacity;
+            $product->mileage = $request->mileage;
+            $product->door = $request->door;
+            $product->luggage = $request->luggage;
+            $product->custom = $request->custom;
+            $product->people = $request->people;
+            $product->wheel = $request->wheel;
+            $product->brand_id = $request->brand;
+            $product->model_id = $request->model;
+            $product->category_id = $request->category;
+            $product->fuel_id = $request->fuel;
+            $product->transmission_id = $request->transmission;
+            $product->engine_id = $request->engine;
+            $product->condition_id = $request->condition;
+            $product->deal_id = $request->deal;
+            $product->new = $request->new;
+            $product->vip = $request->vip;
             $product->save();
-            return redirect('admin/brands')->with('success', 'მწარმოებელი წარმატებით რედაქტირდა.');
+
+            if ($request->hasFile('kartik-input-700')) {
+                foreach ($request->file('kartik-input-700') as $key => $file) {
+                    $imagename = date('Ymhs') . $file->getClientOriginalName();
+                    $destination = base_path() . '/storage/app/public/product/' . $product->id;
+                    $request->file('kartik-input-700')[$key]->move($destination, $imagename);
+                    $product->image()->create([
+                        'name' => $imagename
+                    ]);
+                }
+            }
+            return redirect('admin/products')->with('success', 'პროდუქტი წარმატებით რედაქტირდა.');
 
         }
     }
@@ -172,14 +204,15 @@ class ProductController extends AdminController
         $message = ($product->status) ? 'პროდუქტი დეაქტივირებულია.' : 'პროდუქტი გააქტიურდა.';
         $product->status = !$product->status;
         $product->save();
-        return redirect('admin/products')->with('success', $message);
+        return back()->with('success', $message);
+
     }
     public function vip(Product $product)
     {
         $message = ($product->vip) ? 'პროდუქტი დაემატა VIP-ში.' : 'პროდუქტი წაიშალა VIP-დან.';
         $product->vip = !$product->vip;
         $product->save();
-        return redirect('admin/products')->with('success', $message);
+        return back()->with('success', $message);
     }
 
     public function models(Request $request)

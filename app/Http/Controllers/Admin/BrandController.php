@@ -6,7 +6,9 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Brand;
 use App\Models\BrandModel;
 use App\Models\Category;
+use App\Models\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BrandController extends AdminController
 {
@@ -66,6 +68,25 @@ class BrandController extends AdminController
             ]);
             $brand->title = $request->title;
             $brand->save();
+
+            if ($request->hasFile('kartik-input-700')) {
+                $image = Image::where(['imageable_id' => $brand->id, 'imageable_type' => 'App\Models\Brand'])->first();
+                if ($image) {
+                    if (!Storage::delete('public/brand/' . $image->imageable_id . '/' . $image->name)) {
+                        return false;
+                    }
+                    if (!$image->delete()) {
+                        return false;
+                    }
+                }
+                    $imagename = date('Ymhs') . $request->file('kartik-input-700')->getClientOriginalName();
+                    $destination = base_path() . '/storage/app/public/brand/' . $brand->id;
+                    $request->file('kartik-input-700')->move($destination, $imagename);
+                    $brand->image()->create([
+                        'name' => $imagename
+                    ]);
+            }
+
             return redirect('admin/brands')->with('success', 'მწარმოებელი წარმატებით რედაქტირდა.');
 
         }

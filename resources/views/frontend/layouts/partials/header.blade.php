@@ -9,7 +9,7 @@
 
             <ul class="navigation">
                 <li class="navigation__item">
-                    <a href="{{route('home')}}" class="navigation__link active">მთავარი</a>
+                    <a href="{{route('site')}}" class="navigation__link active">მთავარი</a>
                 </li>
                 <li class="navigation__item">
                     <a href="{{route('catalogIndex')}}" class="navigation__link">კატალოგი</a>

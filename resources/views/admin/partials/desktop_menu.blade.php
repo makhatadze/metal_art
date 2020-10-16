@@ -6,25 +6,11 @@
     <div class="side-nav__devider my-6"></div>
     <ul>
         <li>
-            <a href="#" class="side-menu" data-menu="home">
+            <a href="{{route('siteIndex')}}" class="side-menu" data-menu="home">
                 <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                 <div class="side-menu__title"> მთავარი გვერდი </div>
             </a>
          </li>
-        <li>
-            <a href="javascript:;" class="side-menu side-menu--active" data-menu="user">
-                <div class="side-menu__icon"> <i data-feather="users"></i> </div>
-                <div class="side-menu__title"> მომხმარებლები <i data-feather="chevron-down" class="side-menu__sub-icon"></i> </div>
-            </a>
-            <ul class="data-menu-item">
-                <li>
-                    <a href="#" class="side-menu custom-nav-item">
-                        <div class="side-menu__icon"> <i data-feather="circle" style="width: 15px; height: 15px;"></i> </div>
-                        <div class="side-menu__title"> ჩამონათვალი </div>
-                    </a>
-                </li>
-            </ul>
-        </li>
         <li>
             <a href="javascript:;" class="side-menu" data-menu="shop">
                 <div class="side-menu__icon"> <i data-feather="shopping-cart"></i> </div>

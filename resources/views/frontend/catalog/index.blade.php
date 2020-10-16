@@ -200,7 +200,7 @@
                         </div>
 
                         <div class="catalogue__header-location">
-                            <a href="{{route('home')}}">{{__('app.home')}}</a> &nbsp; &#47; &nbsp;
+                            <a href="{{route('site')}}">{{__('app.site')}}</a> &nbsp; &#47; &nbsp;
                             <span>კატალოგი</span>
                         </div>
 

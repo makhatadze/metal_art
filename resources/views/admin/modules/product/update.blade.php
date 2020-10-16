@@ -118,7 +118,8 @@
                     <div class="relative mt-4 {{ $errors->has('engine_capacity') ? ' has-error' : '' }}">
                         {{ Form::label('engine_capacity', 'ძრავის მოცულობა', ['class' => 'font-helvetica']) }}
                         <input class="input w-full border mt-2 col-span-2"
-                               type="number" required min="0.1" value="0.1" step="0.1" name="engine_capacity" value="{{$product->engine_capacity}}">
+                               type="number" required min="0.1" value="0.1" step="0.1" name="engine_capacity"
+                               value="{{$product->engine_capacity}}">
                         @if ($errors->has('engine_capacity'))
                             <span class="help-block">
                                             {{ $errors->first('engine_capacity') }}
@@ -197,7 +198,8 @@
                     <div class="relative mt-4" id="brand-model">
                         <label class="font-helvetica">მოდელი</label>
                         <div class="mt-2">
-                            <select data-placeholder="აირჩიეთ მოდელი" name="model" value="{{$product->model_id}}" id="brand-model-select"
+                            <select data-placeholder="აირჩიეთ მოდელი" name="model" value="{{$product->model_id}}"
+                                    id="brand-model-select"
                                     class="font-helvetica select2 w-full">
                                 @foreach ($brandModels as $model)
                                     <option value="{{$model->id}}"> {{$model->title}}</option>
@@ -207,7 +209,7 @@
                     </div>
                     <div class="relative mt-4 {{ $errors->has('created_date') ? ' has-error' : '' }}">
                         {{ Form::label('created_date', 'გამოშვების თარიღი', ['class' => 'font-helvetica']) }}
-                        {{ Form::date('created_date', $product->created_date, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
+                        {{ Form::date('created_date', Carbon\Carbon::parse($product->created_date), ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
                         @if ($errors->has('created_date'))
                             <span class="help-block">
                                             {{ $errors->first('created_date') }}
@@ -230,7 +232,7 @@
 
                 <div class="relative mt-4 {{ $errors->has('description_ge') ? ' has-error' : '' }}">
                     {{ Form::label('description_ge', 'პროდუქტის აღწერა ქართულად', ['class' => 'font-helvetica']) }}
-                    {{ Form::textarea('description_ge', $product->description_ge, ['class' => 'summernote', 'no']) }}
+                    {{ Form::textarea('description_ge', $product->description_ge, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
                     @if ($errors->has('description_ge'))
                         <span class="help-block">
                                             {{ $errors->first('description_ge') }}
@@ -239,11 +241,21 @@
                 </div>
                 <div class="relative mt-4 {{ $errors->has('description_en') ? ' has-error' : '' }}">
                     {{ Form::label('description_en', 'პროდუქტის აღწერა ინგლისურად', ['class' => 'font-helvetica']) }}
-                    {{ Form::textarea('description_en', $product->description_en, ['class' => 'summernote', 'no']) }}
+                    {{ Form::textarea('description_en', $product->description_en, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
                     @if ($errors->has('description_en'))
                         <span class="help-block">
                                             {{ $errors->first('description_en') }}
                                         </span>
+                    @endif
+                </div>
+                <div class="sm:grid grid-cols-4 gap-4 mb-5 mt-5">
+                    @if ($product->image)
+                        @foreach($product->image as $image)
+                            <div class="image-area" id="{{$image->id}}">
+                                <img src="{{url('storage/product/'.$product->id.'/'.$image->name)}}" alt="Preview">
+                                <a class="remove-image" onclick="imageDelete({{$image->id}})" style="display: inline;">&#215;</a>
+                            </div>
+                        @endforeach
                     @endif
                 </div>
 
@@ -268,13 +280,13 @@
     <script type="text/javascript">
         $('.side-menu').removeClass('side-menu--active');
         $('.data-menu-item').removeClass('side-menu__sub-open');
-        $('.side-menu[data-menu="vehicle"]').addClass('side-menu--active');
-        $('.data-menu-item[data-menu="vehicle"]').addClass('side-menu__sub-open');
+        $('.side-menu[data-menu="shop"]').addClass('side-menu--active');
+        $('.data-menu-item[data-menu="shop"]').addClass('side-menu__sub-open');
 
         $("#input-700").fileinput({
             theme: 'fa',
             uploadUrl: '#',
-            maxFileCount: 7,
+            maxFileCount: 15,
             overwriteInitial: true,
 
             initialPreviewFileType: 'image',
@@ -283,7 +295,6 @@
             },
 
         });
-
         function brandChange(event) {
             $.ajax({
                 url: "{{route('getModels')}}",
@@ -302,6 +313,24 @@
                     $('#brand-model-select').html(option)
                 }
             });
+        }
+
+
+        function imageDelete(id) {
+            var r = confirm("გსურთ ფოტოს წაშლა?!");
+            if (r == true) {
+                $.ajax({
+                    url: "{{route('imageDelete')}}",
+                    data: {
+                        'id': id,
+                    }
+                }).done(function (data) {
+                    if (data) {
+                        let selector = `#${id}`;
+                        $(selector).remove();
+                    }
+                });
+            }
         }
 
     </script>
