@@ -9,22 +9,22 @@
 
         <div class="vip-sales__slider">
             @if(count($vips) > 0)
-                @for($i=0;$i<5;$i++)
+                @foreach($vips as $key => $vip)
                     <div class="card">
 
                         <div class="card-img-box">
-                            <img src="{{url('storage/product/'.$vips[0]->id.'/'.$vips[0]->image()->get()[0]->name)}}" alt="">
+                            <img src="{{url('storage/product/'.$vip->id.'/'.$vip->image()->get()[0]->name)}}" alt="">
                         </div>
 
                         <div class="card__main">
 
                             <div class="card__top">
-                                <h2 id="c-name">{{$vips[0]->{"title_".app()->getLocale()} }}</h2>
-                                <span id="c-year">{{ date('Y', strtotime($vips[0]->created_date))}}</span>
+                                <h2 id="c-name">{{$vip->{"title_".app()->getLocale()} }}</h2>
+                                <span id="c-year">{{ date('Y', strtotime($vip->created_date))}}</span>
 
-                                <div class="currency curr{{$i}}" >
-                                    <button class="select-gel active" onclick="changecurrencyClass('curr{{$i}}', 'gel')">ლ</button>
-                                    <button class="select-dol" onclick="changecurrencyClass('curr{{$i}}', 'dol')">$</button>
+                                <div class="currency curr{{$key}}" >
+                                    <button class="select-gel active" onclick="changecurrencyClass('curr{{$key}}', 'gel',{{$vip->id}}, {{$dolar}},{{$vip->price}})">ლ</button>
+                                    <button class="select-dol" onclick="changecurrencyClass('curr{{$key}}', 'dol',{{$vip->id}}, {{$dolar}},{{$vip->price}})">$</button>
                                 </div>
                             </div>
 
@@ -34,8 +34,8 @@
                                     <span>კატეგორია</span>
                                 </div>
                                 <div class="card__middle-body">
-                                    <p id="c-price">{{number_format($vips[0]->price, 2)}}</p>
-                                    <p class="c-category">{{$vips[0]->new ? 'ახალი' : 'მეორადი'}} / {{$vips[0]->transmission->{"title_".app()->getLocale()} }} / {{$vips[0]->category->{"title_".app()->getLocale()} }}</p>
+                                    <p id="c-price" class="gel-{{$vip->id}}">{{number_format($vip->price, 2)}}</p>
+                                    <p class="c-category">{{$vip->new ? 'ახალი' : 'მეორადი'}} / {{$vip->transmission->{"title_".app()->getLocale()} }} / {{$vip->category->{"title_".app()->getLocale()} }}</p>
                                 </div>
                             </div>
 
@@ -46,7 +46,7 @@
                                         <img src="{{url('frontend-assets/img/logos/i-road.svg')}}" alt="">
                                         გარბენი:
                                     </div>
-                                    <p>{{$vips[0]->mileage}}</p>
+                                    <p>{{$vip->mileage}}</p>
                                 </div>
 
                                 <div class="card__more-info-block">
@@ -86,14 +86,14 @@
                                 2 ადამიანი ნახულობს
                             </div>
 
-                            <a href="{{route('catalogView',$vips[0]->id)}}" class="card__bottom-btn">
+                            <a href="{{route('catalogView',$vip->id)}}" class="card__bottom-btn">
                                 დეტალურად
                             </a>
                         </div>
 
                     </div>
                     <!--end of card -->
-                @endfor
+                @endforeach
             @endif
 
         </div>

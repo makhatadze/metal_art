@@ -33,6 +33,7 @@ class ProductController extends AdminController
             $deals = Deal::where(['status' => true])->get();
             $fuels = Fuel::where(['status' => true])->get();
             $conditions = Condition::where(['status' => true])->get();
+            $engines = Condition::where(['status' => true])->get();
             return view('admin.modules.product.create')
                 ->with('brands', $brands)
                 ->with('brandModels',$brandModels)
@@ -40,6 +41,7 @@ class ProductController extends AdminController
                 ->with('transmissions',$transmissions)
                 ->with('deals',$deals)
                 ->with('conditions',$conditions)
+                ->with('engines',$engines)
                 ->with('fuels', $fuels);
         }
         if ($request->isMethod('POST')) {
@@ -52,7 +54,7 @@ class ProductController extends AdminController
                     'description_en' =>'required|string',
                     'price' => 'required|integer',
                     'luggage' => 'required|integer',
-                    'mileage' => 'required|integer',
+                    'mileage' => 'required|string',
                     'custom' => 'required|integer',
                     'door' => 'required|integer',
                     'people' => 'required|integer',
@@ -66,7 +68,9 @@ class ProductController extends AdminController
                     'fuel' => 'required|integer',
                     'transmission' => 'required|integer',
                     'condition' => 'required|integer',
-                    'deal' => 'required|integer'
+                    'deal' => 'required|integer',
+                    'engine' => 'required|integer',
+                    'kartik-input-700' => 'required'
                 ]);
             $product = new Product([
                 'title_ge' =>$request->title_ge,
@@ -92,6 +96,7 @@ class ProductController extends AdminController
                 'deal_id' => $request->deal,
                 'new' => $request->new,
                 'vip' => $request->vip,
+
             ]);
             $product->save();
 
@@ -143,7 +148,8 @@ class ProductController extends AdminController
                     'description_en' =>'required|string',
                     'price' => 'required|integer',
                     'luggage' => 'required|integer',
-                    'mileage' => 'required|integer',
+                    'mileage' => 'required|string',
+                    'engine' => 'required|integer',
                     'custom' => 'required|integer',
                     'door' => 'required|integer',
                     'people' => 'required|integer',

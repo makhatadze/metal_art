@@ -175,7 +175,7 @@
                     </div>
 
                 </div>
-                <div class="sm:grid grid-cols-4 gap-4 mb-2">
+                <div class="sm:grid grid-cols-5 gap-5 mb-2">
 
                     <div class="relative mt-4">
                         <label class="font-helvetica">მწარმოებელი</label>
@@ -217,6 +217,18 @@
                                     class="font-helvetica select2 w-full">
                                 @foreach ($conditions as $cond)
                                     <option value="{{$cond->id}}"> {{$cond->title_ge}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="relative mt-4">
+                        <label class="font-helvetica">ძრავის ტიპი</label>
+                        <div class="mt-2">
+                            <select data-placeholder="აირჩიეთ ძრავის ტიპი"
+                                    name="engine"
+                                    class="font-helvetica select2 w-full">
+                                @foreach ($engines as $eng)
+                                    <option value="{{$eng->id}}"> {{$eng->title_ge}}</option>
                                 @endforeach
                             </select>
                         </div>

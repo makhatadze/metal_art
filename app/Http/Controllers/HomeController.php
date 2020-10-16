@@ -37,6 +37,7 @@ class HomeController extends Controller
             ->with('brands', $brands)
             ->with('transmissions', $transmissions)
             ->with('conditions', $conditions)
+            ->with('dolar',3.25)
             ->with('vips', $vips);
     }
 
@@ -111,6 +112,7 @@ class HomeController extends Controller
                 ->with('engines', $engines)
                 ->with('conditions', $conditions)
                 ->with('brands', $brands)
+                ->with('dolar',3.25)
                 ->with('brandModels', $brandModels);
 
         }

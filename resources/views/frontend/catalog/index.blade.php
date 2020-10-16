@@ -318,14 +318,14 @@
 
                                                 <div class="currency" id="curr{{$key}}">
                                                     <button class="select-gel active"
-                                                            onclick="changecurrency('curr{{$key}}', 'gel')">₾
+                                                            onclick="changecurrency('curr{{$key}}', 'gel',{{$product->id}}, {{$dolar}},{{$product->price}})">₾
                                                     </button>
-                                                    <button class="select-dol" onclick="changecurrency('curr{{$key}}', 'dol')">$
+                                                    <button class="select-dol" onclick="changecurrency('curr{{$key}}', 'dol',{{$product->id}}, {{$dolar}},{{$product->price}})">$
                                                     </button>
                                                 </div>
 
                                                 <p>
-                                                    <span id="catalogue-item-price">{{number_format($product->price, 2)}}</span>
+                                                    <span id="catalogue-item-price" class="gel-{{$product->id}}">{{number_format($product->price, 0)}}</span>
                                                 </p>
                                                 <a class="cataloguecard__btn">
                                                     კონტაქტი

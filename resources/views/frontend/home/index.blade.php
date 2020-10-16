@@ -84,95 +84,97 @@
                 <div class="we-advice__item-wrapper">
                     @if(count($products) >0)
                         @for($i = 0; $i <8; $i++)
-                            <div class="card">
+                            @if(isset($products[$i]))
+                                <div class="card">
 
-                                <div class="card-img-box">
-                                    <img src="{{url('storage/product/'.$products[0]->id.'/'.$products[0]->image()->get()[0]->name)}}">
+                                    <div class="card-img-box">
+                                        <img src="{{url('storage/product/'.$products[0]->id.'/'.$products[0]->image()->get()[0]->name)}}">
+                                    </div>
+
+                                    <div class="card__main">
+
+                                        <div class="card__top">
+                                            <h2 id="c-name">{{$products[$i]->{"title_".app()->getLocale()} }}</h2>
+                                            <span id="c-year">{{ date('Y', strtotime($products[$i]->created_date))}}</span>
+
+                                            <div class="currency" id="adviced{{$i}}">
+                                                <button class="select-gel active"
+                                                        onclick="changecurrency('adviced{{$i}}', 'gel',{{$products[$i]->id}}, {{$dolar}},{{$products[$i]->price}})">
+                                                    ლ
+                                                </button>
+                                                <button class="select-dol" onclick="changecurrency('adviced{{$i}}', 'dol',{{$products[$i]->id}},{{$dolar}},{{$products[$i]->price}})">$
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="card__middle">
+                                            <div class="card__middle-top">
+                                                <span>ფასი</span>
+                                                <span>კატეგორია</span>
+                                            </div>
+                                            <div class="card__middle-body">
+                                                <p id="c-price" class="gel-{{$products[$i]->id}}">{{number_format($products[$i]->price, 0)}} </p>
+                                                <p class="c-category">{{$products[$i]->new ? 'ახალი' : 'მეორადი'}}
+                                                    / {{$products[$i]->transmission->{"title_".app()->getLocale()} }}
+                                                    / {{$products[$i]->category->{"title_".app()->getLocale()} }}</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="card__more-info">
+
+                                            <div class="card__more-info-block">
+                                                <div class="card__more-info__label">
+                                                    <img src="{{url('frontend-assets/img/logos/i-road.svg')}}" alt="">
+
+                                                    გარბენი:
+                                                </div>
+                                                <p>{{$products[$i]->mileage}}</p>
+                                            </div>
+
+                                            <div class="card__more-info-block">
+                                                <div class="card__more-info__label">
+                                                    <img src="{{url('frontend-assets/img/logos/i-car-crash.svg')}}" alt="">
+
+                                                    დაზიანება:
+                                                </div>
+                                                <p>არ აქვს</p>
+                                            </div>
+
+                                            <div class="card__more-info-block">
+                                                <div class="card__more-info__label">
+                                                    <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
+
+                                                    მდგომარეობა:
+                                                </div>
+                                                <p>{{$products[0]->condition->{"title_".app()->getLocale()} }}</p>
+                                            </div>
+
+                                            <div class="card__more-info-block">
+                                                <div class="card__more-info__label">
+                                                    <img src="{{url('frontend-assets/img/logos/i-dollar-sign.svg')}}" alt="">
+
+                                                    გაყიდვის ტიპი:
+                                                </div>
+                                                <p>{{$products[$i]->deal->{"title_".app()->getLocale()} }}</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="card__bottom">
+                                        <div class="card__bottom-views">
+                                            <img src="{{url('frontend-assets/img/logos/i-fire.svg')}}" alt="">
+                                            2 ადამიანი ნახულობს
+                                        </div>
+
+                                        <a href="{{route('catalogView',$products[$i]->id)}}" class="card__bottom-btn">
+                                            დეტალურად
+                                        </a>
+                                    </div>
+
                                 </div>
 
-                                <div class="card__main">
-
-                                    <div class="card__top">
-                                        <h2 id="c-name">{{$products[0]->{"title_".app()->getLocale()} }}</h2>
-                                        <span id="c-year">{{ date('Y', strtotime($products[0]->created_date))}}</span>
-
-                                        <div class="currency" id="adviced{{$i}}">
-                                            <button class="select-gel active"
-                                                    onclick="changecurrency('adviced{{$i}}', 'gel')">
-                                                ლ
-                                            </button>
-                                            <button class="select-dol" onclick="changecurrency('adviced{{$i}}', 'dol')">$
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <div class="card__middle">
-                                        <div class="card__middle-top">
-                                            <span>ფასი</span>
-                                            <span>კატეგორია</span>
-                                        </div>
-                                        <div class="card__middle-body">
-                                            <p id="c-price">{{number_format($products[0]->price, 2)}} </p>
-                                            <p class="c-category">{{$products[0]->new ? 'ახალი' : 'მეორადი'}}
-                                                / {{$products[0]->transmission->{"title_".app()->getLocale()} }}
-                                                / {{$products[0]->category->{"title_".app()->getLocale()} }}</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="card__more-info">
-
-                                        <div class="card__more-info-block">
-                                            <div class="card__more-info__label">
-                                                <img src="{{url('frontend-assets/img/logos/i-road.svg')}}" alt="">
-
-                                                გარბენი:
-                                            </div>
-                                            <p>{{$products[0]->mileage}}</p>
-                                        </div>
-
-                                        <div class="card__more-info-block">
-                                            <div class="card__more-info__label">
-                                                <img src="{{url('frontend-assets/img/logos/i-car-crash.svg')}}" alt="">
-
-                                                დაზიანება:
-                                            </div>
-                                            <p>არ აქვს</p>
-                                        </div>
-
-                                        <div class="card__more-info-block">
-                                            <div class="card__more-info__label">
-                                                <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
-
-                                                მდგომარეობა:
-                                            </div>
-                                            <p>{{$products[0]->condition->{"title_".app()->getLocale()} }}</p>
-                                        </div>
-
-                                        <div class="card__more-info-block">
-                                            <div class="card__more-info__label">
-                                                <img src="{{url('frontend-assets/img/logos/i-dollar-sign.svg')}}" alt="">
-
-                                                გაყიდვის ტიპი:
-                                            </div>
-                                            <p>{{$products[0]->deal->{"title_".app()->getLocale()} }}</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="card__bottom">
-                                    <div class="card__bottom-views">
-                                        <img src="{{url('frontend-assets/img/logos/i-fire.svg')}}" alt="">
-                                        2 ადამიანი ნახულობს
-                                    </div>
-
-                                    <a href="{{route('catalogView',$products[0]->id)}}" class="card__bottom-btn">
-                                        დეტალურად
-                                    </a>
-                                </div>
-
-                            </div>
-
+                            @endif
                         @endfor
 
                     @endif

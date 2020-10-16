@@ -56,8 +56,20 @@ displayGrid.addEventListener('click', () => {
 
 // change dolar gel filter
 // dollar - gel switch active class
-function changecurrency($id, $cur){
+function changecurrency($id, $cur,id,dolarValue,realValue){
     // clear both
+    let amount = realValue;
+    if ($cur === 'dol') {
+        amount = amount / dolarValue;
+    }
+    amount = `${parseInt(amount)}`;
+
+    amount = amount.split('').reverse().join('').match(/.{1,3}/g).map(function (x) {
+        return x.split('').reverse().join('')
+    }).reverse()
+    amount = amount.join(',')
+    let sel = `.gel-${id}`;
+    $(sel).text(amount);
     $('#'+$id+' .select-dol').removeClass('active');
     $('#'+$id+' .select-gel').removeClass('active');
 

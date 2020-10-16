@@ -34,7 +34,19 @@ $('.vip-sales__slider').slick({
 
   // with class - for sliders copyied items
 // dollar - gel switch active class
-function changecurrencyClass($id, $cur){
+function changecurrencyClass($id, $cur, id,dolarValue,realValue){
+    let amount = realValue;
+    if ($cur === 'dol') {
+        amount = amount / dolarValue;
+    }
+    amount = `${parseInt(amount)}`;
+
+    amount = amount.split('').reverse().join('').match(/.{1,3}/g).map(function (x) {
+        return x.split('').reverse().join('')
+    }).reverse()
+    amount = amount.join(',')
+    let sel = `.gel-${id}`;
+    $(sel).text(amount);
   // clear both
   $('.'+$id+' .select-dol').removeClass('active');
   $('.'+$id+' .select-gel').removeClass('active');
@@ -45,13 +57,23 @@ function changecurrencyClass($id, $cur){
 
   // with di  - for normal items
 // dollar - gel switch active class
-function changecurrency($id, $cur){
-  // clear both
+function changecurrency($id, $cur, id,dolarValue,realValue){
+    let amount = realValue;
+    if ($cur === 'dol') {
+        amount = amount / dolarValue;
+    }
+    amount = `${parseInt(amount)}`;
+
+    amount = amount.split('').reverse().join('').match(/.{1,3}/g).map(function (x) {
+        return x.split('').reverse().join('')
+    }).reverse()
+    amount = amount.join(',')
+    let sel = `.gel-${id}`;
+    $(sel).text(amount);
+    // clear both
   $('#'+$id+' .select-dol').removeClass('active');
   $('#'+$id+' .select-gel').removeClass('active');
 
   // add to selected - $(#curr2 .select-gel) -dol)
   $('#'+$id+' .select-'+$cur).addClass('active');
 }
-
-

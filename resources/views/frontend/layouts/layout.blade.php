@@ -40,7 +40,6 @@
 <script src="{{ url('frontend-assets/script/general.js') }}"></script>
 <script src="{{url('frontend-assets/script/details.js')}}"></script>
 <script src="{{url('frontend-assets/script/catalogue.js')}}"></script>
-
 @yield('custom_scripts')
 </body>
 </html>
