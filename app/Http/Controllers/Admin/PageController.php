@@ -28,14 +28,13 @@ class PageController extends Controller
                 'meta_title_ge' => 'required',
                 'meta_title_en' => 'required'
             ]);
-            $page->save( [
-                'title_ge' => $request->title_ge,
-                'title_en' => $request->title_en,
-                'meta_title_ge' => $request->meta_title_ge,
-                'meta_title_en' => $request->meta_title_en,
-                'content_ge' => $request->content_ge,
-                'content_en' => $request->content_en,
-            ]);
+            $page->title_ge = $request->title_ge;
+            $page->title_en = $request->title_en;
+            $page->meta_title_ge = $request->meta_title_ge;
+            $page->meta_title_en = $request->meta_title_en;
+            $page->content_ge = $request->content_ge;
+            $page->content_en = $request->content_en;
+            $page->save();
             return redirect('admin/pages')->with('success', 'ფეიჯი წარმატებით რედაქტირდა.');
 
         }

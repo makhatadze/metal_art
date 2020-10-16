@@ -22,7 +22,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product::where(['status' => true, 'vip' => false])
+        $products = Product::where(['status' => true,'vip' => false])
             ->with(['transmission', 'category', 'condition', 'deal'])
             ->get();
         $vips = Product::where(['status' => true, 'vip' => true])
@@ -32,7 +32,7 @@ class HomeController extends Controller
         $brands = Brand::where(['status' => true])->get();
         $transmissions = Transmission::where(['status' => true])->get();
         $conditions = Condition::where(['status' => true])->get();
-        return view('frontend.site.index')
+        return view('frontend.home.index')
             ->with('products', $products)
             ->with('brands', $brands)
             ->with('transmissions', $transmissions)
@@ -56,7 +56,7 @@ class HomeController extends Controller
                 'category' => 'integer'
             ]);
             $products = Product::where(['status' => true])
-                ->with(['transmission', 'category', 'condition', 'deal']);
+                ->with(['transmission', 'category', 'condition', 'deal','engine']);
             if ($request->brand) {
                 $products->where(['brand_id' => $request->brand]);
             }
@@ -140,11 +140,11 @@ class HomeController extends Controller
     }
 
     public function about() {
-        $about = Page::where(['status' => true,'slug' => 'about-us'])->first();
-        if (!$about) {
+        $page = Page::where(['status' => true,'slug' => 'about-us'])->first();
+        if (!$page) {
             return abort('404');
         }
-        return view('frontend.about.index')->with('about',$about);
+        return view('frontend.about.index')->with('page',$page);
 
     }
 

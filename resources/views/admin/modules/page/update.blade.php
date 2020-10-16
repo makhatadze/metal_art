@@ -59,7 +59,7 @@
                 </div>
                 <div class="relative mt-4 {{ $errors->has('content_ge') ? ' has-error' : '' }}">
                     {{ Form::label('content_ge', 'საიტის კონტენტი ქართულად', ['class' => 'font-helvetica']) }}
-                    {{ Form::textarea('content_ge', $page->content_ge, ['class' => 'summernote', 'no']) }}
+                    {{ Form::textarea('content_ge', $page->content_ge, ['class' => 'input w-full border mt-2 col-span-2']) }}
                     @if ($errors->has('content_ge'))
                         <span class="help-block">
                                             {{ $errors->first('content_ge') }}
@@ -68,7 +68,7 @@
                 </div>
                 <div class="relative mt-4 {{ $errors->has('content_en') ? ' has-error' : '' }}">
                     {{ Form::label('content_en', 'საიტის კონტენტი ინგლისურად', ['class' => 'font-helvetica']) }}
-                    {{ Form::textarea('content_en', $page->content_en, ['class' => 'summernote']) }}
+                    {{ Form::textarea('content_en', $page->content_en, ['class' => 'input w-full border mt-2 col-span-2']) }}
                     @if ($errors->has('content_en'))
                         <span class="help-block">
                                             {{ $errors->first('content_en') }}
