@@ -15,14 +15,7 @@ $protoc = Setting::where(['key' => $protocolKey])->first();
     @include('frontend.layouts.partials.detail-header')
     @include('frontend.layouts.partials.modal')
 
-    <!-- animation on subbmit request -->
-    <div class="submit-box">
-        <div class="submit-content">იგზავნება...</div>
-    </div>
 
-    <div class="success-box">
-        <div class="submit-content">გაგზავნილია!</div>
-    </div>
     <!-- end of  animation on subbmit request -->
 
     <main>

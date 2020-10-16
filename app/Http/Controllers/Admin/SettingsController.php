@@ -70,4 +70,23 @@ class SettingsController extends AdminController
         return redirect('admin/settings')->with('success', 'პარამეტრები რედაქტირდა.')->with('social-update', 'true');
     }
 
+    public function smtp(Request $request)
+    {
+        $request->all();
+        $this->validate($request, [
+            'smtp_host' => 'required',
+            'smtp_port' => 'required',
+            'smtp_encrypted' => 'required',
+            'smtp_email' => 'required',
+            'smtp_password' => 'required',
+            'smtp_subject' => 'required'
+        ]);
+        foreach ($request->all() as $key => $item) {
+            if ($key != '_token') {
+                Setting::where(['key' => $key])->update(['value' => $item]);
+            }
+        }
+        return redirect('admin/settings')->with('success', 'Mailer რედაქტირდა.')->with('mailer-update', 'true');
+    }
+
 }

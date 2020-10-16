@@ -94,8 +94,43 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('settings')->insert([
+            'key' => 'linkedin',
+            'value' => 'Linkedin url'
+        ]);
+
+        DB::table('settings')->insert([
             'key' => 'phone',
             'value' => '+995599123123'
+        ]);
+
+        DB::table('settings')->insert([
+            'key' => 'smtp_host',
+            'value' => 'host'
+        ]);
+
+        DB::table('settings')->insert([
+            'key' => 'smtp_port',
+            'value' => 'port'
+        ]);
+
+        DB::table('settings')->insert([
+            'key' => 'smtp_encrypted',
+            'value' => 'tls'
+        ]);
+
+        DB::table('settings')->insert([
+            'key' => 'smtp_email',
+            'value' => 'email'
+        ]);
+
+        DB::table('settings')->insert([
+            'key' => 'smtp_password',
+            'value' => 'password'
+        ]);
+
+        DB::table('settings')->insert([
+            'key' => 'smtp_subject',
+            'value' => 'subject'
         ]);
     }
 }

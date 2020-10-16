@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\SiteController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\TransmissionsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -38,6 +39,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/catalog',[HomeController::class,'catalog'])->name('catalogIndex');
     Route::get('/catalog/{product}',[HomeController::class,'view'])->name('catalogView');
     Route::get('/about',[HomeController::class,'about'])->name('about');
+    Route::get('/send-email',[MailController::class,'sendEmail']);
 });
 
 
@@ -111,15 +113,11 @@ Route::prefix('admin')->group(function () {
 
 
 
-
-            //            Route::get('/{controller}/{action?}', 'PageController@action')->where([
-//                'controller' => '[a-z]+(?:-[a-z]+)*',
-//                'action' => '[a-z]+(?:-[a-z]+)*'
-//            ]);
             // Setting Controller
             Route::any('settings',[SettingsController::class,'index'])->name('settingsIndex');
             Route::post('settings/contact',[SettingsController::class,'contact'])->name('contactUpdate');
             Route::post('settings/social',[SettingsController::class,'social'])->name('socialUpdate');
+            Route::post('settings/smtp',[SettingsController::class,'smtp'])->name('settingSmtp');
 
 
             // Products routes

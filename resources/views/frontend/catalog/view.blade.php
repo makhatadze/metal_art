@@ -5,6 +5,7 @@
 <!-- sell car Modal -->
 
 
+<!-- end of  animation on subbmit request -->
     <!-- section 1 -   slider -->
     <section id="details-slider__section">
 

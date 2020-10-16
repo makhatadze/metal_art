@@ -1900,7 +1900,8 @@ main {
 /* loader animation */
 
 .submit-box,
-.success-box {
+.success-box,
+.error-box{
     position: fixed;
     top: 0;
     left: 0;
@@ -1924,7 +1925,8 @@ main {
      z-index: 300;
 }
 .submit-box.active,
-.success-box.active {
+.success-box.active,
+.error-box.active{
       visibility: visible;
      opacity: 1;
 }

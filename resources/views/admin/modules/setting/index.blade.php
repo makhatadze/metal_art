@@ -13,6 +13,15 @@ $socialActive =  (
     $errors->has('instagram_url') ||
     $errors->has('youtube_url')
 ) ?   'active' :   '';
+
+$mailerActive =  (
+    $errors->has('smtp_host') ||
+    $errors->has('smtp_port') ||
+    $errors->has('smtp_encrypted') ||
+    $errors->has('smtp_email') ||
+    $errors->has('smtp_password') ||
+    $errors->has('smtp_subject')
+) ?   'active' :   '';
 ?>
 @section('content')
     <div class="row mt-5">
@@ -32,7 +41,7 @@ $socialActive =  (
                         <a data-toggle="tab"
                            data-target="#general-settings"
                            href="javascript:;"
-                           class="flex-1 py-2 rounded-md text-center {{(!session('contact-update') && !session('social-update') && !$contactActive && !$socialActive) ? 'active' : ''}}">საიტის
+                           class="flex-1 py-2 rounded-md text-center {{(!session('contact-update') && !session('social-update') && !session('mailer-update') && !$contactActive && !$socialActive && !$mailerActive) ? 'active' : ''}}">საიტის
                             ზოგადი პარამეტრები</a>
                         <a data-toggle="tab"
                            data-target="#contact"
@@ -42,11 +51,15 @@ $socialActive =  (
                            data-target="#social"
                            href="javascript:;"
                            class="flex-1 py-2 rounded-md text-center  {{session('social-update') ? 'active' : ''}} {{$socialActive}}">სოციალური ქსელები</a>
+                        <a data-toggle="tab"
+                           data-target="#mailer"
+                           href="javascript:;"
+                           class="flex-1 py-2 rounded-md text-center  {{session('mailer-update') ? 'active' : ''}} {{$mailerActive}}">მეილერის სისტემა</a>
                     </div>
                 </div>
             </div>
             <div class="tab-content">
-                <div class="tab-content__pane {{(!session('contact-update') && !session('social-update') && !$contactActive && !$socialActive) ? 'active' : ''}}" id="general-settings">
+                <div class="tab-content__pane {{(!session('contact-update') && !session('social-update') && !session('mailer-update') && !$contactActive && !$socialActive && !$mailerActive) ? 'active' : ''}}" id="general-settings">
                     <div class="pr-1">
                         <div class="grid grid-cols-12 gap-6 mt-5">
                             <div class="intro-y col-span-12 lg:col-span-8">
@@ -239,6 +252,83 @@ $socialActive =  (
                         </div>
                     </div>
 
+                </div>
+                <div class="tab-content__pane {{session('mailer-update') ? 'active' : ''}} {{$mailerActive}}" id="mailer">
+                    <div class="pr-1">
+                        <div class="grid grid-cols-12 gap-6 mt-5">
+                            <div class="intro-y col-span-12 lg:col-span-8">
+                                <div class="intro-y box p-5">
+                                    {!! Form::open(['route' => 'settingSmtp', 'method' => 'POST']) !!}
+                                    <div class="sm:grid grid-cols-3 gap-3 mb-4">
+                                        <div class="relative mt-4 {{ $errors->has('smtp_host') ? ' has-error' : '' }}">
+                                            {{ Form::label('smtp_host', 'SMTP host', ['class' => 'font-helvetica']) }}
+                                            {{ Form::text('smtp_host', $datas['smtp_host'], ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
+                                            @if ($errors->has('smtp_host'))
+                                                <span class="help-block">
+                                                          {{ $errors->first('smtp_host') }}
+                                                     </span>
+                                            @endif
+                                        </div>
+                                        <div class="relative mt-4 {{ $errors->has('smtp_port') ? ' has-error' : '' }}">
+                                            {{ Form::label('smtp_port', 'Port', ['class' => 'font-helvetica']) }}
+                                            {{ Form::text('smtp_port', $datas['smtp_port'], ['class' => 'input w-full border mt-2 col-span-2']) }}
+                                            @if ($errors->has('smtp_port'))
+                                                <span class="help-block">
+                                            {{ $errors->first('smtp_port') }}
+                                        </span>
+                                            @endif
+                                        </div>
+                                        <div class="relative mt-4 {{ $errors->has('smtp_encrypted') ? ' has-error' : '' }}">
+                                            {{ Form::label('smtp_encrypted', 'Encrypted', ['class' => 'font-helvetica']) }}
+                                            {{ Form::text('smtp_encrypted', $datas['smtp_encrypted'], ['class' => 'input w-full border mt-2 col-span-2']) }}
+                                            @if ($errors->has('smtp_encrypted'))
+                                                <span class="help-block">
+                                            {{ $errors->first('smtp_encrypted') }}
+                                        </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="sm:grid grid-cols-2 gap-2 mb-4">
+                                        <div class="relative mt-4 {{ $errors->has('smtp_email') ? ' has-error' : '' }}">
+                                            {{ Form::label('smtp_email', 'Email', ['class' => 'font-helvetica']) }}
+                                            {{ Form::text('smtp_email', $datas['smtp_email'], ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
+                                            @if ($errors->has('smtp_email'))
+                                                <span class="help-block">
+                                            {{ $errors->first('smtp_email') }}
+                                        </span>
+                                            @endif
+                                        </div>
+                                        <div class="relative mt-4 {{ $errors->has('smtp_password') ? ' has-error' : '' }}">
+                                            {{ Form::label('smtp_password', 'Email Password', ['class' => 'font-helvetica']) }}
+                                            {{ Form::text('smtp_password', $datas['smtp_password'], ['class' => 'input w-full border mt-2 col-span-2']) }}
+                                            @if ($errors->has('smtp_password'))
+                                                <span class="help-block">
+                                            {{ $errors->first('smtp_password') }}
+                                        </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="relative mt-4 {{ $errors->has('smtp_subject') ? ' has-error' : '' }}">
+                                        {{ Form::label('smtp_subject', 'Subject', ['class' => 'font-helvetica']) }}
+                                        {{ Form::text('smtp_subject', $datas['smtp_subject'], ['class' => 'input w-full border mt-2 col-span-2']) }}
+                                        @if ($errors->has('smtp_subject'))
+                                            <span class="help-block">
+                                            {{ $errors->first('smtp_subject') }}
+                                        </span>
+                                        @endif
+                                    </div>
+
+                                    <div class="relative mt-3">
+                                        <button type="submit" name="smtp_add_submit"
+                                                class="button w-25 bg-theme-1 text-white font-helvetica">რედაქტირება
+                                        </button>
+                                    </div>
+                                    {!! Form::close() !!}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
 
             </div>
