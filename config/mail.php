@@ -1,5 +1,39 @@
 <?php
 
+// Select variables to connect database from .env.
+$host = env('DB_HOST', 'localhost');
+$username = env('DB_USERNAME', 'username');
+$password = env('DB_PASSWORD');
+$dbName = env('DB_DATABASE');
+$conn = mysqli_connect($host, $username, $password, $dbName);
+
+// Check connection
+if($conn === false){
+    die("Connect to IT services.. " . mysqli_connect_error());
+}
+$sql = "SELECT * FROM settings as se
+        WHERE se.key='smtp_host' ||
+         se.key='smtp_port' ||
+         se.key='smtp_encrypted' ||
+         se.key='smtp_email' ||
+         se.key='smtp_password'";
+
+$smtp = [];
+
+if($result = mysqli_query($conn, $sql)){
+    if(mysqli_num_rows($result) > 0) {
+        while($row = mysqli_fetch_array($result)){
+            $smtp[$row['key']]=$row['value'];
+        }
+        mysqli_free_result($result);
+    }
+
+}
+
+// Close connection
+mysqli_close($conn);
+
+
 return [
 
     /*
@@ -36,11 +70,11 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-            'port' => env('MAIL_PORT', 587),
-            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => env('MAIL_USERNAME'),
-            'password' => env('MAIL_PASSWORD'),
+            'host' => $smtp['smtp_host'],
+            'port' => $smtp['smtp_port'],
+            'encryption' => $smtp['smtp_encrypted'],
+            'username' => $smtp['smtp_email'],
+            'password' => $smtp['smtp_password'],
             'timeout' => null,
             'auth_mode' => null,
         ],

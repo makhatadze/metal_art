@@ -11,6 +11,10 @@ use App\Models\Page;
 use App\Models\Product;
 use App\Models\Transmission;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -22,6 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         $products = Product::where(['status' => true,'vip' => false])
             ->with(['transmission', 'category', 'condition', 'deal'])
             ->get();
@@ -148,6 +153,21 @@ class HomeController extends Controller
         }
         return view('frontend.about.index')->with('page',$page);
 
+    }
+
+    private function setEnvironmentValue($environmentName, $configKey, $newValue) {
+        file_put_contents(App::environmentFilePath(), str_replace(
+            $environmentName . '=' . Config::get($configKey),
+            $environmentName . '=' . $newValue,
+            file_get_contents(App::environmentFilePath())
+        ));
+
+        Config::set($configKey, $newValue);
+
+        // Reload the cached config
+        if (file_exists(App::getCachedConfigPath())) {
+            Artisan::call("config:cache");
+        }
     }
 
 }
