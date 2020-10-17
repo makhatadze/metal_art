@@ -31,7 +31,12 @@ return [
     'submit_application' => 'Submit an application',
     'read_terms' => 'I have read the terms and conditions and confirm the authenticity of the information provided by me',
     'sending' => 'Sending ...',
-    'sent' => 'Sent!'
-
+    'sent' => 'Sent!',
+    'we_recommended' => 'We Recommended',
+    'price' => 'Price',
+    'category' => 'Category',
+    'mileage' => 'Mileage',
+    'type_of_sale' => 'Type of sale',
+    'in_details' => 'In Details'
 
 ];

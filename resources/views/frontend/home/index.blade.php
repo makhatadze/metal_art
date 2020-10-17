@@ -78,7 +78,7 @@
 
                 <h1 class="we-advice__heading">
                     <img src="{{url('frontend-assets/img/logos/ios-star.svg')}}" alt="">
-                    ჩვენ გირჩევთ
+                    {{__('app.we_recommended')}}
                 </h1>
 
                 <div class="we-advice__item-wrapper">
@@ -109,12 +109,12 @@
 
                                         <div class="card__middle">
                                             <div class="card__middle-top">
-                                                <span>ფასი</span>
-                                                <span>კატეგორია</span>
+                                                <span>{{__('app.price')}}</span>
+                                                <span>{{__('app.category')}}</span>
                                             </div>
                                             <div class="card__middle-body">
                                                 <p id="c-price" class="gel-{{$products[$i]->id}}">{{number_format($products[$i]->price, 0)}} </p>
-                                                <p class="c-category">{{$products[$i]->new ? 'ახალი' : 'მეორადი'}}
+                                                <p class="c-category">{{$products[$i]->new ? __('app.new') : __('app.second')}}
                                                     / {{$products[$i]->transmission->{"title_".app()->getLocale()} }}
                                                     / {{$products[$i]->category->{"title_".app()->getLocale()} }}</p>
                                             </div>
@@ -126,7 +126,7 @@
                                                 <div class="card__more-info__label">
                                                     <img src="{{url('frontend-assets/img/logos/i-road.svg')}}" alt="">
 
-                                                    გარბენი:
+                                                    {{__('app.mileage')}}:
                                                 </div>
                                                 <p>{{$products[$i]->mileage}}</p>
                                             </div>
@@ -144,7 +144,7 @@
                                                 <div class="card__more-info__label">
                                                     <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
 
-                                                    მდგომარეობა:
+                                                    {{__('app.condition')}}:
                                                 </div>
                                                 <p>{{$products[0]->condition->{"title_".app()->getLocale()} }}</p>
                                             </div>
@@ -153,7 +153,7 @@
                                                 <div class="card__more-info__label">
                                                     <img src="{{url('frontend-assets/img/logos/i-dollar-sign.svg')}}" alt="">
 
-                                                    გაყიდვის ტიპი:
+                                                    {{__('app.type_of_sale')}}:
                                                 </div>
                                                 <p>{{$products[$i]->deal->{"title_".app()->getLocale()} }}</p>
                                             </div>
@@ -168,7 +168,7 @@
                                         </div>
 
                                         <a href="{{route('catalogView',$products[$i]->id)}}" class="card__bottom-btn">
-                                            დეტალურად
+                                            {{__('app.in_details')}}
                                         </a>
                                     </div>
 
