@@ -26,7 +26,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $products = Product::where(['status' => true,'vip' => false])
             ->with(['transmission', 'category', 'condition', 'deal'])
             ->get();

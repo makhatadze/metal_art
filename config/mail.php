@@ -70,11 +70,11 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => $smtp['smtp_host'],
-            'port' => $smtp['smtp_port'],
-            'encryption' => $smtp['smtp_encrypted'],
-            'username' => $smtp['smtp_email'],
-            'password' => $smtp['smtp_password'],
+            'host' => (isset($smtp['smtp_host']) ? $smtp['smtp_host'] : ''),
+            'port' => (isset($smtp['smtp_port']) ? $smtp['smtp_port'] : ''),
+            'encryption' => (isset($smtp['smtp_encrypted']) ? $smtp['smtp_encrypted'] : ''),
+            'username' => (isset($smtp['smtp_email']) ? $smtp['smtp_email'] : ''),
+            'password' => (isset($smtp['smtp_password']) ? $smtp['smtp_password'] : ''),
             'timeout' => null,
             'auth_mode' => null,
         ],

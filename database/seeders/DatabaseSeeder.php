@@ -13,29 +13,62 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-        $faker = Faker::create();
 
-        $gender = $faker->randomElement(['male', 'female']);
+        DB::table('users')->insert([
+            'name' => 'webmaster webmaster',
+            'email' => 'webmaster@gmail.com',
+            'password' =>'$2y$10$sgEPreNxcHq0gtVFEXFSFOYMES5nXqyWcjnOiqAYMO3CB4kxtbkKi'
+        ]);
 
-        foreach (range(1,200) as $index) {
-            DB::table('students')->insert([
-                'name' => $faker->name($gender),
-                'email' => $faker->email,
-                'username' => $faker->username,
-                'phone' => $faker->phoneNumber,
-                'dob' => $faker->date($format = 'Y-m-d', $max = 'now')
-            ]);
-        }
+        DB::table('pages')->insert([
+            'slug' => 'home',
+            'title_ge' => 'home',
+            'title_en' => 'home',
+            'meta_title_ge' => 'meta title ge',
+            'meta_title_en' => 'meta title en',
+            'description_ge' => 'Description ge',
+            'description_en' => 'Description en',
+            'content_ge' => 'content ge',
+            'content_en' => 'content en',
+            'status' => true,
+        ]);
+
+        DB::table('pages')->insert([
+            'slug' => 'category',
+            'title_ge' => 'category',
+            'title_en' => 'category',
+            'meta_title_ge' => 'meta title ge',
+            'meta_title_en' => 'meta title en',
+            'description_ge' => 'Description ge',
+            'description_en' => 'Description en',
+            'content_ge' => 'content ge',
+            'content_en' => 'content en',
+            'status' => true,
+        ]);
 
         DB::table('pages')->insert([
             'slug' => 'about-us',
             'title_ge' => 'ჩვენს შესახებ',
             'title_en' => 'ჩვენს შესახებ',
-            'meta_title_ge' => 'ჩვენს შესახებ',
-            'meta_title_en' => 'ჩვენს შესახებ',
-            'content_ge' => 'rame',
-            'content_en' => 'rame',
+            'meta_title_ge' => 'meta title ge',
+            'meta_title_en' => 'meta title en',
+            'description_ge' => 'Description ge',
+            'description_en' => 'Description en',
+            'content_ge' => 'content ge',
+            'content_en' => 'content en',
+            'status' => true,
+        ]);
+
+        DB::table('pages')->insert([
+            'slug' => 'contact',
+            'title_ge' => 'contact',
+            'title_en' => 'contact',
+            'meta_title_ge' => 'meta title ge',
+            'meta_title_en' => 'meta title en',
+            'description_ge' => 'Description ge',
+            'description_en' => 'Description en',
+            'content_ge' => 'content ge',
+            'content_en' => 'content en',
             'status' => true,
         ]);
         DB::table('settings')->insert([

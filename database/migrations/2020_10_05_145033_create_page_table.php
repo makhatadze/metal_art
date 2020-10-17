@@ -20,6 +20,8 @@ class CreatePageTable extends Migration
             $table->string('title_en');
             $table->string('meta_title_ge');
             $table->string('meta_title_en');
+            $table->string('description_ge');
+            $table->string('description_en');
             $table->text('content_ge');
             $table->text('content_en');
             $table->boolean('status');
