@@ -240,6 +240,15 @@ $mailerActive =  (
                                         </span>
                                             @endif
                                         </div>
+                                        <div class="relative mt-4 {{ $errors->has('linkedin') ? ' has-error' : '' }}">
+                                            {{ Form::label('linkedin', 'linkedin მისამართი', ['class' => 'font-helvetica']) }}
+                                            {{ Form::text('linkedin', $datas['linkedin'], ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
+                                            @if ($errors->has('linkedin'))
+                                                <span class="help-block">
+                                            {{ $errors->first('linkedin') }}
+                                        </span>
+                                            @endif
+                                        </div>
                                     </div>
                                     <div class="relative mt-3">
                                         <button type="submit" name="social_submit"

@@ -60,7 +60,8 @@ class SettingsController extends AdminController
         $this->validate($request, [
             'facebook_url' => 'required',
             'instagram_url' => 'required',
-            'youtube_url' => 'required'
+            'youtube_url' => 'required',
+            'linkedin' => 'required'
         ]);
         foreach ($request->all() as $key => $item) {
             if ($key != '_token') {

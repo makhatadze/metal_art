@@ -57,6 +57,27 @@
                         @endif
                     </div>
                 </div>
+                <div class="sm:grid grid-cols-2 gap-2 mb-4">
+                    <div class="relative mt-4 {{ $errors->has('description_ge') ? ' has-error' : '' }}">
+                        {{ Form::label('description_ge', 'მოკლე აღწერა ქართულად', ['class' => 'font-helvetica']) }}
+                        {{ Form::text('description_ge', $page->description_ge, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
+                        @if ($errors->has('description_ge'))
+                            <span class="help-block">
+                                            {{ $errors->first('description_ge') }}
+                                        </span>
+                        @endif
+                    </div>
+                    <div class="relative mt-4 {{ $errors->has('description_en') ? ' has-error' : '' }}">
+                        {{ Form::label('description_en', 'მოკლე აღწერა ინგლისურად', ['class' => 'font-helvetica']) }}
+                        {{ Form::text('description_en', $page->description_en, ['class' => 'input w-full border mt-2 col-span-2']) }}
+                        @if ($errors->has('description_en'))
+                            <span class="help-block">
+                                            {{ $errors->first('description_en') }}
+                                        </span>
+                        @endif
+                    </div>
+                </div>
+
                 <div class="relative mt-4 {{ $errors->has('content_ge') ? ' has-error' : '' }}">
                     {{ Form::label('content_ge', 'საიტის კონტენტი ქართულად', ['class' => 'font-helvetica']) }}
                     {{ Form::textarea('content_ge', $page->content_ge, ['class' => 'input w-full border mt-2 col-span-2']) }}

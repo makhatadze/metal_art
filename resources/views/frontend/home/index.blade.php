@@ -12,10 +12,10 @@
 
                 <form action="{{app()->getLocale()}}/catalog" class="hero__form">
                     <h1 class="hero__form-heading">
-                        შეარჩიე მანქანა
+                        {{ $page->{"meta_title_".app()->getLocale()} }}
                     </h1>
                     <p class="hero__form-p">
-                        ლორემ იპსუმ მორიდებას დახუჭვილი უყიდნია ნებისმიერ ნამიან ბნედიანმა ასეა მაკვირვებს ნივთს.
+                        {{ $page->{"description_".app()->getLocale()} }}
                     </p>
 
 

@@ -12,7 +12,9 @@
 
     <link rel="stylesheet" href="{{url('frontend-assets/css/style.css')}}">
     <link rel="stylesheet" href="{{url('frontend-assets/css/slick.css')}}">
-    <title> AutoHome - home</title>
+    <title>{{ $page->{"title_".app()->getLocale()} }}</title>
+
+
 </head>
 <!-- header begin -->
 <!-- header end -->

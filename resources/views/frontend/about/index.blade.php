@@ -28,7 +28,7 @@ $protoc = Setting::where(['key' => $protocolKey])->first();
 
                     <h2 class="about-main__heading">{{ $page->{"title_".app()->getLocale()} }}</h2>
 
-                    <h3 class="about-main__subheading">ლორემ იპსუმ დოლორ სიტ ამეტ წაიყვანა</h3>
+                    <h3 class="about-main__subheading">{!! $page->{"description_".app()->getLocale()} !!}</h3>
 
                     <p class="about-us__paragraph">
                         {!! $page->{"content_".app()->getLocale()} !!}

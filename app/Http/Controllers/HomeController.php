@@ -26,6 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $page = Page::where(['status' => true,'slug' => 'home'])->first();
+        if (!$page) {
+            return abort('404');
+        }
         $products = Product::where(['status' => true,'vip' => false])
             ->with(['transmission', 'category', 'condition', 'deal'])
             ->get();
@@ -42,6 +46,7 @@ class HomeController extends Controller
             ->with('transmissions', $transmissions)
             ->with('conditions', $conditions)
             ->with('dolar',3.25)
+            ->with('page',$page)
             ->with('vips', $vips);
     }
 

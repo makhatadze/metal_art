@@ -25,6 +25,8 @@ class PageController extends Controller
                 'slug' => 'required',
                 'title_ge' => 'required',
                 'title_en' => 'required',
+                'description_ge' => 'required',
+                'description_en' => 'required',
                 'meta_title_ge' => 'required',
                 'meta_title_en' => 'required'
             ]);
@@ -32,6 +34,8 @@ class PageController extends Controller
             $page->title_en = $request->title_en;
             $page->meta_title_ge = $request->meta_title_ge;
             $page->meta_title_en = $request->meta_title_en;
+            $page->description_ge = $request->description_ge;
+            $page->description_en = $request->description_en;
             $page->content_ge = $request->content_ge;
             $page->content_en = $request->content_en;
             $page->save();
