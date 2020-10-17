@@ -52,6 +52,10 @@ class HomeController extends Controller
 
     public function catalog(Request $request)
     {
+        $page = Page::where(['status' => true,'slug' => 'catalog'])->first();
+        if (!$page) {
+            return abort('404');
+        }
         if ($request->isMethod('get')) {
             $this->validate($request, [
                 'custom' => 'integer',
@@ -124,6 +128,7 @@ class HomeController extends Controller
                 ->with('conditions', $conditions)
                 ->with('brands', $brands)
                 ->with('dolar',3.25)
+                ->with('page',$page)
                 ->with('brandModels', $brandModels);
 
         }
