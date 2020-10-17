@@ -4,7 +4,14 @@
     <list default="true" id="3d51b9db-7f3b-4935-adfa-fc1bbaf7761b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ge/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ge/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/catalog/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/catalog/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/detail-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/detail-header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +226,7 @@
       <workItem from="1602828038308" duration="8495000" />
       <workItem from="1602837959523" duration="10975000" />
       <workItem from="1602852595985" duration="7324000" />
-      <workItem from="1602919569093" duration="4542000" />
+      <workItem from="1602919569093" duration="7084000" />
     </task>
     <servers />
   </component>
@@ -312,9 +319,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="590" y="27" width="1181" height="685" maximized="true" key="dock-window-2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602759193331" />
-    <state x="2559" y="272" width="643" height="783" key="find.popup" timestamp="1602857461046">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="455" y="183" width="555" height="534" key="find.popup" timestamp="1602925457010">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="455" y="183" width="555" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1602925457010" />
     <state x="639" y="292" width="643" height="764" key="find.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1602745174974" />
     <state x="2559" y="272" width="643" height="783" key="find.popup/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602857461046" />
     <state x="687" y="292" width="618" height="594" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1601988730722" />

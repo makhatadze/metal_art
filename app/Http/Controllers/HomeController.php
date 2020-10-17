@@ -107,8 +107,10 @@ class HomeController extends Controller
             $engines = Engine::where(['status' => true])->get();
             $conditions = Condition::where(['status' => true])->get();
             $brands = Brand::where(['status' => true])->get();
-            $brandModels = BrandModel::where(['status' => true, 'brandmodeleable_type' => 'App\Models\Brand', 'brandmodeleable_id' => $brands[0]->id])->get();
-
+            $brandModels = [];
+            if (isset($brands[0])) {
+                $brandModels = BrandModel::where(['status' => true, 'brandmodeleable_type' => 'App\Models\Brand', 'brandmodeleable_id' => $brands[0]->id])->get();
+            }
 
             return view('frontend.catalog.index')
                 ->with('products', $products)
@@ -153,6 +155,10 @@ class HomeController extends Controller
         }
         return view('frontend.about.index')->with('page',$page);
 
+    }
+
+    public function contact() {
+        dd(1);
     }
 
     private function setEnvironmentValue($environmentName, $configKey, $newValue) {

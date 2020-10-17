@@ -62,41 +62,23 @@ $facebookUrl = Setting::where(['key' => 'facebook_url'])->first();
 
             <div class="footer__category-col">
                 <h2 class="footer__category-heading">
-                    კატეგორიები
+                    {{__('app.categories')}}
                 </h2>
 
-                <a href="#" class="footer__category-link">
-                    პირველი ლინკი
+                <a href="{{route('site')}}" class="footer__category-link">
+                    {{__('app.site')}}
                 </a>
-                <a href="#" class="footer__category-link">
-                    მეორე ლინკი
+                <a href="{{route('catalogIndex')}}" class="footer__category-link">
+                    {{__('app.catalog')}}
                 </a>
-                <a href="#" class="footer__category-link">
-                    მესამე ლინკი
+                <a href="{{route('aboutIndex')}}" class="footer__category-link">
+                    {{__('app.about-us')}}
                 </a>
-                <a href="#" class="footer__category-link">
-                    მეოთხე ლინკი
+                <a href="{{route('contactIndex')}}" class="footer__category-link">
+                    {{__('app.contact')}}
                 </a>
             </div>
 
-            <div class="footer__category-col">
-                <h2 class="footer__category-heading">
-                    კატეგორია
-                </h2>
-
-                <a href="#" class="footer__category-link">
-                    პირველი ლინკი
-                </a>
-                <a href="#" class="footer__category-link">
-                    მეორე ლინკი
-                </a>
-                <a href="#" class="footer__category-link">
-                    მესამე ლინკი
-                </a>
-                <a href="#" class="footer__category-link">
-                    მეოთხე ლინკი
-                </a>
-            </div>
 
             <div class="footer__map-col">
                 <div class="footer__map-col-overlay"></div>

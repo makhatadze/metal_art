@@ -231,7 +231,7 @@
 
                     <div class="catalogue__item-wrap">
 
-                        @if($products)
+                        @if(count($products) > 0)
                             @foreach($products as $key => $product)
                                 <div class="catalogue-card">
 

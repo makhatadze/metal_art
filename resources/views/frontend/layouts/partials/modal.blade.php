@@ -5,11 +5,11 @@
         </button>
 
         <h1 class="modal__form-heading">
-            მანქანის გაყიდვა
+            {{__('app.selling_car')}}
         </h1>
 
         <p class="modal__form-p">
-            მანქანის გასაყიდად დაგვიკავშირდით მითითებულ ნომერზე ან მოგვწერეთ მეილზე
+            {{__('app.to_sell_the_car')}}
         </p>
 
         <div class="modal__form-info">
@@ -24,37 +24,37 @@
         </div>
 
         <p class="modal__form-p">
-            ან შეავსეთ განცხადების ფორმა და ჩვენი ოპერატორი დაგიკავშირდებათ
+            {{__('app.or_fill_out_the_application')}}
         </p>
 
         <div class="modal__form-input-grid">
-            <input type="text" placeholder="სახელი" name="first_name" required>
-            <input type="text" placeholder="გვარი" name="last_name" required>
+            <input type="text" placeholder="{{__('app.first_name')}}" name="first_name" required>
+            <input type="text" placeholder="{{__('app.last_name')}}" name="last_name" required>
 
-            <input type="number" placeholder="პირადობის ნომერი" name="personal_id" required>
-            <input type="number" placeholder="ტელეფონის ნომერი" name="phone" required>
+            <input type="number" placeholder="{{__('app.personal_id')}}" name="personal_id" required>
+            <input type="number" placeholder="{{__('app.mobile_phone')}}" name="phone" required>
 
-            <input type="email" placeholder="ელ-ფოსტის მისამართი" name="email" required>
+            <input type="email" placeholder="{{__('app.email_address')}}" name="email" required>
 
-            <input type="date" id="birthday" placeholder="დაბადების თარიღი" name="birthday" required>
+            <input type="date" id="birthday" placeholder="{{__('app.birthday')}}" name="birthday" required>
         </div>
 
         <div class="confirm-info">
             <input type="checkbox" name="confirm" id="confirm-1" required>
-            <label for="confirm-1">გავეცანი პირობებს და ვადასტურებ ჩემს მიერ მოწოდებული ინფორმაციის უტყუარობას</label>
+            <label for="confirm-1">{{__('app.read_terms')}}</label>
         </div>
 
-        <button class="modal__form-btn">განაცხადის გაგზავნა</button>
+        <button class="modal__form-btn">{{__('app.submit_application')}}</button>
 
     </form>
 </div>
 <!-- animation on subbmit request -->
 <div class="submit-box">
-    <div class="submit-content">იგზავნება...</div>
+    <div class="submit-content">{{__('app.sending')}}</div>
 </div>
 
 <div class="success-box">
-    <div class="submit-content">გაგზავნილია!</div>
+    <div class="submit-content">{{__('app.sent')}}</div>
 </div>
 
 <div class="error-box">
