@@ -37,6 +37,14 @@ return [
     'category' => 'Category',
     'mileage' => 'Mileage',
     'type_of_sale' => 'Type of sale',
-    'in_details' => 'In Details'
+    'in_details' => 'In Details',
+    'engine_type' => 'Engine Type',
+    'deal_type' => 'Deal Type',
+    'release_date' => 'Release Date',
+    'engine_capacity' => 'Engine Capacity',
+    'contact_us' => 'Contact Us',
+    'like_it' => 'You May Like It',
+    'last_added' => 'Last Added',
+    'people_saw_it' => 'People Saw It'
 
 ];

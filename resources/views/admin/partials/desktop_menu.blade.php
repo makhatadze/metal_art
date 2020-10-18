@@ -73,6 +73,12 @@
                         <div class="side-menu__title"> გადაცემათა კოლოფი </div>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('engineIndex')}}" class="side-menu custom-nav-item">
+                        <div class="side-menu__icon"> <i data-feather="circle" style="width: 15px; height: 15px;"></i> </div>
+                        <div class="side-menu__title"> ძრავის ტიპი </div>
+                    </a>
+                </li>
             </ul>
         </li>
 

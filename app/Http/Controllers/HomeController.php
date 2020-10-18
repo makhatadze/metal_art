@@ -136,6 +136,10 @@ class HomeController extends Controller
 
     public function view(Product $product)
     {
+        $page = Page::where(['status' => true,'slug' => 'details'])->first();
+        if (!$page) {
+            return abort('404');
+        }
         $images = $product->image()->get();
         $brand = $product->brand()->get()[0];
         $model = $product->model()->get()[0];
@@ -145,7 +149,12 @@ class HomeController extends Controller
 
         $news = Product::where(['status' => true])
             ->with(['transmission', 'category', 'condition', 'deal'])
-            ->orderBy('created_at', 'asc')->paginate(4);
+            ->orderBy('created_at', 'desc')->paginate(4);
+
+        $vips = Product::where(['status' => true,'vip' => true])
+            ->with(['transmission', 'category', 'condition', 'deal'])
+            ->orderBy('created_at', 'desc')->paginate(4);
+
 
         return view('frontend.catalog.view')
             ->with('product', $product)
@@ -154,6 +163,9 @@ class HomeController extends Controller
             ->with('deal', $deal)
             ->with('engine', $engine)
             ->with('news', $news)
+            ->with('page',$page)
+            ->with('vips',$vips)
+            ->with('dolar',3.25)
             ->with('images', $images);
     }
 
@@ -183,6 +195,15 @@ class HomeController extends Controller
         if (file_exists(App::getCachedConfigPath())) {
             Artisan::call("config:cache");
         }
+    }
+
+    private function getDolar() {
+        $client = new SoapClient('http://nbg.gov.ge/currency.wsdl');
+        print $client->GetCurrencyDescription('USD').'<br>';
+        print $client->GetCurrency('USD').'<br>';
+        print $client->GetCurrencyRate('USD').'<br>';
+        print $client->GetCurrencyChange('USD').'<br>';
+        print $client->GetDate().'<br>';
     }
 
 }

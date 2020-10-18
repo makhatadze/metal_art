@@ -37,5 +37,14 @@ return [
     'category' => 'კატეგორია',
     'mileage' => 'გარბენი',
     'type_of_sale' => 'გაყიდვის ტიპი',
-    'in_details' => 'დეტალურად'
+    'in_details' => 'დეტალურად',
+    'engine_type' => 'ძრავის ტიპი',
+    'deal_type' => 'გარიგების ტიპი',
+    'release_date' => 'გამოშვების თარიღი',
+    'engine_capacity' => 'ძრავის მოცულობა',
+    'contact_us' => 'დაგვიკავშირდით',
+    'like_it' => 'შეიძლება მოგეწონოთ',
+    'last_added' => 'ბოლოს დამატებული',
+    'people_saw_it' => 'ადამიანმა ნახა'
+
 ];

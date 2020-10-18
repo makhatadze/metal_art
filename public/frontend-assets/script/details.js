@@ -17,7 +17,7 @@ $('.details-slider').slick({
           centerPadding: '300px',
         }
       },
-      
+
       {
         breakpoint: 990,
         settings: {
@@ -36,7 +36,7 @@ $('.details-slider').slick({
   });
 
 
-// section 2 main 
+// section 2 main
 
 //  input[date] selected
 $('#details-birthday').change(function(){
@@ -46,14 +46,46 @@ $('#details-birthday').change(function(){
 });
 
 
-      // ------ section 4 - u might like 
+      // ------ section 4 - u might like
+function changecurrencyvips($id,$cur,id,dolarValue,realValue) {
+    let amount = realValue;
+    if ($cur === 'dol') {
+        amount = amount / dolarValue;
+    }
+    amount = `${parseInt(amount)}`;
 
-// dollar - gel switch active class
-function changecurrency($id, $cur){
-  // clear both
-  $('#'+$id+' .select-dol').removeClass('active');
-  $('#'+$id+' .select-gel').removeClass('active');
+    amount = amount.split('').reverse().join('').match(/.{1,3}/g).map(function (x) {
+        return x.split('').reverse().join('')
+    }).reverse()
+    amount = amount.join(',')
+    let sel = `.vip-gel-${id}`;
+    $(sel).text(amount);
+    // clear both
+    $('#'+$id+' .select-dol').removeClass('active');
+    $('#'+$id+' .select-gel').removeClass('active');
 
-  // add to selected - $(#curr2 .select-gel) -dol)
-  $('#'+$id+' .select-'+$cur).addClass('active');
+    // add to selected - $(#curr2 .select-gel) -dol)
+    $('#'+$id+' .select-'+$cur).addClass('active');
+}
+
+
+function changecurrencynews($id,$cur,id,dolarValue,realValue) {
+    let amount = realValue;
+    if ($cur === 'dol') {
+        amount = amount / dolarValue;
+    }
+    amount = `${parseInt(amount)}`;
+
+    amount = amount.split('').reverse().join('').match(/.{1,3}/g).map(function (x) {
+        return x.split('').reverse().join('')
+    }).reverse()
+    amount = amount.join(',')
+    let sel = `.new-gel-${id}`;
+    $(sel).text(amount);
+    // clear both
+    $('#'+$id+' .select-dol').removeClass('active');
+    $('#'+$id+' .select-gel').removeClass('active');
+
+    // add to selected - $(#curr2 .select-gel) -dol)
+    $('#'+$id+' .select-'+$cur).addClass('active');
 }
