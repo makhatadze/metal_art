@@ -2,9 +2,9 @@
 /**
  *  app/Breadcrumbs/Segment.php
  *
- * User: 
+ * User:
  * Date-Time: 19.10.20
- * Time: 15:30
+ * Time: 15:31
  * @author Vito Makhatadze <vitomaxatadze@gmail.com>
  */
 namespace App\Breadcrumbs;

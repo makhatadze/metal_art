@@ -6,28 +6,7 @@
       <change beforePath="$PROJECT_DIR$/app/Breadcrumbs/Breadcrumbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Breadcrumbs/Breadcrumbs.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Breadcrumbs/Segment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Breadcrumbs/Segment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BrandController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BrandController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BrandModelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BrandModelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ConditionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ConditionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DealController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DealController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/EngineController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/EngineController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/FuelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/FuelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ImageController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TransmissionsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TransmissionsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Brand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Brand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/BrandModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/BrandModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Condition.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Condition.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Deal.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Deal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Engine.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Engine.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Fuel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Fuel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Image.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Inventory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inventory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Page.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Page.php" afterDir="false" />
@@ -36,6 +15,7 @@
       <change beforePath="$PROJECT_DIR$/app/Models/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Student.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Transmission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Transmission.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend-assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend-assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/catalog/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/catalog/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -313,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603106753132</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add comments.">
+      <created>1603107055293</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1603107055293</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +312,8 @@
     <MESSAGE value="Change logo png" />
     <MESSAGE value="Change translations." />
     <MESSAGE value="remove 2 people saw it." />
-    <option name="LAST_COMMIT_MESSAGE" value="remove 2 people saw it." />
+    <MESSAGE value="Add comments." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add comments." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2544" y="234" width="734" height="646" key="#Inspections" timestamp="1602225352070">
@@ -353,11 +341,11 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2648" y="310" width="526" height="493" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603105656143" />
-    <state x="2454" y="100" width="745" height="617" key="CommitChangelistDialog2" timestamp="1603106752965">
+    <state x="2454" y="100" width="745" height="617" key="CommitChangelistDialog2" timestamp="1603107055144">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="380" y="67" width="745" height="617" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1603018624336" />
-    <state x="2454" y="100" width="914" height="914" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603106752965" />
+    <state x="2454" y="100" width="914" height="914" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603107055144" />
     <state x="26" y="75" width="1215" height="609" key="DiffContextDialog" timestamp="1603018623524">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -389,10 +377,10 @@
     <state x="625" y="327" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1602253606559" />
     <state x="2546" y="308" width="1024" height="737" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603099036427" />
     <state x="674" y="327" width="1024" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1602079358619" />
-    <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2" timestamp="1603106754552">
+    <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2" timestamp="1603107056482">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603106754552" />
+    <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603107056482" />
     <state x="2772" y="412" width="198" height="256" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1602852324112">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

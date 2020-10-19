@@ -24,7 +24,7 @@ class PageController extends Controller
     public function update(Request $request,Page $page)
     {
         if ($request->isMethod('GET')) {
-            return view('admin.modules.page.update', compact('pages', $page));
+            return view('admin.modules.page.update', compact('page', $page));
         }
         if ($request->isMethod('POST')) {
             $request->all();

@@ -2676,17 +2676,8 @@ main {
     }
 }
 
-#price2 {
-    width: 50%;
-    border: none;
-    padding: 0 17px;
-    font-size: 12px;
-    font-family: "BPG Arial Caps", sans-serif;
-    color: #BBBBBB;
-    outline: none;
-    background-position: calc(100% - 15px) 50%;
-}
-#price1 {
+
+#price {
     width: 50%;
     border: none;
     padding: 0 17px;

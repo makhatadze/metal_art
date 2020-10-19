@@ -114,8 +114,8 @@
                                 {{__('app.price')}}
                             </h2>
                             <div class="catalogue__select-wrap half">
-                                <input type="number" id="price1" placeholder="{{__('app.price_from')}}" value="0" name="price_from" value="{{Request::get('price_from')}}">
-                                <input type="number" id="price2" placeholder="{{__('app.price_to')}}" value="100000" name="price_to" value="{{Request::get('price_to')}}">
+                                <input type="number" id="price" placeholder="{{__('app.price_from')}}" value="0" name="price_from" value="{{Request::get('price_from')}}">
+                                <input type="number" id="price" placeholder="{{__('app.price_to')}}" value="100000" name="price_to" value="{{Request::get('price_to')}}">
                             </div>
 
                             <input hidden name="searchValue" value="{{Request::get('searchValue') ? Request::get('searchValue') : ''}}">
