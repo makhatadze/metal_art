@@ -10,7 +10,7 @@
 
             <div class="container">
 
-                <form action="{{app()->getLocale()}}/catalog" class="hero__form">
+                <form action="{{app()->getLocale()}}/catalogue" class="hero__form">
                     <h1 class="hero__form-heading">
                         {{ $page->{"meta_title_".app()->getLocale()} }}
                     </h1>
@@ -18,35 +18,40 @@
                         {{ $page->{"description_".app()->getLocale()} }}
                     </p>
 
+                    <div class="sel-container">
+                        <select name="brand" class="select2">
+                            @if ($brands)
+                                @foreach($brands as $brand)
+                                    <option value="{{$brand->id}}">{{$brand->title }}</option>
+                                @endforeach
+                            @endif
+                        </select>
+                    </div>
+                    <div class="sel-container">
+                        <select name="custom" class="select2">
+                            <option value="1">{{__('app.custom_cleared')}}</option>
+                            <option value="0">{{__('app.before_customs')}}</option>
+                        </select>
+                    </div>
+                    <div class="sel-container">
 
-                    <select name="brand">
-                        @if ($brands)
-                            @foreach($brands as $brand)
-                                <option value="{{$brand->id}}">{{$brand->title }}</option>
-                            @endforeach
-                        @endif
-                    </select>
-
-                    <select name="custom">
-                        <option value="1">{{__('app.custom_cleared')}}</option>
-                        <option value="0">{{__('app.before_customs')}}</option>
-                    </select>
-
-                    <select name="transmission">
-                        @if ($transmissions)
-                            @foreach($transmissions as $trans)
-                                <option value="{{$trans->id}}">{{$trans->{"title_".app()->getLocale()} }}</option>
-                            @endforeach
-                        @endif
-                    </select>
-
-                    <select name="condition">
-                        @if ($conditions)
-                            @foreach($conditions as $cond)
-                                <option value="{{$cond->id}}">{{$cond->{"title_".app()->getLocale()} }}</option>
-                            @endforeach
-                        @endif
-                    </select>
+                        <select name="transmission" class="select2">
+                            @if ($transmissions)
+                                @foreach($transmissions as $trans)
+                                    <option value="{{$trans->id}}">{{$trans->{"title_".app()->getLocale()} }}</option>
+                                @endforeach
+                            @endif
+                        </select>
+                    </div>
+                    <div class="sel-container">
+                        <select name="condition" class="select2">
+                            @if ($conditions)
+                                @foreach($conditions as $cond)
+                                    <option value="{{$cond->id}}">{{$cond->{"title_".app()->getLocale()} }}</option>
+                                @endforeach
+                            @endif
+                        </select>
+                    </div>
 
                     <button class="hero__form-btn">
                         {{__('app.search')}}
@@ -215,6 +220,24 @@
 @section('custom_scripts')
     <script src="{{ url('frontend-assets/script/index.js') }}"></script>
     <script type="text/javascript">
+        (function ($) {
+            "use strict";
+
+            // Select2
+            $('.select2').each(function () {
+                let options = {}
+
+                if ($(this).data('placeholder')) {
+                    options.placeholder = $(this).data('placeholder')
+                }
+
+                if ($(this).data('hide-search')) {
+                    options.minimumResultsForSearch = -1
+                }
+
+                $(this).select2(options)
+            })
+        })($)
         $(document).ready(function () {
         });
     </script>

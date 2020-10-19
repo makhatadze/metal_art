@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="{{url('frontend-assets/css/bpg-arial-caps.css')}}">
     <link rel="stylesheet" href="{{url('frontend-assets/css/bpg-web-001-caps.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="{{url('frontend-assets/css/style.css')}}">
     <link rel="stylesheet" href="{{url('frontend-assets/css/slick.css')}}">
+    <link rel="stylesheet" href="{{url('frontend-assets/css/select.css')}}">
     <title>{{ $page->{"title_".app()->getLocale()} }}</title>
 
 
@@ -41,6 +43,7 @@
 <!-- normal js  -->
 <script src="{{ url('frontend-assets/script/general.js') }}"></script>
 <script src="{{url('frontend-assets/script/details.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script src="{{url('frontend-assets/script/catalogue.js')}}"></script>
 @yield('custom_scripts')
 </body>

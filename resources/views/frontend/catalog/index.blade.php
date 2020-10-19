@@ -9,7 +9,7 @@
             <div class="catalogue__wrapper">
 
                 <div class="catalogue__left">
-                    <form action="/{{app()->getLocale()}}/catalog">
+                    <form action="/{{app()->getLocale()}}/catalogue">
                         <div class="catalogue__filter">
                             <h1 class="catalogue__filter-heading">
                                 {{__('app.filter')}}
@@ -22,7 +22,7 @@
                                 <div class="catalogue__select-img">
                                     <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
                                 </div>
-                                <select name="brand" value="{{Request::get('brand') ? Request::get('brand') : 1}}" onchange="brandChange(event)">
+                                <select name="brand" class="select2" value="{{Request::get('brand') ? Request::get('brand') : 1}}" onchange="brandChange(event)">
                                     @if ($brands)
                                         @foreach($brands as $brand)
                                             <option {{(Request::get('brand') && Request::get('brand') == $brand->id) ? 'selected' : ''}} value="{{$brand->id}}">{{$brand->title }}</option>
@@ -38,7 +38,7 @@
                                 <div class="catalogue__select-img">
                                     <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
                                 </div>
-                                <select name="model" id="brand-model">
+                                <select name="model" class="select2" id="brand-model">
                                     @if ($brandModels)
                                         @foreach($brandModels as $mod)
                                             <option {{(Request::get('model') && Request::get('model') == $mod->id) ? 'selected' : ''}} value="{{$mod->id}}">{{$mod->title }}</option>
@@ -54,7 +54,7 @@
                                 <div class="catalogue__select-img">
                                     <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
                                 </div>
-                                <select name="condition">
+                                <select name="condition" class="select2">
                                     @if ($conditions)
                                         @foreach($conditions as $cond)
                                             <option {{(Request::get('condition') && Request::get('condition') == $cond->id) ? 'selected' : ''}} value="{{$cond->id}}">{{$cond->{"title_".app()->getLocale()} }}</option>
@@ -70,7 +70,7 @@
                                 <div class="catalogue__select-img">
                                     <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
                                 </div>
-                                <select name="custom">
+                                <select name="custom" class="select2">
                                     <option {{(Request::get('custom') == 1) ? 'selected' : ''}} value="1">{{__('app.custom_cleared')}}</option>
                                     <option {{(Request::get('custom') == 0) ? 'selected' : ''}} value="0">{{__('app.before_customs')}}</option>
                                 </select>
@@ -84,7 +84,7 @@
                                 <div class="catalogue__select-img">
                                     <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
                                 </div>
-                                <select name="category">
+                                <select name="category" class="select2">
                                     @if ($categories)
                                         @foreach($categories as $cat)
                                             <option {{(Request::get('custom') == $cat->id) ? 'selected' : ''}} value="{{$cat->id}}">{{$cat->{"title_".app()->getLocale()} }}</option>
@@ -97,20 +97,20 @@
                                 {{__('app.release_date')}}
                             </h2>
                             <div class="catalogue__select-wrap half">
-                                <select name="date_from">
+                                <select name="date_from" class="select2">
                                     @foreach(range(1980,date("Y")) as $date )
                                     <option {{(Request::get('date_from') == $date) ? 'selected' : ''}} value="{{$date}}">{{$date}}</option>
                                     @endforeach
                                 </select>
 
-                                <select name="date_to">
+                                <select name="date_to" class="select2">
                                     @foreach(range(1980,date("Y")) as $date )
                                         <option {{(Request::get('date_to') == $date) ? 'selected' : ''}} value="{{$date}}">{{$date}}</option>
                                     @endforeach
                                 </select>
                             </div>
 
-                            <h2 class="catalogue__filter-category">
+                            <h2 class="catalogue__filter-category" >
                                 {{__('app.price')}}
                             </h2>
                             <div class="catalogue__select-wrap half">
@@ -126,7 +126,7 @@
                                 <div class="catalogue__select-img">
                                     <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
                                 </div>
-                                <select name="transmission">
+                                <select name="transmission" class="select2">
                                     @if ($transmissions)
                                         @foreach($transmissions as $trans)
                                             <option {{(Request::get('transmission') == $trans->id) ? 'selected' : ''}} value="{{$trans->id}}">{{$trans->{"title_".app()->getLocale()} }}</option>
@@ -142,7 +142,7 @@
                                 <div class="catalogue__select-img">
                                     <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
                                 </div>
-                                <select name="engine">
+                                <select name="engine" class="select2">
                                     @if ($engines)
                                         @foreach($engines as $engine)
                                             <option {{(Request::get('engine') == $engine->id) ? 'selected' : ''}} value="{{$engine->id}}">{{$engine->{"title_".app()->getLocale()} }}</option>
