@@ -100,3 +100,23 @@ $('.activable').click(function (e) {
 
     $(e.target).addClass("active");
 })
+
+function brandChange(event) {
+    $.ajax({
+        url: "/brand-models",
+        data: {
+            'brand': event.target.value,
+        }
+    }).done(function (data) {
+        if (data) {
+            let option = '';
+            data.forEach(el => {
+                option = `${option}
+                                <option value="${el.id}">${el.title}</option>
+`
+            })
+
+            $('#brand-model').html(option)
+        }
+    });
+}

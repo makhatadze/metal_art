@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactEmail;
+use App\Models\BrandModel;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -54,5 +55,16 @@ class MailController extends Controller
 
         return Mail::to($mailTo->value)->send(new ContactEmail($data,true));
 
+    }
+
+    public function models(Request $request)
+    {
+        if ($request->isMethod('GET')) {
+            $this->validate($request, [
+                'brand' => 'required|integer'
+            ]);
+            $brandModel = BrandModel::where(['status' => true,'brandmodeleable_type' => 'App\Models\Brand', 'brandmodeleable_id' => $request->brand])->get();
+            return response()->json($brandModel);
+        }
     }
 }

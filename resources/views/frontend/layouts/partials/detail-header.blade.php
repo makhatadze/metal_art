@@ -11,10 +11,10 @@
                     <a href="{{route('site')}}" class="navigation__link {{$page->slug == 'home' ? 'active': ''}}">{{__('app.site')}}</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="{{route('catalogIndex')}}" class="navigation__link {{$page->slug == 'catalog' ? 'active': ''}}">{{__('app.catalog')}}</a>
+                    <a href="{{route('catalogIndex')}}" class="navigation__link {{($page->slug == 'catalog' || $page->slug == 'details') ? 'active': ''}}">{{__('app.catalog')}}</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="{{route('aboutIndex')}}" class="navigation__link {{$page->slug == 'home' ? 'about-us': ''}}">{{__('app.about-us')}}</a>
+                    <a href="{{route('aboutIndex')}}" class="navigation__link {{$page->slug == 'about-us' ? 'active': ''}}">{{__('app.about-us')}}</a>
                 </li>
                 <li class="navigation__item">
                     <a href="{{route('contactIndex')}}" class="navigation__link {{$page->slug == 'contact-us' ? 'active': ''}}">{{__('app.contact')}}</a>

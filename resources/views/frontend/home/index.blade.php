@@ -163,8 +163,8 @@
 
                                     <div class="card__bottom">
                                         <div class="card__bottom-views">
-                                            <img src="{{url('frontend-assets/img/logos/i-fire.svg')}}" alt="">
-                                            2 ადამიანი ნახულობს
+{{--                                            <img src="{{url('frontend-assets/img/logos/i-fire.svg')}}" alt="">--}}
+{{--                                            2 ადამიანი ნახულობს--}}
                                         </div>
 
                                         <a href="{{route('catalogView',$products[$i]->id)}}" class="card__bottom-btn">

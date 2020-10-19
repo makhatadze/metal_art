@@ -12,17 +12,17 @@
                     <form action="/{{app()->getLocale()}}/catalog">
                         <div class="catalogue__filter">
                             <h1 class="catalogue__filter-heading">
-                                ფილტრი
+                                {{__('app.filter')}}
                             </h1>
 
                             <h2 class="catalogue__filter-category">
-                                მწარმოებელი
+                                {{__('app.Manufacturer')}}
                             </h2>
                             <div class="catalogue__select-wrap">
                                 <div class="catalogue__select-img">
                                     <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
                                 </div>
-                                <select name="brand" value="{{Request::get('brand') ? Request::get('brand') : 1}}">
+                                <select name="brand" value="{{Request::get('brand') ? Request::get('brand') : 1}}" onchange="brandChange(event)">
                                     @if ($brands)
                                         @foreach($brands as $brand)
                                             <option {{(Request::get('brand') && Request::get('brand') == $brand->id) ? 'selected' : ''}} value="{{$brand->id}}">{{$brand->title }}</option>
@@ -32,13 +32,13 @@
                             </div>
 
                             <h2 class="catalogue__filter-category">
-                                მოდელი
+                                {{__('app.model')}}
                             </h2>
                             <div class="catalogue__select-wrap">
                                 <div class="catalogue__select-img">
                                     <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
                                 </div>
-                                <select name="model">
+                                <select name="model" id="brand-model">
                                     @if ($brandModels)
                                         @foreach($brandModels as $mod)
                                             <option {{(Request::get('model') && Request::get('model') == $mod->id) ? 'selected' : ''}} value="{{$mod->id}}">{{$mod->title }}</option>
@@ -349,5 +349,7 @@
 
 
 @endsection
+
 @section('custom-scripts')
+
 @endsection

@@ -60,7 +60,11 @@ return [
     'announcements' => 'Announcements',
     'year' => 'Year',
     'right' => 'Right',
-    'left' => 'Left'
+    'left' => 'Left',
+    'filter' => 'Filter',
+    'model' => 'Model'
+
+
 
 
 

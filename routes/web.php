@@ -40,6 +40,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/contact-us',[HomeController::class,'contact'])->name('contactIndex');
     Route::get('/send-email',[MailController::class,'sendEmail']);
     Route::get('/send-message',[MailController::class,'sendMessage']);
+    Route::get('/brand-models',[MailController::class,'models'])->name('brandModels');
+
 });
 
 

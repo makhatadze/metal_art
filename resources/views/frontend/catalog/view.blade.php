@@ -230,8 +230,8 @@
 
                             <div class="card__bottom">
                                 <div class="card__bottom-views">
-                                    <img src="{{url('frontend-assets/img/logos/i-fire.svg')}}" alt="">
-                                    2 {{__('app.people_saw_it')}}
+{{--                                    <img src="{{url('frontend-assets/img/logos/i-fire.svg')}}" alt="">--}}
+{{--                                    2 {{__('app.people_saw_it')}}--}}
                                 </div>
 
                                 <a href="{{route('catalogView',$vip->id)}}" class="card__bottom-btn">
@@ -342,8 +342,8 @@
 
                             <div class="card__bottom">
                                 <div class="card__bottom-views">
-                                    <img src="{{url('frontend-assets/img/logos/i-fire.svg')}}" alt="">
-                                    2 {{__('app.people_saw_it')}}
+{{--                                    <img src="{{url('frontend-assets/img/logos/i-fire.svg')}}" alt="">--}}
+{{--                                    2 {{__('app.people_saw_it')}}--}}
                                 </div>
 
                                 <a href="{{route('catalogView',$new->id)}}" class="card__bottom-btn">
