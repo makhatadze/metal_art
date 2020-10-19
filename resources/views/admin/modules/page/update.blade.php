@@ -40,7 +40,7 @@
                 <div class="sm:grid grid-cols-2 gap-2 mb-4">
                     <div class="relative mt-4 {{ $errors->has('meta_title_ge') ? ' has-error' : '' }}">
                         {{ Form::label('meta_title_ge', 'მეტა სახელი ქართულად', ['class' => 'font-helvetica']) }}
-                        {{ Form::text('meta_title_ge', $page->title_ge, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
+                        {{ Form::text('meta_title_ge', $page->meta_title_ge, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
                         @if ($errors->has('meta_title_ge'))
                             <span class="help-block">
                                             {{ $errors->first('meta_title_ge') }}
@@ -49,7 +49,7 @@
                     </div>
                     <div class="relative mt-4 {{ $errors->has('meta_title_en') ? ' has-error' : '' }}">
                         {{ Form::label('meta_title_en', 'მეტა სახელი ინგლისურად', ['class' => 'font-helvetica']) }}
-                        {{ Form::text('meta_title_en', $page->title_en, ['class' => 'input w-full border mt-2 col-span-2']) }}
+                        {{ Form::text('meta_title_en', $page->meta_title_en, ['class' => 'input w-full border mt-2 col-span-2']) }}
                         @if ($errors->has('meta_title_en'))
                             <span class="help-block">
                                             {{ $errors->first('meta_title_en') }}

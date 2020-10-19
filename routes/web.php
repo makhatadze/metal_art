@@ -38,9 +38,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/',[HomeController::class, 'index'])->name('site');
     Route::get('/catalog',[HomeController::class,'catalog'])->name('catalogIndex');
     Route::get('/catalog/{product}',[HomeController::class,'view'])->name('catalogView');
-    Route::get('/about',[HomeController::class,'about'])->name('aboutIndex');
-    Route::get('/contact',[HomeController::class,'contact'])->name('contactIndex');
+    Route::get('/about-us',[HomeController::class,'about'])->name('aboutIndex');
+    Route::get('/contact-us',[HomeController::class,'contact'])->name('contactIndex');
     Route::get('/send-email',[MailController::class,'sendEmail']);
+    Route::get('/send-message',[MailController::class,'sendMessage']);
 });
 
 

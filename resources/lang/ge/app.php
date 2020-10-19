@@ -45,6 +45,12 @@ return [
     'contact_us' => 'დაგვიკავშირდით',
     'like_it' => 'შეიძლება მოგეწონოთ',
     'last_added' => 'ბოლოს დამატებული',
-    'people_saw_it' => 'ადამიანმა ნახა'
+    'people_saw_it' => 'ადამიანმა ნახა',
+    'send_message' => 'შეტყობინების გაგზავნა',
+    'contact_us_and_we_will_answer_you' => 'დაგვიკავშირდით და ჩვენ გიპასუხებთ',
+    'full_name' => 'სრული სახელი',
+    'write_message' => 'დაწერეთ შეტყობინება',
+    'description' => 'აღწერა',
+    'fill_out' => 'შეავსეთ განაცხადი'
 
 ];

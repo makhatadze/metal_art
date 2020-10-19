@@ -186,3 +186,55 @@ $('#sendEmailBtn').on('click',function () {
 
     }
 })
+
+$('#sendMessageBtn').on('click',function () {
+    console.log(1233)
+    let full_name = $('input[name="message_full_name"]').val();
+    let email = $('input[name="message_email"]').val();
+    let message = $('#message_message').val();
+
+    let check = /\S+@\S+\.\S+/;
+    let emailStatus = check.test(email);
+
+    //
+    //
+    if (full_name &&  email && emailStatus && message) {
+        $.ajax({
+            type: 'GET',
+            url: '/send-message',
+            data: {
+                'full_name': full_name,
+                'email': email,
+                'message': message,
+            },
+            beforeSend: function () {
+                $('.submit-box').addClass('active');
+            },
+            success: function (data) {
+                console.log(data)
+                setTimeout(() => {
+                    $('.submit-box').removeClass('active');
+                    $('.success-box').addClass('active');
+                    $(':input', '.contact__form')
+                        .not(':button, :submit, :reset, :hidden')
+                        .val('')
+                        .removeAttr('checked')
+                        .removeAttr('selected');
+                }, 1000);
+            },
+            error: function (xhr) { // if error occured
+                setTimeout(() => {
+                    $('.submit-box').removeClass('active');
+                    $('.error-box').addClass('active');
+                }, 1000);
+            },
+            complete: function () {
+                setTimeout(() => {
+                    $('.success-box').removeClass('active');
+                    $('.error-box').removeClass('active');
+                }, 2500);
+            },
+        });
+
+    }
+})

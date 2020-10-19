@@ -20,7 +20,8 @@ $mailerActive =  (
     $errors->has('smtp_encrypted') ||
     $errors->has('smtp_email') ||
     $errors->has('smtp_password') ||
-    $errors->has('smtp_subject')
+    $errors->has('smtp_subject') ||
+    $errors->has('smtp_contact_subject')
 ) ?   'active' :   '';
 ?>
 @section('content')
@@ -221,7 +222,7 @@ $mailerActive =  (
                                             @endif
                                         </div>
                                         <div class="relative mt-4 {{ $errors->has('instagram_url') ? ' has-error' : '' }}">
-                                            {{ Form::label('instagram_url', 'Instagram', ['class' => 'font-helvetica']) }}
+                                            {{ Form::label('instagram_url', 'Twitter Url', ['class' => 'font-helvetica']) }}
                                             {{ Form::text('instagram_url', $datas['instagram_url'], ['class' => 'input w-full border mt-2 col-span-2']) }}
                                             @if ($errors->has('instagram_url'))
                                                 <span class="help-block">
@@ -317,14 +318,27 @@ $mailerActive =  (
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="relative mt-4 {{ $errors->has('smtp_subject') ? ' has-error' : '' }}">
-                                        {{ Form::label('smtp_subject', 'Subject', ['class' => 'font-helvetica']) }}
-                                        {{ Form::text('smtp_subject', $datas['smtp_subject'], ['class' => 'input w-full border mt-2 col-span-2']) }}
-                                        @if ($errors->has('smtp_subject'))
-                                            <span class="help-block">
+                                    <div class="sm:grid grid-cols-2 gap-2 mb-4">
+                                        <div class="relative mt-4 {{ $errors->has('smtp_subject') ? ' has-error' : '' }}">
+                                            {{ Form::label('smtp_subject', 'Subject', ['class' => 'font-helvetica']) }}
+                                            {{ Form::text('smtp_subject', $datas['smtp_subject'], ['class' => 'input w-full border mt-2 col-span-2']) }}
+                                            @if ($errors->has('smtp_subject'))
+                                                <span class="help-block">
                                             {{ $errors->first('smtp_subject') }}
                                         </span>
-                                        @endif
+                                            @endif
+                                        </div>
+                                        <div class="relative mt-4 {{ $errors->has('smtp_contact_subject') ? ' has-error' : '' }}">
+                                            {{ Form::label('smtp_contact_subject', 'Contact Subject', ['class' => 'font-helvetica']) }}
+                                            {{ Form::text('smtp_contact_subject', $datas['smtp_contact_subject'], ['class' => 'input w-full border mt-2 col-span-2']) }}
+                                            @if ($errors->has('smtp_contact_subject'))
+                                                <span class="help-block">
+                                            {{ $errors->first('smtp_contact_subject') }}
+                                        </span>
+                                            @endif
+                                        </div>
+
+
                                     </div>
 
                                     <div class="relative mt-3">

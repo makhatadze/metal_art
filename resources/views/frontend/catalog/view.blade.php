@@ -47,7 +47,7 @@
 
                 <div class="details-section__main-description">
                     <h2 class="description__heading">
-                        აღწერა
+                        {{__('app.description')}}
                     </h2>
                     <p class="description__p">
                         {{ $product->description_ge }}
@@ -173,7 +173,7 @@
                                     <span id="c-year">{{ date('Y', strtotime($vip->created_date))}}</span>
 
                                     <div class="currency" id="adviced{{$vip->id}}">
-                                        <button class="select-gel active" onclick="changecurrencyvips('adviced{{$vip->id}}', 'gel',{{$vip->id}},{{$dolar}},{{$vip->price}})">₾
+                                        <button class="select-gel active" onclick="changecurrencyvips('adviced{{$vip->id}}', 'gel',{{$vip->id}},{{$dolar}},{{$vip->price}})">ლ
                                         </button>
                                         <button class="select-dol" onclick="changecurrencyvips('adviced{{$vip->id}}', 'dol',{{$vip->id}},{{$dolar}},{{$vip->price}})">$</button>
                                     </div>
@@ -284,7 +284,7 @@
                                     <span id="c-year">{{ date('Y', strtotime($new->created_date))}}</span>
 
                                     <div class="currency" id="newly{{$new->id}}">
-                                        <button class="select-gel active" onclick="changecurrencynews('newly{{$new->id}}', 'gel',{{$new->id}},{{$dolar}},{{$new->price}})">₾
+                                        <button class="select-gel active" onclick="changecurrencynews('newly{{$new->id}}', 'gel',{{$new->id}},{{$dolar}},{{$new->price}})">ლ
                                         </button>
                                         <button class="select-dol" onclick="changecurrencynews('newly{{$new->id}}', 'dol',{{$new->id}},{{$dolar}},{{$new->price}})">$</button>
                                     </div>

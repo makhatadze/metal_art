@@ -80,7 +80,8 @@ class SettingsController extends AdminController
             'smtp_encrypted' => 'required',
             'smtp_email' => 'required',
             'smtp_password' => 'required',
-            'smtp_subject' => 'required'
+            'smtp_subject' => 'required',
+            'smtp_contact_subject' => 'required'
         ]);
         foreach ($request->all() as $key => $item) {
             if ($key != '_token') {

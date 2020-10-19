@@ -16,9 +16,10 @@ class ContactEmail extends Mailable
      *
      * @return void
      */
-    public function __construct($data)
+    public function __construct($data,$contact)
     {
         $this->data = $data;
+        $this->contact = $contact;
     }
 
     /**
@@ -28,6 +29,9 @@ class ContactEmail extends Mailable
      */
     public function build()
     {
-        return $this->from($this->data['email'],$this->data['fullName'])->subject($this->data['subject'])->view('frontend.mail.contact-email',['data' => $this->data]);
+        if ($this->contact) {
+            return $this->from($this->data['email'],$this->data['full_name'])->subject($this->data['subject'])->view('frontend.mail.contact-email',['data' => $this->data]);
+        }
+        return $this->from($this->data['email'],$this->data['fullName'])->subject($this->data['subject'])->view('frontend.mail.agreement-email',['data' => $this->data]);
     }
 }

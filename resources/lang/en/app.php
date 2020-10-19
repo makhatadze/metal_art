@@ -45,6 +45,13 @@ return [
     'contact_us' => 'Contact Us',
     'like_it' => 'You May Like It',
     'last_added' => 'Last Added',
-    'people_saw_it' => 'People Saw It'
+    'people_saw_it' => 'People Saw It',
+    'send_message' => 'Send a message',
+    'contact_us_and_we_will_answer_you' => 'Contact us and we will answer you',
+    'full_name' => 'Full Name',
+    'write_message' => 'Write a message',
+    'description' => 'Description',
+    'fill_out' => 'Fill out the application'
+
 
 ];

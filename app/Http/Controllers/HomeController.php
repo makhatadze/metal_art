@@ -179,7 +179,12 @@ class HomeController extends Controller
     }
 
     public function contact() {
-        dd(1);
+        $page = Page::where(['status' => true,'slug' => 'contact-us'])->first();
+        if (!$page) {
+            return abort('404');
+        }
+        return view('frontend.contact.index')->with('page',$page);
+
     }
 
     private function setEnvironmentValue($environmentName, $configKey, $newValue) {
@@ -197,13 +202,5 @@ class HomeController extends Controller
         }
     }
 
-    private function getDolar() {
-        $client = new SoapClient('http://nbg.gov.ge/currency.wsdl');
-        print $client->GetCurrencyDescription('USD').'<br>';
-        print $client->GetCurrency('USD').'<br>';
-        print $client->GetCurrencyRate('USD').'<br>';
-        print $client->GetCurrencyChange('USD').'<br>';
-        print $client->GetDate().'<br>';
-    }
 
 }

@@ -33,7 +33,26 @@ class MailController extends Controller
 
         $mailTo = Setting::where(['key' => 'contact_email'])->first();
 
-        return Mail::to($mailTo->value)->send(new ContactEmail($data));
+        return Mail::to($mailTo->value)->send(new ContactEmail($data,false));
+
+    }
+    public function sendMessage(Request $request) {
+        $this->validate($request,[
+            'full_name' => 'required|string',
+            'email' => 'required|email',
+            'message' => 'required|string',
+        ]);
+        $subject = Setting::where(['key' => 'smtp_contact_subject'])->first();
+        $data = [
+            'full_name' => $request->full_name,
+            'email' => $request->email,
+            'message' => $request->message,
+            'subject' => $subject->value
+        ];
+
+        $mailTo = Setting::where(['key' => 'contact_email'])->first();
+
+        return Mail::to($mailTo->value)->send(new ContactEmail($data,true));
 
     }
 }

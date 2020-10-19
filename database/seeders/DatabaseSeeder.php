@@ -34,9 +34,22 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('pages')->insert([
-            'slug' => 'category',
-            'title_ge' => 'category',
-            'title_en' => 'category',
+            'slug' => 'catalog',
+            'title_ge' => 'catalog',
+            'title_en' => 'catalog',
+            'meta_title_ge' => 'meta title ge',
+            'meta_title_en' => 'meta title en',
+            'description_ge' => 'Description ge',
+            'description_en' => 'Description en',
+            'content_ge' => 'content ge',
+            'content_en' => 'content en',
+            'status' => true,
+        ]);
+
+        DB::table('pages')->insert([
+            'slug' => 'details',
+            'title_ge' => 'details',
+            'title_en' => 'details ',
             'meta_title_ge' => 'meta title ge',
             'meta_title_en' => 'meta title en',
             'description_ge' => 'Description ge',
@@ -60,7 +73,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('pages')->insert([
-            'slug' => 'contact',
+            'slug' => 'contact-us',
             'title_ge' => 'contact',
             'title_en' => 'contact',
             'meta_title_ge' => 'meta title ge',
@@ -164,6 +177,11 @@ class DatabaseSeeder extends Seeder
         DB::table('settings')->insert([
             'key' => 'smtp_subject',
             'value' => 'subject'
+        ]);
+
+        DB::table('settings')->insert([
+            'key' => 'smtp_contact_subject',
+            'value' => 'contact subject'
         ]);
     }
 }

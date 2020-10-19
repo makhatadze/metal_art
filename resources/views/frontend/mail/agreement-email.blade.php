@@ -62,24 +62,18 @@
             margin:0px 5.45% 25px 5.45%;
         }
 
-        #content h5{
-            color: #818181;
-            font-size:12px;
-            margin-bottom:20px;
-            font-family: 'Conv_BPG DejaVu Sans ExtraLight 2012';
-            margin:0px 5.45% 25px 5.45%;
-        }
-
     </style>
 </head>
 <body>
 <section id="wrapper">
     <section id="maincContent">
         <section id="content">
-            <h2> სრული სახელი: {{$data['full_name']}}</h2>
+            <h2> სახელი: {{$data['first_name']}}</h2>
+            <h2> გვარი: {{$data['last_name']}}</h2>
+            <h2> პირადი ნომერი: {{$data['pid']}}</h2>
+            <h2> ტელეფონის ნომერი: {{$data['phone']}}</h2>
             <h2> ელ-ფოსტა: {{$data['email']}}</h2>
-            <h2> შეტყობინება</h2>
-            <h5>{{$data['message']}}</h5>
+            <h2> დაბადების თარიღი: {{$data['birthday']}}</h2>
         </section>
     </section>
 </section>

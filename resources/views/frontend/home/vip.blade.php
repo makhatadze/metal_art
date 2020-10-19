@@ -30,12 +30,12 @@
 
                             <div class="card__middle">
                                 <div class="card__middle-top">
-                                    <span>ფასი</span>
-                                    <span>კატეგორია</span>
+                                    <span>{{__('app.price')}}</span>
+                                    <span>{{__('app.category')}}</span>
                                 </div>
                                 <div class="card__middle-body">
-                                    <p id="c-price" class="gel-{{$vip->id}}">{{number_format($vip->price, 2)}}</p>
-                                    <p class="c-category">{{$vip->new ? 'ახალი' : 'მეორადი'}} / {{$vip->transmission->{"title_".app()->getLocale()} }} / {{$vip->category->{"title_".app()->getLocale()} }}</p>
+                                    <p id="c-price" class="gel-{{$vip->id}}">{{number_format($vip->price, 0)}}</p>
+                                    <p class="c-category">{{$vip->new ? __('app.new') : __('app.second')}} / {{$vip->transmission->{"title_".app()->getLocale()} }} / {{$vip->category->{"title_".app()->getLocale()} }}</p>
                                 </div>
                             </div>
 
@@ -44,7 +44,7 @@
                                 <div class="card__more-info-block">
                                     <div class="card__more-info__label">
                                         <img src="{{url('frontend-assets/img/logos/i-road.svg')}}" alt="">
-                                        გარბენი:
+                                        {{__('app.mileage')}}:
                                     </div>
                                     <p>{{$vip->mileage}}</p>
                                 </div>
@@ -62,18 +62,18 @@
                                     <div class="card__more-info__label">
                                         <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
 
-                                        მდგომარეობა:
+                                        {{__('app.condition')}}:
                                     </div>
-                                    <p>იქოქება და დადის</p>
+                                    <p>{{$vip->condition->{"title_".app()->getLocale()} }}</p>
                                 </div>
 
                                 <div class="card__more-info-block">
                                     <div class="card__more-info__label">
                                         <img src="{{url('frontend-assets/img/logos/i-dollar-sign.svg')}}" alt="">
 
-                                        გაყიდვის ტიპი:
+                                        {{__('app.type_of_sale')}}:
                                     </div>
-                                    <p>განვადება, ხელზე</p>
+                                    <p>{{$vip->deal->{"title_".app()->getLocale()} }}</p>
                                 </div>
 
                             </div>
@@ -83,11 +83,11 @@
                             <div class="card__bottom-views">
                                 <img src="{{url('frontend-assets/img/logos/i-fire.svg')}}" alt="">
 
-                                2 ადამიანი ნახულობს
+                                2 {{__('app.people_saw_it')}}
                             </div>
 
                             <a href="{{route('catalogView',$vip->id)}}" class="card__bottom-btn">
-                                დეტალურად
+                                {{__('app.in_details')}}
                             </a>
                         </div>
 
