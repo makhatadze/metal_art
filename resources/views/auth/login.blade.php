@@ -17,13 +17,7 @@
     <div class="block xl:grid grid-cols-2 gap-4">
         <div class="hidden xl:flex flex-col min-h-screen">
             <div class="my-auto">
-                <img alt="" class="-intro-x w-1/2 -mt-16" src="{{ url('dist/images/illustration.svg')}}">
-                <div class="-intro-x text-white font-medium text-4xl leading-tight mt-10">
-                    A few more clicks to
-                    <br>
-                    sign in to your account.
-                </div>
-                <div class="-intro-x mt-5 text-lg text-white">Manage all your e-commerce accounts in one place</div>
+                <img alt="" class="-intro-x w-1/2 -mt-16" src="{{url('frontend-assets//img/logos/site-logo.svg')}}">
             </div>
         </div>
         <div class="h-screen xl:h-auto flex py-5 xl:py-0 my-10 xl:my-0">

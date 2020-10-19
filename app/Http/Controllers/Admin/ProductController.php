@@ -8,6 +8,7 @@ use App\Models\BrandModel;
 use App\Models\Category;
 use App\Models\Condition;
 use App\Models\Deal;
+use App\Models\Engine;
 use App\Models\Fuel;
 use App\Models\Gearbox;
 use App\Models\Image;
@@ -33,7 +34,7 @@ class ProductController extends AdminController
             $deals = Deal::where(['status' => true])->get();
             $fuels = Fuel::where(['status' => true])->get();
             $conditions = Condition::where(['status' => true])->get();
-            $engines = Condition::where(['status' => true])->get();
+            $engines = Engine::where(['status' => true])->get();
             return view('admin.modules.product.create')
                 ->with('brands', $brands)
                 ->with('brandModels',$brandModels)
@@ -127,6 +128,8 @@ class ProductController extends AdminController
             $fuels = Fuel::where(['status' => true])->get();
             $conditions = Condition::where(['status' => true])->get();
             $images = Image::where(['imageable_type' =>'App\Models\Product','imageable_id' => $product->id])->get();
+            $engines = Engine::where(['status' => true])->get();
+
             return view('admin.modules.product.update')
                 ->with('brands', $brands)
                 ->with('brandModels',$brandModels)
@@ -135,6 +138,7 @@ class ProductController extends AdminController
                 ->with('deals',$deals)
                 ->with('conditions',$conditions)
                 ->with('fuels', $fuels)
+                ->with('engines',$engines)
                 ->with('product',$product)
                 ->with('images',$images);
         }

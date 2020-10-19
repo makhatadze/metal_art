@@ -1,7 +1,7 @@
 <nav class="side-nav">
     <a href="" class="intro-x flex items-center pl-5 pt-4">
-        <img alt="Midone Tailwind HTML Admin Template" class="w-6" src="{{ url('dist/images/logo.svg') }}">
-        <span class="hidden xl:block text-white text-lg ml-3"> CRM<span class="font-medium"> DIMOND</span> </span>
+        <img alt="Midone Tailwind HTML Admin Template" class="w-6" src="{{url('frontend-assets//img/logos/site-logo.svg')}}">
+        <span class="hidden xl:block text-white text-lg ml-3"> AUTO<span class="font-medium"> HOME</span> </span>
     </a>
     <div class="side-nav__devider my-6"></div>
     <ul>
