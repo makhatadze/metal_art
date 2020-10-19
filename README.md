@@ -8,8 +8,12 @@ $ npm install
 ```
 
 
-####For run migrations...
+### For run migrations...
+
+
 create .env file by .env.example
+
+
 ```sh
 $ php artisan migrate
 $ php artisan db:seed
