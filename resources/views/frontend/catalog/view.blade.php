@@ -57,14 +57,14 @@
                     <div class="description__grid">
                         <p class="description__element">
                             <img src="{{url('frontend-assets/img/logos/car-b.png')}}" alt="">
-                            ბრენდი, მოდელი:
+                            {{__('app.Manufacturer')}}, {{__('app.model')}}:
                             <span>{{$brand->title}}, {{$model->title}}</span>
                         </p>
 
                         <p class="description__element">
                             <img src="{{url('frontend-assets/img/logos/data-i-b.png')}}" alt="">
-                            დამატების თარიღი:
-                            <span>20 ივნ, 2020</span>
+                            {{__('app.date_of_addition')}}:
+                            <span>{{ date('Y/mm/dd h:m', strtotime($product->created_at))}}</span>
                         </p>
 
                         <p class="description__element">
@@ -200,13 +200,12 @@
                                         </div>
                                         <p>{{$vip->mileage}}</p>
                                     </div>
-
                                     <div class="card__more-info-block">
                                         <div class="card__more-info__label">
                                             <img src="{{url('frontend-assets/img/logos/i-car-crash.svg')}}" alt="">
-                                            დაზიანება:
+                                            {{__('app.wheel')}}:
                                         </div>
-                                        <p>{{$vip->new ? __('app.new') : __('app.second')}}</p>
+                                        <p>{{$vip->wheel ? __('app.right') : __('app.left')}}</p>
                                     </div>
 
                                     <div class="card__more-info-block">
@@ -296,7 +295,7 @@
                                         <span>{{__('app.category')}}</span>
                                     </div>
                                     <div class="card__middle-body">
-                                        <p id="c-price" class="new-gel-{{$new->id}}">{{number_format($product->price)}} </p>
+                                        <p id="c-price" class="new-gel-{{$new->id}}">{{number_format($new->price)}} </p>
                                         <p class="c-category">{{$new->new ? __('app.new') : __('app.second')}}
                                             / {{$new->transmission->{"title_".app()->getLocale()} }}
                                             / {{$new->category->{"title_".app()->getLocale()} }}</p>
@@ -316,9 +315,9 @@
                                     <div class="card__more-info-block">
                                         <div class="card__more-info__label">
                                             <img src="{{url('frontend-assets/img/logos/i-car-crash.svg')}}" alt="">
-                                            დაზიანება:
+                                            {{__('app.wheel')}}:
                                         </div>
-                                        <p>{{$new->new ? __('app.new') : __('app.second')}}</p>
+                                        <p>{{$new->wheel ? __('app.right') : __('app.left')}}</p>
                                     </div>
 
                                     <div class="card__more-info-block">

@@ -16,7 +16,7 @@ return [
     'to' => 'To',
     'about-us' => 'About Us',
     'contact' => 'Contact',
-    'catalog' => 'Catalog',
+    'catalog' => 'Catalogue',
     'sell_the_car' => 'Sell the car',
     'selling_car' => 'Selling a car',
     'categories' => 'Categories',
@@ -62,11 +62,7 @@ return [
     'right' => 'Right',
     'left' => 'Left',
     'filter' => 'Filter',
-    'model' => 'Model'
-
-
-
-
-
-
+    'model' => 'Model',
+    'wheel' => 'Wheel',
+    'date_of_addition' => 'Date of addition'
 ];

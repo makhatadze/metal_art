@@ -53,15 +53,14 @@
                                     <div class="card__more-info__label">
                                         <img src="{{url('frontend-assets/img/logos/i-car-crash.svg')}}" alt="">
 
-                                        დაზიანება:
+                                        {{__('app.wheel')}}:
                                     </div>
-                                    <p>არ აქვს</p>
+                                    <p>{{$vip->wheel ? __('app.right') : __('app.left')}}</p>
                                 </div>
 
                                 <div class="card__more-info-block">
                                     <div class="card__more-info__label">
                                         <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
-
                                         {{__('app.condition')}}:
                                     </div>
                                     <p>{{$vip->condition->{"title_".app()->getLocale()} }}</p>

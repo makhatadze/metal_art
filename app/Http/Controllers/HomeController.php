@@ -58,7 +58,7 @@ class HomeController extends Controller
 
     public function catalog(Request $request)
     {
-        $page = Page::where(['status' => true, 'slug' => 'catalog'])->first();
+        $page = Page::where(['status' => true, 'slug' => 'catalogue'])->first();
         if (!$page) {
             return abort('404');
         }
@@ -133,7 +133,7 @@ class HomeController extends Controller
                 ->with('engines', $engines)
                 ->with('conditions', $conditions)
                 ->with('brands', $brands)
-                ->with('dolar', 3.25)
+                ->with('dolar', $this->getDolar())
                 ->with('page', $page)
                 ->with('brandModels', $brandModels);
 
@@ -153,7 +153,7 @@ class HomeController extends Controller
         $engine = $product->engine()->get()[0];
         $engine = $product->engine()->get()[0];
 
-        $news = Product::where(['status' => true])
+        $news = Product::where(['status' => true,'vip' => false])
             ->with(['transmission', 'category', 'condition', 'deal'])
             ->orderBy('created_at', 'desc')->paginate(4);
 
@@ -171,7 +171,7 @@ class HomeController extends Controller
             ->with('news', $news)
             ->with('page', $page)
             ->with('vips', $vips)
-            ->with('dolar', 3.25)
+            ->with('dolar', $this->getDolar())
             ->with('images', $images);
     }
 
@@ -211,5 +211,8 @@ class HomeController extends Controller
         }
     }
 
+    public function getDolar() {
+        return 3.25;
+    }
 
 }

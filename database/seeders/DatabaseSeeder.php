@@ -34,9 +34,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('pages')->insert([
-            'slug' => 'catalog',
-            'title_ge' => 'catalog',
-            'title_en' => 'catalog',
+            'slug' => 'catalogue',
+            'title_ge' => 'catalogue title',
+            'title_en' => 'catalogue title',
             'meta_title_ge' => 'meta title ge',
             'meta_title_en' => 'meta title en',
             'description_ge' => 'Description ge',

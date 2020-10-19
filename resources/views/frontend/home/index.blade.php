@@ -88,7 +88,7 @@
                                 <div class="card">
 
                                     <div class="card-img-box">
-                                        <img src="{{url('storage/product/'.$products[0]->id.'/'.$products[0]->image()->get()[0]->name)}}">
+                                        <img src="{{url('storage/product/'.$products[$i]->id.'/'.$products[$i]->image()->get()[$i]->name)}}">
                                     </div>
 
                                     <div class="card__main">
@@ -102,7 +102,9 @@
                                                         onclick="changecurrency('adviced{{$i}}', 'gel',{{$products[$i]->id}}, {{$dolar}},{{$products[$i]->price}})">
                                                     ლ
                                                 </button>
-                                                <button class="select-dol" onclick="changecurrency('adviced{{$i}}', 'dol',{{$products[$i]->id}},{{$dolar}},{{$products[$i]->price}})">$
+                                                <button class="select-dol"
+                                                        onclick="changecurrency('adviced{{$i}}', 'dol',{{$products[$i]->id}},{{$dolar}},{{$products[$i]->price}})">
+                                                    $
                                                 </button>
                                             </div>
                                         </div>
@@ -113,7 +115,8 @@
                                                 <span>{{__('app.category')}}</span>
                                             </div>
                                             <div class="card__middle-body">
-                                                <p id="c-price" class="gel-{{$products[$i]->id}}">{{number_format($products[$i]->price, 0)}} </p>
+                                                <p id="c-price"
+                                                   class="gel-{{$products[$i]->id}}">{{number_format($products[$i]->price, 0)}} </p>
                                                 <p class="c-category">{{$products[$i]->new ? __('app.new') : __('app.second')}}
                                                     / {{$products[$i]->transmission->{"title_".app()->getLocale()} }}
                                                     / {{$products[$i]->category->{"title_".app()->getLocale()} }}</p>
@@ -133,25 +136,28 @@
 
                                             <div class="card__more-info-block">
                                                 <div class="card__more-info__label">
-                                                    <img src="{{url('frontend-assets/img/logos/i-car-crash.svg')}}" alt="">
-
-                                                    დაზიანება:
+                                                    <img src="{{url('frontend-assets/img/logos/i-car-crash.svg')}}"
+                                                         alt="">
+                                                    {{__('app.wheel')}}
                                                 </div>
-                                                <p>არ აქვს</p>
+                                                <p>{{$products[$i]->wheel ? __('app.right') : __('app.left')}}
+                                                </p>
                                             </div>
 
                                             <div class="card__more-info-block">
                                                 <div class="card__more-info__label">
-                                                    <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
+                                                    <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}"
+                                                         alt="">
 
                                                     {{__('app.condition')}}:
                                                 </div>
-                                                <p>{{$products[0]->condition->{"title_".app()->getLocale()} }}</p>
+                                                <p>{{$products[$i]->condition->{"title_".app()->getLocale()} }}</p>
                                             </div>
 
                                             <div class="card__more-info-block">
                                                 <div class="card__more-info__label">
-                                                    <img src="{{url('frontend-assets/img/logos/i-dollar-sign.svg')}}" alt="">
+                                                    <img src="{{url('frontend-assets/img/logos/i-dollar-sign.svg')}}"
+                                                         alt="">
 
                                                     {{__('app.type_of_sale')}}:
                                                 </div>
@@ -163,8 +169,8 @@
 
                                     <div class="card__bottom">
                                         <div class="card__bottom-views">
-{{--                                            <img src="{{url('frontend-assets/img/logos/i-fire.svg')}}" alt="">--}}
-{{--                                            2 ადამიანი ნახულობს--}}
+                                            {{--                                            <img src="{{url('frontend-assets/img/logos/i-fire.svg')}}" alt="">--}}
+                                            {{--                                            2 ადამიანი ნახულობს--}}
                                         </div>
 
                                         <a href="{{route('catalogView',$products[$i]->id)}}" class="card__bottom-btn">
@@ -209,7 +215,7 @@
 @section('custom_scripts')
     <script src="{{ url('frontend-assets/script/index.js') }}"></script>
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
         });
     </script>
 @endsection
