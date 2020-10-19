@@ -57,6 +57,9 @@ return [
     'transmission' => 'ტრანსმისია',
     'car' => 'მანქანა',
     'result_not_found' => 'შედეგი ვერ მოიძებნა',
-    'announcements' => 'განცხადებები'
+    'announcements' => 'განცხადებები',
+    'year' => 'წელი',
+    'right' => 'მარჯვენა',
+    'left' => 'მარცხენა'
 
 ];

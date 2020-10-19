@@ -114,8 +114,8 @@
                                 {{__('app.price')}}
                             </h2>
                             <div class="catalogue__select-wrap half">
-                                <input type="number" placeholder="{{__('app.price_from')}}" value="0" name="price_from" value="{{Request::get('price_from')}}">
-                                <input type="number" placeholder="{{__('app.price_to')}}" value="50000" name="price_to" value="{{Request::get('price_to')}}">
+                                <input type="number" id="price1" placeholder="{{__('app.price_from')}}" value="0" name="price_from" value="{{Request::get('price_from')}}">
+                                <input type="number" id="price2" placeholder="{{__('app.price_to')}}" value="50000" name="price_to" value="{{Request::get('price_to')}}">
                             </div>
 
                             <input hidden name="searchValue" value="{{Request::get('searchValue') ? Request::get('searchValue') : ''}}">
@@ -240,24 +240,24 @@
                                     <div class="catalogue-card__wrap">
 
                                         <div class="card__top">
-                                            <h2>{{$product->title_ge}}</h2>
+                                            <h2>{{$product->{"title_".app()->getLocale()} }}</h2>
 
                                             <p class="card__top-p">
-                                                {{$product->engine->title_ge}} & {{$product->category->title_ge}}
+                                                {{$product->engine->{"title_".app()->getLocale()} }} & {{$product->category->{"title_".app()->getLocale()} }}
                                             </p>
                                             <p class="card__top-p">
-                                                წელი : {{ date('Y', strtotime($product->created_date))}}
+                                                {{__('app.year')}} : {{ date('Y', strtotime($product->created_date))}}
                                             </p>
 
                                             <p class="card-list-data">
                                                 <img src="{{url('frontend-assets/img/logos/date-range.svg')}}" alt="">
-                                                განთავსების თარიღი : {{date('Y/m/d',strtotime($product->created_at))}}
+                                                {{__('app.release_date')}} : {{date('Y/m/d',strtotime($product->created_at))}}
                                             </p>
 
                                         </div>
 
                                         <div class="card-list-about">
-                                            {{$product->description_ge}}
+                                            {{$product->{"description_".app()->getLocale()} }}
                                         </div>
 
                                         <div class="card-list-right">
@@ -266,28 +266,28 @@
                                                 <div class="card__more-info-block">
                                                     <div class="card__more-info__label">
                                                         <img src="{{url('frontend-assets/img/logos/car-engine.png')}}" alt="">
-                                                        {{$product->engine_capacity}} {{$product->engine->title_ge}}
+                                                        {{$product->engine_capacity}} {{$product->engine->{"title_".app()->getLocale()} }}
                                                     </div>
                                                 </div>
 
                                                 <div class="card__more-info-block">
                                                     <div class="card__more-info__label">
                                                         <img src="{{url('frontend-assets/img/logos/speedometer-i.png')}}" alt="">
-                                                        {{$product->mileage}} კმ
+                                                        {{$product->mileage}}
                                                     </div>
                                                 </div>
 
                                                 <div class="card__more-info-block">
                                                     <div class="card__more-info__label">
                                                         <img src="{{url('frontend-assets/img/logos/manual-transmission.png')}}" alt="">
-                                                        {{$product->transmission->title_ge}}
+                                                        {{$product->transmission->{"title_".app()->getLocale()} }}
                                                     </div>
                                                 </div>
 
                                                 <div class="card__more-info-block">
                                                     <div class="card__more-info__label">
                                                         <img src="{{url('frontend-assets/img/logos/steering-wheel.png')}}" alt="">
-                                                        {{$product->wheel ? 'მარჯვენა': 'მარცხენა'}}
+                                                        {{$product->wheel ? __('app.right'): __('app.left')}}
                                                     </div>
                                                 </div>
 

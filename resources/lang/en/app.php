@@ -57,7 +57,10 @@ return [
     'transmission' => 'Transmission',
     'car' => 'Car',
     'result_not_found' => 'Result not found',
-    'announcements' => 'Announcements'
+    'announcements' => 'Announcements',
+    'year' => 'Year',
+    'right' => 'Right',
+    'left' => 'Left'
 
 
 
