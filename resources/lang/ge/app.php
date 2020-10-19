@@ -51,6 +51,12 @@ return [
     'full_name' => 'სრული სახელი',
     'write_message' => 'დაწერეთ შეტყობინება',
     'description' => 'აღწერა',
-    'fill_out' => 'შეავსეთ განაცხადი'
+    'fill_out' => 'შეავსეთ განაცხადი',
+    'price_from' => 'ფასიდან',
+    'price_to' => 'ფასამდე',
+    'transmission' => 'ტრანსმისია',
+    'car' => 'მანქანა',
+    'result_not_found' => 'შედეგი ვერ მოიძებნა',
+    'announcements' => 'განცხადებები'
 
 ];

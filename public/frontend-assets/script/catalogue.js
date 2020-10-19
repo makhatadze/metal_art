@@ -1,9 +1,8 @@
-
 // show search box
 const showSearchBtn = document.querySelector('.search-btn');
 const searchInput = document.querySelector('#search-input');
 
-showSearchBtn.addEventListener('click', ()=> {
+showSearchBtn.addEventListener('click', () => {
     searchInput.classList.toggle('show');
 })
 
@@ -18,14 +17,14 @@ const cards = document.querySelectorAll('.catalogue-card');
 
 // list
 displayList.addEventListener('click', () => {
-    if(window.innerWidth < 1000) {
+    if (window.innerWidth < 1000) {
         // back tyo grid 
         itemWrapper.classList.remove('list');
         cards.forEach(c => {
             c.classList.remove('list');
         });
         return;  // under 1000 show grid only
-    }  
+    }
 
     displayList.classList.add('active');
     displayGrid.classList.remove('active');
@@ -35,7 +34,7 @@ displayList.addEventListener('click', () => {
     cards.forEach(c => {
         c.classList.add('list');
     })
-} );
+});
 
 // grid
 displayGrid.addEventListener('click', () => {
@@ -47,16 +46,33 @@ displayGrid.addEventListener('click', () => {
     cards.forEach(c => {
         c.classList.remove('list');
     })
-} );
+});
 
 
+function changeSearch(e) {
+    var str = 'searchValue=5';
 
+    str = str.replace(/searchValue=5/g, "searchValue=10");
+    let url = window.location.href;
+    let searchUrl = '';
+    if (url.includes('?')) {
+        if (url.includes('searchValue=')) {
+            let sp = url.split('?');
+            searchUrl = `${sp[0]}?searchValue=${e.target.value}`
+        } else {
+            searchUrl = `${url}&searchValue=${e.target.value}`
 
-
+        }
+    }
+    if (searchUrl == '') {
+        searchUrl = `${url}?searchValue=${e.target.value}`
+    }
+    location.href = searchUrl;
+}
 
 // change dolar gel filter
 // dollar - gel switch active class
-function changecurrency($id, $cur,id,dolarValue,realValue){
+function changecurrency($id, $cur, id, dolarValue, realValue) {
     // clear both
     let amount = realValue;
     if ($cur === 'dol') {
@@ -70,18 +86,17 @@ function changecurrency($id, $cur,id,dolarValue,realValue){
     amount = amount.join(',')
     let sel = `.gel-${id}`;
     $(sel).text(amount);
-    $('#'+$id+' .select-dol').removeClass('active');
-    $('#'+$id+' .select-gel').removeClass('active');
+    $('#' + $id + ' .select-dol').removeClass('active');
+    $('#' + $id + ' .select-gel').removeClass('active');
 
     // add to selected - $(#curr2 .select-gel) -dol)
-    $('#'+$id+' .select-'+$cur).addClass('active');
+    $('#' + $id + ' .select-' + $cur).addClass('active');
 }
 
 
-
-// pagination active  
-$('.activable').click(function(e) {
+// pagination active
+$('.activable').click(function (e) {
     $('.activable').removeClass('active');
 
-    $(e.target).addClass("active"); 
+    $(e.target).addClass("active");
 })

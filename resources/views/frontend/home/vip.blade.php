@@ -4,7 +4,7 @@
 
         <h2 class="vip-sales__heading">
             <img src="{{url('frontend-assets/img/logos/crown-i.svg')}}" alt="">
-            VIP განცხადებები
+            VIP {{__('app.announcements')}}
         </h2>
 
         <div class="vip-sales__slider">

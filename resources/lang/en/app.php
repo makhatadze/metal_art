@@ -51,7 +51,15 @@ return [
     'full_name' => 'Full Name',
     'write_message' => 'Write a message',
     'description' => 'Description',
-    'fill_out' => 'Fill out the application'
+    'fill_out' => 'Fill out the application',
+    'price_from' => 'Price from',
+    'price_to' => 'Price to',
+    'transmission' => 'Transmission',
+    'car' => 'Car',
+    'result_not_found' => 'Result not found',
+    'announcements' => 'Announcements'
+
+
 
 
 ];

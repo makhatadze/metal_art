@@ -14,7 +14,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -26,11 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $page = Page::where(['status' => true,'slug' => 'home'])->first();
+        $page = Page::where(['status' => true, 'slug' => 'home'])->first();
         if (!$page) {
             return abort('404');
         }
-        $products = Product::where(['status' => true,'vip' => false])
+        $products = Product::where(['status' => true, 'vip' => false])
             ->with(['transmission', 'category', 'condition', 'deal'])
             ->get();
         $vips = Product::where(['status' => true, 'vip' => true])
@@ -45,14 +44,14 @@ class HomeController extends Controller
             ->with('brands', $brands)
             ->with('transmissions', $transmissions)
             ->with('conditions', $conditions)
-            ->with('dolar',3.25)
-            ->with('page',$page)
+            ->with('dolar', 3.25)
+            ->with('page', $page)
             ->with('vips', $vips);
     }
 
     public function catalog(Request $request)
     {
-        $page = Page::where(['status' => true,'slug' => 'catalog'])->first();
+        $page = Page::where(['status' => true, 'slug' => 'catalog'])->first();
         if (!$page) {
             return abort('404');
         }
@@ -67,10 +66,13 @@ class HomeController extends Controller
                 'date_from' => 'integer',
                 'date_to' => 'integer',
                 'engine' => 'integer',
-                'category' => 'integer'
+                'category' => 'integer',
             ]);
             $products = Product::where(['status' => true])
-                ->with(['transmission', 'category', 'condition', 'deal','engine']);
+                ->with(['transmission', 'category', 'condition', 'deal', 'engine']);
+            if ($request->searchValue) {
+                $products->where('title_'.app()->getLocale(), 'like', '%'.$request->searchValue.'%');
+            }
             if ($request->brand) {
                 $products->where(['brand_id' => $request->brand]);
             }
@@ -106,10 +108,7 @@ class HomeController extends Controller
                 $products->where('created_date', '<', $to);
             }
 
-
-            $products = $products->paginate(2);
-
-
+            $products = $products->orderBy('vip', 'desc', 'created_at', 'desc')->paginate(1)->appends(request()->query());;
             $categories = Category::where(['status' => true])->get();
             $transmissions = Transmission::where(['status' => true])->get();
             $engines = Engine::where(['status' => true])->get();
@@ -127,8 +126,8 @@ class HomeController extends Controller
                 ->with('engines', $engines)
                 ->with('conditions', $conditions)
                 ->with('brands', $brands)
-                ->with('dolar',3.25)
-                ->with('page',$page)
+                ->with('dolar', 3.25)
+                ->with('page', $page)
                 ->with('brandModels', $brandModels);
 
         }
@@ -136,7 +135,7 @@ class HomeController extends Controller
 
     public function view(Product $product)
     {
-        $page = Page::where(['status' => true,'slug' => 'details'])->first();
+        $page = Page::where(['status' => true, 'slug' => 'details'])->first();
         if (!$page) {
             return abort('404');
         }
@@ -151,7 +150,7 @@ class HomeController extends Controller
             ->with(['transmission', 'category', 'condition', 'deal'])
             ->orderBy('created_at', 'desc')->paginate(4);
 
-        $vips = Product::where(['status' => true,'vip' => true])
+        $vips = Product::where(['status' => true, 'vip' => true])
             ->with(['transmission', 'category', 'condition', 'deal'])
             ->orderBy('created_at', 'desc')->paginate(4);
 
@@ -163,31 +162,34 @@ class HomeController extends Controller
             ->with('deal', $deal)
             ->with('engine', $engine)
             ->with('news', $news)
-            ->with('page',$page)
-            ->with('vips',$vips)
-            ->with('dolar',3.25)
+            ->with('page', $page)
+            ->with('vips', $vips)
+            ->with('dolar', 3.25)
             ->with('images', $images);
     }
 
-    public function about() {
-        $page = Page::where(['status' => true,'slug' => 'about-us'])->first();
+    public function about()
+    {
+        $page = Page::where(['status' => true, 'slug' => 'about-us'])->first();
         if (!$page) {
             return abort('404');
         }
-        return view('frontend.about.index')->with('page',$page);
+        return view('frontend.about.index')->with('page', $page);
 
     }
 
-    public function contact() {
-        $page = Page::where(['status' => true,'slug' => 'contact-us'])->first();
+    public function contact()
+    {
+        $page = Page::where(['status' => true, 'slug' => 'contact-us'])->first();
         if (!$page) {
             return abort('404');
         }
-        return view('frontend.contact.index')->with('page',$page);
+        return view('frontend.contact.index')->with('page', $page);
 
     }
 
-    private function setEnvironmentValue($environmentName, $configKey, $newValue) {
+    private function setEnvironmentValue($environmentName, $configKey, $newValue)
+    {
         file_put_contents(App::environmentFilePath(), str_replace(
             $environmentName . '=' . Config::get($configKey),
             $environmentName . '=' . $newValue,

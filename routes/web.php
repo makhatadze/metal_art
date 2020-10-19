@@ -9,12 +9,10 @@ use App\Http\Controllers\Admin\ConditionController;
 use App\Http\Controllers\Admin\DealController;
 use App\Http\Controllers\Admin\EngineController;
 use App\Http\Controllers\Admin\FuelController;
-use App\Http\Controllers\Admin\GearboxController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\SiteController;
-use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\TransmissionsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MailController;
@@ -51,14 +49,8 @@ Route::prefix('admin')->group(function () {
     Route::middleware(['auth'])->group(function () {
         Route::get('/logout', [LoginController::class,'logout'])->name('logout');
         Route::namespace('')->group(function () {
-            Route::get('students', [StudentController::class,'index'])->name('student-list');
             Route::get('/', [SiteController::class,'index'])->name('siteIndex'); // Added name
 
-            Route::get('users/{id}/edit/',[\App\Http\Controllers\Admin\UserController::class,'edit']);
-            Route::delete('users',[\App\Http\Controllers\Admin\UserController::class,'destroy'])->name('usersDestroy');
-            Route::any('users/edit/{id}',[\App\Http\Controllers\Admin\UserController::class,'edit'])->name('userEdit');
-            Route::post('users/create',[\App\Http\Controllers\Admin\UserController::class,'create'])->name('userCreate');
-            Route::resource('users',\App\Http\Controllers\Admin\UserController::class);
 
             // Routes for page
             Route::any('pages',[\App\Http\Controllers\Admin\PageController::class,'index'])->name('pageIndex');

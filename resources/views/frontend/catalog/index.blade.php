@@ -64,7 +64,7 @@
                             </div>
 
                             <h2 class="catalogue__filter-category">
-                                განბაჟების ტიპი
+                                {{__('app.custom')}}
                             </h2>
                             <div class="catalogue__select-wrap">
                                 <div class="catalogue__select-img">
@@ -78,7 +78,7 @@
 
 
                             <h2 class="catalogue__filter-category">
-                                კატეგორია
+                                {{__('app.category')}}
                             </h2>
                             <div class="catalogue__select-wrap">
                                 <div class="catalogue__select-img">
@@ -94,7 +94,7 @@
                             </div>
 
                             <h2 class="catalogue__filter-category">
-                                გამოშვების წელი - დან
+                                {{__('app.release_date')}}
                             </h2>
                             <div class="catalogue__select-wrap half">
                                 <select name="date_from">
@@ -111,18 +111,16 @@
                             </div>
 
                             <h2 class="catalogue__filter-category">
-                                ფასი
+                                {{__('app.price')}}
                             </h2>
                             <div class="catalogue__select-wrap half">
-                                <label for="price_from">{{__('app.from')}}</label>
-                                <input type="number" name="price_from" value="{{Request::get('price_from')}}">
-                                <label for="price_to">{{__('app.to')}}</label>
-                                <input type="number" name="price_to" value="{{Request::get('price_to')}}">
+                                <input type="number" placeholder="{{__('app.price_from')}}" value="0" name="price_from" value="{{Request::get('price_from')}}">
+                                <input type="number" placeholder="{{__('app.price_to')}}" value="50000" name="price_to" value="{{Request::get('price_to')}}">
                             </div>
 
-
+                            <input hidden name="searchValue" value="{{Request::get('searchValue') ? Request::get('searchValue') : ''}}">
                             <h2 class="catalogue__filter-category">
-                                ტრანსმისია
+                                {{__('app.transmission')}}
                             </h2>
                             <div class="catalogue__select-wrap">
                                 <div class="catalogue__select-img">
@@ -138,7 +136,7 @@
                             </div>
 
                             <h2 class="catalogue__filter-category">
-                                საწვავის ტიპი
+                                {{__('app.engine_type')}}
                             </h2>
                             <div class="catalogue__select-wrap">
                                 <div class="catalogue__select-img">
@@ -163,7 +161,7 @@
                                           stroke-linejoin="round" stroke-width="1"/>
                                 </svg>
 
-                                გაფილტვრა
+                                {{__('app.search')}}
                             </button>
 
 
@@ -182,7 +180,7 @@
 
                         <div class="header-left">
                             <p>
-                                <span id="cars-found">{{number_format($products->total(), 0)}}</span> მანქანა
+                                <span id="cars-found">{{number_format($products->total(), 0)}}</span> {{__('app.car')}}
                             </p>
 
                             <div class="catalogue__header-search-box">
@@ -195,13 +193,13 @@
                                     </svg>
 
                                 </button>
-                                <input id="search-input" type="text" placeholder="ძიება">
+                                <input id="search-input" value="{{Request::get('searchValue') ? Request::get('searchValue') : ''}}" onchange="changeSearch(event)" type="text" placeholder="ძიება">
                             </div>
                         </div>
 
                         <div class="catalogue__header-location">
                             <a href="{{route('site')}}">{{__('app.site')}}</a> &nbsp; &#47; &nbsp;
-                            <span>კატალოგი</span>
+                            <span>{{__('app.catalog')}}</span>
                         </div>
 
                         <div class="catalogue__header-view-btns">
@@ -252,7 +250,7 @@
                                             </p>
 
                                             <p class="card-list-data">
-                                                <img src="./img/logos/date-range.svg" alt="">
+                                                <img src="{{url('frontend-assets/img/logos/date-range.svg')}}" alt="">
                                                 განთავსების თარიღი : {{date('Y/m/d',strtotime($product->created_at))}}
                                             </p>
 
@@ -298,19 +296,15 @@
                                             <div class="catalogue-card__display">
                                                 <div class="catalogue-card__display-info">
                                                     <img src="{{url('frontend-assets/img/logos/people-i.png')}}" alt="">
-                                                    <p>3</p>
+                                                    <p>{{$product->people}}</p>
                                                 </div>
                                                 <div class="catalogue-card__display-info">
                                                     <img src="{{url('frontend-assets/img/logos/i-shopping-bag.png')}}" alt="">
-                                                    <p>5</p>
+                                                    <p>{{$product->luggage}}</p>
                                                 </div>
                                                 <div class="catalogue-card__display-info">
                                                     <img src="{{url('frontend-assets/img/logos/car-door.png')}}" alt="">
-                                                    <p>4</p>
-                                                </div>
-                                                <div class="catalogue-card__display-info">
-                                                    <img src="{{url('frontend-assets/img/logos/i-snowflake.png')}}" alt="">
-                                                    <p>A/C</p>
+                                                    <p>{{$product->door}}</p>
                                                 </div>
                                             </div>
 
@@ -327,8 +321,8 @@
                                                 <p>
                                                     <span id="catalogue-item-price" class="gel-{{$product->id}}">{{number_format($product->price, 0)}}</span>
                                                 </p>
-                                                <a class="cataloguecard__btn">
-                                                    კონტაქტი
+                                                <a class="cataloguecard__btn" href="{{route('catalogView',$product->id)}}">
+                                                    {{__('app.in_details')}}
                                                 </a>
                                             </div>
                                         </div>
@@ -338,7 +332,7 @@
 
                             @endforeach
                         @else
-                            <h1>Result not found</h1>
+                            <h1>{{__('app.result_not_found')}}</h1>
                         @endif
                         <!-- card end-->
 
@@ -356,5 +350,4 @@
 
 @endsection
 @section('custom-scripts')
-    <script src="{{url('frontend-assets/script/test.js')}}"></script>
 @endsection

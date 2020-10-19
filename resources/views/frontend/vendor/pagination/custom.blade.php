@@ -1,3 +1,11 @@
+<?php
+//$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+//$search = explode('?',$actual_link);
+//if (isset($search[1])) {
+//    $page = explode('&',$search[1]);
+//}
+//dd($page);
+//?>
 @if ($paginator->hasPages())
         <div class="catalogue__pagination">
             {{-- Previous Page Link --}}

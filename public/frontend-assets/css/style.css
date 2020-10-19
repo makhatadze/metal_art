@@ -970,6 +970,17 @@ main {
     color: rgb(51, 51, 51);
 }
 
+.catalogueselect-wrap.half input {
+    width: 50%;
+    border: none;
+    border-right: 1px solid #E2E2E2;
+    font-family: "BPG Arial Caps", sans-serif;
+    padding: 0 17px;
+    color: #BBBBBB;
+}
+.catalogueselect-wrap.half input::placeholder {
+    color: #BBBBBB;
+}
 
 .catalogue__filter-btn {
     line-height: 37px ;
