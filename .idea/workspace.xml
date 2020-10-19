@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3d51b9db-7f3b-4935-adfa-fc1bbaf7761b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ge/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ge/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/catalog/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/catalog/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/home/vip.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home/vip.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,6 +245,7 @@
       <workItem from="1602919569093" duration="10506000" />
       <workItem from="1602947424801" duration="2561000" />
       <workItem from="1603007758511" duration="7639000" />
+      <workItem from="1603110179042" duration="1045000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings and translations.">
       <created>1603092223375</created>

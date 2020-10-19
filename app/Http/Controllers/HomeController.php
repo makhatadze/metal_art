@@ -115,7 +115,7 @@ class HomeController extends Controller
                 $products->where('created_date', '<', $to);
             }
 
-            $products = $products->orderBy('vip', 'desc', 'created_at', 'desc')->paginate(1)->appends(request()->query());;
+            $products = $products->orderBy('vip', 'desc', 'created_at', 'desc')->paginate(3)->appends(request()->query());;
             $categories = Category::where(['status' => true])->get();
             $transmissions = Transmission::where(['status' => true])->get();
             $engines = Engine::where(['status' => true])->get();
