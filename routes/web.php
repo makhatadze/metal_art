@@ -5,9 +5,7 @@ use App\Http\Controllers\Admin\auth\LoginController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\BrandModelController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\ConditionController;
 use App\Http\Controllers\Admin\DealController;
-use App\Http\Controllers\Admin\EngineController;
 use App\Http\Controllers\Admin\FuelController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\ProductController;
@@ -84,23 +82,12 @@ Route::prefix('admin')->group(function () {
             Route::get('fuels/activate/{fuel}',[FuelController::class,'activate'])->name('fuelActivate');
             Route::match(['get', 'post'],'fuels/create',[FuelController::class,'create'])->name('fuelCreate');
 
-            // Routes for Product Condition
-            Route::any('conditions',[ConditionController::class,'index'])->name('conditionIndex');
-            Route::any('conditions/update/{condition}',[ConditionController::class,'update'])->name('conditionUpdate');
-            Route::get('conditions/activate/{condition}',[ConditionController::class,'activate'])->name('conditionActivate');
-            Route::match(['get', 'post'],'conditions/create',[ConditionController::class,'create'])->name('conditionCreate');
-
             // Routes for Product Transmission
             Route::any('transmissions',[TransmissionsController::class,'index'])->name('transmissionIndex');
             Route::any('transmissions/update/{transmission}',[TransmissionsController::class,'update'])->name('transmissionUpdate');
             Route::get('transmissions/activate/{transmission}',[TransmissionsController::class,'activate'])->name('transmissionActivate');
             Route::match(['get', 'post'],'transmissions/create',[TransmissionsController::class,'create'])->name('transmissionCreate');
 
-            // Routes for Product Transmission
-            Route::any('engines',[EngineController::class,'index'])->name('engineIndex');
-            Route::any('engines/update/{engine}',[EngineController::class,'update'])->name('engineUpdate');
-            Route::get('engines/activate/{engine}',[EngineController::class,'activate'])->name('engineActivate');
-            Route::match(['get', 'post'],'engines/create',[EngineController::class,'create'])->name('engineCreate');
 
             // Routes for Product Deal
             Route::any('deals',[DealController::class,'index'])->name('dealIndex');
@@ -123,6 +110,7 @@ Route::prefix('admin')->group(function () {
             Route::get('products/activate/{product}',[ProductController::class,'activate'])->name('productActivate');
             Route::get('products/vip/{product}',[ProductController::class,'vip'])->name('productVip');
             Route::match(['get', 'post'],'products/create',[ProductController::class,'create'])->name('productCreate');
+            Route::get('products/delete/{product}',[ProductController::class,'delete'])->name('productDelete');
             Route::get('products/models',[ProductController::class,'models'])->name('getModels');
 
 

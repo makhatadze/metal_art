@@ -48,22 +48,6 @@
                             </div>
 
                             <h2 class="catalogue__filter-category">
-                                {{__('app.condition')}}
-                            </h2>
-                            <div class="catalogue__select-wrap">
-                                <div class="catalogue__select-img">
-                                    <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
-                                </div>
-                                <select name="condition" class="select2">
-                                    @if ($conditions)
-                                        @foreach($conditions as $cond)
-                                            <option {{(Request::get('condition') && Request::get('condition') == $cond->id) ? 'selected' : ''}} value="{{$cond->id}}">{{$cond->{"title_".app()->getLocale()} }}</option>
-                                        @endforeach
-                                    @endif
-                                </select>
-                            </div>
-
-                            <h2 class="catalogue__filter-category">
                                 {{__('app.custom')}}
                             </h2>
                             <div class="catalogue__select-wrap">
@@ -98,13 +82,13 @@
                             </h2>
                             <div class="catalogue__select-wrap half">
                                 <select name="date_from" class="select2">
-                                    @foreach(range(1980,date("Y")) as $date )
+                                    @foreach(array_reverse(range(1980,date("Y"))) as $date )
                                     <option {{(Request::get('date_from') == $date) ? 'selected' : ''}} value="{{$date}}">{{$date}}</option>
                                     @endforeach
                                 </select>
 
                                 <select name="date_to" class="select2">
-                                    @foreach(range(1980,date("Y")) as $date )
+                                    @foreach(array_reverse(range(1980,date("Y"))) as $date )
                                         <option {{(Request::get('date_to') == $date) ? 'selected' : ''}} value="{{$date}}">{{$date}}</option>
                                     @endforeach
                                 </select>
@@ -114,8 +98,8 @@
                                 {{__('app.price')}}
                             </h2>
                             <div class="catalogue__select-wrap half">
-                                <input type="number" id="price" placeholder="{{__('app.price_from')}}" value="0" name="price_from" value="{{Request::get('price_from')}}">
-                                <input type="number" id="price" placeholder="{{__('app.price_to')}}" value="100000" name="price_to" value="{{Request::get('price_to')}}">
+                                <input type="number" id="price" placeholder="{{__('app.price_from')}}"  name="price_from" value="{{Request::get('price_from')}}">
+                                <input type="number" id="price" placeholder="{{__('app.price_to')}}" name="price_to" value="{{Request::get('price_to')}}">
                             </div>
 
                             <input hidden name="searchValue" value="{{Request::get('searchValue') ? Request::get('searchValue') : ''}}">

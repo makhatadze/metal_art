@@ -35,15 +35,6 @@ class CreateProductsTable extends Migration
             $table->bigInteger('transmission_id')->unsigned()->index()->nullable();
             $table->foreign('transmission_id')->references('id')->on('transmissions')->onUpdate('set null');
 
-
-            // Engine
-            $table->bigInteger('engine_id')->unsigned()->index()->nullable();
-            $table->foreign('engine_id')->references('id')->on('engines')->onUpdate('set null');
-
-            // Condition
-            $table->bigInteger('condition_id')->unsigned()->index()->nullable();
-            $table->foreign('condition_id')->references('id')->on('conditions')->onUpdate('set null');
-
             // Deal Type
             $table->bigInteger('deal_id')->unsigned()->index()->nullable();
             $table->foreign('deal_id')->references('id')->on('deals')->onUpdate('set null');
@@ -54,15 +45,12 @@ class CreateProductsTable extends Migration
             $table->text('description_ge')->nullable();
             $table->text('description_en')->nullable();
             $table->float('price');
-            $table->string('luggage');
             $table->timestamp('created_date');
             $table->string('mileage');
+            $table->string('phone');
             $table->string('engine_capacity');
-            $table->integer('door');
-            $table->integer('people');
             $table->boolean('wheel');
             $table->boolean('custom');
-            $table->boolean('new');
             $table->boolean('vip')->default(false);
             $table->boolean('status')->default(false);
             $table->timestamps();

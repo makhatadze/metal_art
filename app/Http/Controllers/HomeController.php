@@ -67,9 +67,6 @@ class HomeController extends Controller
                 'custom' => 'integer',
                 'brand' => 'integer',
                 'transmission' => 'integer',
-                'condition' => 'integer',
-                'price_from' => 'integer',
-                'price_to' => 'integer',
                 'date_from' => 'integer',
                 'date_to' => 'integer',
                 'engine' => 'integer',
@@ -89,9 +86,7 @@ class HomeController extends Controller
             if ($request->transmission) {
                 $products->where(['transmission_id' => $request->transmission]);
             }
-            if ($request->condition) {
-                $products->where(['condition_id' => $request->condition]);
-            }
+
             if ($request->category) {
                 $products->where(['category_id' => $request->category]);
             }
