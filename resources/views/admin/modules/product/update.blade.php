@@ -27,15 +27,6 @@
                                         </span>
                         @endif
                     </div>
-                    <div class="relative mt-3 {{ $errors->has('luggage') ? ' has-error' : '' }}">
-                        {{ Form::label('luggage', 'საბარგულის ზომა', ['class' => 'font-helvetica']) }}
-                        {{ Form::text('luggage', $product->luggage, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
-                        @if ($errors->has('luggage'))
-                            <span class="help-block">
-                                            {{ $errors->first('luggage') }}
-                                        </span>
-                        @endif
-                    </div>
                     <div class="relative mt-3 {{ $errors->has('mileage') ? ' has-error' : '' }}">
                         {{ Form::label('mileage', 'გარბენის ოდენობა', ['class' => 'font-helvetica']) }}
                         {{ Form::text('mileage', $product->mileage, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
@@ -45,10 +36,19 @@
                                         </span>
                         @endif
                     </div>
+                    <div class="relative mt-4 {{ $errors->has('created_date') ? ' has-error' : '' }}">
+                        {{ Form::label('created_date', 'გამოშვების თარიღი', ['class' => 'font-helvetica']) }}
+                        {{ Form::date('created_date', Carbon\Carbon::parse($product->created_date), ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
+                        @if ($errors->has('created_date'))
+                            <span class="help-block">
+                                            {{ $errors->first('created_date') }}
+                                        </span>
+                        @endif
+                    </div>
                 </div>
                 <div class="sm:grid grid-cols-4 gap-4 mb-4">
                     <div class="relative mt-4 {{ $errors->has('price') ? ' has-error' : '' }}">
-                        {{ Form::label('price', 'ფასი ლარში', ['class' => 'font-helvetica']) }}
+                        {{ Form::label('price', 'ფასი დოლარში', ['class' => 'font-helvetica']) }}
                         {{ Form::text('price', $product->price, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
                         @if ($errors->has('price'))
                             <span class="help-block">
@@ -65,15 +65,6 @@
                                         </span>
                         @endif
                     </div>
-                    <div class="relative mt-4 {{ $errors->has('new') ? ' has-error' : '' }}">
-                        {{ Form::label('new', 'მანქანის შესახებ', ['class' => 'font-helvetica']) }}
-                        {{ Form::select('new',[1=>'ახალი',0=>'მეორადი'], $product->new, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
-                        @if ($errors->has('new'))
-                            <span class="help-block">
-                                            {{ $errors->first('new') }}
-                                        </span>
-                        @endif
-                    </div>
                     <div class="relative mt-4">
                         <label class="font-helvetica">გარიგების ტიპი</label>
                         <div class="mt-2">
@@ -87,6 +78,16 @@
                             </select>
                         </div>
                     </div>
+                    <div class="relative mt-3 {{ $errors->has('phone') ? ' has-error' : '' }}">
+                        {{ Form::label('phone', 'ტელეფონის ნომერი', ['class' => 'font-helvetica']) }}
+                        {{ Form::text('phone', $product->phone, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
+                        @if ($errors->has('mileage'))
+                            <span class="help-block">
+                                            {{ $errors->first('phone') }}
+                                        </span>
+                        @endif
+                    </div>
+
                 </div>
                 <div class="sm:grid grid-cols-4 gap-4 mb-4">
                     <div class="relative mt-4">
@@ -118,7 +119,7 @@
                     <div class="relative mt-4 {{ $errors->has('engine_capacity') ? ' has-error' : '' }}">
                         {{ Form::label('engine_capacity', 'ძრავის მოცულობა', ['class' => 'font-helvetica']) }}
                         <input class="input w-full border mt-2 col-span-2"
-                               type="number" required min="0.1" value="0.1" step="0.1" name="engine_capacity"
+                               type="number" required min="0.1" value="{{$product->engine_capacity}}" step="0.1" name="engine_capacity"
                                value="{{$product->engine_capacity}}">
                         @if ($errors->has('engine_capacity'))
                             <span class="help-block">
@@ -127,9 +128,9 @@
                         @endif
                     </div>
                     <div class="relative mt-4">
-                        <label class="font-helvetica">საწვავი</label>
+                        <label class="font-helvetica">წვის ტიპი</label>
                         <div class="mt-2">
-                            <select data-placeholder="აირჩიეთ საწვავი"
+                            <select data-placeholder="წვის ტიპი"
                                     name="fuel"
                                     value="{{$product->fuel_id}}"
                                     class="font-helvetica select2 w-full">
@@ -141,47 +142,7 @@
                     </div>
 
                 </div>
-                <div class="sm:grid grid-cols-4 gap-4 mb-4">
-                    <div class="relative mt-4 {{ $errors->has('people') ? ' has-error' : '' }}">
-                        {{ Form::label('people', 'მგზავრების ოდენობა', ['class' => 'font-helvetica']) }}
-                        {{ Form::text('people', $product->people, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
-                        @if ($errors->has('people'))
-                            <span class="help-block">
-                                            {{ $errors->first('people') }}
-                                        </span>
-                        @endif
-                    </div>
-                    <div class="relative mt-4 {{ $errors->has('door') ? ' has-error' : '' }}">
-                        {{ Form::label('door', 'კარებების ოდენობა', ['class' => 'font-helvetica']) }}
-                        {{ Form::text('door', $product->door, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
-                        @if ($errors->has('door'))
-                            <span class="help-block">
-                                            {{ $errors->first('door') }}
-                                        </span>
-                        @endif
-                    </div>
-                    <div class="relative mt-4 {{ $errors->has('wheel') ? ' has-error' : '' }}">
-                        {{ Form::label('wheel', 'wheel', ['class' => 'font-helvetica']) }}
-                        {{ Form::select('wheel',[1=>'მარჯვენა',0=>'მარცხენა'], $product->wheel, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
-                        @if ($errors->has('wheel'))
-                            <span class="help-block">
-                                            {{ $errors->first('wheel') }}
-                                        </span>
-                        @endif
-                    </div>
-                    <div class="relative mt-4 {{ $errors->has('vip') ? ' has-error' : '' }}">
-                        {{ Form::label('vip', 'VIP', ['class' => 'font-helvetica']) }}
-                        {{ Form::select('vip',[1=>'კი',0=>'არა'], $product->vip, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
-                        @if ($errors->has('vip'))
-                            <span class="help-block">
-                                            {{ $errors->first('vip') }}
-                                        </span>
-                        @endif
-                    </div>
-
-                </div>
                 <div class="sm:grid grid-cols-5 gap-5 mb-2">
-
                     <div class="relative mt-4">
                         <label class="font-helvetica">მწარმოებელი</label>
                         <div class="mt-2">
@@ -207,40 +168,33 @@
                             </select>
                         </div>
                     </div>
-                    <div class="relative mt-4 {{ $errors->has('created_date') ? ' has-error' : '' }}">
-                        {{ Form::label('created_date', 'გამოშვების თარიღი', ['class' => 'font-helvetica']) }}
-                        {{ Form::date('created_date', Carbon\Carbon::parse($product->created_date), ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
-                        @if ($errors->has('created_date'))
+                    <div class="relative mt-4 {{ $errors->has('wheel') ? ' has-error' : '' }}">
+                        {{ Form::label('wheel', 'wheel', ['class' => 'font-helvetica']) }}
+                        {{ Form::select('wheel',[1=>'მარჯვენა',0=>'მარცხენა'], $product->wheel, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
+                        @if ($errors->has('wheel'))
                             <span class="help-block">
-                                            {{ $errors->first('created_date') }}
+                                            {{ $errors->first('wheel') }}
                                         </span>
                         @endif
                     </div>
-                    <div class="relative mt-4">
-                        <label class="font-helvetica">მდგომარეობა</label>
-                        <div class="mt-2">
-                            <select data-placeholder="აირჩიეთ მდგომარეობა"
-                                    name="condition" value="{{$product->condition_id}}"
-                                    class="font-helvetica select2 w-full">
-                                @foreach ($conditions as $cond)
-                                    <option value="{{$cond->id}}"> {{$cond->title_ge}}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                    <div class="relative mt-4 {{ $errors->has('vip') ? ' has-error' : '' }}">
+                        {{ Form::label('vip', 'VIP', ['class' => 'font-helvetica']) }}
+                        {{ Form::select('vip',[1=>'კი',0=>'არა'], $product->vip, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
+                        @if ($errors->has('vip'))
+                            <span class="help-block">
+                                            {{ $errors->first('vip') }}
+                                        </span>
+                        @endif
                     </div>
-                    <div class="relative mt-4">
-                        <label class="font-helvetica">ძრავის ტიპი</label>
-                        <div class="mt-2">
-                            <select data-placeholder="აირჩიეთ ძრავის ტიპი"
-                                    name="engine" value="{{$product->engine_id}}"
-                                    class="font-helvetica select2 w-full">
-                                @foreach ($engines as $eng)
-                                    <option value="{{$eng->id}}"> {{$eng->title_ge}}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                    <div class="relative mt-4 {{ $errors->has('drive') ? ' has-error' : '' }}">
+                        {{ Form::label('drive', 'წამყვანი თვლები', ['class' => 'font-helvetica']) }}
+                        {{ Form::text('drive', $product->drive, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
+                        @if ($errors->has('drive'))
+                            <span class="help-block">
+                                            {{ $errors->first('drive') }}
+                                        </span>
+                        @endif
                     </div>
-
                 </div>
 
                 <div class="relative mt-4 {{ $errors->has('description_ge') ? ' has-error' : '' }}">

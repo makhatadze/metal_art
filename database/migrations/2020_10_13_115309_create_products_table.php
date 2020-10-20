@@ -51,6 +51,7 @@ class CreateProductsTable extends Migration
             $table->string('engine_capacity');
             $table->boolean('wheel');
             $table->boolean('custom');
+            $table->string('drive');
             $table->boolean('vip')->default(false);
             $table->boolean('status')->default(false);
             $table->timestamps();

@@ -2,19 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d51b9db-7f3b-4935-adfa-fc1bbaf7761b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/75cb9270-c5bd-4ea3-927e-0779061c6e32.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/75cb9270-c5bd-4ea3-927e-0779061c6e32.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ConditionController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/EngineController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/FuelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/FuelController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_12_115953_create_conditions_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_12_124818_create_engines_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Condition.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Engine.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_13_115309_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_13_115309_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/modules/fuel/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/modules/fuel/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/modules/fuel/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/modules/fuel/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/modules/fuel/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/modules/fuel/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/modules/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/modules/product/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/modules/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/modules/product/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/modules/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/modules/site/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/catalog/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/catalog/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/modules/product/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/modules/product/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/desktop_menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/desktop_menu.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +192,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.env" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/frontend/mail" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CRM-DIMOND" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -259,7 +260,7 @@
       <workItem from="1603111517607" duration="156000" />
       <workItem from="1603115507669" duration="4217000" />
       <workItem from="1603173382324" duration="748000" />
-      <workItem from="1603187302109" duration="6997000" />
+      <workItem from="1603187302109" duration="11273000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings and translations.">
       <created>1603092223375</created>
@@ -345,7 +346,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603194567429</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Delete condition and engine.">
+      <created>1603197666751</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1603197666751</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,7 +371,8 @@
     <MESSAGE value="import select2" />
     <MESSAGE value="Change select2 styles." />
     <MESSAGE value="Add mailers." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add mailers." />
+    <MESSAGE value="Delete condition and engine." />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete condition and engine." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2544" y="234" width="734" height="646" key="#Inspections" timestamp="1602225352070">
@@ -391,23 +400,23 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2648" y="310" width="526" height="493" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603193018982" />
-    <state x="2454" y="100" width="914" height="602" key="CommitChangelistDialog2" timestamp="1603194567241">
+    <state x="2454" y="100" width="914" height="602" key="CommitChangelistDialog2" timestamp="1603197666613">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="380" y="67" width="745" height="617" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1603018624336" />
     <state x="534" y="125" width="914" height="602" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603119509683" />
-    <state x="2454" y="100" width="914" height="914" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603194567241" />
+    <state x="2454" y="100" width="914" height="914" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603197666613" />
     <state x="37" y="135" width="1215" height="609" key="DiffContextDialog" timestamp="1603116509417">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="26" y="75" width="1215" height="609" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1603018623524" />
     <state x="37" y="135" key="DiffContextDialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603116509417" />
     <state x="2137" y="109" width="1538" height="903" key="DiffContextDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602852787677" />
-    <state x="2654" y="290" width="426" height="493" key="FileChooserDialogImpl" timestamp="1603174128847">
+    <state x="2654" y="290" width="426" height="493" key="FileChooserDialogImpl" timestamp="1603202063259">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="734" y="310" width="426" height="493" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1602232385780" />
-    <state x="2654" y="290" width="426" height="493" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603174128847" />
+    <state x="2654" y="290" width="426" height="493" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603202063259" />
     <state x="778" y="310" width="426" height="493" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1602075899718" />
     <state width="261" height="506" key="HiddenNamespacesPopup" timestamp="1602075075076">
       <screen x="72" y="27" width="1848" height="1053" />
@@ -430,20 +439,20 @@
     <state x="625" y="327" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1602253606559" />
     <state x="2546" y="308" width="1024" height="737" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603099036427" />
     <state x="674" y="327" width="1024" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1602079358619" />
-    <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2" timestamp="1603194568577">
+    <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2" timestamp="1603197667722">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="590" y="294" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603119511314" />
-    <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603194568577" />
+    <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603197667722" />
     <state x="2772" y="412" width="198" height="256" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1602852324112">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2772" y="412" width="198" height="256" key="com.intellij.database.actions.DdlActions$CreateObject$1/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602852324112" />
     <state x="892" y="429" width="198" height="256" key="com.intellij.database.actions.DdlActions$CreateObject$1/72.27.1848.1053@72.27.1848.1053" timestamp="1602074814946" />
-    <state x="2759" y="423" width="379" height="307" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603197552656">
+    <state x="2759" y="423" width="379" height="307" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603200554401">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2759" y="423" width="379" height="307" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603197552656" />
+    <state x="2759" y="423" width="379" height="307" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603200554401" />
     <state x="880" y="439" width="369" height="265" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/72.27.1848.1053@72.27.1848.1053" timestamp="1602074809223" />
     <state x="2668" y="368" width="486" height="378" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1602495718965">
       <screen x="1920" y="0" width="1920" height="1080" />

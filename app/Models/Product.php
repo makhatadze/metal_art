@@ -21,24 +21,20 @@ class Product extends Model
         'category_id',
         'fuel_id',
         'transmission_id',
-        'engine_id',
-        'condition_id',
         'deal_id',
         'title_ge',
         'title_en',
         'description_ge',
         'description_en',
         'price',
-        'luggage',
         'mileage',
-        'people',
-        'door',
         'wheel',
         'custom',
+        'phone',
         'created_date',
         'engine_capacity',
-        'new',
         'vip',
+        'drive',
         'status'
     ];
     protected $table = 'products';
@@ -72,13 +68,6 @@ class Product extends Model
         return $this->hasOne('App\Models\Fuel', 'id','fuel_id');
     }
 
-    public function engine(){
-        return $this->hasOne('App\Models\Engine', 'id','engine_id');
-    }
-
-    public function condition(){
-        return $this->hasOne('App\Models\Condition', 'id','condition_id');
-    }
 
     public function deal(){
         return $this->hasOne('App\Models\Deal', 'id','deal_id');

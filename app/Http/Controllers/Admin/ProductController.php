@@ -27,8 +27,14 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends AdminController
 {
-    public function index()
+    public function index(Request $request)
     {
+        $request->all();
+        if($request->id) {
+            $products = Product::where(['id' => $request->id])->get();
+            return view('admin.modules.product.index', compact('products', $products));
+
+        }
         $products = Product::all();
         return view('admin.modules.product.index', compact('products', $products));
     }
@@ -42,16 +48,12 @@ class ProductController extends AdminController
             $transmissions = Transmission::where(['status' => true])->get();
             $deals = Deal::where(['status' => true])->get();
             $fuels = Fuel::where(['status' => true])->get();
-            $conditions = Condition::where(['status' => true])->get();
-            $engines = Engine::where(['status' => true])->get();
             return view('admin.modules.product.create')
                 ->with('brands', $brands)
                 ->with('brandModels', $brandModels)
                 ->with('categories', $categories)
                 ->with('transmissions', $transmissions)
                 ->with('deals', $deals)
-                ->with('conditions', $conditions)
-                ->with('engines', $engines)
                 ->with('fuels', $fuels);
         }
         if ($request->isMethod('POST')) {
@@ -61,25 +63,21 @@ class ProductController extends AdminController
                     'title_ge' => 'required|string|max:255',
                     'title_en' => 'required|string|max:255',
                     'description_ge' => 'required|string',
-                    'description_en' => 'required|string',
                     'price' => 'required|integer',
-                    'luggage' => 'required|integer',
                     'mileage' => 'required|string',
                     'custom' => 'required|integer',
-                    'door' => 'required|integer',
-                    'people' => 'required|integer',
                     'wheel' => 'required|integer',
                     'vip' => 'required|integer',
                     'created_date' => 'required',
+                    'drive' => 'required|string',
                     'engine_capacity' => 'required',
                     'brand' => 'required|integer',
                     'model' => 'required|integer',
                     'category' => 'required|integer',
                     'fuel' => 'required|integer',
                     'transmission' => 'required|integer',
-                    'condition' => 'required|integer',
                     'deal' => 'required|integer',
-                    'engine' => 'required|integer',
+                    'phone' => 'required',
                     'kartik-input-700' => 'required'
                 ]);
             $product = new Product([
@@ -91,8 +89,6 @@ class ProductController extends AdminController
                 'created_date' => $request->created_date,
                 'engine_capacity' => $request->engine_capacity,
                 'mileage' => $request->mileage,
-                'door' => $request->door,
-                'luggage' => $request->luggage,
                 'custom' => $request->custom,
                 'people' => $request->people,
                 'wheel' => $request->wheel,
@@ -101,11 +97,10 @@ class ProductController extends AdminController
                 'category_id' => $request->category,
                 'fuel_id' => $request->fuel,
                 'transmission_id' => $request->transmission,
-                'engine_id' => $request->engine,
-                'condition_id' => $request->condition,
                 'deal_id' => $request->deal,
-                'new' => $request->new,
                 'vip' => $request->vip,
+                'phone' => $request->phone,
+                'drive' => $request->drive
 
             ]);
             $product->save();
@@ -135,9 +130,7 @@ class ProductController extends AdminController
             $transmissions = Transmission::where(['status' => true])->get();
             $deals = Deal::where(['status' => true])->get();
             $fuels = Fuel::where(['status' => true])->get();
-            $conditions = Condition::where(['status' => true])->get();
             $images = Image::where(['imageable_type' => 'App\Models\Product', 'imageable_id' => $product->id])->get();
-            $engines = Engine::where(['status' => true])->get();
 
             return view('admin.modules.product.update')
                 ->with('brands', $brands)
@@ -145,9 +138,7 @@ class ProductController extends AdminController
                 ->with('categories', $categories)
                 ->with('transmissions', $transmissions)
                 ->with('deals', $deals)
-                ->with('conditions', $conditions)
                 ->with('fuels', $fuels)
-                ->with('engines', $engines)
                 ->with('product', $product)
                 ->with('images', $images);
         }
@@ -158,24 +149,20 @@ class ProductController extends AdminController
                     'title_ge' => 'required|string|max:255',
                     'title_en' => 'required|string|max:255',
                     'description_ge' => 'required|string',
-                    'description_en' => 'required|string',
+                    'drive' => 'required|string',
                     'price' => 'required|integer',
-                    'luggage' => 'required|integer',
                     'mileage' => 'required|string',
-                    'engine' => 'required|integer',
                     'custom' => 'required|integer',
-                    'door' => 'required|integer',
-                    'people' => 'required|integer',
                     'wheel' => 'required|integer',
                     'vip' => 'required|integer',
                     'created_date' => 'required',
+                    'phone' => 'required|string',
                     'engine_capacity' => 'required',
                     'brand' => 'required|integer',
                     'model' => 'required|integer',
                     'category' => 'required|integer',
                     'fuel' => 'required|integer',
                     'transmission' => 'required|integer',
-                    'condition' => 'required|integer',
                     'deal' => 'required|integer'
                 ]);
             $product->title_ge = $request->title_ge;
@@ -186,21 +173,17 @@ class ProductController extends AdminController
             $product->created_date = $request->created_date;
             $product->engine_capacity = $request->engine_capacity;
             $product->mileage = $request->mileage;
-            $product->door = $request->door;
-            $product->luggage = $request->luggage;
             $product->custom = $request->custom;
-            $product->people = $request->people;
             $product->wheel = $request->wheel;
             $product->brand_id = $request->brand;
             $product->model_id = $request->model;
             $product->category_id = $request->category;
             $product->fuel_id = $request->fuel;
             $product->transmission_id = $request->transmission;
-            $product->engine_id = $request->engine;
-            $product->condition_id = $request->condition;
             $product->deal_id = $request->deal;
-            $product->new = $request->new;
             $product->vip = $request->vip;
+            $product->phone = $request->phone;
+            $product->drive = $request->drive;
             $product->save();
 
             if ($request->hasFile('kartik-input-700')) {

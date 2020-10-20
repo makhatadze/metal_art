@@ -6,7 +6,32 @@
         </div>
         <!-- /.col-lg-12 -->
     </div>
-    <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
+    {!! Form::open(['method'=>'GET']) !!}
+    <div class="col-span-6 xxl:col-span-3 -mb-10 pb-10 mb-5">
+        <h6 class="font-bold font-caps text-gray-700 text-xs">ფილტრი</h6>
+        <div class="box mt-3 p-2">
+            <div class="flex flex-wrap -mx-3  mt-3">
+                <div class=" px-3 mb-6 md:mb-0 {{ $errors->has('id') ? ' has-error' : '' }}">
+                    {{ Form::text('id',Request::get('id') ? Request::get('id') : '', ['class' => 'input w-full border mt-2 col-span-2']) }}
+                    @if ($errors->has('id'))
+                        <span class="help-block">
+                                            {{ $errors->first('id') }}
+                                        </span>
+                    @endif
+                </div>
+                <div class="w-full md:w-1/2 px-3">
+                    <button type="submit"
+                            class="mt-2 block appearance-none font-bold font-caps bg-indigo-500 text-xs text-white bg-gray-200 border border-gray-200  py-3 px-4 pr-8 rounded leading-tight"
+                            id="category-search">
+                        ძებნა
+                    </button>
+                </div>
+            </div>
+
+    </div>
+
+    {!! Form::close() !!}
+    <div class="w-full sm:w-auto flex mt-4 sm:mt-0 mt-5">
         <a href="{{route('productCreate')}}" class="button text-white bg-theme-1 shadow-md mr-2">პროდუქტის დამატება</a>
     </div>
     <div class="intro-y datatable-wrapper box p-5 mt-5">

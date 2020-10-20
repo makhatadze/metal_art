@@ -7,7 +7,7 @@
         <!-- /.col-lg-12 -->
     </div>
     <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
-        <a href="{{route('fuelCreate')}}" class="button text-white bg-theme-1 shadow-md mr-2">საწვავის დამატება</a>
+        <a href="{{route('fuelCreate')}}" class="button text-white bg-theme-1 shadow-md mr-2">წვის ტიპის დამატება</a>
     </div>
     <div class="intro-y datatable-wrapper box p-5 mt-5">
         <table class="table table-report table-report--bordered display datatable w-full">

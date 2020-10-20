@@ -41,7 +41,7 @@ class FuelController extends AdminController
                 'title_en' => $request->title_en,
             ]);
             $fuel->save();
-            return redirect('admin/fuels')->with('success', 'საწვავი წარმატებით შეიქმნა.');
+            return redirect('admin/fuels')->with('success', 'წვის ტიპი წარმატებით შეიქმნა.');
 
         }
     }
@@ -60,13 +60,13 @@ class FuelController extends AdminController
             $fuel->title_ge = $request->title_ge;
             $fuel->title_en = $request->title_en;
             $fuel->save();
-            return redirect('admin/fuels')->with('success', 'საწვავი წარმატებით რედაქტირდა.');
+            return redirect('admin/fuels')->with('success', 'წვის ტიპი წარმატებით რედაქტირდა.');
 
         }
     }
 
     public function activate(Fuel $fuel) {
-        $message = ($fuel->status) ? 'საწვავი დეაქტივირებულია.' : 'საწვავი გააქტიურდა.';
+        $message = ($fuel->status) ? 'წვის ტიპი დეაქტივირებულია.' : 'წვის ტიპი გააქტიურდა.';
         $fuel->status = !$fuel->status;
         $fuel->save();
         return redirect('admin/fuels')->with('success', $message);
