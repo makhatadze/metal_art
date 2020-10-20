@@ -70,10 +70,9 @@
         <section id="content">
             <h2> სახელი: {{$data['first_name']}}</h2>
             <h2> გვარი: {{$data['last_name']}}</h2>
-            <h2> პირადი ნომერი: {{$data['pid']}}</h2>
             <h2> ტელეფონის ნომერი: {{$data['phone']}}</h2>
-            <h2> ელ-ფოსტა: {{$data['email']}}</h2>
-            <h2> დაბადების თარიღი: {{$data['birthday']}}</h2>
+            <h2> მისამართი : {{$data['address']}}</h2>
+            <h2> აღწერა: {{$data['description']}}</h2>
         </section>
     </section>
 </section>

@@ -76,11 +76,11 @@
 <section id="wrapper">
     <section id="maincContent">
         <section id="content">
-            <h2> სრული სახელი: {{$data['full_name']}}</h2>
-            <h2> მობილური : {{$data['phone']}}</h2>
-            <h2> ელ-ფოსტა: {{$data['email']}}</h2>
-            <h2> შეტყობინება</h2>
-            <h5>{{$data['message']}}</h5>
+            <h2> სახელი: {{$data['first_name']}}</h2>
+            <h2> გვარი: {{$data['last_name']}}</h2>
+            <h2> ელ-ფოსტა: {{$data['phone']}}</h2>
+            <h2> მისამართი: {{$data['address']}}</h2>
+            <h2> პროფუქტი: {{$data['url']}}</h2>
         </section>
     </section>
 </section>

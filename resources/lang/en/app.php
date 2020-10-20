@@ -64,5 +64,6 @@ return [
     'filter' => 'Filter',
     'model' => 'Model',
     'wheel' => 'Wheel',
-    'date_of_addition' => 'Date of addition'
+    'date_of_addition' => 'Date of addition',
+    'address' => 'Address'
 ];

@@ -27,7 +27,7 @@ $protoc = Setting::where(['key' => $protocolKey])->first();
 
                     <form class="contact__form" onsubmit="return false;">
 
-                        <h1 class="contact__form-heading">კონტაქტი</h1>
+                        <h1 class="contact__form-heading">{{__('app.contact')}}</h1>
 
                         <p class="contact__form-p">{{__('app.contact_us_and_we_will_answer_you')}}</p>
 
@@ -35,7 +35,10 @@ $protoc = Setting::where(['key' => $protocolKey])->first();
                             <input type="text" placeholder="{{__('app.full_name')}}" name="message_full_name" required>
                             <div class="focus-line"></div>
 
-                            <input type="text" placeholder="{{__('app.email_address')}}" name="message_email" required>
+                            <input type="text" placeholder="{{__('app.mobile_phone')}}" name="message_phone" required>
+                            <div class="focus-line"></div>
+
+                            <input type="text" placeholder="{{__('app.email_address')}}" name="message_email">
                             <div class="focus-line"></div>
 
                             <textarea name="message_message" id="message_message"

@@ -2,8 +2,8 @@
 
 namespace App\Mail;
 
+use App\Models\Setting;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
@@ -16,10 +16,11 @@ class ContactEmail extends Mailable
      *
      * @return void
      */
-    public function __construct($data,$contact)
+    public function __construct($data, $contact, $loan)
     {
         $this->data = $data;
         $this->contact = $contact;
+        $this->loan = $loan;
     }
 
     /**
@@ -29,9 +30,14 @@ class ContactEmail extends Mailable
      */
     public function build()
     {
+        $mailTo = Setting::where(['key' => 'contact_email'])->first();
+
         if ($this->contact) {
-            return $this->from($this->data['email'],$this->data['full_name'])->subject($this->data['subject'])->view('frontend.mail.contact-email',['data' => $this->data]);
+            return $this->from($mailTo->value, $this->data['full_name'])->subject($this->data['subject'])->view('frontend.mail.contact-email', ['data' => $this->data]);
         }
-        return $this->from($this->data['email'],$this->data['fullName'])->subject($this->data['subject'])->view('frontend.mail.agreement-email',['data' => $this->data]);
+        if ($this->loan) {
+            return $this->from($mailTo->value, $this->data['full_name'])->subject($this->data['subject'])->view('frontend.mail.loan-email', ['data' => $this->data]);
+        }
+        return $this->from($mailTo->value, $this->data['fullName'])->subject($this->data['subject'])->view('frontend.mail.agreement-email', ['data' => $this->data]);
     }
 }

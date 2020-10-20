@@ -74,27 +74,22 @@ const modalS = $('#sell-car-modal');
 modalSubmit.click(function () {
     let first_name = $('input[name="first_name"]').val();
     let last_name = $('input[name="last_name"]').val();
-    let personal_id = $('input[name="personal_id"]').val();
     let phone = $('input[name="phone"]').val();
-    let email = $('input[name="email"]').val();
-    let birthday = $('input[name="birthday"]').val();
+    let address = $('input[name="address"]').val();
+    let description = $('input[name="description"]').val();
     let confirm = $('input[name="confirm"]').val();
 
-    let check = /\S+@\S+\.\S+/;
-    let emailStatus = check.test(email);
 
-
-    if (first_name && last_name && phone && email && personal_id && birthday && emailStatus && confirm) {
+    if (first_name && last_name && phone && address && description &&  confirm) {
         $.ajax({
             type: 'GET',
             url: '/send-email',
             data: {
                 'first_name': first_name,
                 'last_name': last_name,
-                'personal_id': personal_id,
+                'address': address,
                 'phone': phone,
-                'email': email,
-                'birthday': birthday,
+                'description': description,
             },
             beforeSend: function () {
                 $('.submit-box').addClass('active');
@@ -132,27 +127,19 @@ modalSubmit.click(function () {
 $('#sendEmailBtn').on('click',function () {
     let first_name = $('input[name="detail_first_name"]').val();
     let last_name = $('input[name="detail_last_name"]').val();
-    let personal_id = $('input[name="detail_personal_id"]').val();
     let phone = $('input[name="detail_phone"]').val();
-    let email = $('input[name="detail_email"]').val();
-    let birthday = $('input[name="detail_birthday"]').val();
-    let confirm = $('input[name="detail_confirm"]').val();
+    let address = $('input[name="detail_address"]').val();
 
-    let check = /\S+@\S+\.\S+/;
-    let emailStatus = check.test(email);
-
-
-    if (first_name && last_name && phone && email && personal_id && birthday && emailStatus && confirm) {
+    if (first_name && last_name && phone && address && confirm) {
         $.ajax({
             type: 'GET',
-            url: '/send-email',
+            url: '/send-loan',
             data: {
                 'first_name': first_name,
                 'last_name': last_name,
-                'personal_id': personal_id,
                 'phone': phone,
-                'email': email,
-                'birthday': birthday,
+                'address': address,
+                'url': location.href
             },
             beforeSend: function () {
                 $('.submit-box').addClass('active');
@@ -190,28 +177,25 @@ $('#sendEmailBtn').on('click',function () {
 $('#sendMessageBtn').on('click',function () {
     console.log(1233)
     let full_name = $('input[name="message_full_name"]').val();
+    let phone = $('input[name="message_phone"]').val();
     let email = $('input[name="message_email"]').val();
     let message = $('#message_message').val();
 
-    let check = /\S+@\S+\.\S+/;
-    let emailStatus = check.test(email);
-
     //
-    //
-    if (full_name &&  email && emailStatus && message) {
+    if (full_name &&  phone && message) {
         $.ajax({
             type: 'GET',
             url: '/send-message',
             data: {
                 'full_name': full_name,
                 'email': email,
+                'phone': phone,
                 'message': message,
             },
             beforeSend: function () {
                 $('.submit-box').addClass('active');
             },
             success: function (data) {
-                console.log(data)
                 setTimeout(() => {
                     $('.submit-box').removeClass('active');
                     $('.success-box').addClass('active');

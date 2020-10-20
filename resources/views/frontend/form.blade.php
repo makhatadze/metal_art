@@ -7,13 +7,8 @@
     <div class="details__form-input-grid">
         <input type="text" placeholder="{{__('app.first_name')}}" name="detail_first_name" required>
         <input type="text" placeholder="{{__('app.last_name')}}" name="detail_last_name" required>
-
-        <input type="number" placeholder="{{__('app.personal_id')}}" name="detail_personal_id" required>
         <input type="number" placeholder="{{__('app.mobile_phone')}}" name="detail_phone" required>
-
-        <input type="email" placeholder="{{__('app.email_address')}}" name="detail_email" required>
-
-        <input type="date"   id="details-birthday" name="detail_birthday" required>
+        <input type="address" placeholder="{{__('app.address')}}" name="detail_address" required>
     </div>
 
     <div class="confirm-info" >

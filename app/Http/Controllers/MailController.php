@@ -21,9 +21,8 @@ class MailController extends Controller
         $this->validate($request,[
             'first_name' => 'required|string',
             'last_name' => 'required|string',
-            'birthday' => 'required|string',
-            'personal_id' => 'required|integer',
-            'email' => 'required|email',
+            'address' => 'required|string',
+            'description' => 'required',
             'phone' => 'required',
         ]);
 
@@ -32,35 +31,61 @@ class MailController extends Controller
           'fullName' => $request->first_name . ' ' . $request->last_name,
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
-            'email' => $request->email,
-            'pid' => $request->personal_id,
+            'address' => $request->address,
             'phone' => $request->phone,
-            'birthday' => $request->birthday,
+            'description' => $request->description,
             'subject' => $subject->value
         ];
 
         $mailTo = Setting::where(['key' => 'contact_email'])->first();
 
-        return Mail::to($mailTo->value)->send(new ContactEmail($data,false));
+        return Mail::to($mailTo->value)->send(new ContactEmail($data,false,false));
 
     }
+    public function sendLoan(Request $request) {
+        $this->validate($request,[
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+            'phone' => 'required|string',
+            'address' => 'required',
+            'url' => 'url'
+        ]);
+
+        $subject = Setting::where(['key' => 'smtp_subject'])->first();
+        $data = [
+            'full_name' => $request->first_name . ' ' . $request->last_name,
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'url' => $request->url,
+            'subject' => 'განვადება',
+        ];
+
+        $mailTo = Setting::where(['key' => 'contact_email'])->first();
+
+        return Mail::to($mailTo->value)->send(new ContactEmail($data,false,true));
+
+    }
+
     public function sendMessage(Request $request) {
         $this->validate($request,[
             'full_name' => 'required|string',
-            'email' => 'required|email',
+            'phone' => 'required|string',
             'message' => 'required|string',
         ]);
         $subject = Setting::where(['key' => 'smtp_contact_subject'])->first();
         $data = [
             'full_name' => $request->full_name,
             'email' => $request->email,
+            'phone' => $request->phone ? $request->phone : '',
             'message' => $request->message,
             'subject' => $subject->value
         ];
 
         $mailTo = Setting::where(['key' => 'contact_email'])->first();
 
-        return Mail::to($mailTo->value)->send(new ContactEmail($data,true));
+        return Mail::to($mailTo->value)->send(new ContactEmail($data,true,false));
 
     }
 

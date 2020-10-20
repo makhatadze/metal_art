@@ -1,3 +1,10 @@
+<?php
+
+use App\Models\Setting;
+
+$phone = Setting::where(['key' => 'phone'])->first();
+$mailTo = Setting::where(['key' => 'contact_email'])->first();
+?>
 <div id="sell-car-modal">
     <form class="modal__form" onsubmit="return false;">
 
@@ -15,11 +22,11 @@
         <div class="modal__form-info">
             <p>
                 <img src="{{url('frontend-assets/img/logos/pur-phone-alt.svg')}}" alt="">
-                +995 555 555 555
+                {{$phone->value}}
             </p>
             <p>
                 <img src="{{url('frontend-assets/img/logos/pur-ios-mail.svg')}}" alt="">
-                autohome@example.com
+                {{$mailTo->value}}
             </p>
         </div>
 
@@ -31,12 +38,11 @@
             <input type="text" placeholder="{{__('app.first_name')}}" name="first_name" required>
             <input type="text" placeholder="{{__('app.last_name')}}" name="last_name" required>
 
-            <input type="number" placeholder="{{__('app.personal_id')}}" name="personal_id" required>
-            <input type="number" placeholder="{{__('app.mobile_phone')}}" name="phone" required>
+            <input type="text" placeholder="{{__('app.mobile_phone')}}" name="phone" required>
 
-            <input type="email" placeholder="{{__('app.email_address')}}" name="email" required>
+            <input type="text" placeholder="{{__('app.address')}}" name="address" required>
+            <input type="text" placeholder="{{__('app.description')}}" name="description">
 
-            <input type="date" id="birthday" placeholder="{{__('app.birthday')}}" name="birthday" required>
         </div>
 
         <div class="confirm-info">

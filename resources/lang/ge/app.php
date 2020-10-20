@@ -64,6 +64,7 @@ return [
     'filter' => 'ფილტრი',
     'model' => 'მოდელი',
     'wheel' => 'საჭე',
-    'date_of_addition' => 'დამატების თარიღი'
+    'date_of_addition' => 'დამატების თარიღი',
+    'address' => 'მისამართი'
 
 ];
