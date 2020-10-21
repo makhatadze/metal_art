@@ -10,7 +10,6 @@
 
                 <div class="catalogue__left">
                     <form action="/{{app()->getLocale()}}/catalogue">
-                        @csrf
                         <div class="catalogue__filter">
                             <h1 class="catalogue__filter-heading">
                                 {{__('app.filter')}}

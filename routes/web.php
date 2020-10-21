@@ -37,9 +37,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/about-us',[HomeController::class,'about'])->name('aboutIndex');
     Route::get('/contact-us',[HomeController::class,'contact'])->name('contactIndex');
     Route::post('/send-email',[MailController::class,'sendEmail']);
-    Route::get('/send-message',[MailController::class,'sendMessage']);
+    Route::post('/send-message',[MailController::class,'sendMessage']);
     Route::get('/brand-models',[MailController::class,'models'])->name('brandModels');
-    Route::get('/send-loan',[MailController::class,'sendLoan'])->name('sendLoan');
+    Route::post('/send-loan',[MailController::class,'sendLoan'])->name('sendLoan');
 
 });
 

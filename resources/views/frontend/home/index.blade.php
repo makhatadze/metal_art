@@ -11,8 +11,6 @@
             <div class="container">
 
                 <form action="{{app()->getLocale()}}/catalogue" enctype="multipart/form-data" class="hero__form">
-                    @csrf
-                    <h1 class="hero__form-heading">
                         {{ $page->{"meta_title_".app()->getLocale()} }}
                     </h1>
                     <p class="hero__form-p">

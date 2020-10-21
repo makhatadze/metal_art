@@ -168,7 +168,10 @@ $('#sendEmailBtn').on('click',function () {
 
     if (first_name && last_name && phone && address && confirm) {
         $.ajax({
-            type: 'GET',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: 'POST',
             url: '/send-loan',
             data: {
                 'first_name': first_name,
@@ -211,7 +214,6 @@ $('#sendEmailBtn').on('click',function () {
 })
 
 $('#sendMessageBtn').on('click',function () {
-    console.log(1233)
     let full_name = $('input[name="message_full_name"]').val();
     let phone = $('input[name="message_phone"]').val();
     let email = $('input[name="message_email"]').val();
@@ -220,7 +222,10 @@ $('#sendMessageBtn').on('click',function () {
     //
     if (full_name &&  phone && message) {
         $.ajax({
-            type: 'GET',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: 'POST',
             url: '/send-message',
             data: {
                 'full_name': full_name,

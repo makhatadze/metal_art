@@ -78,9 +78,9 @@
         <section id="content">
             <h2> სახელი: {{$data['first_name']}}</h2>
             <h2> გვარი: {{$data['last_name']}}</h2>
-            <h2> ელ-ფოსტა: {{$data['phone']}}</h2>
+            <h2> ტელეფონის ნომერი: {{$data['phone']}}</h2>
             <h2> მისამართი: {{$data['address']}}</h2>
-            <h2> პროფუქტი: {{$data['url']}}</h2>
+            <h2> პროდუქტი: {{$data['url']}}</h2>
         </section>
     </section>
 </section>
