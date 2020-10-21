@@ -2,21 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d51b9db-7f3b-4935-adfa-fc1bbaf7761b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/ContactEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/ContactEmail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend-assets/css/select.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend-assets/css/select.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend-assets/script/catalogue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend-assets/script/catalogue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend-assets/script/details.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend-assets/script/details.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend-assets/script/general.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend-assets/script/general.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/catalog/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/catalog/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/catalog/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/catalog/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/home/vip.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home/vip.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/modal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/accordion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/chat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/copy-code.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/datatable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/datepicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/dropdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/dropzone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/feather.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/helper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/highlight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/image-zoom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/maps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/mobile-menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/modal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/select2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/show-code.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/show-modal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/side-menu-tooltip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/side-menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/slick.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/summernote.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/svg-loader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/tab.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/toast.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/tooltipster.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/validation.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +276,7 @@
       <workItem from="1603115507669" duration="4217000" />
       <workItem from="1603173382324" duration="748000" />
       <workItem from="1603187302109" duration="13344000" />
-      <workItem from="1603259943007" duration="8737000" />
+      <workItem from="1603259943007" duration="8909000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings and translations.">
       <created>1603092223375</created>
@@ -362,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603202754937</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add email attach files.">
+      <created>1603269044260</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1603269044260</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +403,8 @@
     <MESSAGE value="Add mailers." />
     <MESSAGE value="Delete condition and engine." />
     <MESSAGE value="Add filter to product." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add filter to product." />
+    <MESSAGE value="Add email attach files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add email attach files." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2544" y="234" width="734" height="646" key="#Inspections" timestamp="1602225352070">
@@ -410,12 +432,12 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2648" y="310" width="526" height="493" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603193018982" />
-    <state x="2454" y="100" width="914" height="602" key="CommitChangelistDialog2" timestamp="1603202754740">
+    <state x="2454" y="100" width="914" height="602" key="CommitChangelistDialog2" timestamp="1603269044044">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="380" y="67" width="745" height="617" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1603018624336" />
     <state x="534" y="125" width="914" height="602" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603119509683" />
-    <state x="2454" y="100" width="914" height="914" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603202754740" />
+    <state x="2454" y="100" width="914" height="914" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603269044044" />
     <state x="37" y="135" width="1215" height="609" key="DiffContextDialog" timestamp="1603116509417">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -449,11 +471,11 @@
     <state x="625" y="327" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1602253606559" />
     <state x="2546" y="308" width="1024" height="737" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603099036427" />
     <state x="674" y="327" width="1024" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1602079358619" />
-    <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2" timestamp="1603202756380">
+    <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2" timestamp="1603269045922">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="590" y="294" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603119511314" />
-    <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603202756380" />
+    <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603269045922" />
     <state x="2772" y="412" width="198" height="256" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1602852324112">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
