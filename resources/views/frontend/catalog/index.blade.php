@@ -213,7 +213,7 @@
                                             <h2>{{$product->{"title_".app()->getLocale()} }}</h2>
 
                                             <p class="card__top-p">
-{{--                                                {{$product->engine->{"title_".app()->getLocale()} }} & {{$product->category->{"title_".app()->getLocale()} }}--}}
+                                                {{$product->fuel->{"title_".app()->getLocale()} }} & {{$product->category->{"title_".app()->getLocale()} }}
                                             </p>
                                             <p class="card__top-p">
                                                 {{__('app.year')}} : {{ date('Y', strtotime($product->created_date))}}

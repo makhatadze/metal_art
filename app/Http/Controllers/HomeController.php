@@ -133,6 +133,7 @@ class HomeController extends Controller
         $brand = $product->brand()->get()[0];
         $model = $product->model()->get()[0];
         $deal = $product->deal()->get()[0];
+        $fuel = $product->fuel()->get()[0];
 
         $news = Product::where(['status' => true,'vip' => false])
             ->with(['transmission', 'category', 'deal'])
@@ -150,6 +151,7 @@ class HomeController extends Controller
             ->with('news', $news)
             ->with('page', $page)
             ->with('vips', $vips)
+            ->with('fuel',$fuel)
             ->with('dolar', $this->getDolar())
             ->with('images', $images);
     }

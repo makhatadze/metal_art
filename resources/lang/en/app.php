@@ -65,5 +65,7 @@ return [
     'model' => 'Model',
     'wheel' => 'Wheel',
     'date_of_addition' => 'Date of addition',
-    'address' => 'Address'
+    'address' => 'Address',
+    'drive' => 'Drive Wheels',
+    'fuel_type' => 'Fuel Type'
 ];

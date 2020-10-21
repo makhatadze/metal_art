@@ -2,35 +2,79 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d51b9db-7f3b-4935-adfa-fc1bbaf7761b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/js/accordion.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/chart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/chat.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/copy-code.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/datatable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/datepicker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/dropdown.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/dropzone.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/feather.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/helper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/highlight.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/image-zoom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/maps.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/mobile-menu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/modal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/select2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/show-code.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/show-modal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/side-menu-tooltip.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/side-menu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/slick.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/summernote.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/svg-loader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/tab.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/toast.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/tooltipster.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/validation.js" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend-assets/img/logos/automatic-transmission.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend-assets/img/logos/phone-call.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend-assets/img/logos/repair.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend-assets/img/logos/tire.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/bg-login-page.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/error-illustration.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/food-beverage-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/food-beverage-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/food-beverage-11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/food-beverage-12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/food-beverage-13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/food-beverage-14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/food-beverage-15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/food-beverage-16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/food-beverage-17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/food-beverage-18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/food-beverage-19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/food-beverage-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/food-beverage-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/food-beverage-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/food-beverage-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/food-beverage-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/food-beverage-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/food-beverage-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/food-beverage-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/illustration.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/map-marker-region.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/map-marker.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/preview-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/preview-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/preview-11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/preview-12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/preview-13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/preview-14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/preview-15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/preview-16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/preview-17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/preview-18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/preview-19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/preview-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/preview-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/preview-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/preview-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/preview-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/preview-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/preview-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/preview-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/profile-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/profile-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/profile-11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/profile-12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/profile-13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/profile-14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/profile-15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/profile-16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/profile-17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/profile-18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/profile-19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/profile-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/profile-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/profile-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/profile-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/profile-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/profile-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/profile-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/profile-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ge/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ge/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/catalog/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/catalog/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/catalog/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/catalog/view.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +251,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.env" />
-    <property name="last_opened_file_path" value="/var/www/html/cabinet.wft.group" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/frontend-assets/img/logos" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -227,11 +271,11 @@
       <recent name="$PROJECT_DIR$/resources/views/admin/layouts" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/frontend-assets/img/logos" />
       <recent name="$PROJECT_DIR$/resources/views/frontend/mail" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="C:\xampp\htdocs\admin-panel" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
     </key>
   </component>
   <component name="RunManager">
@@ -276,7 +320,7 @@
       <workItem from="1603115507669" duration="4217000" />
       <workItem from="1603173382324" duration="748000" />
       <workItem from="1603187302109" duration="13344000" />
-      <workItem from="1603259943007" duration="8909000" />
+      <workItem from="1603259943007" duration="10836000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings and translations.">
       <created>1603092223375</created>
@@ -383,7 +427,21 @@
       <option name="project" value="LOCAL" />
       <updated>1603269044260</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Delete unused files.">
+      <created>1603269201459</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1603269201459</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Change logic for currency calculation.">
+      <created>1603269274895</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1603269274895</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +462,9 @@
     <MESSAGE value="Delete condition and engine." />
     <MESSAGE value="Add filter to product." />
     <MESSAGE value="Add email attach files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add email attach files." />
+    <MESSAGE value="Delete unused files." />
+    <MESSAGE value="Change logic for currency calculation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Change logic for currency calculation." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2544" y="234" width="734" height="646" key="#Inspections" timestamp="1602225352070">
@@ -432,12 +492,12 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2648" y="310" width="526" height="493" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603193018982" />
-    <state x="2454" y="100" width="914" height="602" key="CommitChangelistDialog2" timestamp="1603269044044">
+    <state x="2454" y="100" width="914" height="602" key="CommitChangelistDialog2" timestamp="1603269274817">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="380" y="67" width="745" height="617" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1603018624336" />
     <state x="534" y="125" width="914" height="602" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603119509683" />
-    <state x="2454" y="100" width="914" height="914" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603269044044" />
+    <state x="2454" y="100" width="914" height="914" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603269274817" />
     <state x="37" y="135" width="1215" height="609" key="DiffContextDialog" timestamp="1603116509417">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -471,11 +531,11 @@
     <state x="625" y="327" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1602253606559" />
     <state x="2546" y="308" width="1024" height="737" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603099036427" />
     <state x="674" y="327" width="1024" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1602079358619" />
-    <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2" timestamp="1603269045922">
+    <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2" timestamp="1603269275889">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="590" y="294" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603119511314" />
-    <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603269045922" />
+    <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603269275889" />
     <state x="2772" y="412" width="198" height="256" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1602852324112">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

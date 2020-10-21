@@ -80,7 +80,7 @@
                         </p>
 
                         <p class="description__element">
-                            <img src="{{url('frontend-assets/img/logos/b-car-crash.png')}}" alt="">
+                            <img src="{{url('frontend-assets/img/logos/phone-call.png')}}" alt="">
                             {{__('app.mobile_phone')}}:
                             <span>{{$product->phone}}</span>
                         </p>
@@ -93,15 +93,40 @@
 
                         <p class="description__element">
                             <img src="{{url('frontend-assets/img/logos/engine-i.png')}}" alt="">
-                            {{__('app.engine_type')}}:
-{{--                            <span>{{$engine->{"title_".app()->getLocale()} }}</span>--}}
+                            {{__('app.fuel_type')}}:
+                            <span>{{$fuel->{"title_".app()->getLocale()} }}</span>
+                        </p>
+
+                        <p class="description__element">
+                            <img src="{{url('frontend-assets/img/logos/repair.png')}}" alt="">
+                            {{__('app.engine_capacity')}}:
+                            <span>{{$product->engine_capacity}}</span>
+                        </p>
+
+                        <p class="description__element">
+                            <img src="{{url('frontend-assets/img/logos/automatic-transmission.png')}}" alt="">
+                            {{__('app.transmission')}}:
+                            <span>{{$product->transmission->{"title_".app()->getLocale()} }}</span>
                         </p>
 
                         <p class="description__element">
                             <img src="{{url('frontend-assets/img/logos/b-speedometer.png')}}" alt="">
-                            {{__('app.engine_capacity')}}:
-                            <span>{{$product->engine_capacity}}</span>
+                            {{__('app.mileage')}}:
+                            <span>{{$product->mileage }}</span>
                         </p>
+
+                        <p class="description__element">
+                            <img src="{{url('frontend-assets/img/logos/tire.png')}}" alt="">
+                            {{__('app.drive')}}:
+                            <span>{{$product->drive }}</span>
+                        </p>
+
+                        <p class="description__element">
+                            <img src="{{url('frontend-assets/img/logos/steering-wheel.png')}}" alt="">
+                            {{__('app.wheel')}}:
+                            <span>{{$product->wheel ? __('app.right') : __('app.left') }}</span>
+                        </p>
+
                     </div>
                 </div>
 
@@ -210,7 +235,7 @@
 
                                     <div class="card__more-info-block">
                                         <div class="card__more-info__label">
-                                            <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
+                                            <img src="{{url('frontend-assets/img/logos/phone-call.png')}}" alt="">
                                             {{__('app.mobile_phone')}}:
                                         </div>
                                         <p>{{$vip->phone }}</p>
@@ -322,7 +347,7 @@
 
                                     <div class="card__more-info-block">
                                         <div class="card__more-info__label">
-                                            <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
+                                            <img src="{{url('frontend-assets/img/logos/phone-call.png')}}" alt="">
                                             {{__('app.mobile_phone')}}:
                                         </div>
                                         <p>{{$new->phone }}</p>
