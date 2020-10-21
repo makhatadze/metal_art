@@ -50,7 +50,7 @@ $('#details-birthday').change(function(){
 function changecurrencyvips($id,$cur,id,dolarValue,realValue) {
     let amount = realValue;
     if ($cur === 'dol') {
-        amount = amount / dolarValue;
+        amount = amount * dolarValue;
     }
     amount = `${parseInt(amount)}`;
 
@@ -72,7 +72,7 @@ function changecurrencyvips($id,$cur,id,dolarValue,realValue) {
 function changecurrencynews($id,$cur,id,dolarValue,realValue) {
     let amount = realValue;
     if ($cur === 'dol') {
-        amount = amount / dolarValue;
+        amount = amount * dolarValue;
     }
     amount = `${parseInt(amount)}`;
 

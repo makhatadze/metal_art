@@ -71,26 +71,46 @@ $('#birthday').change(function () {
 const modalSubmit = $('.modal__form-btn');
 const modalS = $('#sell-car-modal');
 
-modalSubmit.click(function () {
+modalSubmit.click(function (e) {
+
     let first_name = $('input[name="first_name"]').val();
     let last_name = $('input[name="last_name"]').val();
     let phone = $('input[name="phone"]').val();
     let address = $('input[name="address"]').val();
     let description = $('input[name="description"]').val();
     let confirm = $('input[name="confirm"]').val();
-
-
+    //
+    //
     if (first_name && last_name && phone && address && description &&  confirm) {
+        let $file = document.getElementById('file'),
+            $formData = new FormData();
+        let count = 0;
+        if ($file.files.length > 0) {
+            for (var i = 0; i < $file.files.length; i++) {
+                if ($file.files[i].size > (1048576*6)) {
+                    alert(`${i} - ფაილის ზომა არის ზედმეტად დიდი ...`)
+                    return false;
+                }
+                $formData.append(i , $file.files[i]);
+                count++;
+            }
+        }
+        $formData.append('count',count);
+        $formData.append('first_name',first_name)
+        $formData.append('last_name',last_name)
+        $formData.append('phone',phone)
+        $formData.append('address',address)
+        $formData.append('description',description)
         $.ajax({
-            type: 'GET',
-            url: '/send-email',
-            data: {
-                'first_name': first_name,
-                'last_name': last_name,
-                'address': address,
-                'phone': phone,
-                'description': description,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
+            type: 'POST',
+            url: '/send-email',
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            data: $formData,
             beforeSend: function () {
                 $('.submit-box').addClass('active');
             },
@@ -107,11 +127,27 @@ modalSubmit.click(function () {
                 }, 1000);
             },
             error: function (xhr) { // if error occured
-                console.log(111)
-                setTimeout(() => {
-                    $('.submit-box').removeClass('active');
-                    $('.error-box').addClass('active');
-                }, 1000);
+                if (xhr.statusText === 'OK') {
+                    setTimeout(() => {
+                        $('.submit-box').removeClass('active');
+                        $('.success-box').addClass('active');
+                        $(':input', '.modal__form')
+                            .not(':button, :submit, :reset, :hidden')
+                            .val('')
+                            .removeAttr('checked')
+                            .removeAttr('selected');
+                        $('.imageThumb').attr('src','');
+                        modalS.removeClass('show');
+
+                    }, 1000);
+                } else {
+                    console.log(xhr.statusText)
+                    console.log('ok')
+                    setTimeout(() => {
+                        $('.submit-box').removeClass('active');
+                        $('.error-box').addClass('active');
+                    }, 1000);
+                }
             },
             complete: function () {
                 setTimeout(() => {
@@ -222,3 +258,23 @@ $('#sendMessageBtn').on('click',function () {
 
     }
 })
+
+if(window.File && window.FileList && window.FileReader) {
+    $("#file").on("change",function(e) {
+        var files = e.target.files ,
+            filesLength = files.length ;
+        for (var i = 0; i < filesLength ; i++) {
+            var f = files[i]
+            var fileReader = new FileReader();
+            fileReader.onload = (function(e) {
+                var file = e.target;
+                $("<img></img>",{
+                    class : "imageThumb",
+                    src : e.target.result,
+                    title : file.name
+                }).insertAfter("#index-preview");
+            });
+            fileReader.readAsDataURL(f);
+        }
+    });
+} else { alert("Your browser doesn't support to File API") }

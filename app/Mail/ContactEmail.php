@@ -10,6 +10,7 @@ use Illuminate\Queue\SerializesModels;
 class ContactEmail extends Mailable
 {
     use Queueable, SerializesModels;
+    protected $data;
 
     /**
      * Create a new message instance.
@@ -38,6 +39,16 @@ class ContactEmail extends Mailable
         if ($this->loan) {
             return $this->from($mailTo->value, $this->data['full_name'])->subject($this->data['subject'])->view('frontend.mail.loan-email', ['data' => $this->data]);
         }
-        return $this->from($mailTo->value, $this->data['fullName'])->subject($this->data['subject'])->view('frontend.mail.agreement-email', ['data' => $this->data]);
+        $email = $this->from($mailTo->value, $this->data['fullName'])
+            ->subject($this->data['subject'])
+            ->view('frontend.mail.agreement-email', ['data' => $this->data]);
+        if ($this->data['files']) {
+            foreach ($this->data['files'] as $file) {
+                $email->attach($file->getRealPath(), [
+                    'as' => $file->getClientOriginalName()
+                ]);
+            }
+        }
+        return $email;
     }
 }

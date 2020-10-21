@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Mail;
 class MailController extends Controller
 {
     public function sendEmail(Request $request) {
+        $request->all();
+
         $this->validate($request,[
             'first_name' => 'required|string',
             'last_name' => 'required|string',
@@ -25,6 +27,14 @@ class MailController extends Controller
             'description' => 'required',
             'phone' => 'required',
         ]);
+        if ($request->hasFile(0)) {
+            $validate = [];
+            for ($i = 0; $i<$request->count; $i++) {
+                $validate[$i] = 'image|mimes:jpeg,png,jpg,gif,svg|max:7000';
+            }
+            $this->validate($request,$validate);
+        }
+
 
         $subject = Setting::where(['key' => 'smtp_subject'])->first();
         $data = [
@@ -34,11 +44,18 @@ class MailController extends Controller
             'address' => $request->address,
             'phone' => $request->phone,
             'description' => $request->description,
-            'subject' => $subject->value
+            'subject' => $subject->value,
+            'files' => []
         ];
+        if($request->count) {
+            for ($i = 0; $i<$request->count; $i++) {
+                if ($request->hasFile($i)) {
+                    $data['files'][$i]=$request->file($i);
+                }
+            }
+        }
 
         $mailTo = Setting::where(['key' => 'contact_email'])->first();
-
         return Mail::to($mailTo->value)->send(new ContactEmail($data,false,false));
 
     }

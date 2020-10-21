@@ -10,6 +10,7 @@
 
                 <div class="catalogue__left">
                     <form action="/{{app()->getLocale()}}/catalogue">
+                        @csrf
                         <div class="catalogue__filter">
                             <h1 class="catalogue__filter-heading">
                                 {{__('app.filter')}}
@@ -119,21 +120,6 @@
                                 </select>
                             </div>
 
-                            <h2 class="catalogue__filter-category">
-                                {{__('app.engine_type')}}
-                            </h2>
-                            <div class="catalogue__select-wrap">
-                                <div class="catalogue__select-img">
-                                    <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
-                                </div>
-                                <select name="engine" class="select2">
-                                    @if ($engines)
-                                        @foreach($engines as $engine)
-                                            <option {{(Request::get('engine') == $engine->id) ? 'selected' : ''}} value="{{$engine->id}}">{{$engine->{"title_".app()->getLocale()} }}</option>
-                                        @endforeach
-                                    @endif
-                                </select>
-                            </div>
 
 
                             <button class="catalogue__filter-btn">
@@ -227,7 +213,7 @@
                                             <h2>{{$product->{"title_".app()->getLocale()} }}</h2>
 
                                             <p class="card__top-p">
-                                                {{$product->engine->{"title_".app()->getLocale()} }} & {{$product->category->{"title_".app()->getLocale()} }}
+{{--                                                {{$product->engine->{"title_".app()->getLocale()} }} & {{$product->category->{"title_".app()->getLocale()} }}--}}
                                             </p>
                                             <p class="card__top-p">
                                                 {{__('app.year')}} : {{ date('Y', strtotime($product->created_date))}}
@@ -250,7 +236,7 @@
                                                 <div class="card__more-info-block">
                                                     <div class="card__more-info__label">
                                                         <img src="{{url('frontend-assets/img/logos/car-engine.png')}}" alt="">
-                                                        {{$product->engine_capacity}} {{$product->engine->{"title_".app()->getLocale()} }}
+                                                        {{$product->engine_capacity}}
                                                     </div>
                                                 </div>
 
@@ -277,28 +263,14 @@
 
                                             </div>
 
-                                            <div class="catalogue-card__display">
-                                                <div class="catalogue-card__display-info">
-                                                    <img src="{{url('frontend-assets/img/logos/people-i.png')}}" alt="">
-                                                    <p>{{$product->people}}</p>
-                                                </div>
-                                                <div class="catalogue-card__display-info">
-                                                    <img src="{{url('frontend-assets/img/logos/i-shopping-bag.png')}}" alt="">
-                                                    <p>{{$product->luggage}}</p>
-                                                </div>
-                                                <div class="catalogue-card__display-info">
-                                                    <img src="{{url('frontend-assets/img/logos/car-door.png')}}" alt="">
-                                                    <p>{{$product->door}}</p>
-                                                </div>
-                                            </div>
 
                                             <div class="catalogue-card__bottom">
 
                                                 <div class="currency" id="curr{{$key}}">
                                                     <button class="select-gel active"
-                                                            onclick="changecurrency('curr{{$key}}', 'gel',{{$product->id}}, {{$dolar}},{{$product->price}})">₾
+                                                            onclick="changecurrency('curr{{$key}}', 'gel',{{$product->id}}, {{$dolar}},{{$product->price}})">$
                                                     </button>
-                                                    <button class="select-dol" onclick="changecurrency('curr{{$key}}', 'dol',{{$product->id}}, {{$dolar}},{{$product->price}})">$
+                                                    <button class="select-dol" onclick="changecurrency('curr{{$key}}', 'dol',{{$product->id}}, {{$dolar}},{{$product->price}})">₾
                                                     </button>
                                                 </div>
 

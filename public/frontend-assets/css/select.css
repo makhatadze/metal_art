@@ -714,5 +714,11 @@
 
 .sel-container {
     margin-bottom: 15px;
-    border: 1px solid;
+    border: 1px solid #E2E2E2;
+}
+
+#file-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 12px 0;
 }

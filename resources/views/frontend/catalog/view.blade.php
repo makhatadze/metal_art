@@ -64,13 +64,13 @@
                         <p class="description__element">
                             <img src="{{url('frontend-assets/img/logos/data-i-b.png')}}" alt="">
                             {{__('app.date_of_addition')}}:
-                            <span>{{ date('Y/mm/dd h:m', strtotime($product->created_at))}}</span>
+                            <span>{{ date('Y/m/d', strtotime($product->created_at))}}</span>
                         </p>
 
                         <p class="description__element">
                             <img src="{{url('frontend-assets/img/logos/price-i.png')}}" alt="">
                             {{__('app.price')}}:
-                            <span>{{number_format($product->price, 0)}} ლ</span>
+                            <span>{{number_format($product->price, 0)}} $</span>
                         </p>
 
                         <p class="description__element">
@@ -81,8 +81,8 @@
 
                         <p class="description__element">
                             <img src="{{url('frontend-assets/img/logos/b-car-crash.png')}}" alt="">
-                            {{__('app.condition')}}:
-                            <span>{{$product->new ? __('app.new') : __('app.second')}}</span>
+                            {{__('app.mobile_phone')}}:
+                            <span>{{$product->phone}}</span>
                         </p>
 
                         <p class="description__element">
@@ -94,7 +94,7 @@
                         <p class="description__element">
                             <img src="{{url('frontend-assets/img/logos/engine-i.png')}}" alt="">
                             {{__('app.engine_type')}}:
-                            <span>{{$engine->{"title_".app()->getLocale()} }}</span>
+{{--                            <span>{{$engine->{"title_".app()->getLocale()} }}</span>--}}
                         </p>
 
                         <p class="description__element">
@@ -173,9 +173,9 @@
                                     <span id="c-year">{{ date('Y', strtotime($vip->created_date))}}</span>
 
                                     <div class="currency" id="adviced{{$vip->id}}">
-                                        <button class="select-gel active" onclick="changecurrencyvips('adviced{{$vip->id}}', 'gel',{{$vip->id}},{{$dolar}},{{$vip->price}})">ლ
+                                        <button class="select-gel active" onclick="changecurrencyvips('adviced{{$vip->id}}', 'gel',{{$vip->id}},{{$dolar}},{{$vip->price}})">$
                                         </button>
-                                        <button class="select-dol" onclick="changecurrencyvips('adviced{{$vip->id}}', 'dol',{{$vip->id}},{{$dolar}},{{$vip->price}})">$</button>
+                                        <button class="select-dol" onclick="changecurrencyvips('adviced{{$vip->id}}', 'dol',{{$vip->id}},{{$dolar}},{{$vip->price}})">ლ</button>
                                     </div>
                                 </div>
 
@@ -186,8 +186,8 @@
                                     </div>
                                     <div class="card__middle-body">
                                         <p id="c-price" class="vip-gel-{{$vip->id}}">{{number_format($vip->price)}} </p>
-                                        <p class="c-category">{{$vip->new ? __('app.new') : __('app.second')}}
-                                            / {{$vip->transmission->{"title_".app()->getLocale()} }}
+                                        <p class="c-category">
+                                             {{$vip->transmission->{"title_".app()->getLocale()} }}
                                             / {{$vip->category->{"title_".app()->getLocale()} }}</p>
                                     </div>
                                 </div>
@@ -211,9 +211,9 @@
                                     <div class="card__more-info-block">
                                         <div class="card__more-info__label">
                                             <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
-                                            {{__('app.condition')}}:
+                                            {{__('app.mobile_phone')}}:
                                         </div>
-                                        <p>{{$vip->condition->{"title_".app()->getLocale()} }}</p>
+                                        <p>{{$vip->phone }}</p>
                                     </div>
 
                                     <div class="card__more-info-block">
@@ -283,9 +283,9 @@
                                     <span id="c-year">{{ date('Y', strtotime($new->created_date))}}</span>
 
                                     <div class="currency" id="newly{{$new->id}}">
-                                        <button class="select-gel active" onclick="changecurrencynews('newly{{$new->id}}', 'gel',{{$new->id}},{{$dolar}},{{$new->price}})">ლ
+                                        <button class="select-gel active" onclick="changecurrencynews('newly{{$new->id}}', 'gel',{{$new->id}},{{$dolar}},{{$new->price}})">$
                                         </button>
-                                        <button class="select-dol" onclick="changecurrencynews('newly{{$new->id}}', 'dol',{{$new->id}},{{$dolar}},{{$new->price}})">$</button>
+                                        <button class="select-dol" onclick="changecurrencynews('newly{{$new->id}}', 'dol',{{$new->id}},{{$dolar}},{{$new->price}})">ლ</button>
                                     </div>
                                 </div>
 
@@ -296,8 +296,8 @@
                                     </div>
                                     <div class="card__middle-body">
                                         <p id="c-price" class="new-gel-{{$new->id}}">{{number_format($new->price)}} </p>
-                                        <p class="c-category">{{$new->new ? __('app.new') : __('app.second')}}
-                                            / {{$new->transmission->{"title_".app()->getLocale()} }}
+                                        <p class="c-category">
+                                             {{$new->transmission->{"title_".app()->getLocale()} }}
                                             / {{$new->category->{"title_".app()->getLocale()} }}</p>
                                     </div>
                                 </div>
@@ -323,9 +323,9 @@
                                     <div class="card__more-info-block">
                                         <div class="card__more-info__label">
                                             <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
-                                            {{__('app.condition')}}:
+                                            {{__('app.mobile_phone')}}:
                                         </div>
-                                        <p>{{$new->condition->{"title_".app()->getLocale()} }}</p>
+                                        <p>{{$new->phone }}</p>
                                     </div>
 
                                     <div class="card__more-info-block">

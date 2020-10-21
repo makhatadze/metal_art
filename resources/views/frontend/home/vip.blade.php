@@ -23,8 +23,8 @@
                                 <span id="c-year">{{ date('Y', strtotime($vip->created_date))}}</span>
 
                                 <div class="currency curr{{$key}}" >
-                                    <button class="select-gel active" onclick="changecurrencyClass('curr{{$key}}', 'gel',{{$vip->id}}, {{$dolar}},{{$vip->price}})">ლ</button>
-                                    <button class="select-dol" onclick="changecurrencyClass('curr{{$key}}', 'dol',{{$vip->id}}, {{$dolar}},{{$vip->price}})">$</button>
+                                    <button class="select-gel active" onclick="changecurrencyClass('curr{{$key}}', 'gel',{{$vip->id}}, {{$dolar}},{{$vip->price}})">$</button>
+                                    <button class="select-dol" onclick="changecurrencyClass('curr{{$key}}', 'dol',{{$vip->id}}, {{$dolar}},{{$vip->price}})">ლ</button>
                                 </div>
                             </div>
 
@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="card__middle-body">
                                     <p id="c-price" class="gel-{{$vip->id}}">{{number_format($vip->price, 0)}}</p>
-                                    <p class="c-category">{{$vip->new ? __('app.new') : __('app.second')}} / {{$vip->transmission->{"title_".app()->getLocale()} }} / {{$vip->category->{"title_".app()->getLocale()} }}</p>
+                                    <p class="c-category">{{$vip->transmission->{"title_".app()->getLocale()} }} / {{$vip->category->{"title_".app()->getLocale()} }}</p>
                                 </div>
                             </div>
 
@@ -61,9 +61,9 @@
                                 <div class="card__more-info-block">
                                     <div class="card__more-info__label">
                                         <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
-                                        {{__('app.condition')}}:
+                                        {{__('app.mobile_phone')}}:
                                     </div>
-                                    <p>{{$vip->condition->{"title_".app()->getLocale()} }}</p>
+                                    <p>{{$vip->phone }}</p>
                                 </div>
 
                                 <div class="card__more-info-block">

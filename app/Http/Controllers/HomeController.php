@@ -12,8 +12,6 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 use App\Models\BrandModel;
 use App\Models\Category;
-use App\Models\Condition;
-use App\Models\Engine;
 use App\Models\Page;
 use App\Models\Product;
 use App\Models\Transmission;
@@ -37,20 +35,18 @@ class HomeController extends Controller
             return abort('404');
         }
         $products = Product::where(['status' => true, 'vip' => false])
-            ->with(['transmission', 'category', 'condition', 'deal'])
+            ->with(['transmission', 'category', 'deal'])
             ->get();
         $vips = Product::where(['status' => true, 'vip' => true])
-            ->with(['transmission', 'category', 'condition', 'deal'])
+            ->with(['transmission', 'category', 'deal'])
             ->get();
 
         $brands = Brand::where(['status' => true])->get();
         $transmissions = Transmission::where(['status' => true])->get();
-        $conditions = Condition::where(['status' => true])->get();
         return view('frontend.home.index')
             ->with('products', $products)
             ->with('brands', $brands)
             ->with('transmissions', $transmissions)
-            ->with('conditions', $conditions)
             ->with('dolar', 3.25)
             ->with('page', $page)
             ->with('vips', $vips);
@@ -69,11 +65,10 @@ class HomeController extends Controller
                 'transmission' => 'integer',
                 'date_from' => 'integer',
                 'date_to' => 'integer',
-                'engine' => 'integer',
                 'category' => 'integer',
             ]);
             $products = Product::where(['status' => true])
-                ->with(['transmission', 'category', 'condition', 'deal', 'engine']);
+                ->with(['transmission', 'category', 'deal']);
             if ($request->searchValue) {
                 $products->where('title_'.app()->getLocale(), 'like', '%'.$request->searchValue.'%');
             }
@@ -89,9 +84,6 @@ class HomeController extends Controller
 
             if ($request->category) {
                 $products->where(['category_id' => $request->category]);
-            }
-            if ($request->engine) {
-                $products->where(['engine_id' => $request->engine]);
             }
             if ($request->price_from) {
                 $products->where('price', '>', $request->price_from);
@@ -113,8 +105,6 @@ class HomeController extends Controller
             $products = $products->orderBy('vip', 'desc', 'created_at', 'desc')->paginate(9)->appends(request()->query());;
             $categories = Category::where(['status' => true])->get();
             $transmissions = Transmission::where(['status' => true])->get();
-            $engines = Engine::where(['status' => true])->get();
-            $conditions = Condition::where(['status' => true])->get();
             $brands = Brand::where(['status' => true])->get();
             $brandModels = [];
             if (isset($brands[0])) {
@@ -125,8 +115,6 @@ class HomeController extends Controller
                 ->with('products', $products)
                 ->with('categories', $categories)
                 ->with('transmissions', $transmissions)
-                ->with('engines', $engines)
-                ->with('conditions', $conditions)
                 ->with('brands', $brands)
                 ->with('dolar', $this->getDolar())
                 ->with('page', $page)
@@ -145,24 +133,20 @@ class HomeController extends Controller
         $brand = $product->brand()->get()[0];
         $model = $product->model()->get()[0];
         $deal = $product->deal()->get()[0];
-        $engine = $product->engine()->get()[0];
-        $engine = $product->engine()->get()[0];
 
         $news = Product::where(['status' => true,'vip' => false])
-            ->with(['transmission', 'category', 'condition', 'deal'])
+            ->with(['transmission', 'category', 'deal'])
             ->orderBy('created_at', 'desc')->paginate(4);
 
         $vips = Product::where(['status' => true, 'vip' => true])
-            ->with(['transmission', 'category', 'condition', 'deal'])
+            ->with(['transmission', 'category', 'deal'])
             ->orderBy('created_at', 'desc')->paginate(4);
-
 
         return view('frontend.catalog.view')
             ->with('product', $product)
             ->with('brand', $brand)
             ->with('model', $model)
             ->with('deal', $deal)
-            ->with('engine', $engine)
             ->with('news', $news)
             ->with('page', $page)
             ->with('vips', $vips)

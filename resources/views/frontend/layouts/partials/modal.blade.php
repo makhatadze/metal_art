@@ -5,6 +5,18 @@ use App\Models\Setting;
 $phone = Setting::where(['key' => 'phone'])->first();
 $mailTo = Setting::where(['key' => 'contact_email'])->first();
 ?>
+<style>
+    input[type="file[]"] {
+
+        display:block;
+    }
+    .imageThumb {
+        max-height: 75px;
+        border: 2px solid;
+        margin: 10px 10px 0 0;
+        padding: 1px;
+    }
+</style>
 <div id="sell-car-modal">
     <form class="modal__form" onsubmit="return false;">
 
@@ -43,6 +55,12 @@ $mailTo = Setting::where(['key' => 'contact_email'])->first();
             <input type="text" placeholder="{{__('app.address')}}" name="address" required>
             <input type="text" placeholder="{{__('app.description')}}" name="description">
 
+            <input type="file" id="file" name="files[]" accept=".jpg,.jpeg,.png" multiple />
+
+
+        </div>
+        <div id="file-container">
+            <div id="index-preview"></div>
         </div>
 
         <div class="confirm-info">

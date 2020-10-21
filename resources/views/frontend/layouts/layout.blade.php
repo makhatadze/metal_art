@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{url('frontend-assets/css/slick.css')}}">
     <link rel="stylesheet" href="{{url('frontend-assets/css/select.css')}}">
     <title>{{ $page->{"title_".app()->getLocale()} }}</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 
 
 </head>

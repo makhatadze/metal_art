@@ -10,7 +10,8 @@
 
             <div class="container">
 
-                <form action="{{app()->getLocale()}}/catalogue" class="hero__form">
+                <form action="{{app()->getLocale()}}/catalogue" enctype="multipart/form-data" class="hero__form">
+                    @csrf
                     <h1 class="hero__form-heading">
                         {{ $page->{"meta_title_".app()->getLocale()} }}
                     </h1>
@@ -43,16 +44,23 @@
                             @endif
                         </select>
                     </div>
-                    <div class="sel-container">
-                        <select name="condition" class="select2">
-                            @if ($conditions)
-                                @foreach($conditions as $cond)
-                                    <option value="{{$cond->id}}">{{$cond->{"title_".app()->getLocale()} }}</option>
-                                @endforeach
-                            @endif
+                    <div class="catalogue__select-wrap half">
+                        <select name="date_from" class="select2">
+                            @foreach(array_reverse(range(1980,date("Y"))) as $date )
+                                <option {{(Request::get('date_from') == $date) ? 'selected' : ''}} value="{{$date}}">{{$date}}</option>
+                            @endforeach
+                        </select>
+
+                        <select name="date_to" class="select2">
+                            @foreach(array_reverse(range(1980,date("Y"))) as $date )
+                                <option {{(Request::get('date_to') == $date) ? 'selected' : ''}} value="{{$date}}">{{$date}}</option>
+                            @endforeach
                         </select>
                     </div>
-
+                    <div class="catalogue__select-wrap half">
+                        <input type="number" id="price" placeholder="{{__('app.price_from')}}"  name="price_from" value="{{Request::get('price_from')}}">
+                        <input type="number" id="price" placeholder="{{__('app.price_to')}}" name="price_to" value="{{Request::get('price_to')}}">
+                    </div>
                     <button class="hero__form-btn">
                         {{__('app.search')}}
                     </button>
@@ -105,11 +113,11 @@
                                             <div class="currency" id="adviced{{$i}}">
                                                 <button class="select-gel active"
                                                         onclick="changecurrency('adviced{{$i}}', 'gel',{{$products[$i]->id}}, {{$dolar}},{{$products[$i]->price}})">
-                                                    ლ
+                                                    $
                                                 </button>
                                                 <button class="select-dol"
                                                         onclick="changecurrency('adviced{{$i}}', 'dol',{{$products[$i]->id}},{{$dolar}},{{$products[$i]->price}})">
-                                                    $
+                                                    ლ
                                                 </button>
                                             </div>
                                         </div>
@@ -122,8 +130,8 @@
                                             <div class="card__middle-body">
                                                 <p id="c-price"
                                                    class="gel-{{$products[$i]->id}}">{{number_format($products[$i]->price, 0)}} </p>
-                                                <p class="c-category">{{$products[$i]->new ? __('app.new') : __('app.second')}}
-                                                    / {{$products[$i]->transmission->{"title_".app()->getLocale()} }}
+                                                <p class="c-category">
+                                                     {{$products[$i]->transmission->{"title_".app()->getLocale()} }}
                                                     / {{$products[$i]->category->{"title_".app()->getLocale()} }}</p>
                                             </div>
                                         </div>
@@ -154,9 +162,9 @@
                                                     <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}"
                                                          alt="">
 
-                                                    {{__('app.condition')}}:
+                                                    {{__('app.mobile_phone')}}:
                                                 </div>
-                                                <p>{{$products[$i]->condition->{"title_".app()->getLocale()} }}</p>
+                                                <p>{{$products[$i]->phone }}</p>
                                             </div>
 
                                             <div class="card__more-info-block">
@@ -210,7 +218,7 @@
                                   fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
                         </g>
                     </svg>
-                    ყველა პროდუქტი
+                    {{__('app.all_product')}}
                 </a>
             </div>
         </section>

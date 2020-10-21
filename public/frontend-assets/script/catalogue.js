@@ -76,7 +76,7 @@ function changecurrency($id, $cur, id, dolarValue, realValue) {
     // clear both
     let amount = realValue;
     if ($cur === 'dol') {
-        amount = amount / dolarValue;
+        amount = amount * dolarValue;
     }
     amount = `${parseInt(amount)}`;
 
