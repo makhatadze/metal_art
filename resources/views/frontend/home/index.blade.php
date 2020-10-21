@@ -11,11 +11,11 @@
             <div class="container">
 
                 <form action="{{app()->getLocale()}}/catalogue" enctype="multipart/form-data" class="hero__form">
-                        {{ $page->{"meta_title_".app()->getLocale()} }}
+                      <h1 class="home-title">  {{ $page->{"meta_title_".app()->getLocale()} }}
                     </h1>
-                    <p class="hero__form-p">
-                        {{ $page->{"description_".app()->getLocale()} }}
-                    </p>
+{{--                    <p class="hero__form-p home-description">--}}
+{{--                        {{ $page->{"description_".app()->getLocale()} }}--}}
+{{--                    </p>--}}
 
                     <div class="sel-container">
                         <select name="brand" class="select2">

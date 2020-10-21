@@ -65,7 +65,8 @@ class MailController extends Controller
             'last_name' => 'required|string',
             'phone' => 'required|string',
             'address' => 'required',
-            'url' => 'url'
+            'url' => 'url',
+            'personal_id' => 'required'
         ]);
 
         $subject = Setting::where(['key' => 'smtp_subject'])->first();
@@ -76,6 +77,7 @@ class MailController extends Controller
             'address' => $request->address,
             'phone' => $request->phone,
             'url' => $request->url,
+            'personal_id' => $request->personal_id,
             'subject' => 'განვადება',
         ];
 

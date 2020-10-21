@@ -165,8 +165,9 @@ $('#sendEmailBtn').on('click',function () {
     let last_name = $('input[name="detail_last_name"]').val();
     let phone = $('input[name="detail_phone"]').val();
     let address = $('input[name="detail_address"]').val();
+    let personal_id = $('input[name="detail_personal_id"]').val();
 
-    if (first_name && last_name && phone && address && confirm) {
+    if (first_name && last_name && phone && address && personal_id && confirm) {
         $.ajax({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -178,6 +179,7 @@ $('#sendEmailBtn').on('click',function () {
                 'last_name': last_name,
                 'phone': phone,
                 'address': address,
+                'personal_id': personal_id,
                 'url': location.href
             },
             beforeSend: function () {

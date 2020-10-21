@@ -68,5 +68,5 @@ return [
     'address' => 'Address',
     'drive' => 'Drive Wheels',
     'fuel_type' => 'Fuel Type',
-    'all_products' => 'All Products'
+    'all_product' => 'All Products'
 ];

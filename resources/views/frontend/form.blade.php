@@ -8,7 +8,8 @@
         <input type="text" placeholder="{{__('app.first_name')}}" name="detail_first_name" required>
         <input type="text" placeholder="{{__('app.last_name')}}" name="detail_last_name" required>
         <input type="number" placeholder="{{__('app.mobile_phone')}}" name="detail_phone" required>
-        <input type="address" placeholder="{{__('app.address')}}" name="detail_address" required>
+        <input type="text" placeholder="{{__('app.address')}}" name="detail_address" required>
+        <input type="number" placeholder="{{__('app.personal_id')}}" name="detail_personal_id" required>
     </div>
 
     <div class="confirm-info" >

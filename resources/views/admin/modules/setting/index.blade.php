@@ -135,7 +135,7 @@ $mailerActive =  (
                                     {!! Form::open(['url' => route('contactUpdate')]) !!}
                                     <div class="sm:grid grid-cols-2 gap-2 mb-4">
                                         <div class="relative mt-4 {{ $errors->has('admin_email') ? ' has-error' : '' }}">
-                                            {{ Form::label('admin_email', 'ადმინის ელ-ფოსტა', ['class' => 'font-helvetica']) }}
+                                            {{ Form::label('admin_email', 'კონტაქტის ელ-ფოსტა', ['class' => 'font-helvetica']) }}
                                             {{ Form::text('admin_email', $datas['admin_email'], ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
                                             @if ($errors->has('admin_email'))
                                                 <span class="help-block">
@@ -144,7 +144,7 @@ $mailerActive =  (
                                             @endif
                                         </div>
                                         <div class="relative mt-4 {{ $errors->has('contact_email') ? ' has-error' : '' }}">
-                                            {{ Form::label('contact_email', 'საკონტაქტო ელ-ფოსტა', ['class' => 'font-helvetica']) }}
+                                            {{ Form::label('contact_email', 'განვადების ელ-ფოსტა', ['class' => 'font-helvetica']) }}
                                             {{ Form::text('contact_email', $datas['contact_email'], ['class' => 'input w-full border mt-2 col-span-2']) }}
                                             @if ($errors->has('contact_email'))
                                                 <span class="help-block">
@@ -155,7 +155,7 @@ $mailerActive =  (
                                     </div>
                                     <div class="sm:grid grid-cols-2 gap-2 mb-4">
                                         <div class="relative mt-4 {{ $errors->has('support_email') ? ' has-error' : '' }}">
-                                            {{ Form::label('support_email', 'ტექნიკური მხარდაჭერის ელ-ფოსტა', ['class' => 'font-helvetica']) }}
+                                            {{ Form::label('support_email', 'მანქანის ატვირთვის ელ-ფოსტა', ['class' => 'font-helvetica']) }}
                                             {{ Form::text('support_email', $datas['support_email'], ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
                                             @if ($errors->has('support_email'))
                                                 <span class="help-block">

@@ -722,3 +722,11 @@
     flex-wrap: wrap;
     margin: 12px 0;
 }
+
+.home-title {
+    color: #222;
+    margin-bottom: 24px;
+}
+.home-description {
+    color: #222;
+}

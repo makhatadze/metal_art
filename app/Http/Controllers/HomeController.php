@@ -102,7 +102,7 @@ class HomeController extends Controller
                 $products->where('created_date', '<', $to);
             }
 
-            $products = $products->orderBy('vip', 'desc', 'created_at', 'desc')->paginate(9)->appends(request()->query());;
+            $products = $products->orderBy('vip', 'desc', 'created_at', 'desc')->paginate(12)->appends(request()->query());;
             $categories = Category::where(['status' => true])->get();
             $transmissions = Transmission::where(['status' => true])->get();
             $brands = Brand::where(['status' => true])->get();

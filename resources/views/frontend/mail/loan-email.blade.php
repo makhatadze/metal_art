@@ -78,6 +78,7 @@
         <section id="content">
             <h2> სახელი: {{$data['first_name']}}</h2>
             <h2> გვარი: {{$data['last_name']}}</h2>
+            <h2> პირადი ნომერი: {{$data['personal_id']}}</h2>
             <h2> ტელეფონის ნომერი: {{$data['phone']}}</h2>
             <h2> მისამართი: {{$data['address']}}</h2>
             <h2> პროდუქტი: {{$data['url']}}</h2>
