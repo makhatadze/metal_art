@@ -50,7 +50,7 @@
                         {{__('app.description')}}
                     </h2>
                     <p class="description__p">
-                        {{ $product->description_ge }}
+                        {{$product->{"description_".app()->getLocale()} ? $product->{"description_".app()->getLocale()} : $product->description_ge }}
 
                     </p>
 

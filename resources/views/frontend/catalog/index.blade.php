@@ -227,7 +227,7 @@
                                         </div>
 
                                         <div class="card-list-about">
-                                            {{$product->{"description_".app()->getLocale()} }}
+                                            {{$product->{"description_".app()->getLocale()} ? $product->{"description_".app()->getLocale()} : $product->description_ge }}
                                         </div>
 
                                         <div class="card-list-right">

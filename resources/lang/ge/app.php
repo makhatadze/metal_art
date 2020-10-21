@@ -67,6 +67,7 @@ return [
     'date_of_addition' => 'დამატების თარიღი',
     'address' => 'მისამართი',
     'drive' => 'წამყვანი თვლები',
-    'fuel_type' => 'წვის ტიპი'
+    'fuel_type' => 'წვის ტიპი',
+    'all_products' => 'ყველა პროდუქტი'
 
 ];

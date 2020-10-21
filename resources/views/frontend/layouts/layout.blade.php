@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="">
+    <link href="{{url('frontend-assets//img/logos/site-logo.svg')}}" rel="shortcut icon">
+
 
     <link rel="stylesheet" href="{{url('frontend-assets/css/bpg-arial-caps.css')}}">
     <link rel="stylesheet" href="{{url('frontend-assets/css/bpg-web-001-caps.css')}}">

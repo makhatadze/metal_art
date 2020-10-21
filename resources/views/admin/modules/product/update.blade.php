@@ -232,7 +232,7 @@
                 </div>
                 <div class="relative mt-3">
                     <button type="submit" name="user_add_submit"
-                            class="button w-25 bg-theme-1 text-white font-helvetica">დამატება
+                            class="button w-25 bg-theme-1 text-white font-helvetica">რედაქტირება
                     </button>
                 </div>
                 {!! Form::close() !!}

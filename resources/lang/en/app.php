@@ -67,5 +67,6 @@ return [
     'date_of_addition' => 'Date of addition',
     'address' => 'Address',
     'drive' => 'Drive Wheels',
-    'fuel_type' => 'Fuel Type'
+    'fuel_type' => 'Fuel Type',
+    'all_products' => 'All Products'
 ];
