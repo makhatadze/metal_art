@@ -37,7 +37,7 @@ $('.vip-sales__slider').slick({
 function changecurrencyClass($id, $cur, id,dolarValue,realValue){
     let amount = realValue;
     if ($cur === 'dol') {
-        amount = amount / dolarValue;
+        amount = amount * dolarValue;
     }
     amount = `${parseInt(amount)}`;
 
@@ -60,7 +60,7 @@ function changecurrencyClass($id, $cur, id,dolarValue,realValue){
 function changecurrency($id, $cur, id,dolarValue,realValue){
     let amount = realValue;
     if ($cur === 'dol') {
-        amount = amount / dolarValue;
+        amount = amount * dolarValue;
     }
     amount = `${parseInt(amount)}`;
 
