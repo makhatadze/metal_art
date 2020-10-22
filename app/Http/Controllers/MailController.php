@@ -59,6 +59,51 @@ class MailController extends Controller
         return Mail::to($mailTo->value)->send(new ContactEmail($data,false,false));
 
     }
+    public function sendStatement(Request $request) {
+        $request->all();
+
+        $this->validate($request,[
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+            'personal_id' => 'required|string',
+            'address' => 'required|string',
+            'phone' => 'required',
+            'category' => 'required|string',
+            'url' => 'string|max:255|nullable'
+        ]);
+        if ($request->hasFile(0)) {
+            $validate = [];
+            for ($i = 0; $i<$request->count; $i++) {
+                $validate[$i] = 'image|mimes:jpeg,png,jpg,gif,svg|max:7000';
+            }
+            $this->validate($request,$validate);
+        }
+
+
+        $data = [
+          'fullName' => $request->first_name . ' ' . $request->last_name,
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'personal_id' => $request->personal_id,
+            'category' => $request->category,
+            'url' => $request->url,
+            'subject' => 'განვადება',
+            'files' => []
+        ];
+        if($request->count) {
+            for ($i = 0; $i<$request->count; $i++) {
+                if ($request->hasFile($i)) {
+                    $data['files'][$i]=$request->file($i);
+                }
+            }
+        }
+
+        $mailTo = Setting::where(['key' => 'contact_email'])->first();
+        return Mail::to($mailTo->value)->send(new ContactEmail($data,false,false,true));
+
+    }
     public function sendLoan(Request $request) {
         $this->validate($request,[
             'first_name' => 'required|string',
@@ -69,7 +114,7 @@ class MailController extends Controller
             'personal_id' => 'required'
         ]);
 
-        $subject = Setting::where(['key' => 'smtp_subject'])->first();
+
         $data = [
             'full_name' => $request->first_name . ' ' . $request->last_name,
             'first_name' => $request->first_name,

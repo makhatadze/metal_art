@@ -70,5 +70,10 @@ return [
     'fuel_type' => 'Fuel Type',
     'all_product' => 'All Products',
     'date_from' => 'Date From',
-    'date_to' => 'Data To'
+    'date_to' => 'Data To',
+    'fill_out_the_application' => 'Fill out the application',
+    'choose_category'=>'Choose Category',
+    'url' => 'If exist url please insert it!',
+    'statement' => 'Fill out the application'
+
 ];

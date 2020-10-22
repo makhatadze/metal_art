@@ -240,29 +240,5 @@
 @endsection
 @section('custom_scripts')
     <script src="{{ url('frontend-assets/script/index.js') }}"></script>
-    <script type="text/javascript">
-        (function ($) {
-            "use strict";
-
-            // Select2
-            $('.select2').each(function () {
-                let options = {}
-                if ($(this).data('placeholder')) {
-                    options.placeholder = $(this).data('placeholder');
-                }
-
-                if ($(this).data('hide-search')) {
-                    options.minimumResultsForSearch = -1
-                }
-
-                $(this).select2(options)
-                //
-                // $('#brand-select2').select2({
-                //     placeholder: "Please select an skill",
-                // });
-            })
-        })($)
-
-    </script>
 @endsection
 

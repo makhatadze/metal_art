@@ -270,6 +270,11 @@ if(window.File && window.FileList && window.FileReader) {
     $("#file").on("change",function(e) {
         var files = e.target.files ,
             filesLength = files.length ;
+        if (filesLength > 17) {
+            alert('ზედმეტად ბევრი ფაილია');
+            return false;
+        }
+        $('.modal-container').html(`<div id="index-preview"></div>`);
         for (var i = 0; i < filesLength ; i++) {
             var f = files[i]
             var fileReader = new FileReader();

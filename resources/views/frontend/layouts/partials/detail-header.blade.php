@@ -18,7 +18,10 @@
                 </li>
                 <li class="navigation__item">
                     <a href="{{route('contactIndex')}}" class="navigation__link {{$page->slug == 'contact-us' ? 'active': ''}}">{{__('app.contact')}}</a>
+                </li>                <li class="navigation__item">
+                    <a href="{{route('statementIndex')}}" class="navigation__link {{$page->slug == 'statement' ? 'active': ''}}">{{__('app.statement')}}</a>
                 </li>
+
             </ul>
 
             <div class="nav-right">

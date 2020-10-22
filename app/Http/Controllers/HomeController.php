@@ -177,6 +177,16 @@ class HomeController extends Controller
 
     }
 
+    public function statement()
+    {
+        $page = Page::where(['status' => true, 'slug' => 'statement'])->first();
+        if (!$page) {
+            return abort('404');
+        }
+        return view('frontend.statement.index')->with('page', $page);
+
+    }
+
     private function setEnvironmentValue($environmentName, $configKey, $newValue)
     {
         file_put_contents(App::environmentFilePath(), str_replace(

@@ -48,6 +48,30 @@
 <script src="{{url('frontend-assets/script/details.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script src="{{url('frontend-assets/script/catalogue.js')}}"></script>
+<script type="text/javascript">
+    (function ($) {
+        "use strict";
+
+        // Select2
+        $('.select2').each(function () {
+            let options = {}
+            if ($(this).data('placeholder')) {
+                options.placeholder = $(this).data('placeholder');
+            }
+
+            if ($(this).data('hide-search')) {
+                options.minimumResultsForSearch = -1
+            }
+
+            $(this).select2(options)
+            //
+            // $('#brand-select2').select2({
+            //     placeholder: "Please select an skill",
+            // });
+        })
+    })($)
+
+</script>
 @yield('custom_scripts')
 </body>
 </html>

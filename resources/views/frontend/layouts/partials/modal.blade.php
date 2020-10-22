@@ -59,7 +59,7 @@ $mailTo = Setting::where(['key' => 'contact_email'])->first();
 
 
         </div>
-        <div id="file-container">
+        <div id="file-container" class="modal-container">
             <div id="index-preview"></div>
         </div>
 

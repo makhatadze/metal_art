@@ -17,11 +17,12 @@ class ContactEmail extends Mailable
      *
      * @return void
      */
-    public function __construct($data, $contact, $loan)
+    public function __construct($data, $contact, $loan,$statement)
     {
         $this->data = $data;
         $this->contact = $contact;
         $this->loan = $loan;
+        $this->statement = $statement;
     }
 
     /**
@@ -38,6 +39,19 @@ class ContactEmail extends Mailable
         }
         if ($this->loan) {
             return $this->from($mailTo->value, $this->data['full_name'])->subject($this->data['subject'])->view('frontend.mail.loan-email', ['data' => $this->data]);
+        }
+        if ($this->statement) {
+            $email = $this->from($mailTo->value, $this->data['fullName'])
+                ->subject($this->data['subject'])
+                ->view('frontend.mail.statement-email', ['data' => $this->data]);
+            if ($this->data['files']) {
+                foreach ($this->data['files'] as $file) {
+                    $email->attach($file->getRealPath(), [
+                        'as' => $file->getClientOriginalName()
+                    ]);
+                }
+            }
+            return $email;
         }
         $email = $this->from($mailTo->value, $this->data['fullName'])
             ->subject($this->data['subject'])
