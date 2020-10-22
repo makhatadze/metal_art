@@ -59,16 +59,17 @@ class HomeController extends Controller
             return abort('404');
         }
         if ($request->isMethod('get')) {
+
             $this->validate($request, [
-                'custom' => 'integer',
-                'brand' => 'integer',
-                'transmission' => 'integer',
-                'date_from' => 'integer',
-                'date_to' => 'integer',
-                'category' => 'integer',
+                'custom' => 'integer|nullable',
+                'brand' => 'integer|nullable',
+                'transmission' => 'integer|nullable',
+                'date_from' => 'integer|nullable',
+                'date_to' => 'integer|nullable',
+                'category' => 'integer|nullable',
             ]);
             $products = Product::where(['status' => true])
-                ->with(['transmission', 'category', 'deal']);
+                ->with(['transmission', 'category', 'deal','brand','model']);
             if ($request->searchValue) {
                 $products->where('title_'.app()->getLocale(), 'like', '%'.$request->searchValue.'%');
             }

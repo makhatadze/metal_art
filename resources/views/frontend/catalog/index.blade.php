@@ -22,7 +22,10 @@
                                 <div class="catalogue__select-img">
                                     <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
                                 </div>
-                                <select name="brand" class="select2" value="{{Request::get('brand') ? Request::get('brand') : 1}}" onchange="brandChange(event)">
+                                <select name="brand" class="select2" data-placeholder="{{__('app.Manufacturer')}}"
+                                        value="{{Request::get('brand') ? Request::get('brand') : 1}}"
+                                        onchange="brandChange(event)">
+                                    <option></option>
                                     @if ($brands)
                                         @foreach($brands as $brand)
                                             <option {{(Request::get('brand') && Request::get('brand') == $brand->id) ? 'selected' : ''}} value="{{$brand->id}}">{{$brand->title }}</option>
@@ -38,7 +41,9 @@
                                 <div class="catalogue__select-img">
                                     <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
                                 </div>
-                                <select name="model" class="select2" id="brand-model">
+                                <select name="model" class="select2" id="brand-model"
+                                        data-placeholder="{{__('app.model')}}">
+                                    <option></option>
                                     @if ($brandModels)
                                         @foreach($brandModels as $mod)
                                             <option {{(Request::get('model') && Request::get('model') == $mod->id) ? 'selected' : ''}} value="{{$mod->id}}">{{$mod->title }}</option>
@@ -54,9 +59,10 @@
                                 <div class="catalogue__select-img">
                                     <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
                                 </div>
-                                <select name="custom" class="select2">
+                                <select name="custom" class="select2" data-placeholder="{{__('app.custom')}}">
+                                    <option selected></option>
                                     <option {{(Request::get('custom') == 1) ? 'selected' : ''}} value="1">{{__('app.custom_cleared')}}</option>
-                                    <option {{(Request::get('custom') == 0) ? 'selected' : ''}} value="0">{{__('app.before_customs')}}</option>
+                                    <option {{(Request::get('custom') == 2) ? 'selected' : ''}} value="2">{{__('app.before_customs')}}</option>
                                 </select>
                             </div>
 
@@ -68,7 +74,8 @@
                                 <div class="catalogue__select-img">
                                     <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
                                 </div>
-                                <select name="category" class="select2">
+                                <select name="category" class="select2" data-placeholder="{{__('app.category')}}">
+                                    <option></option>
                                     @if ($categories)
                                         @foreach($categories as $cat)
                                             <option {{(Request::get('custom') == $cat->id) ? 'selected' : ''}} value="{{$cat->id}}">{{$cat->{"title_".app()->getLocale()} }}</option>
@@ -81,28 +88,33 @@
                                 {{__('app.release_date')}}
                             </h2>
                             <div class="catalogue__select-wrap half">
-                                <select name="date_from" class="select2">
-                                    @foreach(array_reverse(range(1980,date("Y"))) as $date )
+                                <select name="date_to" class="select2" data-placeholder="{{__('app.date_to')}}">
+                                    <option></option>
+                                    @foreach(range(1980,date("Y")) as $date )
                                         <option {{(Request::get('date_from') == $date) ? 'selected' : ''}} value="{{$date}}">{{$date}}</option>
                                     @endforeach
                                 </select>
 
-                                <select name="date_to" class="select2">
+                                <select name="date_from" class="select2" data-placeholder="{{__('app.date_from')}}">
+                                    <option></option>
                                     @foreach(array_reverse(range(1980,date("Y"))) as $date )
                                         <option {{(Request::get('date_to') == $date) ? 'selected' : ''}} value="{{$date}}">{{$date}}</option>
                                     @endforeach
                                 </select>
                             </div>
 
-                            <h2 class="catalogue__filter-category" >
+                            <h2 class="catalogue__filter-category">
                                 {{__('app.price')}}
                             </h2>
                             <div class="catalogue__select-wrap half">
-                                <input type="number" id="price" placeholder="{{__('app.price_from')}}"  name="price_from" value="{{Request::get('price_from')}}">
-                                <input type="number" id="price" placeholder="{{__('app.price_to')}}" name="price_to" value="{{Request::get('price_to')}}">
+                                <input type="number" id="price" placeholder="{{__('app.price_from')}}" name="price_from"
+                                       value="{{Request::get('price_from')}}">
+                                <input type="number" id="price" placeholder="{{__('app.price_to')}}" name="price_to"
+                                       value="{{Request::get('price_to')}}">
                             </div>
 
-                            <input hidden name="searchValue" value="{{Request::get('searchValue') ? Request::get('searchValue') : ''}}">
+                            <input hidden name="searchValue"
+                                   value="{{Request::get('searchValue') ? Request::get('searchValue') : ''}}">
                             <h2 class="catalogue__filter-category">
                                 {{__('app.transmission')}}
                             </h2>
@@ -110,7 +122,8 @@
                                 <div class="catalogue__select-img">
                                     <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}" alt="">
                                 </div>
-                                <select name="transmission" class="select2">
+                                <select name="transmission" class="select2" data-placeholder="{{__('app.transmission')}}">
+                                    <option></option>
                                     @if ($transmissions)
                                         @foreach($transmissions as $trans)
                                             <option {{(Request::get('transmission') == $trans->id) ? 'selected' : ''}} value="{{$trans->id}}">{{$trans->{"title_".app()->getLocale()} }}</option>
@@ -118,7 +131,6 @@
                                     @endif
                                 </select>
                             </div>
-
 
 
                             <button class="catalogue__filter-btn">
@@ -162,7 +174,9 @@
                                     </svg>
 
                                 </button>
-                                <input id="search-input" value="{{Request::get('searchValue') ? Request::get('searchValue') : ''}}" onchange="changeSearch(event)" type="text" placeholder="ძიება">
+                                <input id="search-input"
+                                       value="{{Request::get('searchValue') ? Request::get('searchValue') : ''}}"
+                                       onchange="changeSearch(event)" type="text" placeholder="ძიება">
                             </div>
                         </div>
 
@@ -216,9 +230,13 @@
 
                                         <div class="card__top">
                                             <h2>{{$product->{"title_".app()->getLocale()} }}</h2>
-
                                             <p class="card__top-p">
-                                                {{$product->fuel->{"title_".app()->getLocale()} }} & {{$product->category->{"title_".app()->getLocale()} }}
+                                                {{$product->brand->title }}
+                                                & {{$product->model->title }}
+                                            </p>
+                                            <p class="card__top-p">
+                                                {{$product->fuel->{"title_".app()->getLocale()} }}
+                                                & {{$product->category->{"title_".app()->getLocale()} }}
                                             </p>
                                             <p class="card__top-p">
                                                 {{__('app.year')}} : {{ date('Y', strtotime($product->created_date))}}
@@ -226,7 +244,8 @@
 
                                             <p class="card-list-data">
                                                 <img src="{{url('frontend-assets/img/logos/date-range.svg')}}" alt="">
-                                                {{__('app.release_date')}} : {{date('Y/m/d',strtotime($product->created_at))}}
+                                                {{__('app.release_date')}}
+                                                : {{date('Y/m/d',strtotime($product->created_at))}}
                                             </p>
 
                                         </div>
@@ -240,28 +259,32 @@
 
                                                 <div class="card__more-info-block">
                                                     <div class="card__more-info__label">
-                                                        <img src="{{url('frontend-assets/img/logos/car-engine.png')}}" alt="">
+                                                        <img src="{{url('frontend-assets/img/logos/car-engine.png')}}"
+                                                             alt="">
                                                         {{$product->engine_capacity}}
                                                     </div>
                                                 </div>
 
                                                 <div class="card__more-info-block">
                                                     <div class="card__more-info__label">
-                                                        <img src="{{url('frontend-assets/img/logos/speedometer-i.png')}}" alt="">
+                                                        <img src="{{url('frontend-assets/img/logos/speedometer-i.png')}}"
+                                                             alt="">
                                                         {{$product->mileage}}
                                                     </div>
                                                 </div>
 
                                                 <div class="card__more-info-block">
                                                     <div class="card__more-info__label">
-                                                        <img src="{{url('frontend-assets/img/logos/manual-transmission.png')}}" alt="">
+                                                        <img src="{{url('frontend-assets/img/logos/manual-transmission.png')}}"
+                                                             alt="">
                                                         {{$product->transmission->{"title_".app()->getLocale()} }}
                                                     </div>
                                                 </div>
 
                                                 <div class="card__more-info-block">
                                                     <div class="card__more-info__label">
-                                                        <img src="{{url('frontend-assets/img/logos/steering-wheel.png')}}" alt="">
+                                                        <img src="{{url('frontend-assets/img/logos/steering-wheel.png')}}"
+                                                             alt="">
                                                         {{$product->wheel ? __('app.right'): __('app.left')}}
                                                     </div>
                                                 </div>
@@ -273,16 +296,21 @@
 
                                                 <div class="currency" id="curr{{$key}}">
                                                     <button class="select-gel active"
-                                                            onclick="changecurrency('curr{{$key}}', 'gel',{{$product->id}}, {{$dolar}},{{$product->price}})">$
+                                                            onclick="changecurrency('curr{{$key}}', 'gel',{{$product->id}}, {{$dolar}},{{$product->price}})">
+                                                        $
                                                     </button>
-                                                    <button class="select-dol" onclick="changecurrency('curr{{$key}}', 'dol',{{$product->id}}, {{$dolar}},{{$product->price}})">₾
+                                                    <button class="select-dol"
+                                                            onclick="changecurrency('curr{{$key}}', 'dol',{{$product->id}}, {{$dolar}},{{$product->price}})">
+                                                        ₾
                                                     </button>
                                                 </div>
 
                                                 <p>
-                                                    <span id="catalogue-item-price" class="gel-{{$product->id}}">{{number_format($product->price, 0)}}</span>
+                                                    <span id="catalogue-item-price"
+                                                          class="gel-{{$product->id}}">{{number_format($product->price, 0)}}</span>
                                                 </p>
-                                                <a class="cataloguecard__btn" href="{{route('catalogView',$product->id)}}">
+                                                <a class="cataloguecard__btn"
+                                                   href="{{route('catalogView',$product->id)}}">
                                                     {{__('app.in_details')}}
                                                 </a>
                                             </div>
@@ -296,8 +324,6 @@
                             <h1>{{__('app.result_not_found')}}</h1>
                     @endif
                     <!-- card end-->
-
-
 
 
                     </div>
