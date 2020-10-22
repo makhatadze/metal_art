@@ -13,8 +13,8 @@
         <introspection-scope>
           <node kind="schema">
             <name qname="@" />
-            <name qname="crm-dimond" />
             <name qname="adminka" />
+            <name qname="crm-dimond" />
           </node>
         </introspection-scope>
       </schema-mapping>

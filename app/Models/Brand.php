@@ -27,6 +27,10 @@ class Brand extends Model
         return $this->morphOne('App\Models\BrandModel', 'brandmodeleable');
     }
 
+    public function hasImage() {
+        return Image::where(['imageable_id' => $this->id, 'imageable_type' => 'App\Models\Brand'])->count();
+    }
+
     /**
      * Get the brand's image.
      */

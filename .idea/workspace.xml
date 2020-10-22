@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d51b9db-7f3b-4935-adfa-fc1bbaf7761b" name="Default Changelist" comment="">
+    <list default="true" id="3d51b9db-7f3b-4935-adfa-fc1bbaf7761b" name="Default Changelist" comment="Change get request by post.">
+      <change afterPath="$PROJECT_DIR$/public/noimageavailable.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend-assets/css/select.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend-assets/css/select.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Brand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Brand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/frontend-assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend-assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend-assets/script/general.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend-assets/script/general.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ge/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ge/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/modules/setting/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/modules/setting/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/catalog/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/catalog/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/catalog/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/catalog/view.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/mail/loan-email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/mail/loan-email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/home/vip.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home/vip.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +188,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.env" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/frontend-assets/img/logos" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -202,19 +200,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/public/frontend-assets/img/logos" />
+      <recent name="$PROJECT_DIR$/resources/views/frontend/mail" />
+      <recent name="C:\xampp\htdocs\admin-panel" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/frontend/layouts" />
       <recent name="$PROJECT_DIR$/resources/views/frontend/home" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
       <recent name="$PROJECT_DIR$/resources/views/admin/modules/image" />
       <recent name="$PROJECT_DIR$/resources/views/admin/layouts" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/frontend-assets/img/logos" />
-      <recent name="$PROJECT_DIR$/resources/views/frontend/mail" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="C:\xampp\htdocs\admin-panel" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -455,12 +453,12 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2648" y="310" width="526" height="493" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603193018982" />
-    <state x="2454" y="100" width="914" height="602" key="CommitChangelistDialog2" timestamp="1603273943541">
+    <state x="2454" y="100" width="914" height="602" key="CommitChangelistDialog2" timestamp="1603366795953">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="380" y="67" width="745" height="617" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1603018624336" />
     <state x="534" y="125" width="914" height="602" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603119509683" />
-    <state x="2454" y="100" width="914" height="914" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603273943541" />
+    <state x="2454" y="100" width="914" height="914" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603366795953" />
     <state x="37" y="135" width="1215" height="609" key="DiffContextDialog" timestamp="1603116509417">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -473,9 +471,10 @@
     <state x="734" y="310" width="426" height="493" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1602232385780" />
     <state x="2654" y="290" width="426" height="493" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603261327273" />
     <state x="778" y="310" width="426" height="493" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1602075899718" />
-    <state width="261" height="506" key="HiddenNamespacesPopup" timestamp="1602075075076">
-      <screen x="72" y="27" width="1848" height="1053" />
+    <state width="272" height="506" key="HiddenNamespacesPopup" timestamp="1603358843336">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
+    <state width="272" height="506" key="HiddenNamespacesPopup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603358843336" />
     <state width="261" height="506" key="HiddenNamespacesPopup/72.27.1848.1053@72.27.1848.1053" timestamp="1602075075076" />
     <state x="2666" y="463" width="401" height="158" key="NewPhpFileDialog" timestamp="1603087776518">
       <screen x="1920" y="0" width="1920" height="1080" />
@@ -537,9 +536,10 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="735" y="431" width="628" height="288" key="org.intellij.images.editor.actions.BackgroundImageDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1602079338340" />
-    <state x="2531" y="231" key="run.anything.popup" timestamp="1603262735105">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="611" y="252" key="run.anything.popup" timestamp="1603358739366">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
+    <state x="611" y="252" key="run.anything.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603358739366" />
     <state x="2531" y="231" key="run.anything.popup/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603262735105" />
     <state x="660" y="252" key="run.anything.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1601900832244" />
     <state x="2579" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1603093480310">

@@ -10,13 +10,18 @@
     <section id="details-slider__section">
 
         <div class="details-slider">
-            @foreach($images as $img)
-                <div class="details-slider__item">
-                    <img src="{{url('storage/product/'.$product->id.'/'.$img->name)}}" alt="">
-                    <div class="slider-overlay"></div>
-                </div>
+            @if(count($images) > 0)
+                @foreach($images as $img)
+                    <div class="details-slider__item">
+                        <img src="{{url('storage/product/'.$product->id.'/'.$img->name)}}" alt="">
+                        <div class="slider-overlay"></div>
+                    </div>
 
-            @endforeach
+                @endforeach
+            @else
+                <img src="{{url('noimageavailable.png')}}">
+            @endif
+
         </div>
 
     </section>
@@ -29,7 +34,11 @@
                 <div class="details-section__main-top">
 
                     <div class="car-brand-icon">
-                        <img src="{{ $product->brand->image() ? url('storage/brand/'.$product->brand->id.'/'.$product->brand->image()->get()[0]->name) : ''}}" alt="">
+                        @if(!$product->brand->hasImage())
+                            <img src="{{url('noimageavailable.png')}}">
+                        @else
+                            <img src="{{ $product->brand->image() ? url('storage/brand/'.$product->brand->id.'/'.$product->brand->image()->get()[0]->name) : ''}}" alt="">
+                        @endif
                     </div>
 
                     <div class="details__car-info">
@@ -187,8 +196,12 @@
                         <div class="card">
 
                             <div class="card-img-box">
-                                <img src="{{url('storage/product/'.$vip->id.'/'.$vip->image()->get()[0]->name)}}"
-                                     alt="">
+                                @if(!$vip->hasImage())
+                                    <img src="{{url('noimageavailable.png')}}">
+                                @else
+                                    <img src="{{url('storage/product/'.$vip->id.'/'.$vip->image()->get()[0]->name)}}"
+                                         alt="">
+                                @endif
                             </div>
 
                             <div class="card__main">
@@ -212,7 +225,7 @@
                                     <div class="card__middle-body">
                                         <p id="c-price" class="vip-gel-{{$vip->id}}">{{number_format($vip->price)}} </p>
                                         <p class="c-category">
-                                             {{$vip->transmission->{"title_".app()->getLocale()} }}
+                                            {{$vip->transmission->{"title_".app()->getLocale()} }}
                                             / {{$vip->category->{"title_".app()->getLocale()} }}</p>
                                     </div>
                                 </div>
@@ -254,8 +267,8 @@
 
                             <div class="card__bottom">
                                 <div class="card__bottom-views">
-{{--                                    <img src="{{url('frontend-assets/img/logos/i-fire.svg')}}" alt="">--}}
-{{--                                    2 {{__('app.people_saw_it')}}--}}
+                                    {{--                                    <img src="{{url('frontend-assets/img/logos/i-fire.svg')}}" alt="">--}}
+                                    {{--                                    2 {{__('app.people_saw_it')}}--}}
                                 </div>
 
                                 <a href="{{route('catalogView',$vip->id)}}" class="card__bottom-btn">
@@ -297,8 +310,12 @@
                         <div class="card">
 
                             <div class="card-img-box">
-                                <img src="{{url('storage/product/'.$new->id.'/'.$new->image()->get()[0]->name)}}"
-                                     alt="">
+                                @if(!$new->hasImage())
+                                    <img src="{{url('noimageavailable.png')}}">
+                                @else
+                                    <img src="{{url('storage/product/'.$new->id.'/'.$new->image()->get()[0]->name)}}"
+                                         alt="">
+                                @endif
                             </div>
 
                             <div class="card__main">
@@ -322,7 +339,7 @@
                                     <div class="card__middle-body">
                                         <p id="c-price" class="new-gel-{{$new->id}}">{{number_format($new->price)}} </p>
                                         <p class="c-category">
-                                             {{$new->transmission->{"title_".app()->getLocale()} }}
+                                            {{$new->transmission->{"title_".app()->getLocale()} }}
                                             / {{$new->category->{"title_".app()->getLocale()} }}</p>
                                     </div>
                                 </div>
@@ -366,8 +383,8 @@
 
                             <div class="card__bottom">
                                 <div class="card__bottom-views">
-{{--                                    <img src="{{url('frontend-assets/img/logos/i-fire.svg')}}" alt="">--}}
-{{--                                    2 {{__('app.people_saw_it')}}--}}
+                                    {{--                                    <img src="{{url('frontend-assets/img/logos/i-fire.svg')}}" alt="">--}}
+                                    {{--                                    2 {{__('app.people_saw_it')}}--}}
                                 </div>
 
                                 <a href="{{route('catalogView',$new->id)}}" class="card__bottom-btn">

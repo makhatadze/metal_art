@@ -14,19 +14,19 @@
     font-style: normal;
 }
 
-/*  reset  */ 
+/*  reset  */
 
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; 
+  box-sizing: inherit;
 }
 
 html {
     box-sizing: border-box;
-    font-size: 62.5%; 
+    font-size: 62.5%;
 }
 
 body {
@@ -37,21 +37,21 @@ body {
     background: var(--body-bg);
 }
 
-ul { list-style: none;} 
-a { 
-    text-decoration: none; 
+ul { list-style: none;}
+a {
+    text-decoration: none;
     color: inherit;
 }
 button {
     border: none;
     background: transparent;
     outline: none;
-    cursor: pointer; 
+    cursor: pointer;
 }
 select {
     cursor: pointer;
 }
-input,textarea { 
+input,textarea {
     outline: none;
 }
 
@@ -69,24 +69,24 @@ img {
 /* width */
 ::-webkit-scrollbar {
     width: 11px;
-    height: 8px; 
+    height: 8px;
     background-color: #fff;
 }
-  
+
 /* Track */
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px var(--clr-orange); 
+    box-shadow: inset 0 0 5px var(--clr-orange);
 }
-   
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background:var(--clr-orange); 
+    background:var(--clr-orange);
     border-radius: 0px;
 }
-  
+
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #e28e2e; 
+    background: #e28e2e;
 }
                             /* -- End scroll bar--*/
 
@@ -105,7 +105,7 @@ input[type=number] {
 /* util */
 :root {
     --body-bg: #F2F2F2;
-    --clr-orange: #FD8D0F ; 
+    --clr-orange: #FD8D0F ;
     --clr-blue:#5748E1 ;
     --clr-purple-dark: #3F3357;
     --clr-purple: #CE2F6A;
@@ -144,7 +144,7 @@ main {
     background-color: #fff;
     padding: 1rem 0;
     box-shadow: 0px 1px 6px -1px rgba(0, 0, 0, 0.158);
-    
+
 }
 .nav {
     width: 100%;
@@ -1319,11 +1319,11 @@ main {
 }
 /* Track */
 .list .card-list-about::-webkit-scrollbar-track {
-    box-shadow: none; 
+    box-shadow: none;
 }
 /* Handle */
 .list .card-list-about::-webkit-scrollbar-thumb {
-    background:var(--clr-orange); 
+    background:var(--clr-orange);
     border-radius: 5px;
 }
 
@@ -1927,7 +1927,7 @@ main {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    background-color:#99570ce3 ; 
+    background-color:#99570ce3 ;
      visibility: hidden;
      opacity: 0;
      -webkit-transition: .5s;
@@ -2017,7 +2017,7 @@ main {
 }
 
 @media (max-width: 940px) {
- 
+
     .menu {
         display:  inline-block;
     }
@@ -2228,13 +2228,13 @@ main {
     .vip-sales__slider {
         padding: 0 10px;
     }
-    
+
 }
 @media (max-width: 650px) {
     .vip-sales__slider {
         padding: 0 3px;
     }
-    
+
 }
 /* card */
 @media (max-width: 650px){
@@ -2250,7 +2250,7 @@ main {
 
 
 
-/* section 4 - we advice */ 
+/* section 4 - we advice */
 @media (max-width: 1280px)  {
     .we-advice__item-wrapper {
         grid-template-columns: repeat(3, 1fr);
@@ -2272,10 +2272,10 @@ main {
     #we-advice {
         margin-bottom: 5rem;
     }
-    
+
 }
 
-/* Main footer  */ 
+/* Main footer  */
 @media (max-width: 1450px)  {
     .footer__circle {
         bottom: -900px;
@@ -2365,7 +2365,7 @@ main {
     }
 }
 
-            /*  catalogue.html  */ 
+            /*  catalogue.html  */
 
 @media (max-width: 1200px) {
     .catalogue-card.list {
@@ -2450,7 +2450,7 @@ main {
     .catalogue__header {
         margin-bottom: 25px;
     }
-     
+
 }
 
 
@@ -2622,7 +2622,7 @@ main {
 }
 
 @media (max-width: 680px)  {
-  
+
     .contact__form-main input, .contact__form-main textarea {
         line-height: 3.5rem;
     }
@@ -2636,8 +2636,8 @@ main {
     .contact__form-btn {
         line-height: 4.4rem;
     }
-    
-    
+
+
 }
 
                 /* about.html */

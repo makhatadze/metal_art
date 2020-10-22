@@ -83,7 +83,7 @@
                             <div class="catalogue__select-wrap half">
                                 <select name="date_from" class="select2">
                                     @foreach(array_reverse(range(1980,date("Y"))) as $date )
-                                    <option {{(Request::get('date_from') == $date) ? 'selected' : ''}} value="{{$date}}">{{$date}}</option>
+                                        <option {{(Request::get('date_from') == $date) ? 'selected' : ''}} value="{{$date}}">{{$date}}</option>
                                     @endforeach
                                 </select>
 
@@ -203,7 +203,13 @@
                                 <div class="catalogue-card">
 
                                     <div class="card-img-box">
-                                        <img src="{{url('storage/product/'.$product->id.'/'.$product->image()->get()[0]->name)}}">
+                                        @if(!$product->hasImage())
+                                            <img src="{{url('noimageavailable.png')}}">
+
+                                        @else
+                                            <img src="{{url('storage/product/'.$product->id.'/'.$product->image()->get()[0]->name)}}">
+
+                                        @endif
                                     </div>
 
                                     <div class="catalogue-card__wrap">
@@ -288,8 +294,8 @@
                             @endforeach
                         @else
                             <h1>{{__('app.result_not_found')}}</h1>
-                        @endif
-                        <!-- card end-->
+                    @endif
+                    <!-- card end-->
 
 
 

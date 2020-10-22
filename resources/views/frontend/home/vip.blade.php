@@ -13,7 +13,13 @@
                     <div class="card">
 
                         <div class="card-img-box">
-                            <img src="{{url('storage/product/'.$vip->id.'/'.$vip->image()->get()[0]->name)}}" alt="">
+                            @if(!$vip->hasImage()))
+                            <img src="{{url('noimageavailable.png')}}">
+                            @else
+                                <img src="{{url('storage/product/'.$vip->id.'/'.$vip->image()->get()[0]->name)}}"
+                                     alt="">
+                            @endif
+
                         </div>
 
                         <div class="card__main">
@@ -22,9 +28,15 @@
                                 <h2 id="c-name">{{$vip->{"title_".app()->getLocale()} }}</h2>
                                 <span id="c-year">{{ date('Y', strtotime($vip->created_date))}}</span>
 
-                                <div class="currency curr{{$key}}" >
-                                    <button class="select-gel active" onclick="changecurrencyClass('curr{{$key}}', 'gel',{{$vip->id}}, {{$dolar}},{{$vip->price}})">$</button>
-                                    <button class="select-dol" onclick="changecurrencyClass('curr{{$key}}', 'dol',{{$vip->id}}, {{$dolar}},{{$vip->price}})">ლ</button>
+                                <div class="currency curr{{$key}}">
+                                    <button class="select-gel active"
+                                            onclick="changecurrencyClass('curr{{$key}}', 'gel',{{$vip->id}}, {{$dolar}},{{$vip->price}})">
+                                        $
+                                    </button>
+                                    <button class="select-dol"
+                                            onclick="changecurrencyClass('curr{{$key}}', 'dol',{{$vip->id}}, {{$dolar}},{{$vip->price}})">
+                                        ლ
+                                    </button>
                                 </div>
                             </div>
 
@@ -35,7 +47,8 @@
                                 </div>
                                 <div class="card__middle-body">
                                     <p id="c-price" class="gel-{{$vip->id}}">{{number_format($vip->price, 0)}}</p>
-                                    <p class="c-category">{{$vip->transmission->{"title_".app()->getLocale()} }} / {{$vip->category->{"title_".app()->getLocale()} }}</p>
+                                    <p class="c-category">{{$vip->transmission->{"title_".app()->getLocale()} }}
+                                        / {{$vip->category->{"title_".app()->getLocale()} }}</p>
                                 </div>
                             </div>
 
@@ -80,9 +93,9 @@
 
                         <div class="card__bottom">
                             <div class="card__bottom-views">
-{{--                                <img src="{{url('frontend-assets/img/logos/i-fire.svg')}}" alt="">--}}
+                                {{--                                <img src="{{url('frontend-assets/img/logos/i-fire.svg')}}" alt="">--}}
 
-{{--                                2 {{__('app.people_saw_it')}}--}}
+                                {{--                                2 {{__('app.people_saw_it')}}--}}
                             </div>
 
                             <a href="{{route('catalogView',$vip->id)}}" class="card__bottom-btn">

@@ -11,11 +11,11 @@
             <div class="container">
 
                 <form action="{{app()->getLocale()}}/catalogue" enctype="multipart/form-data" class="hero__form">
-                      <h1 class="home-title">  {{ $page->{"meta_title_".app()->getLocale()} }}
+                    <h1 class="home-title">  {{ $page->{"meta_title_".app()->getLocale()} }}
                     </h1>
-{{--                    <p class="hero__form-p home-description">--}}
-{{--                        {{ $page->{"description_".app()->getLocale()} }}--}}
-{{--                    </p>--}}
+                    {{--                    <p class="hero__form-p home-description">--}}
+                    {{--                        {{ $page->{"description_".app()->getLocale()} }}--}}
+                    {{--                    </p>--}}
 
                     <div class="sel-container">
                         <select name="brand" class="select2">
@@ -99,7 +99,12 @@
                                 <div class="card">
 
                                     <div class="card-img-box">
-                                        <img src="{{url('storage/product/'.$products[$i]->id.'/'.$products[$i]->image()->get()[$i]->name)}}">
+                                        @if(!$products[$i]->hasImage())
+                                            <img src="{{url('noimageavailable.png')}}">
+                                        @else
+                                            <img src="{{url('storage/product/'.$products[$i]->id.'/'.$products[$i]->image()->get()[$i]->name)}}">
+
+                                        @endif
                                     </div>
 
                                     <div class="card__main">
@@ -129,7 +134,7 @@
                                                 <p id="c-price"
                                                    class="gel-{{$products[$i]->id}}">{{number_format($products[$i]->price, 0)}} </p>
                                                 <p class="c-category">
-                                                     {{$products[$i]->transmission->{"title_".app()->getLocale()} }}
+                                                    {{$products[$i]->transmission->{"title_".app()->getLocale()} }}
                                                     / {{$products[$i]->category->{"title_".app()->getLocale()} }}</p>
                                             </div>
                                         </div>

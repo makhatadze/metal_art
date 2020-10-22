@@ -48,6 +48,10 @@ class Product extends Model
         return $this->morphMany('App\Models\Image', 'imageable');
     }
 
+    public function hasImage() {
+        return Image::where(['imageable_id' => $this->id, 'imageable_type' => 'App\Models\Product'])->count();
+    }
+
     public function transmission(){
         return $this->hasOne('App\Models\Transmission', 'id','transmission_id');
     }
