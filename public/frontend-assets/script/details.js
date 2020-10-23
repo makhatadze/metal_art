@@ -89,3 +89,19 @@ function changecurrencynews($id,$cur,id,dolarValue,realValue) {
     // add to selected - $(#curr2 .select-gel) -dol)
     $('#'+$id+' .select-'+$cur).addClass('active');
 }
+
+const slidesModal = document.querySelectorAll('.slider-modal');
+
+function showImg(num) {
+    slidesModal[num -1].classList.add('show');
+}
+
+
+window.addEventListener('click', evt => {
+    slidesModal.forEach((e, i)=> {
+        if(evt.target == slidesModal[i] ) {
+            e.classList.remove('show');
+        }
+    })
+
+})

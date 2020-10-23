@@ -90,14 +90,14 @@
                             <div class="catalogue__select-wrap half">
                                 <select name="date_to" class="select2" data-placeholder="{{__('app.date_to')}}">
                                     <option></option>
-                                    @foreach(range(1980,date("Y")) as $date )
+                                    @foreach(array_reverse(range(1980,date("Y"))) as $date )
                                         <option {{(Request::get('date_from') == $date) ? 'selected' : ''}} value="{{$date}}">{{$date}}</option>
                                     @endforeach
                                 </select>
 
                                 <select name="date_from" class="select2" data-placeholder="{{__('app.date_from')}}">
                                     <option></option>
-                                    @foreach(array_reverse(range(1980,date("Y"))) as $date )
+                                    @foreach(range(1980,date("Y")) as $date )
                                         <option {{(Request::get('date_to') == $date) ? 'selected' : ''}} value="{{$date}}">{{$date}}</option>
                                     @endforeach
                                 </select>

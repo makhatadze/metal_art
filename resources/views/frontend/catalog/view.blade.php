@@ -11,8 +11,8 @@
 
         <div class="details-slider">
             @if(count($images) > 0)
-                @foreach($images as $img)
-                    <div class="details-slider__item">
+                @foreach($images as $key => $img)
+                    <div class="details-slider__item" onclick="showImg({{$key+1}})">
                         <img src="{{url('storage/product/'.$product->id.'/'.$img->name)}}" alt="">
                         <div class="slider-overlay"></div>
                     </div>
@@ -25,6 +25,15 @@
         </div>
 
     </section>
+    @if(count($images) > 0)
+        @foreach($images as $img)
+            <div class="slider-modal ">
+                <div class="display_img">
+                    <img  src="{{url('storage/product/'.$product->id.'/'.$img->name)}}" alt="">
+                </div>
+            </div>
+        @endforeach
+    @endif
     <!-- section 2 - main -->
     <section id="details-section">
         <div class="container">
