@@ -73,7 +73,7 @@
                                     value="{{$product->deal_id}}"
                                     class="font-helvetica select2 w-full">
                                 @foreach ($deals as $deal)
-                                    <option value="{{$deal->id}}"> {{$deal->title_ge}}</option>
+                                    <option {{($product->deal_id == $deal->id) ? 'selected' : ''}} value="{{$deal->id}}"> {{$deal->title_ge}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -98,7 +98,7 @@
                                     value="{{$product->category_id}}"
                                     class="font-helvetica select2 w-full">
                                 @foreach ($categories as $cat)
-                                    <option value="{{$cat->id}}"> {{$cat->title_ge}}</option>
+                                    <option {{($product->category_id == $cat->id) ? 'selected' : ''}} value="{{$cat->id}}"> {{$cat->title_ge}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -111,7 +111,7 @@
                                     value="{{$product->transmission_id}}"
                                     class="font-helvetica select2 w-full">
                                 @foreach ($transmissions as $trans)
-                                    <option value="{{$trans->id}}"> {{$trans->title_ge}}</option>
+                                    <option {{($product->transmission_id == $trans->id) ? 'selected' : ''}} value="{{$trans->id}}"> {{$trans->title_ge}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -135,7 +135,7 @@
                                     value="{{$product->fuel_id}}"
                                     class="font-helvetica select2 w-full">
                                 @foreach ($fuels as $fuel)
-                                    <option value="{{$fuel->id}}"> {{$fuel->title_ge}}</option>
+                                    <option {{($product->fuel_id == $fuel->id) ? 'selected' : ''}} value="{{$fuel->id}}"> {{$fuel->title_ge}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -151,7 +151,7 @@
                                     value="{{$product->brand_id}}"
                                     class="font-helvetica select2 w-full">
                                 @foreach ($brands as $brand)
-                                    <option value="{{$brand->id}}"> {{$brand->title}}</option>
+                                    <option {{($product->brand_id == $brand->id) ? 'selected' : ''}} value="{{$brand->id}}"> {{$brand->title}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -163,7 +163,7 @@
                                     id="brand-model-select"
                                     class="font-helvetica select2 w-full">
                                 @foreach ($brandModels as $model)
-                                    <option value="{{$model->id}}"> {{$model->title}}</option>
+                                    <option {{($product->model_id == $model->id) ? 'selected' : ''}} value="{{$model->id}}"> {{$model->title}}</option>
                                 @endforeach
                             </select>
                         </div>
