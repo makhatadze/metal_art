@@ -31,10 +31,12 @@ class CategoryController extends AdminController
             $this->validate($request, [
                 'title_ge' => 'required|string|max:255',
                 'title_en' => 'required|string|max:255',
+                'title_ru' => 'required|string|max:255',
             ]);
             $category = new Category([
                 'title_ge' => $request->title_ge,
-                'title_en' => $request->title_en
+                'title_en' => $request->title_en,
+                'title_ru' => $request->title_ru
             ]);
             $category->save();
             return redirect('admin/categories')->with('success', 'კატეგორია წარმატებით შეიქმნა.');
@@ -50,11 +52,13 @@ class CategoryController extends AdminController
         if ($request->isMethod('POST')) {
             $request->all();
             $this->validate($request, [
-                'title_ge' => 'required',
-                'title_en' => 'required',
+                'title_ge' => 'required|string|max:255',
+                'title_en' => 'required|string|max:255',
+                'title_ru' => 'required|string|max:255',
             ]);
             $category->title_ge = $request->title_ge;
             $category->title_en = $request->title_en;
+            $category->title_ru = $request->title_ru;
             $category->save();
             return redirect('admin/categories')->with('success', 'კატეგორია წარმატებით რედაქტირდა.');
 

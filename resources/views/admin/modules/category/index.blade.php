@@ -16,7 +16,7 @@
                 <th class="border-b-2 whitespace-no-wrap">#</th>
                 <th class="border-b-2 text-center whitespace-no-wrap">კატეგორიის სახელი ქართულად</th>
                 <th class="border-b-2 text-center whitespace-no-wrap">კატეგორიის სახელი ინგლისურად</th>
-                <th class="border-b-2 text-center whitespace-no-wrap">სტატუსი</th>
+                <th class="border-b-2 text-center whitespace-no-wrap">კატეგორიის სახელი რუსულად</th>
                 <th class="border-b-2 text-center whitespace-no-wrap">მოქმედება</th>
             </tr>
             </thead>
@@ -32,18 +32,9 @@
                     </td>
                     <td class="border-b">
                         <div class="flex items-center sm:justify-center "> {{ $cat->title_en }}</div>
-
                     </td>
-                    <td class="w-40 border-b">
-
-                        @if($cat->status)
-                            <a href={{route('activateCategory',$cat->id)}} class="flex items-center sm:justify-center text-theme-9"> <i
-                                        data-feather="check-square" class="w-4 h-4 mr-2"></i> აქტიური</a>
-
-                        @else
-                            <a href={{route('activateCategory',$cat->id)}} class="flex items-center sm:justify-center text-theme-6"> <i
-                                        data-feather="check-square" class="w-4 h-4 mr-2"></i> არა აქტიური </a>
-                        @endif
+                    <td class="border-b">
+                        <div class="flex items-center sm:justify-center "> {{ $cat->title_ru }}</div>
                     </td>
                     <td class="border-b w-5">
                         <div class="flex sm:justify-center items-center">
@@ -64,7 +55,7 @@
     <script type="text/javascript">
         $('.side-menu').removeClass('side-menu--active');
         $('.data-menu-item').removeClass('side-menu__sub-open');
-        $('.side-menu[data-menu="vehicle"]').addClass('side-menu--active');
-        $('.data-menu-item[data-menu="vehicle"]').addClass('side-menu__sub-open');
+        $('.side-menu[data-menu="shop"]').addClass('side-menu--active');
+        $('.data-menu-item[data-menu="shop"]').addClass('side-menu__sub-open');
     </script>
 @endsection

@@ -2,7 +2,7 @@
     <a href="" class="intro-x flex items-center pl-5 pt-4">
         <img alt="Midone Tailwind HTML Admin Template" class="w-6"
              src="{{url('frontend-assets//img/logos/site-logo.svg')}}">
-        <span class="hidden xl:block text-white text-lg ml-3"> AUTO<span class="font-medium"> HOME</span> </span>
+        <span class="hidden xl:block text-white text-lg ml-3"> METAL<span class="font-medium"> ART</span> </span>
     </a>
     <div class="side-nav__devider my-6"></div>
     <ul>
@@ -15,7 +15,7 @@
         <li>
             <a href="javascript:;" class="side-menu" data-menu="shop">
                 <div class="side-menu__icon"><i data-feather="shopping-cart"></i></div>
-                <div class="side-menu__title"> ონლაინ მაღაზია <i data-feather="chevron-down"
+                <div class="side-menu__title">მაღაზია <i data-feather="chevron-down"
                                                                  class="side-menu__sub-icon"></i></div>
             </a>
             <ul class="data-menu-item" data-menu="shop">
@@ -27,36 +27,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('dealIndex')}}" class="side-menu custom-nav-item">
-                        <div class="side-menu__icon"><i data-feather="circle" style="width: 15px; height: 15px;"></i>
-                        </div>
-                        <div class="side-menu__title"> გარიგების ტიპი</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="javascript:;" class="side-menu" data-menu="vehicle">
-                <div class="side-menu__icon"><i data-feather="box"></i></div>
-                <div class="side-menu__title"> მანქანის დეტალები <i data-feather="chevron-down"
-                                                                    class="side-menu__sub-icon"></i></div>
-            </a>
-            <ul class="data-menu-item" data-menu="vehicle">
-                <li>
-                    <a href="{{route('brandIndex')}}" class="side-menu custom-nav-item">
-                        <div class="side-menu__icon"><i data-feather="circle" style="width: 15px; height: 15px;"></i>
-                        </div>
-                        <div class="side-menu__title"> მწარმოებელი</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{route('modelIndex')}}" class="side-menu custom-nav-item">
-                        <div class="side-menu__icon"><i data-feather="circle" style="width: 15px; height: 15px;"></i>
-                        </div>
-                        <div class="side-menu__title"> მოდელები</div>
-                    </a>
-                </li>
-                <li>
                     <a href="{{route('categoryIndex')}}" class="side-menu custom-nav-item">
                         <div class="side-menu__icon"><i data-feather="circle" style="width: 15px; height: 15px;"></i>
                         </div>
@@ -64,22 +34,14 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('fuelIndex')}}" class="side-menu custom-nav-item">
+                    <a href="{{route('sizeIndex')}}" class="side-menu custom-nav-item">
                         <div class="side-menu__icon"><i data-feather="circle" style="width: 15px; height: 15px;"></i>
                         </div>
-                        <div class="side-menu__title"> წვის ტიპი</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{route('transmissionIndex')}}" class="side-menu custom-nav-item">
-                        <div class="side-menu__icon"><i data-feather="circle" style="width: 15px; height: 15px;"></i>
-                        </div>
-                        <div class="side-menu__title"> გადაცემათა კოლოფი</div>
+                        <div class="side-menu__title"> ზომები</div>
                     </a>
                 </li>
             </ul>
         </li>
-
         <li>
             <a href="javascript:;" class="side-menu" data-menu="settings">
                 <div class="side-menu__icon"><i data-feather="settings"></i></div>
@@ -103,11 +65,5 @@
                 </li>
             </ul>
         </li>
-        <div id="insite" style="margin-top: 30px; margin-left: 17px">
-            <li><a href="https://insite.international/" target="_blank">
-                    <img src="{{url('logo.png')}}" style="max-width: 55%">
-                </a></li>
-
-        </div>
     </ul>
 </nav>

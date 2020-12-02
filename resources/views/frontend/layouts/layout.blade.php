@@ -5,17 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="">
-    <link href="{{url('frontend-assets//img/logos/site-logo.svg')}}" rel="shortcut icon">
 
-
-    <link rel="stylesheet" href="{{url('frontend-assets/css/bpg-arial-caps.css')}}">
-    <link rel="stylesheet" href="{{url('frontend-assets/css/bpg-web-001-caps.css')}}">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{url('frontend-assets/css/style.css')}}">
-    <link rel="stylesheet" href="{{url('frontend-assets/css/slick.css')}}">
-    <link rel="stylesheet" href="{{url('frontend-assets/css/select.css')}}">
+    <link rel="stylesheet" href="{{url('frontend-assets/css/style.css')}}">
     <title>{{ $page->{"title_".app()->getLocale()} }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
@@ -25,53 +19,23 @@
 <!-- header end -->
 <body>
 
+@include('frontend.layouts.partials.header')
 
-<main>
+<main class="site-content scroll">
     @yield('content')
     @include('frontend.layouts.partials.footer')
-
 </main>
 
-<!-- sell car Modal -->
 
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
-<!-- footer-->
-
-<script
-        src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-        crossorigin="anonymous"></script>
 <script src="{{ url('frontend-assets/script/slick.min.js') }}"></script>
 
-<!-- normal js  -->
 <script src="{{ url('frontend-assets/script/general.js') }}"></script>
-<script src="{{url('frontend-assets/script/details.js')}}"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
-<script src="{{url('frontend-assets/script/catalogue.js')}}"></script>
-<script type="text/javascript">
-    (function ($) {
-        "use strict";
 
-        // Select2
-        $('.select2').each(function () {
-            let options = {}
-            if ($(this).data('placeholder')) {
-                options.placeholder = $(this).data('placeholder');
-            }
+<script src="{{ url('frontend-assets/script/index.js') }}"></script>
 
-            if ($(this).data('hide-search')) {
-                options.minimumResultsForSearch = -1
-            }
 
-            $(this).select2(options)
-            //
-            // $('#brand-select2').select2({
-            //     placeholder: "Please select an skill",
-            // });
-        })
-    })($)
-
-</script>
 @yield('custom_scripts')
 </body>
 </html>

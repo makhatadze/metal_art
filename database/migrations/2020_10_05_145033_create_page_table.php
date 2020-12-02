@@ -18,12 +18,16 @@ class CreatePageTable extends Migration
             $table->string('slug');
             $table->string('title_ge');
             $table->string('title_en');
+            $table->string('title_ru');
             $table->string('meta_title_ge');
             $table->string('meta_title_en');
+            $table->string('meta_title_ru');
             $table->string('description_ge');
             $table->string('description_en');
+            $table->string('description_ru');
             $table->text('content_ge');
             $table->text('content_en');
+            $table->text('content_ru');
             $table->boolean('status');
             $table->timestamps();
         });

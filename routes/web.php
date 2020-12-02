@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\SiteController;
+use App\Http\Controllers\Admin\SizeController;
 use App\Http\Controllers\Admin\TransmissionsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MailController;
@@ -67,36 +68,11 @@ Route::prefix('admin')->group(function () {
             Route::get('categories/activate/{id}',[CategoryController::class,'activate'])->name('activateCategory');
             Route::match(['get', 'post'],'categories/create',[CategoryController::class,'create'])->name('categoryCreate');
 
-            // Routes for Brand
-            Route::any('brands',[BrandController::class,'index'])->name('brandIndex');
-            Route::any('brands/update/{brand}',[BrandController::class,'update'])->name('brandUpdate');
-            Route::get('brands/activate/{brand}',[BrandController::class,'activate'])->name('brandActivate');
-            Route::match(['get', 'post'],'brands/create',[BrandController::class,'create'])->name('brandCreate');
-
-            // Routes for Brand Models
-            Route::any('models',[BrandModelController::class,'index'])->name('modelIndex');
-            Route::any('models/update/{brandModel}',[BrandModelController::class,'update'])->name('brandModelUpdate');
-            Route::get('models/activate/{brandModel}',[BrandModelController::class,'activate'])->name('brandModelActivate');
-            Route::match(['get', 'post'],'models/create',[BrandModelController::class,'create'])->name('modelCreate');
-
-            // Routes for Product Fuel
-            Route::any('fuels',[FuelController::class,'index'])->name('fuelIndex');
-            Route::any('fuels/update/{fuel}',[FuelController::class,'update'])->name('fuelUpdate');
-            Route::get('fuels/activate/{fuel}',[FuelController::class,'activate'])->name('fuelActivate');
-            Route::match(['get', 'post'],'fuels/create',[FuelController::class,'create'])->name('fuelCreate');
-
-            // Routes for Product Transmission
-            Route::any('transmissions',[TransmissionsController::class,'index'])->name('transmissionIndex');
-            Route::any('transmissions/update/{transmission}',[TransmissionsController::class,'update'])->name('transmissionUpdate');
-            Route::get('transmissions/activate/{transmission}',[TransmissionsController::class,'activate'])->name('transmissionActivate');
-            Route::match(['get', 'post'],'transmissions/create',[TransmissionsController::class,'create'])->name('transmissionCreate');
-
-
-            // Routes for Product Deal
-            Route::any('deals',[DealController::class,'index'])->name('dealIndex');
-            Route::any('deals/update/{deal}',[DealController::class,'update'])->name('dealUpdate');
-            Route::get('deals/activate/{deal}',[DealController::class,'activate'])->name('dealActivate');
-            Route::match(['get', 'post'],'deals/create',[DealController::class,'create'])->name('dealCreate');
+            // Routes for Product Size
+            Route::any('sizes',[SizeController::class,'index'])->name('sizeIndex');
+            Route::any('sizes/update/{size}',[SizeController::class,'update'])->name('sizeUpdate');
+//            Route::get('sizes/activate/{id}',[CategoryController::class,'activate'])->name('activateCategory');
+            Route::match(['get', 'post'],'sizes/create',[SizeController::class,'create'])->name('sizeCreate');
 
 
 

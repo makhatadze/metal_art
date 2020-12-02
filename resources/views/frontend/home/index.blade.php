@@ -1,244 +1,228 @@
 @extends('frontend.layouts.layout')
 @section('content')
-    @include('frontend.layouts.partials.header')
-    @include('frontend.layouts.partials.modal')
-    <main>
-        <!-- section 1 - hero  -->
-        <section id="hero">
+    <!-- section 1 - hero -->
+    <section id="hero" class="child">
 
-            <div class="hero__circle"></div>
+        <div class="hero-top">
+            <a href="gallery.html" class="hero-link hero-left">
+                <img src="frontend-assets/img/hero-left.jpg" alt="product">
+                <div class="overlay"></div>
+                <p>ავეჯი</p>
+            </a>
+            <a href="gallery.html" class="hero-link hero-right">
+                <img src="frontend-assets/img/hero-right.png" alt="product">
+                <div class="overlay"></div>
+                <p>დეკორაციები</p>
+            </a>
+        </div>
 
-            <div class="container">
+        <div class="hero-body">
+            <div class="bg-top"></div>
 
-                <form action="{{app()->getLocale()}}/catalogue" enctype="multipart/form-data" class="hero__form">
-                    <h1 class="home-title">{{ $page->{"meta_title_".app()->getLocale()} }}</h1>
-                    {{--                    <p class="hero__form-p home-description">--}}
-                    {{--                        {{ $page->{"description_".app()->getLocale()} }}--}}
-                    {{--                    </p>--}}
+            <div class="hero-content">
+                <a href="gallery.html"  class="vertical-t">
+                    ყველა პროდუქცია <img src="frontend-assets/img/logos/triangle.png" alt="">
+                </a>
 
-                    <div class="sel-container">
-                        <select name="brand"  class="select2" id="brand-select2" data-placeholder="{{__('app.Manufacturer')}}" onchange="brandChange(event)">
-                            <option></option>
-                            @if ($brands)
-                                @foreach($brands as $brand)
-                                    <option value="{{$brand->id}}">{{$brand->title }}</option>
-                                @endforeach
-                            @endif
-                        </select>
-                    </div>
-                    <div class="sel-container">
-                        <select name="model" class="select2" id="brand-model" data-placeholder="{{__('app.model')}}">
-                            <option></option>
-                        </select>
-                    </div>
-                    <div class="sel-container">
-                        <select name="custom" class="select2" data-placeholder="{{__('app.custom')}}">
-                            <option></option>
-                            <option value="1">{{__('app.custom_cleared')}}</option>
-                            <option value="2">{{__('app.before_customs')}}</option>
-                        </select>
-                    </div>
-                    <div class="sel-container">
-                        <select name="transmission" class="select2" data-placeholder="{{__('app.transmission')}}">
-                            <option></option>
-                            @if ($transmissions)
-                                @foreach($transmissions as $trans)
-                                    <option value="{{$trans->id}}">{{$trans->{"title_".app()->getLocale()} }}</option>
-                                @endforeach
-                            @endif
-                        </select>
-                    </div>
-                    <div class="catalogue__select-wrap half">
-                        <select name="date_to" class="select2" data-placeholder="{{__('app.date_to')}}">
-                            <option></option>
-                            @foreach(array_reverse(range(1980,date("Y"))) as $date )
-                                <option value="{{$date}}">{{$date}}</option>
-                            @endforeach
-                        </select>
+                <h2 class="hero-heading">ჩვენი პროდუქცია</h2>
 
-                        <select name="date_from" class="select2" data-placeholder="{{__('app.date_from')}}">
-                            @foreach(range(1980,date("Y")) as $date )
-                                <option></option>
-                                <option value="{{$date}}">{{$date}}</option>
-                            @endforeach
-                        </select>
+                <p class="hero-sub-heading">
+                    ლორემ იპსუმ მზეო მაკეთებინებენ საზიზღარი, ამოვარდნას მოხმარების არაუშავს მშიშარა იზამ, გამოგვაძევა ბოსელი იმარაგებენ, მათხოვრობის
+                </p>
+
+                <div class="hero-slider">
+
+                    <div class="slide-item">
+                        <div class="overlay"></div>
+                        <img src="frontend-assets/img/1-slide.jpg" alt="slide-i">
+                        <div class="hero-hover">
+                            <p>პროდუქტის სახელი</p>
+                            <a href="details.html" class="hero-item-btn">დეტალურად</a>
+                        </div>
                     </div>
-                    <div class="catalogue__select-wrap half">
-                        <input type="number" id="price" placeholder="{{__('app.price_from')}}" name="price_from"
-                               value="{{Request::get('price_from')}}">
-                        <input type="number" id="price" placeholder="{{__('app.price_to')}}" name="price_to"
-                               value="{{Request::get('price_to')}}">
+
+                    <div class="slide-item">
+                        <div class="overlay"></div>
+                        <img src="frontend-assets/img/2-slide.jpg" alt="slide-i">
+                        <div class="hero-hover">
+                            <p>პროდუქტის სახელი</p>
+                            <a href="details.html" class="hero-item-btn">დეტალურად</a>
+                        </div>
                     </div>
-                    <button class="hero__form-btn">
-                        {{__('app.search')}}
+
+                    <div class="slide-item">
+                        <div class="overlay"></div>
+                        <img src="frontend-assets/img/3-slide.jpg" alt="slide-i">
+                        <div class="hero-hover">
+                            <p>პროდუქტის სახელი</p>
+                            <a href="details.html" class="hero-item-btn">დეტალურად</a>
+                        </div>
+                    </div>
+
+                    <div class="slide-item">
+                        <div class="overlay"></div>
+                        <img src="frontend-assets/img/4-slide.jpg" alt="slide-i">
+                        <div class="hero-hover">
+                            <p>პროდუქტის სახელი</p>
+                            <a href="details.html" class="hero-item-btn">დეტალურად</a>
+                        </div>
+                    </div>
+
+                    <div class="slide-item">
+                        <div class="overlay"></div>
+                        <img src="frontend-assets/img/1-slide.jpg" alt="slide-i">
+                        <div class="hero-hover">
+                            <p>პროდუქტის სახელი</p>
+                            <a href="details.html" class="hero-item-btn">დეტალურად</a>
+                        </div>
+                    </div>
+
+                    <div class="slide-item">
+                        <div class="overlay"></div>
+                        <img src="frontend-assets/img/2-slide.jpg" alt="slide-i">
+                        <div class="hero-hover">
+                            <p>პროდუქტის სახელი</p>
+                            <a href="details.html" class="hero-item-btn">დეტალურად</a>
+                        </div>
+                    </div>
+
+                    <div class="slide-item">
+                        <div class="overlay"></div>
+                        <img src="frontend-assets/img/3-slide.jpg" alt="slide-i">
+                        <div class="hero-hover">
+                            <p>პროდუქტის სახელი</p>
+                            <a href="details.html" class="hero-item-btn">დეტალურად</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- section 2 - product of day -->
+    <section id="day-product">
+        <div class="overlay-left"></div>
+        <div class="overlay-right"></div>
+
+        <div class="day-product-wrap">
+            <div class="day-p-left">
+                <img src="frontend-assets/img/hero-right.png" alt="">
+            </div>
+            <div class="day-product-content">
+                <div class="day-product-info">
+                    <h3 class="day-p-title">დღის პროდუქტი</h3>
+                    <h2 class="day-p-name">პროდუქტის სახელი</h2>
+                    <p class="day-p-text">ლორემ იფსუმ დოლორ სით ამეთ, დოლორე ნონუმy ვოლუფთათუმ ვიმ თე. ად მოდუს ნომინავი აცცომმოდარე ყუო. ეოს ინ ინცორრუფთე სცრიბენთურ.
+                    </p>
+
+                    <a href="details.html" class="day-p-link">დეტალურად</a>
+
+                </div>
+                <div class="day-product-img">
+                    <img src="frontend-assets/img/day-product.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section 3 - hello - about us -->
+    <section id="video" class="child">
+        <div class="half-side">
+            <div class="video-container">
+
+                <div class="video-box">
+                    <img class="cover-img" src="frontend-assets/img/video-p.png" alt="">
+                    <div class="video-text">
+                        <p class="p-top">შექმნის</p>
+                        <p class="p-bot">პრო<span class="white-t">ცესი</span></p>
+                    </div>
+
+                    <div class="overl"></div>
+
+                    <button class="video-btn">
+                        <img class="play" src="frontend-assets/img/logos/play-icon.png" alt="">
+                        <div class="v-btn-t">
+                            უყურე <br> ვიდეოს
+                        </div>
                     </button>
 
-                </form>
-
-                <div class="hero__right">
-                    <img src="{{url('frontend-assets/img/hero-img.png')}}" alt="">
                 </div>
             </div>
 
-        </section>
-        <!-- section 2 - vip sales -->
-    @include('frontend.home.vip')
-    <!-- section 3 - AD  Banner-->
-        <section id="banner">
-            <div class="container">
-                <div class="banner__img-box">
-                    <img src="{{url('frontend-assets/img/baner-full.png')}}" alt="">
-                </div>
-            </div>
-        </section>
+        </div>
 
-
-        <!-- section 4 - we advice -->
-        <section id="we-advice">
-            <div class="container">
-
-                <h1 class="we-advice__heading">
-                    <img src="{{url('frontend-assets/img/logos/ios-star.svg')}}" alt="">
-                    {{__('app.we_recommended')}}
+        <div class="half-side">
+            <div class="hello-container">
+                <h1 class="hello-heading">
+                    გამარჯობა!
                 </h1>
+                <p class="hello-p">
+                    ლორემ იფსუმ დოლორ სით ამეთ,ვოლუფთათუმ ვიმ. ად მოდუს ნომინავი აცცომმოდარე ყუო. ეოს ინ ინცორრუფთე სცრიბენთურ.
 
-                <div class="we-advice__item-wrapper">
-                    @if(count($products) >0)
-                        @for($i = 0; $i <8; $i++)
-                            @if(isset($products[$i]))
-                                <div class="card">
+                </p>
 
-                                    <div class="card-img-box">
-                                        @if(!$products[$i]->hasImage())
-                                            <img src="{{url('noimageavailable.png')}}">
-                                        @else
-                                            <img src="{{url('storage/product/'.$products[$i]->id.'/'.$products[$i]->image()->get()[$i]->name)}}">
-
-                                        @endif
-                                    </div>
-
-                                    <div class="card__main">
-
-                                        <div class="card__top">
-                                            <h2 id="c-name">{{$products[$i]->{"title_".app()->getLocale()} }}</h2>
-                                            <span id="c-year">{{ date('Y', strtotime($products[$i]->created_date))}}</span>
-
-                                            <div class="currency" id="adviced{{$i}}">
-                                                <button class="select-gel active"
-                                                        onclick="changecurrency('adviced{{$i}}', 'gel',{{$products[$i]->id}}, {{$dolar}},{{$products[$i]->price}})">
-                                                    $
-                                                </button>
-                                                <button class="select-dol"
-                                                        onclick="changecurrency('adviced{{$i}}', 'dol',{{$products[$i]->id}},{{$dolar}},{{$products[$i]->price}})">
-                                                    ლ
-                                                </button>
-                                            </div>
-                                        </div>
-
-                                        <div class="card__middle">
-                                            <div class="card__middle-top">
-                                                <span>{{__('app.price')}}</span>
-                                                <span>{{__('app.category')}}</span>
-                                            </div>
-                                            <div class="card__middle-body">
-                                                <p id="c-price"
-                                                   class="gel-{{$products[$i]->id}}">{{number_format($products[$i]->price, 0)}} </p>
-                                                <p class="c-category">
-                                                    {{$products[$i]->transmission->{"title_".app()->getLocale()} }}
-                                                    / {{$products[$i]->category->{"title_".app()->getLocale()} }}</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="card__more-info">
-
-                                            <div class="card__more-info-block">
-                                                <div class="card__more-info__label">
-                                                    <img src="{{url('frontend-assets/img/logos/i-road.svg')}}" alt="">
-
-                                                    {{__('app.mileage')}}:
-                                                </div>
-                                                <p>{{$products[$i]->mileage}}</p>
-                                            </div>
-
-                                            <div class="card__more-info-block">
-                                                <div class="card__more-info__label">
-                                                    <img src="{{url('frontend-assets/img/logos/i-car-crash.svg')}}"
-                                                         alt="">
-                                                    {{__('app.wheel')}}
-                                                </div>
-                                                <p>{{$products[$i]->wheel ? __('app.right') : __('app.left')}}
-                                                </p>
-                                            </div>
-
-                                            <div class="card__more-info-block">
-                                                <div class="card__more-info__label">
-                                                    <img src="{{url('frontend-assets/img/logos/gray-car-i.svg')}}"
-                                                         alt="">
-
-                                                    {{__('app.mobile_phone')}}:
-                                                </div>
-                                                <p>{{$products[$i]->phone }}</p>
-                                            </div>
-
-                                            <div class="card__more-info-block">
-                                                <div class="card__more-info__label">
-                                                    <img src="{{url('frontend-assets/img/logos/i-dollar-sign.svg')}}"
-                                                         alt="">
-
-                                                    {{__('app.type_of_sale')}}:
-                                                </div>
-                                                <p>{{$products[$i]->deal->{"title_".app()->getLocale()} }}</p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="card__bottom">
-                                        <div class="card__bottom-views">
-                                            {{--                                            <img src="{{url('frontend-assets/img/logos/i-fire.svg')}}" alt="">--}}
-                                            {{--                                            2 ადამიანი ნახულობს--}}
-                                        </div>
-
-                                        <a href="{{route('catalogView',$products[$i]->id)}}" class="card__bottom-btn">
-                                            {{__('app.in_details')}}
-                                        </a>
-                                    </div>
-
-                                </div>
-
-                            @endif
-                        @endfor
-
-                    @endif
+                <div class="about-btn-w">
+                    <a class="hello-about-btn">
+                        ჩვენს შესახებ
+                    </a>
                 </div>
+            </div>
+        </div>
 
-                <a href="{{route('catalogIndex')}}" class="we-advice__allproduct-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16.784" height="11.689" viewBox="0 0 16.784 11.689">
-                        <g id="Icon_feather-list" data-name="Icon feather-list" transform="translate(0.75 0.75)">
-                            <path id="Path_332" data-name="Path 332" d="M12,9H23.039" transform="translate(-7.754 -9)"
-                                  fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                            <path id="Path_333" data-name="Path 333" d="M12,18H23.039"
-                                  transform="translate(-7.754 -12.905)" fill="none" stroke-linecap="round"
-                                  stroke-linejoin="round" stroke-width="1.5"/>
-                            <path id="Path_334" data-name="Path 334" d="M12,27H23.039"
-                                  transform="translate(-7.754 -16.811)" fill="none" stroke-linecap="round"
-                                  stroke-linejoin="round" stroke-width="1.5"/>
-                            <path id="Path_335" data-name="Path 335" d="M4.5,9h0" transform="translate(-4.5 -9)"
-                                  fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                            <path id="Path_336" data-name="Path 336" d="M4.5,18h0" transform="translate(-4.5 -12.905)"
-                                  fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                            <path id="Path_337" data-name="Path 337" d="M4.5,27h0" transform="translate(-4.5 -16.811)"
-                                  fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </section>
+
+    <!-- Video Modal-->
+    <section id="video-modal">
+        <button class="video-close-btn" >
+            <img src="frontend-assets/img/logos/Icon metro-cancel.png" alt="">
+        </button>
+
+        <div class="video-wrap">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/yAoLSRbwxL8" frameborder="0"  allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+
+    </section>
+
+    <!-- About us modal -->
+    <section id="about-modal">
+
+        <button class="close-btn">
+            <img src="frontend-assets/img/logos/Icon metro-cancel.png" alt="">
+        </button>
+
+        <div class="modal-wrap">
+
+            <h1 class="modal-heading">ჩვენს შესახებ</h1>
+            <p class="modal-p">
+                ლორემ იფსუმ დოლორ სით ამეთ,ვოლუფთათუმ ვიმ. ად მოდუს ნომინავი აცცომმოდარე ყუო. ეოს ინ ინცორრუფთე სცრიბენთურ, ემ იფსუმ დოლორ სით ამეთ,ვოლუფთათუმ ვიმ. ად მოდუს ნომინავი აცცომმოდარე ყუო. ეოს ინ ინცორრუფთე სცრიბენთურ, ლორე
+                სუმ დოლორ სით ამეთ,ვოლუფთათუმ ვიმ. ად მოდუს ნომინავი აცცომმოდარე ყუო. ეოს ინ ინცორრუფთე სცრიბენთურ, ლორემ მ იფსუმ დოლორ სით ამეთ,ვოლუფთათუმ ვიმ. ად მოდუს ნომინავი აცცომმოდარე ყუო. ეოს ინ ინცორრუფთე სცრიბენთურ.
+
+            </p>
+
+            <div class="modal-btns">
+                <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95278.13240907624!2d44.768813263292024!3d41.73256609181533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440cd7e64f626b%3A0x61d084ede2576ea3!2sTbilisi!5e0!3m2!1sen!2sge!4v1597843332216!5m2!1sen!2sge" target="_blank">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20.588" height="24.719" viewBox="0 0 20.588 24.719">
+                        <g id="Icon_feather-map-pin" data-name="Icon feather-map-pin" transform="translate(-3.5 -0.5)">
+                            <path id="Path_40" data-name="Path 40" d="M23.088,10.794c0,7.229-9.294,13.425-9.294,13.425S4.5,18.023,4.5,10.794a9.294,9.294,0,1,1,18.588,0Z" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                            <path id="Path_41" data-name="Path 41" d="M19.7,13.6a3.1,3.1,0,1,1-3.1-3.1A3.1,3.1,0,0,1,19.7,13.6Z" transform="translate(-2.804 -2.804)" fill="none"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
                         </g>
                     </svg>
-                    {{__('app.all_product')}}
+
+                    თბილისი ქუჩა N31
+                </a>
+                <a href="tel:+995555555555">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24.421" height="24.464" viewBox="0 0 24.421 24.464">
+                        <path id="Icon_feather-phone-call" data-name="Icon feather-phone-call" d="M16.99,5.773a5.341,5.341,0,0,1,4.22,4.22M16.99,1.5a9.615,9.615,0,0,1,8.493,8.482m-1.068,8.525v3.2a2.137,2.137,0,0,1-2.329,2.137,21.141,21.141,0,0,1-9.219-3.28,20.832,20.832,0,0,1-6.41-6.41A21.141,21.141,0,0,1,3.176,4.9,2.137,2.137,0,0,1,5.3,2.568h3.2a2.137,2.137,0,0,1,2.137,1.837,13.717,13.717,0,0,0,.748,3,2.137,2.137,0,0,1-.481,2.254L9.554,11.018a17.093,17.093,0,0,0,6.41,6.41l1.357-1.357a2.137,2.137,0,0,1,2.254-.481,13.717,13.717,0,0,0,3,.748A2.137,2.137,0,0,1,24.414,18.507Z" transform="translate(-2.167 -0.396)" fill="none"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                    </svg>
+
+                    +995 555 555 555
                 </a>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-@endsection
-@section('custom_scripts')
-    <script src="{{ url('frontend-assets/script/index.js') }}"></script>
 @endsection
 

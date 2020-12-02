@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('title_ge');
             $table->string('title_en');
+            $table->string('title_ru');
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

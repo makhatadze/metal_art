@@ -119,133 +119,98 @@
 }
 
 
+/*  Note! -- slick slide width is determinet by its 1fr, so img must be with:100% to cover whole slide  */
+
+/* slick track*/
+
 /* remove Outline - select slide name */
-.slick-slide {
+.slider .slick-track {
+    height: 100%;
+}
+.slick-track .slide {
     outline: none;
-    cursor: pointer;
+}
+.slide-item,
+.product-slide-item {
+    outline: none;
 }
 
-                    /* ------- custom slider parameters here*/
+/* show half slide  ********************/
+.hero-slider .slick-list{
+    padding: 0 13% 0 0;
+}
 
-/* add space the slides */
-.vip-sales__slider .slick-slide {
-    margin: 0 5px;
+@media only screen and (max-width: 600px) {      /* remove half on small*/
+    .hero-slider .slick-list{
+        padding:  0;
+    }
 }
 
 
+/* custom arrows */
 
-                    /* ------- end of  custom slider parameters here*/
-
-
-
-/* custom arrows */ /* for .vip-sales__slider */
-
-.vip-sales__slider .slick-arrow {
+ .slick-arrow {        /* its global , for two slider  select slick-prev, next. specificly  */
     position: absolute;
-    top: 50%;
-    z-index: 4;
+    bottom: -14%;
+    z-index: 10;
     background: transparent;
     border: none;
     color: blue;
     outline: none;
     text-indent: -9999px; 
     white-space: nowrap;  
+    opacity: 0.8;
 }
-
-.vip-sales__slider .slick-prev {
-    left: -45px;
-    background: url('../img/logos/slider-ar-left.png') 50% 50% / 80% no-repeat; 
+.slick-prev:hover,
+.slick-next:hover {
+    opacity: 1;
+}
+.hero-slider .slick-prev {
+    right: 10%;
+    background: url('../img/logos/ar-left.png') 0 0 / 80% no-repeat; 
     width: 30px;
-    height: 30px;
+    height: 14px;
 }
-.vip-sales__slider .slick-next {
-    right: -45px;
-    background: url('../img/logos/slider-ar-right.png')  50% 50% / 80% no-repeat; 
+.hero-slider .slick-next {
+    right: 5%;
+    background: url('../img/logos/ar-right.png') 0 0 / 80% no-repeat; 
     width: 30px;
-    height: 30px;
-}
-
-/* section 2 - vip sales slider  responsive  */
-
-@media (max-width: 1450px) {
-
-    .vip-sales__slider .slick-prev,
-    .vip-sales__slider .slick-next {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        padding: 5px;
-        box-shadow: 0px 0px 6px rgba(26, 25, 25, 0.329);
-    }
-    .vip-sales__slider .slick-prev {
-        left: -10px;
-        background: url('../img/logos/arr-left-bg.png') 50% 50% / 100% no-repeat; 
-    }
-    .vip-sales__slider .slick-next {
-        right: -10px;
-        background: url('../img/logos/arr-right-bg.png')  50% 50% / 100% no-repeat;
-    }
+    height: 14px;
     
 }
-
-/* custom arrows */     /* --  for details-slider  */
-
-.details-slider .slick-arrow {
-    position: absolute;
-    top: 50%;
-    z-index: 4;
-    background: transparent;
-    border: none;
-    color: blue;
-    outline: none;
-    text-indent: -9999px; 
-    white-space: nowrap;  
+@media only screen and (max-width: 900px) {
+    .hero-slider .slick-prev {
+        right: calc(16%);
+    }
 }
 
-.details-slider .slick-prev {
-    left: 440px;
-    background: url('../img/logos/arr-left-svg.svg') 50% 50% / 80% no-repeat; 
-    width: 30px;
-    height: 30px;
+/* 2th slider*/
+.products-slider  .slick-arrow  {
+    left: 50%;
+    bottom: -18%;
+    transform: translateX(-100%);
+    opacity: 0.8;
+    
 }
-.details-slider .slick-next {
-    right: 440px;
-    background: url('../img/logos/arr-right-svg.svg')  50% 50% / 80% no-repeat; 
-    width: 30px;
-    height: 30px;
+.products-slider .slick-prev {
+    right: 10%;
+    background: url('../img/logos/ar-left.png') 0 0 / 80% no-repeat; 
+    width: 26px;
+    height: 12px;
+}
+.products-slider .slick-next {
+    right: 5%;
+    background: url('../img/logos/ar-right.png') 0 0 / 80% no-repeat; 
+    width: 26px;
+    height: 12px;
+    margin-left: 38px;
+}
+.products-slider .slick-prev:hover,
+.products-slider .slick-next:hover {
+    opacity: 1;
 }
 
-/* style centered mode */
 
-.slick-center.details-slider__item .slider-overlay {
-    background-color: rgba(0, 0, 0, 0);
-    transition: .1s;
-}
-/* details slider  responsivity */
-@media (max-width: 1500px) {
-    .details-slider .slick-prev {
-        left: 250px;
-    }
-    .details-slider .slick-next {
-        right: 250px;
-    }
-}
-@media (max-width: 990px) {
-    .details-slider .slick-prev {
-        left: 150px;
-    }
-    .details-slider .slick-next {
-        right: 150px;
-    }
-}
-@media (max-width: 700px) {
-    .details-slider .slick-prev {
-        left: 5px;
-    }
-    .details-slider .slick-next {
-        right: 5px;
-    }
-}
 
 
 
@@ -255,24 +220,33 @@ ul {list-style: none;}
 
 .slider {
     position: relative;
+    outline: none;
 }
-.slick-dots {
+.new-products__slider {
+    outline: none;
+}
+.slider .slick-dots {
   position: absolute;
-  bottom: 10px;
+  bottom: 4%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
-.slick-dots button {
+.slider .slick-dots button {
     font-size: 0;
-    width: 12px;
-    height: 12px;
-    background: greenyellow;
+    width: 15px;
+    height: 15px;
+    background:#d5dbff;
     border-radius: 50%;
     border: none;
     outline: none;
-    margin: 0 3px;
+    margin: 4px;
 }
+.slider .slick-dots .slick-active button{
+    background: #f2073f;
+}
+

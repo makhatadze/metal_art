@@ -41,6 +41,7 @@
                 <th class="border-b-2 whitespace-no-wrap">#</th>
                 <th class="border-b-2 text-center whitespace-no-wrap">სახელი ქართულად</th>
                 <th class="border-b-2 text-center whitespace-no-wrap">სახელი ინგლისურად</th>
+                <th class="border-b-2 text-center whitespace-no-wrap">სახელი რუსულად</th>
                 <th class="border-b-2 text-center whitespace-no-wrap">ფასი</th>
                 <th class="border-b-2 text-center whitespace-no-wrap">VIP</th>
                 <th class="border-b-2 text-center whitespace-no-wrap">სტატუსი</th>

@@ -42,19 +42,7 @@ class ProductController extends AdminController
     public function create(Request $request)
     {
         if ($request->isMethod('GET')) {
-            $brands = Brand::where(['status' => true])->get();
-            $brandModels = BrandModel::where(['status' => true, 'brandmodeleable_type' => 'App\Models\Brand', 'brandmodeleable_id' => $brands[0]->id])->get();
-            $categories = Category::where(['status' => true])->get();
-            $transmissions = Transmission::where(['status' => true])->get();
-            $deals = Deal::where(['status' => true])->get();
-            $fuels = Fuel::where(['status' => true])->get();
-            return view('admin.modules.product.create')
-                ->with('brands', $brands)
-                ->with('brandModels', $brandModels)
-                ->with('categories', $categories)
-                ->with('transmissions', $transmissions)
-                ->with('deals', $deals)
-                ->with('fuels', $fuels);
+            return view('admin.modules.product.create');
         }
         if ($request->isMethod('POST')) {
             $request->all();
