@@ -67,7 +67,9 @@ Route::prefix('admin')->group(function () {
             Route::any('categories/update/{category}',[CategoryController::class,'update'])->name('categoryUpdate');
             Route::get('categories/activate/{id}',[CategoryController::class,'activate'])->name('activateCategory');
             Route::match(['get', 'post'],'categories/create',[CategoryController::class,'create'])->name('categoryCreate');
-            Route::match(['get', 'post'],'categories/create-sub-category',[CategoryController::class,'createSub'])->name('subCategoryCreate');
+            Route::match(['get', 'post'],'categories/create-sub-category',[CategoryController::class,'createSubCategory'])->name('subCategoryCreate');
+            Route::any('categories/update-sub-category/{subCategory}',[CategoryController::class,'updateSubCategory'])->name('subCategoryUpdate');
+
 
             // Routes for Product Size
             Route::any('sizes',[SizeController::class,'index'])->name('sizeIndex');

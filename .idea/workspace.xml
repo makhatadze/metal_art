@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d51b9db-7f3b-4935-adfa-fc1bbaf7761b" name="Default Changelist" comment="Cleaner.">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/modules/category/create_sub_category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/75cb9270-c5bd-4ea3-927e-0779061c6e32.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/75cb9270-c5bd-4ea3-927e-0779061c6e32.xml" afterDir="false" />
+    <list default="true" id="3d51b9db-7f3b-4935-adfa-fc1bbaf7761b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/modules/category/update_sub_category.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Deal.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Size.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/modules/category/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/modules/category/create_category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/modules/category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/modules/category/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/modules/category/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/modules/category/update_category.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -259,7 +253,7 @@
       <workItem from="1603444207279" duration="2467000" />
       <workItem from="1603695918693" duration="1386000" />
       <workItem from="1606913070682" duration="7144000" />
-      <workItem from="1606975932165" duration="2269000" />
+      <workItem from="1606975932165" duration="2922000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings and translations.">
       <created>1603092223375</created>
@@ -436,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606920158725</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Create categories and subCategories with there relationship.">
+      <created>1606978279371</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1606978279371</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +468,8 @@
     <MESSAGE value="Add statement module" />
     <MESSAGE value="Add image zoom function." />
     <MESSAGE value="Cleaner." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaner." />
+    <MESSAGE value="Create categories and subCategories with there relationship." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create categories and subCategories with there relationship." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2544" y="234" width="734" height="646" key="#Inspections" timestamp="1602225352070">
@@ -495,13 +497,13 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2648" y="310" width="526" height="493" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603371634712" />
-    <state x="420" y="54" width="1394" height="956" key="CommitChangelistDialog2" timestamp="1606920158078">
+    <state x="420" y="54" width="1394" height="956" key="CommitChangelistDialog2" timestamp="1606978279184">
       <screen x="0" y="193" width="1920" height="887" />
     </state>
     <state x="380" y="67" width="745" height="617" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1603018624336" />
     <state x="534" y="125" width="914" height="602" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603433272882" />
     <state x="2454" y="100" width="914" height="914" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603378746265" />
-    <state x="420" y="54" width="1394" height="956" key="CommitChangelistDialog2/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606920158078" />
+    <state x="420" y="54" width="1394" height="956" key="CommitChangelistDialog2/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606978279184" />
     <state x="37" y="135" width="1215" height="609" key="DiffContextDialog" timestamp="1603116509417">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -521,11 +523,11 @@
     <state width="272" height="506" key="HiddenNamespacesPopup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603358843336" />
     <state width="272" height="519" key="HiddenNamespacesPopup/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606915743429" />
     <state width="261" height="506" key="HiddenNamespacesPopup/72.27.1848.1053@72.27.1848.1053" timestamp="1602075075076" />
-    <state x="2666" y="629" width="401" height="158" key="NewPhpFileDialog" timestamp="1606976811642">
+    <state x="2666" y="629" width="401" height="158" key="NewPhpFileDialog" timestamp="1606978394451">
       <screen x="1920" y="166" width="1920" height="1080" />
     </state>
     <state x="2666" y="463" width="401" height="158" key="NewPhpFileDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603371870416" />
-    <state x="2666" y="629" key="NewPhpFileDialog/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606976811642" />
+    <state x="2666" y="629" width="401" height="158" key="NewPhpFileDialog/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606978394451" />
     <state x="790" y="478" width="401" height="158" key="NewPhpFileDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1602074527336" />
     <state x="2680" y="236" width="461" height="642" key="RollbackChangesDialog" timestamp="1603446121266">
       <screen x="1920" y="0" width="1920" height="1080" />
@@ -539,12 +541,12 @@
     <state x="625" y="327" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1602253606559" />
     <state x="2546" y="308" width="1024" height="737" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603099036427" />
     <state x="674" y="327" width="1024" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1602079358619" />
-    <state x="2510" y="440" width="802" height="565" key="Vcs.Push.Dialog.v2" timestamp="1606920211426">
+    <state x="2510" y="440" width="802" height="537" key="Vcs.Push.Dialog.v2" timestamp="1606978280892">
       <screen x="1920" y="166" width="1920" height="1080" />
     </state>
     <state x="590" y="294" width="802" height="565" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603433274549" />
     <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603378747398" />
-    <state x="2510" y="440" key="Vcs.Push.Dialog.v2/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606920211426" />
+    <state x="2510" y="440" width="802" height="537" key="Vcs.Push.Dialog.v2/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606978280892" />
     <state x="2772" y="578" width="198" height="256" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1606913450717">
       <screen x="1920" y="166" width="1920" height="1080" />
     </state>
@@ -561,12 +563,12 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2668" y="368" width="486" height="378" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602495718965" />
-    <state x="2020" y="241" width="1720" height="903" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1606913717661">
+    <state x="2020" y="241" width="1720" height="903" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1606978750643">
       <screen x="1920" y="166" width="1920" height="1080" />
     </state>
     <state x="100" y="100" width="1720" height="880" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603117324593" />
     <state x="2020" y="75" width="1720" height="903" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602852872429" />
-    <state x="2020" y="241" width="1720" height="903" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606913717661" />
+    <state x="2020" y="241" width="1720" height="903" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606978750643" />
     <state x="2319" y="75" width="1409" height="685" key="dock-window-1" timestamp="1602750356054">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
