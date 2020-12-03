@@ -2415,3 +2415,57 @@ h1,h2,h3,h4 {
         margin: 4rem auto 0;
     }
 }
+
+.sort-panel input {
+
+    height: 3.8rem;
+
+    width: 16rem;
+
+    border-radius: .5rem;
+
+    margin-right: 2.2rem;
+
+    padding: 1rem;
+
+    background: #fff;
+
+    border: 1px solid #707070;
+
+    font-size: 1.3rem;
+
+}
+
+.sort-panel input::placeholder {
+
+    color: #111;
+
+}
+
+.sort-panel input:focus {
+
+    outline: none;
+
+}
+
+@media only screen and (max-width: 1416px) {
+
+    .sort-panel input  {
+
+        margin-right: 3px;
+
+    }
+
+
+
+}
+
+@media only screen and (max-width: 740px) {
+
+    .sort-panel input  {
+
+        width: 100%;
+
+    }
+
+}

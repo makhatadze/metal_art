@@ -8,6 +8,12 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="{{url('frontend-assets/css/xZoom.css')}}">
+
+    <script src="{{ url('frontend-assets/script/xZoom.js') }}"></script>
+
     <link rel="stylesheet" href="{{url('frontend-assets/css/style.css')}}">
     <link rel="stylesheet" href="{{url('frontend-assets/css/slick.css')}}">
     <title>{{ $page->{"title_".app()->getLocale()} }}</title>
@@ -25,15 +31,21 @@
     @yield('content')
     @include('frontend.layouts.partials.footer')
 </main>
+<script src="{{ url('frontend-assets/script/general.js') }}"></script>
+<script src="{{ url('frontend-assets/script/details.js') }}"></script>
 
+{{__('app.trase')}}
+
+<!--img opener -->
+<script>
+    $(".xzoom, .xzoom-gallery").xzoom({tint: '#333', Xoffset: 15});
+</script>
 
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
 <script src="{{ url('frontend-assets/script/slick.min.js') }}"></script>
-
-<script src="{{ url('frontend-assets/script/general.js') }}"></script>
-
 <script src="{{ url('frontend-assets/script/index.js') }}"></script>
+
 
 
 @yield('custom_scripts')

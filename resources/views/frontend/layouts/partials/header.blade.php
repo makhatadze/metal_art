@@ -2,8 +2,8 @@
 <header  class="header">
 
     <nav class="nav">
-        <a href="index.html" class="brand-logo">
-            <img src="frontend-assets/img/logos/site-logo.png" alt="logo">
+        <a href="{{route('site')}}" class="brand-logo">
+            <img src="{{url('frontend-assets/img/logos/site-logo.png')}}" alt="logo">
         </a>
 
         <div class="dropdown-btns">
@@ -15,28 +15,28 @@
 
         <ul class="nav-navbar">
             <li class="navbar-item">
-                <a href="index.html" class="navbar-link active">მთავარი</a>
+                <a href="{{route('site')}}" class="navbar-link {{$page->slug == 'home' ? 'active': ''}}" class="navbar-link active">{{__('app.home')}}</a>
             </li>
             <li class="navbar-item">
-                <a class="navbar-link">ჩვენს შესახებ</a>
+                <a class="navbar-link">{{__('app.about_us')}}</a>
             </li>
             <li class="navbar-item">
-                <a href="gallery.html" class="navbar-link">გალერია</a>
+                <a href="{{route('productsIndex')}}" class="navbar-link {{($page->slug == 'products' || $page->slug == 'details') ? 'active': ''}}">{{__('app.products')}}</a>
             </li>
             <li class="navbar-item">
-                <a href="contact.html" class="navbar-link">კონტაქტი</a>
+                <a href="{{route('contactIndex')}}" class="navbar-link {{$page->slug == 'contact-us' ? 'active': ''}}">{{__('app.contact_us')}}</a>
             </li>
         </ul>
 
         <div class="lang-bar">
-            <a href="/" class="active">
-                <img src="frontend-assets/img/logos/georgia_1.svg" alt="">
+            <a href="{{ LaravelLocalization::getLocalizedURL('ge') }}" class="{{app()->getLocale() == 'ge' ? 'active' : ''}}">
+                <img src="{{url('frontend-assets/img/logos/georgia_1.svg')}}" alt="">
             </a>
-            <a href="/">
-                <img src="frontend-assets/img/logos/uk.svg" alt="">
+            <a href="{{ LaravelLocalization::getLocalizedURL('en') }}" class="{{app()->getLocale() == 'en' ? 'active' : ''}}">
+                <img src="{{url('frontend-assets/img/logos/uk.svg')}}" alt="">
             </a>
-            <a href="/">
-                <img src="frontend-assets/img/logos/russia.svg" alt="">
+            <a href="{{ LaravelLocalization::getLocalizedURL('ru') }}" class="{{app()->getLocale() == 'ru' ? 'active' : ''}}">
+                <img src="{{url('frontend-assets/img/logos/russia.svg')}}" alt="">
             </a>
         </div>
 
