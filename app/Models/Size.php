@@ -1,10 +1,10 @@
 <?php
 /**
- *  app/Models/Deal.php
+ *  app/Models/Size.php
  *
- * User:
- * Date-Time: 19.10.20
- * Time: 15:30
+ * User: 
+ * Date-Time: 02.12.20
+ * Time: 18:37
  * @author Vito Makhatadze <vitomaxatadze@gmail.com>
  */
 namespace App\Models;
@@ -12,10 +12,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Deal extends Model
+class Size extends Model
 {
-    use HasFactory;
-    protected $fillable =['title_ge', 'title_en'];
-    protected $table = 'deals';
+    protected $fillable =['title'];
+    protected $table = 'sizes';
     protected $primarykey = 'id';
 }

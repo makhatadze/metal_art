@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{url('frontend-assets/css/style.css')}}">
-    <link rel="stylesheet" href="{{url('frontend-assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{url('frontend-assets/css/slick.css')}}">
     <title>{{ $page->{"title_".app()->getLocale()} }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 

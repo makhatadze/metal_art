@@ -34,22 +34,8 @@ class HomeController extends Controller
         if (!$page) {
             return abort('404');
         }
-        $products = Product::where(['status' => true, 'vip' => false])
-            ->with(['transmission', 'category', 'deal'])
-            ->get();
-        $vips = Product::where(['status' => true, 'vip' => true])
-            ->with(['transmission', 'category', 'deal'])
-            ->get();
 
-        $brands = Brand::where(['status' => true])->get();
-        $transmissions = Transmission::where(['status' => true])->get();
-        return view('frontend.home.index')
-            ->with('products', $products)
-            ->with('brands', $brands)
-            ->with('transmissions', $transmissions)
-            ->with('dolar', 3.25)
-            ->with('page', $page)
-            ->with('vips', $vips);
+        return view('frontend.home.index')->with('page', $page);
     }
 
     public function catalog(Request $request)
