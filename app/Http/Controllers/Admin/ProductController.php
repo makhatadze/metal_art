@@ -14,6 +14,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Brand;
 use App\Models\BrandModel;
 use App\Models\Category;
+use App\Models\Color;
 use App\Models\Condition;
 use App\Models\Deal;
 use App\Models\Engine;
@@ -21,6 +22,7 @@ use App\Models\Fuel;
 use App\Models\Gearbox;
 use App\Models\Image;
 use App\Models\Product;
+use App\Models\Size;
 use App\Models\Transmission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -41,57 +43,67 @@ class ProductController extends AdminController
 
     public function create(Request $request)
     {
-        if ($request->isMethod('GET')) {
-            return view('admin.modules.product.create');
-        }
         if ($request->isMethod('POST')) {
             $request->all();
             $this->validate($request,
                 [
                     'title_ge' => 'required|string|max:255',
                     'title_en' => 'required|string|max:255',
+                    'title_ru' => 'required|string|max:255',
                     'description_ge' => 'required|string',
-                    'price' => 'required|integer',
-                    'mileage' => 'required|string',
-                    'custom' => 'required|integer',
-                    'wheel' => 'required|integer',
-                    'vip' => 'required|integer',
-                    'created_date' => 'required',
-                    'drive' => 'required|string',
-                    'engine_capacity' => 'required',
-                    'brand' => 'required|integer',
-                    'model' => 'required|integer',
-                    'category' => 'required|integer',
-                    'fuel' => 'required|integer',
-                    'transmission' => 'required|integer',
-                    'deal' => 'required|integer',
-                    'phone' => 'required',
+                    'description_en' => 'required|string',
+                    'description_ru' => 'required|string',
+                    'price' => 'required',
+                    'categories' => 'required',
+                    'sub_categories' => 'required',
+                    'sizes' => 'required',
+                    'colors' => 'required',
                     'kartik-input-700' => 'required'
                 ]);
+
+
             $product = new Product([
                 'title_ge' => $request->title_ge,
                 'title_en' => $request->title_en,
+                'title_ru' => $request->title_ru,
                 'description_ge' => $request->description_ge,
                 'description_en' => $request->description_en,
+                'description_ru' => $request->description_ru,
                 'price' => $request->price,
-                'created_date' => $request->created_date,
-                'engine_capacity' => $request->engine_capacity,
-                'mileage' => $request->mileage,
-                'custom' => $request->custom,
-                'people' => $request->people,
-                'wheel' => $request->wheel,
-                'brand_id' => $request->brand,
-                'model_id' => $request->model,
-                'category_id' => $request->category,
-                'fuel_id' => $request->fuel,
-                'transmission_id' => $request->transmission,
-                'deal_id' => $request->deal,
-                'vip' => $request->vip,
-                'phone' => $request->phone,
-                'drive' => $request->drive
-
+                'is_sale' => $request->is_sale == 'on',
+                'sale' => $request->sale,
+                'vip' => false
             ]);
             $product->save();
+
+
+            if ($request->categories != null) {
+                foreach ($request->categories as $category) {
+                    $product->categories()->attach($category);
+                    $product->save();
+                }
+            }
+
+            if ($request->sub_categories != null) {
+                foreach ($request->sub_categories as $category) {
+                    $product->subCategories()->attach($category);
+                    $product->save();
+                }
+            }
+
+            if ($request->sizes != null) {
+                foreach ($request->sizes as $size) {
+                    $product->sizes()->attach($size);
+                    $product->save();
+                }
+            }
+
+            if ($request->colors != null) {
+                foreach ($request->colors as $color) {
+                    $product->colors()->attach($color);
+                    $product->save();
+                }
+            }
 
             if ($request->hasFile('kartik-input-700')) {
                 foreach ($request->file('kartik-input-700') as $key => $file) {
@@ -107,72 +119,80 @@ class ProductController extends AdminController
             return redirect('admin/products')->with('success', 'პროდუქტი წარმატებით შეიქმნა.');
 
         }
+        $categories = Category::all();
+        $sizes = Size::all();
+        $colors = Color::all();
+
+        return view('admin.modules.product.create',[
+            'categories' => $categories,
+            'sizes' => $sizes,
+            'colors' => $colors
+        ]);
+
     }
 
     public function update(Request $request, Product $product)
     {
-        if ($request->isMethod('GET')) {
-            $brands = Brand::where(['status' => true])->get();
-            $brandModels = BrandModel::where(['status' => true, 'brandmodeleable_type' => 'App\Models\Brand', 'brandmodeleable_id' => $product->brand_id])->get();
-            $categories = Category::where(['status' => true])->get();
-            $transmissions = Transmission::where(['status' => true])->get();
-            $deals = Deal::where(['status' => true])->get();
-            $fuels = Fuel::where(['status' => true])->get();
-            $images = Image::where(['imageable_type' => 'App\Models\Product', 'imageable_id' => $product->id])->get();
-
-            return view('admin.modules.product.update')
-                ->with('brands', $brands)
-                ->with('brandModels', $brandModels)
-                ->with('categories', $categories)
-                ->with('transmissions', $transmissions)
-                ->with('deals', $deals)
-                ->with('fuels', $fuels)
-                ->with('product', $product)
-                ->with('images', $images);
-        }
         if ($request->isMethod('POST')) {
             $request->all();
             $this->validate($request,
                 [
                     'title_ge' => 'required|string|max:255',
                     'title_en' => 'required|string|max:255',
+                    'title_ru' => 'required|string|max:255',
                     'description_ge' => 'required|string',
-                    'drive' => 'required|string',
-                    'price' => 'required|integer',
-                    'mileage' => 'required|string',
-                    'custom' => 'required|integer',
-                    'wheel' => 'required|integer',
-                    'vip' => 'required|integer',
-                    'created_date' => 'required',
-                    'phone' => 'required|string',
-                    'engine_capacity' => 'required',
-                    'brand' => 'required|integer',
-                    'model' => 'required|integer',
-                    'category' => 'required|integer',
-                    'fuel' => 'required|integer',
-                    'transmission' => 'required|integer',
-                    'deal' => 'required|integer'
+                    'description_en' => 'required|string',
+                    'description_ru' => 'required|string',
+                    'price' => 'required',
+                    'categories' => 'required',
+                    'sub_categories' => 'required',
+                    'sizes' => 'required',
+                    'colors' => 'required'
                 ]);
+
+
             $product->title_ge = $request->title_ge;
             $product->title_en = $request->title_en;
+            $product->title_ru = $request->title_ru;
             $product->description_ge = $request->description_ge;
             $product->description_en = $request->description_en;
+            $product->description_ru = $request->description_ru;
             $product->price = $request->price;
-            $product->created_date = $request->created_date;
-            $product->engine_capacity = $request->engine_capacity;
-            $product->mileage = $request->mileage;
-            $product->custom = $request->custom;
-            $product->wheel = $request->wheel;
-            $product->brand_id = $request->brand;
-            $product->model_id = $request->model;
-            $product->category_id = $request->category;
-            $product->fuel_id = $request->fuel;
-            $product->transmission_id = $request->transmission;
-            $product->deal_id = $request->deal;
-            $product->vip = $request->vip;
-            $product->phone = $request->phone;
-            $product->drive = $request->drive;
+            $product->is_sale = $request->is_sale == 'on';
+            $product->sale = $request->sale;
             $product->save();
+
+            $product->categories()->detach();
+
+            if ($request->categories != null) {
+                foreach ($request->categories as $category) {
+                    $product->categories()->attach($category);
+                    $product->save();
+                }
+            }
+            $product->subCategories()->detach();
+            if ($request->sub_categories != null) {
+                foreach ($request->sub_categories as $category) {
+                    $product->subCategories()->attach($category);
+                    $product->save();
+                }
+            }
+            $product->sizes()->detach();
+            if ($request->sizes != null) {
+                foreach ($request->sizes as $size) {
+                    $product->sizes()->attach($size);
+                    $product->save();
+                }
+            }
+
+            $product->colors()->detach();
+
+            if ($request->colors != null) {
+                foreach ($request->colors as $color) {
+                    $product->colors()->attach($color);
+                    $product->save();
+                }
+            }
 
             if ($request->hasFile('kartik-input-700')) {
                 foreach ($request->file('kartik-input-700') as $key => $file) {
@@ -184,9 +204,49 @@ class ProductController extends AdminController
                     ]);
                 }
             }
-            return redirect('admin/products')->with('success', 'პროდუქტი წარმატებით რედაქტირდა.');
+
+            return redirect('admin/products')->with('success', 'პროდუქტი წარმატებით შეიქმნა.');
 
         }
+
+        $images = Image::where(['imageable_type' => 'App\Models\Product', 'imageable_id' => $product->id])->get();
+
+        $categories = Category::all();
+        $sizes = Size::all();
+        $colors = Color::all();
+
+        $productColors = $product->colors()->select('id')->get()->toArray();
+        $productSizes = $product->sizes()->select('id')->get()->toArray();
+        $productCategories = $product->categories()->select('id')->get()->toArray();
+        $productSubCategories = $product->subCategories()->select('id')->get()->toArray();
+
+        $categorySubCategories = [];
+
+        foreach ($product->categories()->get() as $category) {
+            $subArray = $category->subCategories()->get()->toArray();
+            if (count($subArray) > 0) {
+                foreach ($subArray as $sub) {
+                    if (count($categorySubCategories) > 0) {
+                        if (in_array($sub['id'],array_column($categorySubCategories,'id'))) {
+                            continue;
+                        }
+                    }
+                    $categorySubCategories [] = $sub;
+                }
+            }
+        }
+        return view('admin.modules.product.update',[
+            'product' => $product,
+            'images' => $images,
+            'categories' => $categories,
+            'sizes' => $sizes,
+            'colors' => $colors,
+            'productColors' => $productColors,
+            'productSizes' => $productSizes,
+            'productCategories' => $productCategories,
+            'productSubCategories' => $productSubCategories,
+            'categorySubCategories' => $categorySubCategories
+        ]);
     }
 
     public function activate(Product $product)
@@ -230,5 +290,27 @@ class ProductController extends AdminController
             return back()->with('success', 'პროდუქტი წაიშალა');
         }
 
+    }
+
+
+    public function getCategories(Request $request) {
+        $request->all();
+        $data = [];
+        foreach ($request->categories as $category) {
+            $category = Category::where('id',$category)->first();
+            $subArray = $category->subCategories()->get()->toArray();
+            if (count($subArray) > 0) {
+                foreach ($subArray as $sub) {
+                    if (count($data) > 0) {
+                        if (in_array($sub['id'],array_column($data,'id'))) {
+                            continue;
+                        }
+                    }
+                    $data [] = $sub;
+                }
+            }
+        }
+
+        return $data;
     }
 }

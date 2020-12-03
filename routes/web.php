@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\auth\LoginController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\BrandModelController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\DealController;
 use App\Http\Controllers\Admin\FuelController;
 use App\Http\Controllers\Admin\ImageController;
@@ -74,8 +75,12 @@ Route::prefix('admin')->group(function () {
             // Routes for Product Size
             Route::any('sizes',[SizeController::class,'index'])->name('sizeIndex');
             Route::any('sizes/update/{size}',[SizeController::class,'update'])->name('sizeUpdate');
-//            Route::get('sizes/activate/{id}',[CategoryController::class,'activate'])->name('activateCategory');
             Route::match(['get', 'post'],'sizes/create',[SizeController::class,'create'])->name('sizeCreate');
+
+            // Routes for Product Color
+            Route::any('colors',[ColorController::class,'index'])->name('colorIndex');
+            Route::any('colors/update/{color}',[ColorController::class,'update'])->name('colorUpdate');
+            Route::match(['get', 'post'],'colors/create',[ColorController::class,'create'])->name('colorCreate');
 
 
 
@@ -94,6 +99,8 @@ Route::prefix('admin')->group(function () {
             Route::match(['get', 'post'],'products/create',[ProductController::class,'create'])->name('productCreate');
             Route::get('products/delete/{product}',[ProductController::class,'delete'])->name('productDelete');
             Route::get('products/models',[ProductController::class,'models'])->name('getModels');
+
+            Route::get('products/categories',[ProductController::class,'getCategories']);
 
 
             Route::get('images/delete',[ImageController::class,'delete'])->name('imageDelete');

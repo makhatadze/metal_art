@@ -40,6 +40,13 @@
                         <div class="side-menu__title"> ზომები</div>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('colorIndex')}}" class="side-menu custom-nav-item">
+                        <div class="side-menu__icon"><i data-feather="circle" style="width: 15px; height: 15px;"></i>
+                        </div>
+                        <div class="side-menu__title"> ფერები</div>
+                    </a>
+                </li>
             </ul>
         </li>
         <li>

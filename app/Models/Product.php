@@ -16,25 +16,16 @@ class Product extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'brand_id',
-        'model_id',
-        'category_id',
-        'fuel_id',
-        'transmission_id',
-        'deal_id',
         'title_ge',
         'title_en',
+        'title_ru',
         'description_ge',
         'description_en',
+        'description_ru',
         'price',
-        'mileage',
-        'wheel',
-        'custom',
-        'phone',
-        'created_date',
-        'engine_capacity',
+        'is_sale',
+        'sale',
         'vip',
-        'drive',
         'status'
     ];
     protected $table = 'products';
@@ -52,29 +43,25 @@ class Product extends Model
         return Image::where(['imageable_id' => $this->id, 'imageable_type' => 'App\Models\Product'])->count();
     }
 
-    public function transmission(){
-        return $this->hasOne('App\Models\Transmission', 'id','transmission_id');
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'product_category');
     }
 
-    public function brand(){
-        return $this->hasOne('App\Models\Brand', 'id','brand_id');
+    public function subCategories()
+    {
+        return $this->belongsToMany(SubCategory::class, 'product_sub_category');
     }
 
-    public function model(){
-        return $this->hasOne('App\Models\BrandModel', 'id','model_id');
+    public function sizes()
+    {
+        return $this->belongsToMany(Size::class, 'products_sizes');
     }
 
-    public function category(){
-        return $this->hasOne('App\Models\Category', 'id','category_id');
-    }
-
-    public function fuel(){
-        return $this->hasOne('App\Models\Fuel', 'id','fuel_id');
-    }
-
-
-    public function deal(){
-        return $this->hasOne('App\Models\Deal', 'id','deal_id');
+    public function colors()
+    {
+        return $this->belongsToMany(Color::class, 'products_colors');
     }
 
 }

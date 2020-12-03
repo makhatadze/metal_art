@@ -40,8 +40,6 @@
             <tr>
                 <th class="border-b-2 whitespace-no-wrap">#</th>
                 <th class="border-b-2 text-center whitespace-no-wrap">სახელი ქართულად</th>
-                <th class="border-b-2 text-center whitespace-no-wrap">სახელი ინგლისურად</th>
-                <th class="border-b-2 text-center whitespace-no-wrap">სახელი რუსულად</th>
                 <th class="border-b-2 text-center whitespace-no-wrap">ფასი</th>
                 <th class="border-b-2 text-center whitespace-no-wrap">VIP</th>
                 <th class="border-b-2 text-center whitespace-no-wrap">სტატუსი</th>
@@ -57,9 +55,7 @@
                     <td class="border-b">
                         <div class="flex items-center sm:justify-center "> {{ $product->title_ge }}</div>
                     </td>
-                    <td class="border-b">
-                        <div class="flex items-center sm:justify-center "> {{ $product->title_en }}</div>
-                    </td>
+
                     <td class="border-b">
                         <div class="flex items-center sm:justify-center "> {{ $product->price }}</div>
                     </td>

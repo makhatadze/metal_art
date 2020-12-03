@@ -46,7 +46,7 @@ class CategoryController extends AdminController
         }
     }
 
-    public function createSub(Request $request)
+    public function createSubCategory(Request $request)
     {
         if ($request->isMethod('POST')) {
             $request->all();

@@ -16,11 +16,6 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
 
-            // category
-            $table->bigInteger('category_id')->unsigned()->index()->nullable();
-            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('set null');
-
-
             $table->string('title_ge');
             $table->string('title_en');
             $table->string('title_ru');
@@ -29,7 +24,7 @@ class CreateProductsTable extends Migration
             $table->text('description_ru')->nullable();
             $table->float('price');
             $table->boolean('is_sale');
-            $table->float('sale');
+            $table->float('sale')->nullable();
             $table->boolean('vip')->default(false);
             $table->boolean('status')->default(false);
             $table->timestamps();
