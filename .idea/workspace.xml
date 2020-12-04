@@ -2,25 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d51b9db-7f3b-4935-adfa-fc1bbaf7761b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/insite_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/contact/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/products/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/products/view.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/vendor/module/about.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/vendor/module/detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/laravellocalization.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/laravellocalization.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/frontend-assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend-assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/en/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/modules/color/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/modules/color/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/contact/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/contact/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/vendor/pagination/custom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/vendor/pagination/custom.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/products/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/products/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/products/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/vendor/module/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/vendor/module/about.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/vendor/module/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/vendor/module/detail.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +185,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.env" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$USER_HOME$/www/metalart" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -267,7 +259,9 @@
       <workItem from="1603444207279" duration="2467000" />
       <workItem from="1603695918693" duration="1386000" />
       <workItem from="1606913070682" duration="7144000" />
-      <workItem from="1606975932165" duration="29098000" />
+      <workItem from="1606975932165" duration="29128000" />
+      <workItem from="1607062246288" duration="1615000" />
+      <workItem from="1607063885679" duration="1526000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings and translations.">
       <created>1603092223375</created>
@@ -465,14 +459,20 @@
       <option name="project" value="LOCAL" />
       <updated>1606990392152</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Push files.">
+      <created>1607008101304</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1607008101304</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Change logo png" />
     <MESSAGE value="Change translations." />
     <MESSAGE value="remove 2 people saw it." />
     <MESSAGE value="Add comments." />
@@ -497,7 +497,8 @@
     <MESSAGE value="Create categories and subCategories with there relationship." />
     <MESSAGE value="Create subCategory update and create." />
     <MESSAGE value="Product upload and update logic." />
-    <option name="LAST_COMMIT_MESSAGE" value="Product upload and update logic." />
+    <MESSAGE value="Push files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Push files." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2544" y="234" width="734" height="646" key="#Inspections" timestamp="1602225352070">
@@ -525,12 +526,13 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2648" y="310" width="526" height="493" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603371634712" />
-    <state x="420" y="54" width="1394" height="956" key="CommitChangelistDialog2" timestamp="1606990391967">
+    <state x="420" y="54" width="1394" height="956" key="CommitChangelistDialog2" timestamp="1607008101138">
       <screen x="0" y="193" width="1920" height="887" />
     </state>
     <state x="380" y="67" width="745" height="617" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1603018624336" />
     <state x="534" y="125" width="914" height="602" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603433272882" />
     <state x="2454" y="100" width="914" height="914" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603378746265" />
+    <state x="420" y="54" key="CommitChangelistDialog2/1920.166.1920.1080/0.193.1920.887@0.193.1920.887" timestamp="1607008101138" />
     <state x="420" y="54" width="1394" height="956" key="CommitChangelistDialog2/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606990391967" />
     <state x="37" y="135" width="1215" height="609" key="DiffContextDialog" timestamp="1603116509417">
       <screen x="0" y="27" width="1920" height="1053" />
@@ -538,12 +540,12 @@
     <state x="26" y="75" width="1215" height="609" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1603018623524" />
     <state x="37" y="135" key="DiffContextDialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603116509417" />
     <state x="2137" y="109" width="1538" height="903" key="DiffContextDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602852787677" />
-    <state x="2654" y="456" width="426" height="493" key="FileChooserDialogImpl" timestamp="1606998615826">
+    <state x="2654" y="456" width="426" height="493" key="FileChooserDialogImpl" timestamp="1607065114024">
       <screen x="1920" y="166" width="1920" height="1080" />
     </state>
     <state x="734" y="310" width="426" height="493" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603433534639" />
     <state x="2654" y="290" width="426" height="493" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603261327273" />
-    <state x="2654" y="456" width="426" height="493" key="FileChooserDialogImpl/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606998615826" />
+    <state x="2654" y="456" width="426" height="493" key="FileChooserDialogImpl/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1607065114024" />
     <state x="778" y="310" width="426" height="493" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1602075899718" />
     <state width="272" height="519" key="HiddenNamespacesPopup" timestamp="1606915743429">
       <screen x="1920" y="166" width="1920" height="1080" />
@@ -569,11 +571,12 @@
     <state x="625" y="327" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1602253606559" />
     <state x="2546" y="308" width="1024" height="737" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603099036427" />
     <state x="674" y="327" width="1024" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1602079358619" />
-    <state x="2510" y="440" width="802" height="537" key="Vcs.Push.Dialog.v2" timestamp="1606990395330">
-      <screen x="1920" y="166" width="1920" height="1080" />
+    <state x="590" y="418" width="802" height="537" key="Vcs.Push.Dialog.v2" timestamp="1607008103384">
+      <screen x="0" y="193" width="1920" height="887" />
     </state>
     <state x="590" y="294" width="802" height="565" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603433274549" />
     <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603378747398" />
+    <state x="590" y="418" key="Vcs.Push.Dialog.v2/1920.166.1920.1080/0.193.1920.887@0.193.1920.887" timestamp="1607008103384" />
     <state x="2510" y="440" width="802" height="537" key="Vcs.Push.Dialog.v2/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606990395330" />
     <state x="2772" y="578" width="198" height="256" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1606913450717">
       <screen x="1920" y="166" width="1920" height="1080" />
@@ -606,13 +609,13 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="590" y="27" width="1181" height="685" maximized="true" key="dock-window-2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602759193331" />
-    <state x="2559" y="438" width="643" height="783" key="find.popup" timestamp="1607000289841">
+    <state x="2559" y="438" width="643" height="783" key="find.popup" timestamp="1607063555980">
       <screen x="1920" y="166" width="1920" height="1080" />
     </state>
     <state x="455" y="183" width="555" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1603018911815" />
     <state x="639" y="292" width="643" height="764" key="find.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603277916469" />
     <state x="2559" y="272" width="643" height="783" key="find.popup/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603696691786" />
-    <state x="2559" y="438" width="643" height="783" key="find.popup/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1607000289841" />
+    <state x="2559" y="438" width="643" height="783" key="find.popup/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1607063555980" />
     <state x="687" y="292" width="618" height="594" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1601988730722" />
     <state x="735" y="431" width="628" height="288" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1602079338340">
       <screen x="72" y="27" width="1848" height="1053" />
@@ -625,12 +628,12 @@
     <state x="2531" y="231" key="run.anything.popup/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603262735105" />
     <state x="2531" y="397" key="run.anything.popup/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1607002362979" />
     <state x="660" y="252" key="run.anything.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1601900832244" />
-    <state x="2579" y="425" width="672" height="679" key="search.everywhere.popup" timestamp="1606984395555">
+    <state x="2579" y="425" width="672" height="679" key="search.everywhere.popup" timestamp="1607063101986">
       <screen x="1920" y="166" width="1920" height="1080" />
     </state>
     <state x="469" y="175" width="672" height="458" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602922885835" />
     <state x="659" y="280" width="672" height="662" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603433158943" />
     <state x="2579" y="259" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603369712450" />
-    <state x="2579" y="425" width="672" height="679" key="search.everywhere.popup/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606984395555" />
+    <state x="2579" y="425" width="672" height="679" key="search.everywhere.popup/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1607063101986" />
   </component>
 </project>

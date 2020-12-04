@@ -1,3 +1,11 @@
+<?php
+use App\Models\Setting;
+
+$phone = Setting::where(['key' => 'phone'])->first();
+$addressKey = 'address_'.app()->getLocale();
+$address = Setting::where(['key' => $addressKey])->first();
+?>
+
 @extends('frontend.layouts.layout')
 @section('content')
 <!-- section 1 - contact -->
@@ -16,13 +24,13 @@
                         <path id="Path_41" data-name="Path 41" d="M19.7,13.6a3.1,3.1,0,1,1-3.1-3.1A3.1,3.1,0,0,1,19.7,13.6Z" transform="translate(-2.804 -2.804)" fill="none"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
                     </g>
                 </svg>
-                თბილისი ქუჩა N31
+                {{$address->value}}
             </a>
             <a href="tel:+995555555555">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24.421" height="24.464" viewBox="0 0 24.421 24.464">
                     <path id="Icon_feather-phone-call" data-name="Icon feather-phone-call" d="M16.99,5.773a5.341,5.341,0,0,1,4.22,4.22M16.99,1.5a9.615,9.615,0,0,1,8.493,8.482m-1.068,8.525v3.2a2.137,2.137,0,0,1-2.329,2.137,21.141,21.141,0,0,1-9.219-3.28,20.832,20.832,0,0,1-6.41-6.41A21.141,21.141,0,0,1,3.176,4.9,2.137,2.137,0,0,1,5.3,2.568h3.2a2.137,2.137,0,0,1,2.137,1.837,13.717,13.717,0,0,0,.748,3,2.137,2.137,0,0,1-.481,2.254L9.554,11.018a17.093,17.093,0,0,0,6.41,6.41l1.357-1.357a2.137,2.137,0,0,1,2.254-.481,13.717,13.717,0,0,0,3,.748A2.137,2.137,0,0,1,24.414,18.507Z" transform="translate(-2.167 -0.396)" fill="none"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
                 </svg>
-                +995 555 555 555
+                {{$phone->value}}
             </a>
         </div>
     </div>
@@ -39,12 +47,10 @@
         <label for="e-mail" required>{{__('app.email')}}</label>
         <input type="text" placeholder="{{__('app.email_address')}}">
 
-        <label for="phone">{{__('app.mobile')}}</label>
-        <input type="text" placeholder="{{__('app.mobile_phone')}}">
 
         <label for="message" required>{{__('app.message')}}</label>
 
-        <textarea name="" id="" cols="30" rows="6" placeholder="{{__('app.write_message')}}..."></textarea>
+        <textarea name="" id="" cols="30" rows="6" placeholder="{{__('app.write_message')}}"></textarea>
 
         <button class="form-btn">{{__('app.send')}}</button>
     </form>

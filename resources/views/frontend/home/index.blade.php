@@ -126,8 +126,7 @@
                     {{ __('app.hello') }}!
                 </h1>
                 <p class="hello-p">
-                    {{$vips[0]->{"content".app()->getLocale()} }}
-
+                    {!! $page->{"content_".app()->getLocale()} !!}
                 </p>
 
                 <div class="about-btn-w">

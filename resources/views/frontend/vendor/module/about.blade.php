@@ -18,7 +18,7 @@ $address = Setting::where(['key' => $addressKey])->first();
 
         <h1 class="modal-heading"> {{$page->{"title_".app()->getLocale()} }}</h1>
         <p class="modal-p">
-            {{$page->{"content_".app()->getLocale()} }}
+            {!! $page->{"content_".app()->getLocale()} !!}
         </p>
 
         <div class="modal-btns">

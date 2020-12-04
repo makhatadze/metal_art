@@ -13,13 +13,13 @@ $instagramUrl = Setting::where(['key' => 'instagram_url'])->first();
 
     <div class="order-modal-wrap">
 
-        <h1 class="order-modal-title">{{ __('index.how_to_order') }}</h1>
+        <h1 class="order-modal-title">{{ __('app.how_to_order') }}</h1>
 
         <div class="modal-contact-box">
 
             <div class="order-col">
 
-                <p>{{ __('index.call_to_phone') }}</p>
+                <p>{{ __('app.call_to_phone') }}</p>
 
                 <div class="order-flex">
 
@@ -33,7 +33,7 @@ $instagramUrl = Setting::where(['key' => 'instagram_url'])->first();
 
             <div class=" order-col modal-location">
 
-                <p>{{ __('index.on_place') }}</p>
+                <p>{{ __('app.on_place') }}</p>
 
                 <div class="order-flex">
 
@@ -46,7 +46,7 @@ $instagramUrl = Setting::where(['key' => 'instagram_url'])->first();
             </div>
             <div class="order-col">
 
-                <p>{{ __('index.find_on_network') }}</p>
+                <p>{{ __('app.find_on_network') }}</p>
 
                 <div class="order-flex">
 
@@ -68,7 +68,7 @@ $instagramUrl = Setting::where(['key' => 'instagram_url'])->first();
 
         </div>
 
-        <button class="close-order-modal">{{ __('index.close') }}</button>
+        <button class="close-order-modal">{{ __('app.close') }}</button>
 
     </div>
 

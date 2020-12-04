@@ -49,14 +49,10 @@
                 @if(count($products) > 0)
                     @foreach($products as $product)
                         <div class="gallery-item">
-                            {{$product->id}}
-
-                        @if(!$product->hasImage())
+                            @if(!$product->hasImage())
                                 <img src="{{url('noimageavailable.png')}}">
-
                             @else
                                 <img src="{{url('storage/product/'.$product->id.'/'.$product->image()->get()[0]->name)}}">
-
                             @endif
 
                             <div class="gallery-hover">

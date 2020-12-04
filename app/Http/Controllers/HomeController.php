@@ -79,7 +79,7 @@ class HomeController extends Controller
             });
         }
 
-        if ($request->color != null) {
+        if ($request->size != null) {
             $products = $products->with('sizes')->whereHas('sizes', function ($query) use ($request) {
                 $query->where('id',$request->size);
             });
