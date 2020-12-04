@@ -56,7 +56,7 @@
                     </select>
                 </div>
                 @if($product->is_sale && $product->sale)
-                    <div class="price-box">{{__('app.old_price')}}: ₾ <span class="Price">{{number_format($product->price, 0)}}</span></div>
+                    <div class="price-box" style="margin-bottom: 5px; ">{{__('app.old_price')}}: ₾ <span class="Price" style="color: red">{{number_format($product->price, 0)}}</span></div>
                     <div class="price-box">{{__('app.sale_price')}}: ₾ <span class="Price">{{number_format($product->sale, 0)}}</span></div>
                     @else
                     <div class="price-box">{{__('app.price')}}: ₾ <span class="Price">{{number_format($product->price, 0)}}</span></div>

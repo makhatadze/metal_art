@@ -5,6 +5,7 @@ return [
     'home' => 'Home',
     'about_us' => 'About Us',
     'products' => 'Products',
+    'product' => 'Products',
     'contact_us' => 'Contact',
     'interior' => 'Interior',
     'exterior' => 'Exterior',
@@ -37,5 +38,7 @@ return [
     'call_to_phone' => 'Call to phone',
     'on_place' => 'Pickup item by your self',
     'find_on_network' => 'Find as on social network',
-    'close' => 'Close'
+    'close' => 'Close',
+    'old_price' => 'Old Sale',
+    'sale_price' => 'Sale Price'
 ];

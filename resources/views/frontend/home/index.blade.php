@@ -5,20 +5,20 @@
 @section('content')
     <!-- section 1 - hero -->
     <section id="hero" class="child">
-
-        <div class="hero-top">
-            <a href="/{{app()->getLocale()}}/products?category={{$categories[0]->id}}" class="hero-link hero-left">
-                <img src="frontend-assets/img/hero-left.jpg" alt="product">
-                <div class="overlay"></div>
-                <p>{{__('app.interior')}}</p>
-            </a>
-            <a href="/{{app()->getLocale()}}/products?category={{$categories[1]->id}}" class="hero-link hero-right">
-                <img src="frontend-assets/img/hero-right.png" alt="product">
-                <div class="overlay"></div>
-                <p>{{__('app.exterior')}}</p>
-            </a>
-        </div>
-
+        @if(count($categories) > 0)
+            <div class="hero-top">
+                <a href="/{{app()->getLocale()}}/products?category={{$categories[0]->id}}" class="hero-link hero-left">
+                    <img src="frontend-assets/img/hero-left.jpg" alt="product">
+                    <div class="overlay"></div>
+                    <p>{{__('app.interior')}}</p>
+                </a>
+                <a href="/{{app()->getLocale()}}/products?category={{$categories[1]->id}}" class="hero-link hero-right">
+                    <img src="frontend-assets/img/hero-right.png" alt="product">
+                    <div class="overlay"></div>
+                    <p>{{__('app.exterior')}}</p>
+                </a>
+            </div>
+        @endif
         <div class="hero-body">
             <div class="bg-top"></div>
 
