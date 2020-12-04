@@ -100,7 +100,7 @@ class ProductController extends AdminController
             if ($request->hasFile('kartik-input-700')) {
                 foreach ($request->file('kartik-input-700') as $key => $file) {
                     $imagename = date('Ymhs') . $file->getClientOriginalName();
-                    $destination = base_path() . '/storage/app/public/product/' . $product->id;
+                    $destination = base_path() . '/storage/app/public_html/product/' . $product->id;
                     $request->file('kartik-input-700')[$key]->move($destination, $imagename);
                     $product->image()->create([
                         'name' => $imagename
@@ -189,7 +189,7 @@ class ProductController extends AdminController
             if ($request->hasFile('kartik-input-700')) {
                 foreach ($request->file('kartik-input-700') as $key => $file) {
                     $imagename = date('Ymhs') . $file->getClientOriginalName();
-                    $destination = base_path() . '/storage/app/public/product/' . $product->id;
+                    $destination = base_path() . '/storage/app/public_html/product/' . $product->id;
                     $request->file('kartik-input-700')[$key]->move($destination, $imagename);
                     $product->image()->create([
                         'name' => $imagename
@@ -272,8 +272,8 @@ class ProductController extends AdminController
     public function delete(Product $product)
     {
         if ($product) {
-            if (Storage::exists('public/product/' . $product->id)) {
-                Storage::deleteDirectory('public/product/' . $product->id);
+            if (Storage::exists('public_html/product/' . $product->id)) {
+                Storage::deleteDirectory('public_html/product/' . $product->id);
             }
             if ($product->image()) {
                 $product->image()->delete();

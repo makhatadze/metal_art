@@ -24,7 +24,7 @@ class ImageController extends AdminController
         ]);
         $image = Image::where(['id' => $request->id])->first();
         if ($image) {
-            if (!Storage::delete('public/product/' . $image->imageable_id . '/' . $image->name)) {
+            if (!Storage::delete('public_html/product/' . $image->imageable_id . '/' . $image->name)) {
                 return false;
             }
             if (!$image->delete()) {
@@ -43,7 +43,7 @@ class ImageController extends AdminController
         ]);
         $image = Image::where(['id' => $request->id])->first();
         if ($image) {
-            if (!Storage::delete('public/brand/' . $image->imageable_id . '/' . $image->name)) {
+            if (!Storage::delete('public_html/brand/' . $image->imageable_id . '/' . $image->name)) {
                 return false;
             }
             if (!$image->delete()) {
