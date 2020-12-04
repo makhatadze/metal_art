@@ -167,7 +167,7 @@ $mailerActive =  (
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="sm:grid grid-cols-2 gap-2 mb-4">
+                                    <div class="sm:grid grid-cols-3 gap-3 mb-4">
                                         <div class="relative mt-4 {{ $errors->has('address_ge') ? ' has-error' : '' }}">
                                             {{ Form::label('address_ge', 'კომპანიის მისამართი ქართულად', ['class' => 'font-helvetica']) }}
                                             {{ Form::text('address_ge', $datas['address_ge'], ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
@@ -183,6 +183,15 @@ $mailerActive =  (
                                             @if ($errors->has('address_en'))
                                                 <span class="help-block">
                                             {{ $errors->first('address_en') }}
+                                        </span>
+                                            @endif
+                                        </div>
+                                        <div class="relative mt-4 {{ $errors->has('address_ru') ? ' has-error' : '' }}">
+                                            {{ Form::label('address_en', 'კომპანიის მისამართი რუსულად', ['class' => 'font-helvetica']) }}
+                                            {{ Form::text('address_ru', $datas['address_ru'], ['class' => 'input w-full border mt-2 col-span-2']) }}
+                                            @if ($errors->has('address_ru'))
+                                                <span class="help-block">
+                                            {{ $errors->first('address_ru') }}
                                         </span>
                                             @endif
                                         </div>

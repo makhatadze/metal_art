@@ -57,43 +57,48 @@
     </section>
 
     <!-- section 2 - product of day -->
-    <section id="day-product">
-        <div class="overlay-left"></div>
-        <div class="overlay-right"></div>
+    @if($dayProduct != null)
+        <section id="day-product">
+            <div class="overlay-left"></div>
+            <div class="overlay-right"></div>
 
-        <div class="day-product-wrap">
-            <div class="day-p-left">
-                @if(!$vips[0]->hasImage())
-                    <img src="{{url('noimageavailable.png')}}">
-
-                @else
-                    <img src="{{url('storage/product/'.$vips[0]->id.'/'.$vips[0]->image()->get()[0]->name)}}">
-
-                @endif
-            </div>
-            <div class="day-product-content">
-                <div class="day-product-info">
-                    <h3 class="day-p-title">{{__('app.day_product')}}</h3>
-                    <h2 class="day-p-name">{{$vips[0]->{"title_".app()->getLocale()} }}</h2>
-                    <p class="day-p-text">{{$vips[0]->{"description_".app()->getLocale()} }}
-                    </p>
-
-                    <a href="{{route('detailView',$vips[0]->id)}}" class="day-p-link">{{__('app.details')}}</a>
-
-                </div>
-                <div class="day-product-img">
-                    @if(!$vips[0]->hasImage())
+            <div class="day-product-wrap">
+                <div class="day-p-left">
+                    @if(!$dayProduct->hasImage())
                         <img src="{{url('noimageavailable.png')}}">
 
                     @else
-                        <img src="{{url('storage/product/'.$vips[0]->id.'/'.$vips[0]->image()->get()[0]->name)}}">
-
+                        @if(count($dayProduct->image()->get()) > 1)
+                            <img src="{{url('storage/product/'.$dayProduct->id.'/'.$dayProduct->image()->get()[1]->name)}}">
+                        @else
+                            <img src="{{url('storage/product/'.$dayProduct->id.'/'.$dayProduct->image()->get()[0]->name)}}">
+                        @endif
                     @endif
                 </div>
-            </div>
-        </div>
-    </section>
+                <div class="day-product-content">
+                    <div class="day-product-info">
+                        <h3 class="day-p-title">{{__('app.day_product')}}</h3>
+                        <h2 class="day-p-name">{{$dayProduct->{"title_".app()->getLocale()} }}</h2>
+                        <p class="day-p-text">{{$dayProduct->{"description_".app()->getLocale()} }}
+                        </p>
 
+                        <a href="{{route('detailView',$dayProduct->id)}}" class="day-p-link">{{__('app.details')}}</a>
+
+                    </div>
+                    <div class="day-product-img">
+                        @if(!$dayProduct->hasImage())
+                            <img src="{{url('noimageavailable.png')}}">
+
+                        @else
+                            <img src="{{url('storage/product/'.$dayProduct->id.'/'.$dayProduct->image()->get()[0]->name)}}">
+
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    @endif
     <!-- section 3 - hello - about us -->
     <section id="video" class="child">
         <div class="half-side">

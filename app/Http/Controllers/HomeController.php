@@ -16,6 +16,7 @@ use App\Models\Category;
 use App\Models\Color;
 use App\Models\Page;
 use App\Models\Product;
+use App\Models\Setting;
 use App\Models\Size;
 use App\Models\Transmission;
 use Illuminate\Http\Request;
@@ -26,22 +27,22 @@ use Illuminate\Support\Facades\Config;
 class HomeController extends Controller
 {
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return void
-     */
+
     public function index()
     {
         $page = Page::where(['status' => true, 'slug' => 'home'])->first();
         if (!$page) {
             return abort('404');
         }
-        $vips = Product::where(['status' => true, 'vip' => true])->paginate();
+        $vips = Product::where(['status' => true, 'vip' => true])->get();
+
+        $dayProductId = Setting::where('key','day_product')->first();
+        $dayProduct = Product::where(['status' =>true,'id' => $dayProductId->value])->first();
 
         return view('frontend.home.index',[
             'vips' => $vips,
-            'page' => $page
+            'page' => $page,
+            'dayProduct' => $dayProduct
         ]);
     }
 
@@ -168,10 +169,4 @@ class HomeController extends Controller
             Artisan::call("config:cache");
         }
     }
-
-    public function getDolar()
-    {
-        return 3.25;
-    }
-
 }
