@@ -10,6 +10,7 @@ use Illuminate\Queue\SerializesModels;
 class ContactEmail extends Mailable
 {
     use Queueable, SerializesModels;
+
     protected $data;
 
     /**
@@ -17,12 +18,9 @@ class ContactEmail extends Mailable
      *
      * @return void
      */
-    public function __construct($data, $contact, $loan,$statement)
+    public function __construct($data)
     {
         $this->data = $data;
-        $this->contact = $contact;
-        $this->loan = $loan;
-        $this->statement = $statement;
     }
 
     /**
@@ -34,35 +32,7 @@ class ContactEmail extends Mailable
     {
         $mailTo = Setting::where(['key' => 'contact_email'])->first();
 
-        if ($this->contact) {
-            return $this->from($mailTo->value, $this->data['full_name'])->subject($this->data['subject'])->view('frontend.mail.contact-email', ['data' => $this->data]);
-        }
-        if ($this->loan) {
-            return $this->from($mailTo->value, $this->data['full_name'])->subject($this->data['subject'])->view('frontend.mail.loan-email', ['data' => $this->data]);
-        }
-        if ($this->statement) {
-            $email = $this->from($mailTo->value, $this->data['fullName'])
-                ->subject($this->data['subject'])
-                ->view('frontend.mail.statement-email', ['data' => $this->data]);
-            if ($this->data['files']) {
-                foreach ($this->data['files'] as $file) {
-                    $email->attach($file->getRealPath(), [
-                        'as' => $file->getClientOriginalName()
-                    ]);
-                }
-            }
-            return $email;
-        }
-        $email = $this->from($mailTo->value, $this->data['fullName'])
-            ->subject($this->data['subject'])
-            ->view('frontend.mail.agreement-email', ['data' => $this->data]);
-        if ($this->data['files']) {
-            foreach ($this->data['files'] as $file) {
-                $email->attach($file->getRealPath(), [
-                    'as' => $file->getClientOriginalName()
-                ]);
-            }
-        }
-        return $email;
+        return $this->from($mailTo->value, $this->data['name'])->subject($this->data['subject'])->view('frontend.mail.contact-email', ['data' => $this->data]);
+
     }
 }

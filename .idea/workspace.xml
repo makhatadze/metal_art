@@ -2,88 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d51b9db-7f3b-4935-adfa-fc1bbaf7761b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/lang/ru/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/css/ajax-loader.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/css/ajax-loader.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-Black.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-Black.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-BlackItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-BlackItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-BoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-BoldItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-Italic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-Italic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-Light.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-LightItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-LightItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-Medium.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-MediumItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-MediumItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-Thin.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-Thin.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-ThinItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/fonts/roboto/Roboto-ThinItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/fonts/summernote/summernote.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/fonts/summernote/summernote.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/bg-login-page.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/error-illustration.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/food-beverage-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/food-beverage-10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/food-beverage-11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/food-beverage-12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/food-beverage-13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/food-beverage-14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/food-beverage-15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/food-beverage-16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/food-beverage-17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/food-beverage-18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/food-beverage-19.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/food-beverage-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/food-beverage-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/food-beverage-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/food-beverage-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/food-beverage-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/food-beverage-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/food-beverage-8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/food-beverage-9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/illustration.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/map-marker-region.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/map-marker.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/placeholders/200x200.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/placeholders/800x800.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/preview-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/preview-10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/preview-11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/preview-12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/preview-13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/preview-14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/preview-15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/preview-16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/preview-17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/preview-18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/preview-19.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/preview-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/preview-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/preview-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/preview-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/preview-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/preview-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/preview-8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/preview-9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/profile-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/profile-10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/profile-11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/profile-12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/profile-13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/profile-14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/profile-15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/profile-16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/profile-17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/profile-18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/profile-19.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/profile-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/profile-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/profile-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/profile-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/profile-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/profile-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/profile-8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/images/profile-9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ge/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ge/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/ContactEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/ContactEmail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/contact/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/contact/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/mail/agreement-email.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/mail/contact-email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/mail/contact-email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/mail/loan-email.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/mail/statement-email.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,7 +184,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.env" />
-    <property name="last_opened_file_path" value="$USER_HOME$/www/metalart" />
+    <property name="last_opened_file_path" value="$USER_HOME$/www/admin-panel" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -332,7 +260,7 @@
       <workItem from="1606913070682" duration="7144000" />
       <workItem from="1606975932165" duration="29128000" />
       <workItem from="1607062246288" duration="1615000" />
-      <workItem from="1607063885679" duration="8329000" />
+      <workItem from="1607063885679" duration="10346000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings and translations.">
       <created>1603092223375</created>
@@ -558,14 +486,20 @@
       <option name="project" value="LOCAL" />
       <updated>1607071086080</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Add translations.">
+      <created>1607072315946</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1607072315946</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add readme md file." />
     <MESSAGE value="update readme file" />
     <MESSAGE value="import select2" />
     <MESSAGE value="Change select2 styles." />
@@ -590,7 +524,8 @@
     <MESSAGE value="Add languages and refactor code." />
     <MESSAGE value="Change Day Product" />
     <MESSAGE value="Change settings and add conditions to frontend." />
-    <option name="LAST_COMMIT_MESSAGE" value="Change settings and add conditions to frontend." />
+    <MESSAGE value="Add translations." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add translations." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2544" y="234" width="734" height="646" key="#Inspections" timestamp="1602225352070">
@@ -619,26 +554,30 @@
     </state>
     <state x="2648" y="310" width="526" height="493" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603371634712" />
     <state x="728" y="448" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.166.1920.1080/0.193.1920.887@0.193.1920.887" timestamp="1607069828454" />
-    <state x="420" y="54" width="1394" height="956" key="CommitChangelistDialog2" timestamp="1607071085852">
+    <state x="420" y="54" width="1394" height="956" key="CommitChangelistDialog2" timestamp="1607072315727">
       <screen x="0" y="193" width="1920" height="887" />
     </state>
     <state x="380" y="67" width="745" height="617" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1603018624336" />
     <state x="534" y="125" width="914" height="602" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603433272882" />
     <state x="2454" y="100" width="914" height="914" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603378746265" />
-    <state x="420" y="54" key="CommitChangelistDialog2/1920.166.1920.1080/0.193.1920.887@0.193.1920.887" timestamp="1607071085852" />
+    <state x="420" y="54" key="CommitChangelistDialog2/1920.166.1920.1080/0.193.1920.887@0.193.1920.887" timestamp="1607072315727" />
     <state x="420" y="54" width="1394" height="956" key="CommitChangelistDialog2/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606990391967" />
+    <state x="642" y="297" width="626" height="493" key="DUMP_DIALOG_DIMENSION_KEY" timestamp="1607072284986">
+      <screen x="0" y="193" width="1920" height="887" />
+    </state>
+    <state x="642" y="297" width="626" height="493" key="DUMP_DIALOG_DIMENSION_KEY/1920.166.1920.1080/0.193.1920.887@0.193.1920.887" timestamp="1607072284986" />
     <state x="37" y="135" width="1215" height="609" key="DiffContextDialog" timestamp="1603116509417">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="26" y="75" width="1215" height="609" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1603018623524" />
     <state x="37" y="135" key="DiffContextDialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603116509417" />
     <state x="2137" y="109" width="1538" height="903" key="DiffContextDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602852787677" />
-    <state x="2654" y="456" width="426" height="493" key="FileChooserDialogImpl" timestamp="1607065114024">
+    <state x="2654" y="456" width="426" height="493" key="FileChooserDialogImpl" timestamp="1607073560009">
       <screen x="1920" y="166" width="1920" height="1080" />
     </state>
     <state x="734" y="310" width="426" height="493" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603433534639" />
     <state x="2654" y="290" width="426" height="493" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603261327273" />
-    <state x="2654" y="456" width="426" height="493" key="FileChooserDialogImpl/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1607065114024" />
+    <state x="2654" y="456" width="426" height="493" key="FileChooserDialogImpl/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1607073560009" />
     <state x="778" y="310" width="426" height="493" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1602075899718" />
     <state width="272" height="519" key="HiddenNamespacesPopup" timestamp="1606915743429">
       <screen x="1920" y="166" width="1920" height="1080" />
@@ -665,12 +604,12 @@
     <state x="625" y="327" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1602253606559" />
     <state x="2546" y="308" width="1024" height="737" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603099036427" />
     <state x="674" y="327" width="1024" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1602079358619" />
-    <state x="590" y="418" width="802" height="537" key="Vcs.Push.Dialog.v2" timestamp="1607071087853">
+    <state x="590" y="418" width="802" height="537" key="Vcs.Push.Dialog.v2" timestamp="1607072317523">
       <screen x="0" y="193" width="1920" height="887" />
     </state>
     <state x="590" y="294" width="802" height="565" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603433274549" />
     <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603378747398" />
-    <state x="590" y="418" width="802" height="537" key="Vcs.Push.Dialog.v2/1920.166.1920.1080/0.193.1920.887@0.193.1920.887" timestamp="1607071087853" />
+    <state x="590" y="418" width="802" height="537" key="Vcs.Push.Dialog.v2/1920.166.1920.1080/0.193.1920.887@0.193.1920.887" timestamp="1607072317523" />
     <state x="2510" y="440" width="802" height="537" key="Vcs.Push.Dialog.v2/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606990395330" />
     <state x="2772" y="578" width="198" height="256" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1606913450717">
       <screen x="1920" y="166" width="1920" height="1080" />
@@ -693,12 +632,12 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2668" y="368" width="486" height="378" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602495718965" />
-    <state x="2020" y="241" width="1720" height="903" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1606978750643">
+    <state x="2020" y="241" width="1720" height="903" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1607073724995">
       <screen x="1920" y="166" width="1920" height="1080" />
     </state>
     <state x="100" y="100" width="1720" height="880" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603117324593" />
     <state x="2020" y="75" width="1720" height="903" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602852872429" />
-    <state x="2020" y="241" width="1720" height="903" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606978750643" />
+    <state x="2020" y="241" width="1720" height="903" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1607073724995" />
     <state x="501" y="193" width="1360" height="681" maximized="true" key="dock-window-1" timestamp="1606991997160">
       <screen x="0" y="193" width="1920" height="887" />
     </state>

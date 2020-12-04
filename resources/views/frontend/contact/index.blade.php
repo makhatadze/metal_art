@@ -34,26 +34,26 @@ $address = Setting::where(['key' => $addressKey])->first();
             </a>
         </div>
     </div>
+    {!! Form::open(['url' => route('sendEmail'),'method' => 'post','class'=>'form']) !!}
 
-    <form class="form">
         <div class="logo-box">
             <img src="{{url('frontend-assets/img/logos/site-logo.png')}}" alt="">
         </div>
         <h1 class="form-heading">{{__('app.contact')}}</h1>
 
         <label for="name" required>{{__('app.first_name')}}</label>
-        <input type="text" placeholder="{{__('app.first_name')}}">
+        <input type="text" name="name" placeholder="{{__('app.first_name')}}">
 
         <label for="e-mail" required>{{__('app.email')}}</label>
-        <input type="text" placeholder="{{__('app.email_address')}}">
+        <input type="email" name="email" placeholder="{{__('app.email_address')}}">
 
 
         <label for="message" required>{{__('app.message')}}</label>
 
-        <textarea name="" id="" cols="30" rows="6" placeholder="{{__('app.write_message')}}"></textarea>
+        <textarea name="message" id="" cols="30" rows="6" placeholder="{{__('app.write_message')}}"></textarea>
 
-        <button class="form-btn">{{__('app.send')}}</button>
-    </form>
+        <button type="submit" class="form-btn">{{__('app.send')}}</button>
+    {!! Form::close() !!}
 </section>
 @include('frontend.vendor.module.about')
 

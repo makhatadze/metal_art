@@ -23,7 +23,7 @@
             width:92%;
             max-width:600px;
             padding:29px 4% 10px 4%;
-            background:#fd8d0f no-repeat right bottom;
+            background:#2e393e no-repeat right bottom;
             background-size:auto 100%;
             margin:50px auto;
         }
@@ -55,7 +55,7 @@
             margin:25px auto;
         }
         #content h2{
-            color: #fd8d0f;
+            color: #2e393e;
             font-size:15px;
             margin-bottom:20px;
             font-family: 'Conv_BPG DejaVu Sans ExtraLight 2012';
@@ -76,8 +76,7 @@
 <section id="wrapper">
     <section id="maincContent">
         <section id="content">
-            <h2> სრული სახელი: {{$data['full_name']}}</h2>
-            <h2> მობილური : {{$data['phone']}}</h2>
+            <h2> სრული სახელი: {{$data['name']}}</h2>
             <h2> ელ-ფოსტა: {{$data['email']}}</h2>
             <h2> შეტყობინება</h2>
             <h5>{{$data['message']}}</h5>
