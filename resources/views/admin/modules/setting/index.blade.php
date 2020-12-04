@@ -1,12 +1,11 @@
 @extends('admin.layouts.layout')
 <?php
 $contactActive = (
-        $errors->has('admin_email') ||
         $errors->has('contact_email') ||
-        $errors->has('support_email') ||
         $errors->has('phone') ||
         $errors->has('address_ge') ||
-        $errors->has('address_en')
+        $errors->has('address_en') ||
+        $errors->has('address_ru')
     ) ?   'active' :   '';
 $socialActive =  (
     $errors->has('facebook_url') ||
@@ -20,7 +19,6 @@ $mailerActive =  (
     $errors->has('smtp_encrypted') ||
     $errors->has('smtp_email') ||
     $errors->has('smtp_password') ||
-    $errors->has('smtp_subject') ||
     $errors->has('smtp_contact_subject')
 ) ?   'active' :   '';
 ?>
@@ -28,8 +26,6 @@ $mailerActive =  (
     <div class="row mt-5">
         <div class="col-lg-12">
             <h1 class="page-header">საიტის პარამეტრები</h1>
-            {{ Request::get('site_title_ge') }}
-
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -75,7 +71,7 @@ $mailerActive =  (
                                         </span>
                                         @endif
                                     </div>
-                                    <div class="sm:grid grid-cols-2 gap-2 mb-4">
+                                    <div class="sm:grid grid-cols-3 gap-3 mb-4">
                                         <div class="relative mt-4 {{ $errors->has('site_title_ge') ? ' has-error' : '' }}">
                                             {{ Form::label('site_title_ge', 'საიტის სახელი ქართულად', ['class' => 'font-helvetica']) }}
                                             {{ Form::text('site_title_ge', $datas['site_title_ge'], ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
@@ -94,8 +90,17 @@ $mailerActive =  (
                                         </span>
                                             @endif
                                         </div>
+                                        <div class="relative mt-4 {{ $errors->has('site_title_ru') ? ' has-error' : '' }}">
+                                            {{ Form::label('site_title_ru', 'საიტის სახელი რუსულად', ['class' => 'font-helvetica']) }}
+                                            {{ Form::text('site_title_ru', $datas['site_title_ru'], ['class' => 'input w-full border mt-2 col-span-2']) }}
+                                            @if ($errors->has('site_title_ru'))
+                                                <span class="help-block">
+                                            {{ $errors->first('site_title_ru') }}
+                                        </span>
+                                            @endif
+                                        </div>
                                     </div>
-                                    <div class="sm:grid grid-cols-2 gap-2 mb-4">
+                                    <div class="sm:grid grid-cols-3 gap-3 mb-4">
                                         <div class="relative mt-4 {{ $errors->has('site_meta_title_ge') ? ' has-error' : '' }}">
                                             {{ Form::label('site_meta_title_ge', 'საიტის მეტა აღწერა ქართულად', ['class' => 'font-helvetica']) }}
                                             {{ Form::text('site_meta_title_ge', $datas['site_meta_title_ge'], ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
@@ -111,6 +116,15 @@ $mailerActive =  (
                                             @if ($errors->has('site_meta_title_en'))
                                                 <span class="help-block">
                                             {{ $errors->first('site_meta_title_en') }}
+                                        </span>
+                                            @endif
+                                        </div>
+                                        <div class="relative mt-4 {{ $errors->has('site_meta_title_ru') ? ' has-error' : '' }}">
+                                            {{ Form::label('site_meta_title_ru', 'საიტის მეტა აღწერა რუსულად', ['class' => 'font-helvetica']) }}
+                                            {{ Form::text('site_meta_title_ru', $datas['site_meta_title_ru'], ['class' => 'input w-full border mt-2 col-span-2']) }}
+                                            @if ($errors->has('site_meta_title_ru'))
+                                                <span class="help-block">
+                                            {{ $errors->first('site_meta_title_ru') }}
                                         </span>
                                             @endif
                                         </div>
@@ -134,33 +148,13 @@ $mailerActive =  (
                                 <div class="intro-y box p-5">
                                     {!! Form::open(['url' => route('contactUpdate')]) !!}
                                     <div class="sm:grid grid-cols-2 gap-2 mb-4">
-                                        <div class="relative mt-4 {{ $errors->has('admin_email') ? ' has-error' : '' }}">
-                                            {{ Form::label('admin_email', 'კონტაქტის ელ-ფოსტა', ['class' => 'font-helvetica']) }}
-                                            {{ Form::text('admin_email', $datas['admin_email'], ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
-                                            @if ($errors->has('admin_email'))
-                                                <span class="help-block">
-                                                          {{ $errors->first('admin_email') }}
-                                                     </span>
-                                            @endif
-                                        </div>
                                         <div class="relative mt-4 {{ $errors->has('contact_email') ? ' has-error' : '' }}">
-                                            {{ Form::label('contact_email', 'განვადების ელ-ფოსტა', ['class' => 'font-helvetica']) }}
-                                            {{ Form::text('contact_email', $datas['contact_email'], ['class' => 'input w-full border mt-2 col-span-2']) }}
+                                            {{ Form::label('contact_email', 'კონტაქტის ელ-ფოსტა', ['class' => 'font-helvetica']) }}
+                                            {{ Form::text('contact_email', $datas['contact_email'], ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
                                             @if ($errors->has('contact_email'))
                                                 <span class="help-block">
-                                            {{ $errors->first('contact_email') }}
-                                        </span>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="sm:grid grid-cols-2 gap-2 mb-4">
-                                        <div class="relative mt-4 {{ $errors->has('support_email') ? ' has-error' : '' }}">
-                                            {{ Form::label('support_email', 'მანქანის ატვირთვის ელ-ფოსტა', ['class' => 'font-helvetica']) }}
-                                            {{ Form::text('support_email', $datas['support_email'], ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
-                                            @if ($errors->has('support_email'))
-                                                <span class="help-block">
-                                            {{ $errors->first('support_email') }}
-                                        </span>
+                                                          {{ $errors->first('contact_email') }}
+                                                     </span>
                                             @endif
                                         </div>
                                         <div class="relative mt-4 {{ $errors->has('phone') ? ' has-error' : '' }}">
@@ -319,15 +313,6 @@ $mailerActive =  (
                                         </div>
                                     </div>
                                     <div class="sm:grid grid-cols-2 gap-2 mb-4">
-                                        <div class="relative mt-4 {{ $errors->has('smtp_subject') ? ' has-error' : '' }}">
-                                            {{ Form::label('smtp_subject', 'Subject', ['class' => 'font-helvetica']) }}
-                                            {{ Form::text('smtp_subject', $datas['smtp_subject'], ['class' => 'input w-full border mt-2 col-span-2']) }}
-                                            @if ($errors->has('smtp_subject'))
-                                                <span class="help-block">
-                                            {{ $errors->first('smtp_subject') }}
-                                        </span>
-                                            @endif
-                                        </div>
                                         <div class="relative mt-4 {{ $errors->has('smtp_contact_subject') ? ' has-error' : '' }}">
                                             {{ Form::label('smtp_contact_subject', 'Contact Subject', ['class' => 'font-helvetica']) }}
                                             {{ Form::text('smtp_contact_subject', $datas['smtp_contact_subject'], ['class' => 'input w-full border mt-2 col-span-2']) }}

@@ -32,19 +32,29 @@ class PageController extends Controller
                 'slug' => 'required',
                 'title_ge' => 'required',
                 'title_en' => 'required',
+                'title_ru' => 'required',
                 'description_ge' => 'required',
                 'description_en' => 'required',
+                'description_ru' => 'required',
                 'meta_title_ge' => 'required',
-                'meta_title_en' => 'required'
+                'meta_title_en' => 'required',
+                'meta_title_ru' => 'required',
+                'content_ge' => 'required',
+                'content_en' => 'required',
+                'content_ru' => 'required',
             ]);
             $page->title_ge = $request->title_ge;
             $page->title_en = $request->title_en;
+            $page->title_ru = $request->title_ru;
             $page->meta_title_ge = $request->meta_title_ge;
             $page->meta_title_en = $request->meta_title_en;
+            $page->meta_title_ru = $request->meta_title_ru;
             $page->description_ge = $request->description_ge;
             $page->description_en = $request->description_en;
+            $page->description_ru = $request->description_ru;
             $page->content_ge = $request->content_ge;
             $page->content_en = $request->content_en;
+            $page->content_ru = $request->content_ru;
             $page->save();
             return redirect('admin/pages')->with('success', 'ფეიჯი წარმატებით რედაქტირდა.');
 

@@ -17,7 +17,7 @@
                                         </span>
                     @endif
                 </div>
-                <div class="sm:grid grid-cols-2 gap-2 mb-4">
+                <div class="sm:grid grid-cols-3 gap-3 mb-4">
                     <div class="relative mt-4 {{ $errors->has('title_ge') ? ' has-error' : '' }}">
                         {{ Form::label('title_ge', 'სახელი ქართულად', ['class' => 'font-helvetica']) }}
                         {{ Form::text('title_ge', $page->title_ge, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
@@ -36,8 +36,17 @@
                                         </span>
                         @endif
                     </div>
+                    <div class="relative mt-4 {{ $errors->has('title_ru') ? ' has-error' : '' }}">
+                        {{ Form::label('title_ru', 'სახელი რუსულად', ['class' => 'font-helvetica']) }}
+                        {{ Form::text('title_ru', $page->title_ru, ['class' => 'input w-full border mt-2 col-span-2']) }}
+                        @if ($errors->has('title_ru'))
+                            <span class="help-block">
+                                            {{ $errors->first('title_ru') }}
+                                        </span>
+                        @endif
+                    </div>
                 </div>
-                <div class="sm:grid grid-cols-2 gap-2 mb-4">
+                <div class="sm:grid grid-cols-3 gap-3 mb-4">
                     <div class="relative mt-4 {{ $errors->has('meta_title_ge') ? ' has-error' : '' }}">
                         {{ Form::label('meta_title_ge', 'მეტა სახელი ქართულად', ['class' => 'font-helvetica']) }}
                         {{ Form::text('meta_title_ge', $page->meta_title_ge, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
@@ -56,8 +65,17 @@
                                         </span>
                         @endif
                     </div>
+                    <div class="relative mt-4 {{ $errors->has('meta_title_ru') ? ' has-error' : '' }}">
+                        {{ Form::label('meta_title_ru', 'მეტა სახელი რუსულად', ['class' => 'font-helvetica']) }}
+                        {{ Form::text('meta_title_ru', $page->meta_title_ru, ['class' => 'input w-full border mt-2 col-span-2']) }}
+                        @if ($errors->has('meta_title_ru'))
+                            <span class="help-block">
+                                            {{ $errors->first('meta_title_ru') }}
+                                        </span>
+                        @endif
+                    </div>
                 </div>
-                <div class="sm:grid grid-cols-2 gap-2 mb-4">
+                <div class="sm:grid grid-cols-3 gap-3 mb-4">
                     <div class="relative mt-4 {{ $errors->has('description_ge') ? ' has-error' : '' }}">
                         {{ Form::label('description_ge', 'მოკლე აღწერა ქართულად', ['class' => 'font-helvetica']) }}
                         {{ Form::text('description_ge', $page->description_ge, ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
@@ -73,6 +91,15 @@
                         @if ($errors->has('description_en'))
                             <span class="help-block">
                                             {{ $errors->first('description_en') }}
+                                        </span>
+                        @endif
+                    </div>
+                    <div class="relative mt-4 {{ $errors->has('description_ru') ? ' has-error' : '' }}">
+                        {{ Form::label('description_ru', 'მოკლე აღწერა რუსულად', ['class' => 'font-helvetica']) }}
+                        {{ Form::text('description_ru', $page->description_en, ['class' => 'input w-full border mt-2 col-span-2']) }}
+                        @if ($errors->has('description_ru'))
+                            <span class="help-block">
+                                            {{ $errors->first('description_ru') }}
                                         </span>
                         @endif
                     </div>
@@ -93,6 +120,15 @@
                     @if ($errors->has('content_en'))
                         <span class="help-block">
                                             {{ $errors->first('content_en') }}
+                                        </span>
+                    @endif
+                </div>
+                <div class="relative mt-4 {{ $errors->has('content_ru') ? ' has-error' : '' }}">
+                    {{ Form::label('content_ru', 'საიტის კონტენტი რუსულად', ['class' => 'font-helvetica']) }}
+                    {{ Form::textarea('content_ru', $page->content_ru, ['class' => 'input w-full border mt-2 col-span-2']) }}
+                    @if ($errors->has('content_ru'))
+                        <span class="help-block">
+                                            {{ $errors->first('content_ru') }}
                                         </span>
                     @endif
                 </div>

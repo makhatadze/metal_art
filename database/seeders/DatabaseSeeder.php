@@ -117,6 +117,10 @@ class DatabaseSeeder extends Seeder
             'value' => 'site name'
         ]);
         DB::table('settings')->insert([
+            'key' => 'site_title_ru',
+            'value' => 'site name rusulad'
+        ]);
+        DB::table('settings')->insert([
             'key' => 'site_meta_title_ge',
             'value' => 'site meta title georgia'
         ]);
@@ -125,17 +129,15 @@ class DatabaseSeeder extends Seeder
             'value' => 'site meta title english'
         ]);
         DB::table('settings')->insert([
-            'key' => 'admin_email',
-            'value' => 'admin@gmail.com'
+            'key' => 'site_meta_title_ru',
+            'value' => 'site meta title english'
         ]);
+
         DB::table('settings')->insert([
             'key' => 'contact_email',
             'value' => 'contact@gmail.com'
         ]);
-        DB::table('settings')->insert([
-            'key' => 'support_email',
-            'value' => 'support@gmail.com'
-        ]);
+
         DB::table('settings')->insert([
             'key' => 'address_ge',
             'value' => 'მისამართი ქართულად'
@@ -143,6 +145,11 @@ class DatabaseSeeder extends Seeder
         DB::table('settings')->insert([
             'key' => 'address_en',
             'value' => 'address english'
+        ]);
+
+        DB::table('settings')->insert([
+            'key' => 'address_ru',
+            'value' => 'address russian'
         ]);
         DB::table('settings')->insert([
             'key' => 'facebook_url',
@@ -194,14 +201,15 @@ class DatabaseSeeder extends Seeder
             'value' => 'password'
         ]);
 
-        DB::table('settings')->insert([
-            'key' => 'smtp_subject',
-            'value' => 'subject'
-        ]);
 
         DB::table('settings')->insert([
             'key' => 'smtp_contact_subject',
             'value' => 'contact subject'
+        ]);
+
+        DB::table('settings')->insert([
+            'key' => 'day_product',
+            'value' => '0'
         ]);
     }
 }

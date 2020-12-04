@@ -2,17 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d51b9db-7f3b-4935-adfa-fc1bbaf7761b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/75cb9270-c5bd-4ea3-927e-0779061c6e32.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/75cb9270-c5bd-4ea3-927e-0779061c6e32.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend-assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend-assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/contact/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/contact/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/products/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/products/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/products/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/vendor/module/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/vendor/module/about.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/vendor/module/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/vendor/module/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/modules/page/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/modules/page/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/modules/setting/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/modules/setting/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/modules/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/modules/site/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/desktop_menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/desktop_menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +262,7 @@
       <workItem from="1606913070682" duration="7144000" />
       <workItem from="1606975932165" duration="29128000" />
       <workItem from="1607062246288" duration="1615000" />
-      <workItem from="1607063885679" duration="1526000" />
+      <workItem from="1607063885679" duration="5543000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings and translations.">
       <created>1603092223375</created>
@@ -466,14 +467,20 @@
       <option name="project" value="LOCAL" />
       <updated>1607008101304</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Add languages and refactor code.">
+      <created>1607065657138</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1607065657138</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Change translations." />
     <MESSAGE value="remove 2 people saw it." />
     <MESSAGE value="Add comments." />
     <MESSAGE value="Add readme md file." />
@@ -498,7 +505,8 @@
     <MESSAGE value="Create subCategory update and create." />
     <MESSAGE value="Product upload and update logic." />
     <MESSAGE value="Push files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Push files." />
+    <MESSAGE value="Add languages and refactor code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add languages and refactor code." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2544" y="234" width="734" height="646" key="#Inspections" timestamp="1602225352070">
@@ -526,13 +534,13 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2648" y="310" width="526" height="493" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603371634712" />
-    <state x="420" y="54" width="1394" height="956" key="CommitChangelistDialog2" timestamp="1607008101138">
+    <state x="420" y="54" width="1394" height="956" key="CommitChangelistDialog2" timestamp="1607065656941">
       <screen x="0" y="193" width="1920" height="887" />
     </state>
     <state x="380" y="67" width="745" height="617" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1603018624336" />
     <state x="534" y="125" width="914" height="602" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603433272882" />
     <state x="2454" y="100" width="914" height="914" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603378746265" />
-    <state x="420" y="54" key="CommitChangelistDialog2/1920.166.1920.1080/0.193.1920.887@0.193.1920.887" timestamp="1607008101138" />
+    <state x="420" y="54" key="CommitChangelistDialog2/1920.166.1920.1080/0.193.1920.887@0.193.1920.887" timestamp="1607065656941" />
     <state x="420" y="54" width="1394" height="956" key="CommitChangelistDialog2/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606990391967" />
     <state x="37" y="135" width="1215" height="609" key="DiffContextDialog" timestamp="1603116509417">
       <screen x="0" y="27" width="1920" height="1053" />
@@ -571,12 +579,12 @@
     <state x="625" y="327" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1602253606559" />
     <state x="2546" y="308" width="1024" height="737" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603099036427" />
     <state x="674" y="327" width="1024" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1602079358619" />
-    <state x="590" y="418" width="802" height="537" key="Vcs.Push.Dialog.v2" timestamp="1607008103384">
+    <state x="590" y="418" width="802" height="537" key="Vcs.Push.Dialog.v2" timestamp="1607065658437">
       <screen x="0" y="193" width="1920" height="887" />
     </state>
     <state x="590" y="294" width="802" height="565" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603433274549" />
     <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603378747398" />
-    <state x="590" y="418" key="Vcs.Push.Dialog.v2/1920.166.1920.1080/0.193.1920.887@0.193.1920.887" timestamp="1607008103384" />
+    <state x="590" y="418" width="802" height="537" key="Vcs.Push.Dialog.v2/1920.166.1920.1080/0.193.1920.887@0.193.1920.887" timestamp="1607065658437" />
     <state x="2510" y="440" width="802" height="537" key="Vcs.Push.Dialog.v2/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606990395330" />
     <state x="2772" y="578" width="198" height="256" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1606913450717">
       <screen x="1920" y="166" width="1920" height="1080" />
@@ -584,12 +592,17 @@
     <state x="2772" y="412" width="198" height="256" key="com.intellij.database.actions.DdlActions$CreateObject$1/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1602852324112" />
     <state x="2772" y="578" key="com.intellij.database.actions.DdlActions$CreateObject$1/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606913450717" />
     <state x="892" y="429" width="198" height="256" key="com.intellij.database.actions.DdlActions$CreateObject$1/72.27.1848.1053@72.27.1848.1053" timestamp="1602074814946" />
-    <state x="2759" y="589" width="379" height="631" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1606980718057">
-      <screen x="1920" y="166" width="1920" height="1080" />
+    <state x="839" y="540" width="379" height="631" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1607067038097">
+      <screen x="0" y="193" width="1920" height="887" />
     </state>
     <state x="2759" y="423" width="379" height="307" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603200554401" />
+    <state x="839" y="540" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/1920.166.1920.1080/0.193.1920.887@0.193.1920.887" timestamp="1607067038097" />
     <state x="2759" y="589" width="379" height="631" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606980718057" />
     <state x="880" y="439" width="369" height="265" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/72.27.1848.1053@72.27.1848.1053" timestamp="1602074809223" />
+    <state x="542" y="197" width="826" height="693" key="com.intellij.database.dbimport.ImportDialog" timestamp="1607067029779">
+      <screen x="0" y="193" width="1920" height="887" />
+    </state>
+    <state x="542" y="197" width="826" height="693" key="com.intellij.database.dbimport.ImportDialog/1920.166.1920.1080/0.193.1920.887@0.193.1920.887" timestamp="1607067029779" />
     <state x="2668" y="368" width="486" height="378" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1602495718965">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -621,11 +634,12 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="735" y="431" width="628" height="288" key="org.intellij.images.editor.actions.BackgroundImageDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1602079338340" />
-    <state x="2531" y="397" key="run.anything.popup" timestamp="1607002362979">
-      <screen x="1920" y="166" width="1920" height="1080" />
+    <state x="611" y="383" key="run.anything.popup" timestamp="1607068529440">
+      <screen x="0" y="193" width="1920" height="887" />
     </state>
     <state x="611" y="252" key="run.anything.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603358739366" />
     <state x="2531" y="231" key="run.anything.popup/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603262735105" />
+    <state x="611" y="383" key="run.anything.popup/1920.166.1920.1080/0.193.1920.887@0.193.1920.887" timestamp="1607068529440" />
     <state x="2531" y="397" key="run.anything.popup/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1607002362979" />
     <state x="660" y="252" key="run.anything.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1601900832244" />
     <state x="2579" y="425" width="672" height="679" key="search.everywhere.popup" timestamp="1607063101986">

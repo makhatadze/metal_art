@@ -3870,7 +3870,6 @@ sub_category_id</ColNames>
     <column id="931" parent="360" name="sale">
       <Position>10</Position>
       <DataType>double(8,2 digit)|0s</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="932" parent="360" name="vip">
       <Position>11</Position>

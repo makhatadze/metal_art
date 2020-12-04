@@ -55,7 +55,7 @@ Route::prefix('admin')->group(function () {
     Route::middleware(['auth'])->group(function () {
         Route::get('/logout', [LoginController::class,'logout'])->name('logout');
         Route::namespace('')->group(function () {
-            Route::get('/', [SiteController::class,'index'])->name('siteIndex'); // Added name
+            Route::any('/', [SiteController::class,'index'])->name('siteIndex'); // Added name
 
 
             // Routes for page

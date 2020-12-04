@@ -30,8 +30,10 @@ class SettingsController extends AdminController
                 'site_url' => 'required',
                 'site_title_ge' => 'required',
                 'site_title_en' => 'required',
+                'site_title_ru' => 'required',
                 'site_meta_title_ge' => 'required',
                 'site_meta_title_en' => 'required',
+                'site_meta_title_ru' => 'required',
             ]);
             foreach ($request->all() as $key => $item) {
                 if ($key != '_token' && $key != 'site_url') {
@@ -46,12 +48,11 @@ class SettingsController extends AdminController
     {
         $request->all();
         $this->validate($request, [
-            'admin_email' => 'required',
             'contact_email' => 'required',
-            'support_email' => 'required',
             'phone' => 'required',
             'address_ge' => 'required',
-            'address_en' => 'required'
+            'address_en' => 'required',
+            'address_ru' => 'required',
         ]);
         foreach ($request->all() as $key => $item) {
             if ($key != '_token') {
@@ -87,7 +88,6 @@ class SettingsController extends AdminController
             'smtp_encrypted' => 'required',
             'smtp_email' => 'required',
             'smtp_password' => 'required',
-            'smtp_subject' => 'required',
             'smtp_contact_subject' => 'required'
         ]);
         foreach ($request->all() as $key => $item) {
