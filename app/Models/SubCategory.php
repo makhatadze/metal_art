@@ -1,5 +1,12 @@
 <?php
-
+/**
+ *  app/Models/SubCategory.php
+ *
+ * User: 
+ * Date-Time: 04.12.20
+ * Time: 13:34
+ * @author Vito Makhatadze <vitomaxatadze@gmail.com>
+ */
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;

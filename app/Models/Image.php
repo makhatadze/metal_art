@@ -3,8 +3,8 @@
  *  app/Models/Image.php
  *
  * User: 
- * Date-Time: 19.10.20
- * Time: 15:31
+ * Date-Time: 04.12.20
+ * Time: 13:34
  * @author Vito Makhatadze <vitomaxatadze@gmail.com>
  */
 namespace App\Models;

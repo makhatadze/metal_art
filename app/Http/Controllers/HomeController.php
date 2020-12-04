@@ -2,23 +2,20 @@
 /**
  *  app/Http/Controllers/HomeController.php
  *
- * User:
- * Date-Time: 19.10.20
- * Time: 15:29
+ * User: 
+ * Date-Time: 04.12.20
+ * Time: 13:33
  * @author Vito Makhatadze <vitomaxatadze@gmail.com>
  */
 
 namespace App\Http\Controllers;
 
-use App\Models\Brand;
-use App\Models\BrandModel;
 use App\Models\Category;
 use App\Models\Color;
 use App\Models\Page;
 use App\Models\Product;
 use App\Models\Setting;
 use App\Models\Size;
-use App\Models\Transmission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;

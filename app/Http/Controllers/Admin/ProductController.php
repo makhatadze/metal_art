@@ -11,19 +11,11 @@
 namespace App\Http\Controllers\Admin;
 
 
-use App\Models\Brand;
-use App\Models\BrandModel;
 use App\Models\Category;
 use App\Models\Color;
-use App\Models\Condition;
-use App\Models\Deal;
-use App\Models\Engine;
-use App\Models\Fuel;
-use App\Models\Gearbox;
 use App\Models\Image;
 use App\Models\Product;
 use App\Models\Size;
-use App\Models\Transmission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 

@@ -1,10 +1,10 @@
 <?php
 /**
- *  app/Http/Controllers/Admin/SizeController.php
+ *  app/Http/Controllers/Admin/ColorController.php
  *
  * User: 
- * Date-Time: 02.12.20
- * Time: 18:30
+ * Date-Time: 04.12.20
+ * Time: 13:34
  * @author Vito Makhatadze <vitomaxatadze@gmail.com>
  */
 namespace App\Http\Controllers\Admin;

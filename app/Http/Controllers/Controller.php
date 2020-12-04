@@ -1,5 +1,12 @@
 <?php
-
+/**
+ *  app/Http/Controllers/Controller.php
+ *
+ * User: 
+ * Date-Time: 04.12.20
+ * Time: 13:33
+ * @author Vito Makhatadze <vitomaxatadze@gmail.com>
+ */
 namespace App\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;

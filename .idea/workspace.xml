@@ -3,15 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="3d51b9db-7f3b-4935-adfa-fc1bbaf7761b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ColorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ColorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ImageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SizeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SizeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/ContactEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/ContactEmail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/contact/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/contact/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/mail/agreement-email.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/mail/contact-email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/mail/contact-email.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/mail/loan-email.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/mail/statement-email.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Color.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Color.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Image.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Page.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Setting.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Setting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Size.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Size.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/SubCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/SubCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +271,7 @@
       <workItem from="1606913070682" duration="7144000" />
       <workItem from="1606975932165" duration="29128000" />
       <workItem from="1607062246288" duration="1615000" />
-      <workItem from="1607063885679" duration="10346000" />
+      <workItem from="1607063885679" duration="10596000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings and translations.">
       <created>1603092223375</created>
@@ -493,14 +504,20 @@
       <option name="project" value="LOCAL" />
       <updated>1607072315946</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Add contact.">
+      <created>1607074320804</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1607074320804</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update readme file" />
     <MESSAGE value="import select2" />
     <MESSAGE value="Change select2 styles." />
     <MESSAGE value="Add mailers." />
@@ -525,7 +542,8 @@
     <MESSAGE value="Change Day Product" />
     <MESSAGE value="Change settings and add conditions to frontend." />
     <MESSAGE value="Add translations." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add translations." />
+    <MESSAGE value="Add contact." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add contact." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2544" y="234" width="734" height="646" key="#Inspections" timestamp="1602225352070">
@@ -554,14 +572,14 @@
     </state>
     <state x="2648" y="310" width="526" height="493" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603371634712" />
     <state x="728" y="448" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.166.1920.1080/0.193.1920.887@0.193.1920.887" timestamp="1607069828454" />
-    <state x="420" y="54" width="1394" height="956" key="CommitChangelistDialog2" timestamp="1607072315727">
+    <state x="420" y="54" width="1394" height="956" key="CommitChangelistDialog2" timestamp="1607074320603">
       <screen x="0" y="193" width="1920" height="887" />
     </state>
     <state x="380" y="67" width="745" height="617" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1603018624336" />
     <state x="534" y="125" width="914" height="602" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603433272882" />
     <state x="2454" y="100" width="914" height="914" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603378746265" />
     <state x="420" y="54" key="CommitChangelistDialog2/1920.166.1920.1080/0.193.1920.887@0.193.1920.887" timestamp="1607072315727" />
-    <state x="420" y="54" width="1394" height="956" key="CommitChangelistDialog2/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606990391967" />
+    <state x="420" y="54" width="1394" height="956" key="CommitChangelistDialog2/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1607074320603" />
     <state x="642" y="297" width="626" height="493" key="DUMP_DIALOG_DIMENSION_KEY" timestamp="1607072284986">
       <screen x="0" y="193" width="1920" height="887" />
     </state>
@@ -604,13 +622,13 @@
     <state x="625" y="327" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1602253606559" />
     <state x="2546" y="308" width="1024" height="737" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603099036427" />
     <state x="674" y="327" width="1024" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1602079358619" />
-    <state x="590" y="418" width="802" height="537" key="Vcs.Push.Dialog.v2" timestamp="1607072317523">
-      <screen x="0" y="193" width="1920" height="887" />
+    <state x="2510" y="440" width="802" height="537" key="Vcs.Push.Dialog.v2" timestamp="1607074323169">
+      <screen x="1920" y="166" width="1920" height="1080" />
     </state>
     <state x="590" y="294" width="802" height="565" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1603433274549" />
     <state x="2510" y="274" width="802" height="565" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1603378747398" />
     <state x="590" y="418" width="802" height="537" key="Vcs.Push.Dialog.v2/1920.166.1920.1080/0.193.1920.887@0.193.1920.887" timestamp="1607072317523" />
-    <state x="2510" y="440" width="802" height="537" key="Vcs.Push.Dialog.v2/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1606990395330" />
+    <state x="2510" y="440" width="802" height="537" key="Vcs.Push.Dialog.v2/1920.166.1920.1080/0.193.1920.887@1920.166.1920.1080" timestamp="1607074323169" />
     <state x="2772" y="578" width="198" height="256" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1606913450717">
       <screen x="1920" y="166" width="1920" height="1080" />
     </state>

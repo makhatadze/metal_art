@@ -3,8 +3,8 @@
  *  app/Models/Size.php
  *
  * User: 
- * Date-Time: 02.12.20
- * Time: 18:37
+ * Date-Time: 04.12.20
+ * Time: 13:34
  * @author Vito Makhatadze <vitomaxatadze@gmail.com>
  */
 namespace App\Models;
