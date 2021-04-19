@@ -13,6 +13,7 @@ return [
     'our_product' => 'Our Products',
     'day_product' => 'Daily Product',
     'details' => 'Detail',
+    'in_details' => 'Detail',
     'process_1' => 'Creation',
     'process_2' => 'Proc',
     'process_3' => 'ess',

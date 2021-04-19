@@ -138,8 +138,6 @@ class ProductController extends AdminController
                     'price' => 'required',
                     'categories' => 'required',
                     'sub_categories' => 'required',
-                    'sizes' => 'required',
-                    'colors' => 'required'
                 ]);
 
 

@@ -2,7 +2,7 @@
 /**
  *  app/Http/Controllers/HomeController.php
  *
- * User: 
+ * User:
  * Date-Time: 04.12.20
  * Time: 13:33
  * @author Vito Makhatadze <vitomaxatadze@gmail.com>
@@ -61,7 +61,7 @@ class HomeController extends Controller
 
         if ($request->category != null) {
             $products = $products->with('categories')->whereHas('categories', function ($query) use ($request) {
-               $query->where('id',$request->category);
+                $query->where('id',$request->category);
             });
         }
 
@@ -96,6 +96,13 @@ class HomeController extends Controller
         $sizes = Size::all();
         $categories = Category::all();
         $subCategories = [];
+
+        if ($request->category != null) {
+            $cat = Category::where('id',$request->category)->first();
+            if ($cat != null) {
+                $subCategories = $cat->subCategories;
+            }
+        }
         return view('frontend.products.index',[
             'page' => $page,
             'products' => $products,

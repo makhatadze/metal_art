@@ -13,6 +13,7 @@ return [
     'our_product' => 'ჩვენი პროდუქცია',
     'day_product' => 'დღის პროდუქტი',
     'details' => 'დეტალურად',
+    'in_details' => 'დეტალურად',
     'process_1' => 'შექმნის',
     'process_2' => 'პრო',
     'process_3' => 'ცესი',
