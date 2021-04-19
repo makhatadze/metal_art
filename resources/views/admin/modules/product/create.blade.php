@@ -147,6 +147,8 @@
                                         </span>
                     @endif
                 </div>
+                <span style="padding-bottom: 10px; color: #f65454">ფოტოს ზომები 1920px-1200px</span>
+
                 <div class="file-loading">
                     <input id="input-700" name="kartik-input-700[]" type="file" multiple>
                 </div>
