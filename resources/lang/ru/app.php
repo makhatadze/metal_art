@@ -12,6 +12,7 @@ return [
     'our_product' => 'Наши продукты',
     'day_product' => 'Daily Product',
     'details' => 'Подробности',
+    'in_details' => 'Подробности',
     'process_1' => 'Создание',
     'process_2' => 'Про',
     'process_3' => 'цесс',
