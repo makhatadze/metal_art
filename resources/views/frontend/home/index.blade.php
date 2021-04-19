@@ -1,6 +1,7 @@
 <?php
     $categories = \App\Models\Category::all();
 ?>
+test
 @extends('frontend.layouts.layout')
 @section('content')
     <!-- section 1 - hero -->
