@@ -3,7 +3,7 @@
  *  database/migrations/2021_04_19_062754_add_prices_column_to_products_sizes_table.php
  *
  * Date-Time: 19.04.21
- * Time: 10:32
+ * Time: 10:37
  * @author Vito Makhatadze <vitomaxatadze@gmail.com>
  */
 use Illuminate\Database\Migrations\Migration;

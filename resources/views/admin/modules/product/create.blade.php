@@ -2,7 +2,7 @@
 @section('content')
     <div class="intro-y flex items-center mt-8">
         <h2 class="text-lg font-medium mr-auto font-helvetica">
-            პროდუქტის შექმნა  -> <span class="text-red-600">სავალდებულოა მინიმუმ 2 ფოტოს ატვირთვა</span></h2>
+            პროდუქტის შექმნა -> <span class="text-red-600">სავალდებულოა მინიმუმ 2 ფოტოს ატვირთვა</span></h2>
     </div>
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 lg:col-span-8">
@@ -41,7 +41,8 @@
                     <div class="sm:grid grid-cols-1 gap-1 mb-4 {{ $errors->has('categories') ? ' has-error' : '' }}">
                         <div class="relative mt-4 ">
                             {{ Form::label('categories', 'მთავარი კატეგორიები', ['class' => 'font-helvetica']) }}
-                            <select name="categories[]" id="categories" onchange="changeCategory()" data-placeholder="აირჩიეთ მთავარი კატეგორია"
+                            <select name="categories[]" id="categories" onchange="changeCategory()"
+                                    data-placeholder="აირჩიეთ მთავარი კატეგორია"
                                     class="select2 w-full"
                                     multiple>
                                 @if($categories)
@@ -63,50 +64,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="relative mt-3 inline-flex">
-                        <div class="mr-4 {{ $errors->has('price') ? ' has-error' : '' }}">
-                            {{ Form::label('price', 'ფასი', ['class' => 'font-helvetica']) }}
-                            {{ Form::text('price', '', ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
-                            @if ($errors->has('price'))
-                                <span class="help-block">
-                                            {{ $errors->first('price') }}
-                                        </span>
-                            @endif
-                        </div>
-                        <div class="mr-3"> <label>SALE</label>
-                            <div class="mt-2"> <input type="checkbox" name="is_sale" class="input input--switch border"> </div>
-                        </div>
-                        <div class="mr-4 {{ $errors->has('sale') ? ' has-error' : '' }}">
-                            {{ Form::label('sale', 'SALE ფასი', ['class' => 'font-helvetica']) }}
-                            {{ Form::text('sale', '', ['class' => 'input w-full border mt-2 col-span-2', 'no']) }}
-                            @if ($errors->has('sale'))
-                                <span class="help-block">
-                                            {{ $errors->first('sale') }}
-                                        </span>
-                            @endif
-                        </div>
-                    </div>
-
-                </div>
-                <div class="sm:grid grid-cols-2 gap-2 mb-4">
-                    <div class="sm:grid grid-cols-1 gap-1 mb-4">
-                        <div class="relative mt-4 {{ $errors->has('sizes') ? ' has-error' : '' }}">
-                            {{ Form::label('sizes', 'ზომა', ['class' => 'font-helvetica']) }}
-                            <select name="sizes[]"  data-placeholder="აირჩიეთ ზომა"
-                                    class="select2 w-full"
-                                    multiple>
-                                @if($sizes)
-                                    @foreach($sizes as $size)
-                                        <option value="{{$size->id}}">{{$size->title}}</option>
-                                    @endforeach
-                                @endif
-                            </select>
-                        </div>
-                    </div>
                     <div class="sm:grid grid-cols-1 gap-1 mb-4">
                         <div class="relative mt-4 {{ $errors->has('sizes') ? ' has-error' : '' }}">
                             {{ Form::label('colors', 'ფერი', ['class' => 'font-helvetica']) }}
-                            <select name="colors[]"  data-placeholder="აირჩიეთ ზომა"
+                            <select name="colors[]" data-placeholder="აირჩიეთ ზომა"
                                     class="select2 w-full"
                                     multiple>
                                 @if($colors)
@@ -118,7 +79,26 @@
                         </div>
                     </div>
                 </div>
+                <div class="sm:grid grid-cols-1 gap-2 mb-4">
+                    <div class="sm:grid grid-cols-1 gap-1 mb-4">
+                        <div class="relative mt-4 {{ $errors->has('sizes') ? ' has-error' : '' }}">
+                            {{ Form::label('sizes', 'ზომა', ['class' => 'font-helvetica']) }}
+                            <select name="sizes[]" id="select-size" onchange="changeSize()"
+                                    data-placeholder="აირჩიეთ ზომა"
+                                    class="select2 w-full"
+                                    multiple>
+                                @if($sizes)
+                                    @foreach($sizes as $size)
+                                        <option value="{{$size->id}}">{{$size->title}}</option>
+                                    @endforeach
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="price-container">
 
+                </div>
 
                 <div class="relative mt-4 {{ $errors->has('description_ge') ? ' has-error' : '' }}">
                     {{ Form::label('description_ge', 'პროდუქტის აღწერა ქართულად', ['class' => 'font-helvetica']) }}
@@ -162,7 +142,6 @@
         </div>
 
     </div>
-
 @endsection
 
 @section('custom_scripts')
@@ -218,6 +197,26 @@
             $('#subCategorySelect2').select2();
         }
 
+        function changeSize() {
+            let size = $('#select-size');
+            let sizes = {!! json_encode($sizes) !!};
+            let content = `
+                <div class="sm:grid grid-cols-3 gap-3 mb-4">
+                        <div class="relative mt-3 ">
+                            <label for="title_ge" class="font-helvetica">სახელი ქართულად</label>
+                            <input class="input w-full border mt-2 col-span-2" no="" name="title_ge" type="text" value="" id="title_ge">
+                        </div>
+                         <div class="mr-3"> <label>SALE</label>
+                                        <div class="mt-2"> <input type="checkbox" name="is_sale" class="input input--switch border"> </div>
+                         </div>
+                         <div class="relative mt-3 ">
+                        <label for="title_ge" class="font-helvetica">სახელი ქართულად</label>
+                        <input class="input w-full border mt-2 col-span-2" no="" name="title_ge" type="text" value="" id="title_ge">
+                                            </div>
+                </div>
 
+            `;
+            $('.price-container').append(content);
+        }
     </script>
 @endsection
