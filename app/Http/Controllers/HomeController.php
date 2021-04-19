@@ -61,7 +61,7 @@ class HomeController extends Controller
 
         if ($request->category != null) {
             $products = $products->with('categories')->whereHas('categories', function ($query) use ($request) {
-               $query->where('id',$request->category);
+                $query->where('id',$request->category);
             });
         }
 
@@ -103,8 +103,7 @@ class HomeController extends Controller
                 $subCategories = $cat->subCategories;
             }
         }
-
-            return view('frontend.products.index',[
+        return view('frontend.products.index',[
             'page' => $page,
             'products' => $products,
             'colors' => $colors,
