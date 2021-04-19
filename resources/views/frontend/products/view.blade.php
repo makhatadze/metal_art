@@ -32,7 +32,9 @@
             <div class="product-details">
                 <h1 class="product-name">{{$product->{"title_".app()->getLocale()} }}</h1>
 
-                <p class="product-category">{{$product->{"description_".app()->getLocale()} }}</p>
+                <p class="product-category">
+                    {!! $product->{"description_".app()->getLocale()} !!}
+                </p>
 
                 <div class="size-box">
                     {{__('app.color')}}:
@@ -58,7 +60,7 @@
                 @if($product->is_sale && $product->sale)
                     <div class="price-box" style="margin-bottom: 5px; ">{{__('app.old_price')}}: ₾ <span class="Price" style="color: red">{{number_format($product->price, 0)}}</span></div>
                     <div class="price-box">{{__('app.sale_price')}}: ₾ <span class="Price">{{number_format($product->sale, 0)}}</span></div>
-                    @else
+                @else
                     <div class="price-box">{{__('app.price')}}: ₾ <span class="Price">{{number_format($product->price, 0)}}</span></div>
 
                 @endif
